@@ -1,4 +1,4 @@
-import{j as o}from"./jsx-runtime.D_zvdyIk.js";import{r as a}from"./index.DeO6U63H.js";import{R as X,a as T,u as F,A as Z,V as E,S as J,h as K,C as U,O as N,c as oo}from"./OrbitControls.Cq1iuXS6.js";import{H as _}from"./Html.o5Xnuitd.js";import"./index.Bb8JjhAW.js";import"./client.CN8EEgtH.js";const ro=()=>parseInt(X.replace(/\D+/g,"")),eo=ro();class to extends K{constructor(){super({uniforms:{time:{value:0},fade:{value:1}},vertexShader:`
+import{j as o}from"./jsx-runtime.D_zvdyIk.js";import{r as a}from"./index.DeO6U63H.js";import{R as X,b as T,u as F,A as Z,V as E,S as J,h as K,C as U,O as N,a as oo}from"./OrbitControls.C_SjBBE7.js";import{H as _}from"./Html.Bfk01jMZ.js";import"./index.Bb8JjhAW.js";import"./client.CN8EEgtH.js";const ro=()=>parseInt(X.replace(/\D+/g,"")),eo=ro();class to extends K{constructor(){super({uniforms:{time:{value:0},fade:{value:1}},vertexShader:`
       uniform float time;
       attribute float size;
       varying vec3 vColor;
