@@ -1,0 +1,471 @@
+/* ===================================================
+   AI 기초 — 학생용 교재 디자인 시스템
+   Neural Blue Theme
+   =================================================== */
+
+@import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css');
+@import "tailwindcss";
+
+/* ── Starlight 테마 오버라이드 ── */
+:root {
+  --sl-color-accent-low: #1e3a5f;
+  --sl-color-accent: #3B82F6;
+  --sl-color-accent-high: #93c5fd;
+
+  --sl-font: 'Pretendard Variable', 'Pretendard', system-ui, -apple-system, sans-serif;
+  --sl-font-mono: 'JetBrains Mono', 'Fira Code', 'Consolas', monospace;
+
+  --sl-text-2xl: 1.75rem;
+  --sl-text-3xl: 2rem;
+  --sl-text-4xl: 2.5rem;
+  --sl-content-width: 48rem;
+
+  /* 커스텀 컬러 토큰 */
+  --ai-blue: #3B82F6;
+  --ai-blue-light: #93c5fd;
+  --ai-blue-bg: rgba(59, 130, 246, 0.08);
+  --ai-violet: #8B5CF6;
+  --ai-violet-light: #c4b5fd;
+  --ai-violet-bg: rgba(139, 92, 246, 0.08);
+  --ai-amber: #F59E0B;
+  --ai-amber-light: #fcd34d;
+  --ai-amber-bg: rgba(245, 158, 11, 0.08);
+  --ai-emerald: #10b981;
+  --ai-emerald-bg: rgba(16, 185, 129, 0.08);
+  --ai-rose: #F43F5E;
+  --ai-rose-bg: rgba(244, 63, 94, 0.08);
+  --ai-slate: #64748b;
+}
+
+/* ── 도입 이야기 박스 ── */
+.story-box {
+  position: relative;
+  border-left: 4px solid var(--ai-violet);
+  background: linear-gradient(135deg, var(--ai-violet-bg), transparent);
+  padding: 1.5rem 1.5rem 1.5rem 1.75rem;
+  margin: 1.5rem 0;
+  border-radius: 0 0.75rem 0.75rem 0;
+  font-size: 1.05rem;
+  line-height: 1.8;
+  color: var(--sl-color-text);
+}
+
+.story-box::before {
+  content: '이야기';
+  position: absolute;
+  top: -0.75rem;
+  left: 1rem;
+  background: var(--ai-violet);
+  color: white;
+  padding: 0.15rem 0.75rem;
+  border-radius: 9999px;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.story-box p {
+  margin: 0.5rem 0;
+}
+
+/* ── 역사 공개 박스 ── */
+.history-reveal {
+  position: relative;
+  background: linear-gradient(135deg, var(--ai-violet-bg), var(--ai-blue-bg));
+  border: 2px solid rgba(139, 92, 246, 0.2);
+  padding: 1.5rem 1.5rem 1.5rem 1.75rem;
+  margin: 1.5rem 0;
+  border-radius: 0.75rem;
+  line-height: 1.8;
+}
+
+.history-reveal::before {
+  content: '역사 공개';
+  position: absolute;
+  top: -0.75rem;
+  left: 1rem;
+  background: linear-gradient(135deg, var(--ai-violet), var(--ai-blue));
+  color: white;
+  padding: 0.15rem 0.75rem;
+  border-radius: 9999px;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+}
+
+.history-reveal p {
+  margin: 0.5rem 0;
+}
+
+/* ── 핵심 개념 카드 ── */
+.concept-card {
+  position: relative;
+  border-left: 4px solid var(--ai-blue);
+  background: var(--ai-blue-bg);
+  padding: 1.25rem 1.25rem 1.25rem 1.5rem;
+  margin: 1.5rem 0;
+  border-radius: 0 0.75rem 0.75rem 0;
+}
+
+.concept-card::before {
+  content: '핵심 개념';
+  position: absolute;
+  top: -0.75rem;
+  left: 1rem;
+  background: var(--ai-blue);
+  color: white;
+  padding: 0.15rem 0.75rem;
+  border-radius: 9999px;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+}
+
+.concept-card ul {
+  margin: 0.5rem 0;
+  padding-left: 1.25rem;
+}
+
+.concept-card li {
+  margin: 0.4rem 0;
+  line-height: 1.7;
+}
+
+/* ── 서프라이즈 박스 ── */
+.surprise-box {
+  position: relative;
+  border-left: 4px solid var(--ai-amber);
+  background: var(--ai-amber-bg);
+  padding: 1.25rem 1.25rem 1.25rem 1.5rem;
+  margin: 1.5rem 0;
+  border-radius: 0 0.75rem 0.75rem 0;
+}
+
+.surprise-box::before {
+  content: '서프라이즈';
+  position: absolute;
+  top: -0.75rem;
+  left: 1rem;
+  background: var(--ai-amber);
+  color: white;
+  padding: 0.15rem 0.75rem;
+  border-radius: 9999px;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+}
+
+/* ── 수식 박스 ── */
+.formula-box {
+  background: var(--sl-color-gray-7, #f8fafc);
+  border: 1px solid var(--sl-color-gray-5, #e2e8f0);
+  padding: 1.25rem 1.5rem;
+  margin: 1.5rem 0;
+  border-radius: 0.75rem;
+  text-align: center;
+  font-family: var(--sl-font-mono);
+  font-size: 1.1rem;
+  line-height: 1.8;
+}
+
+[data-theme='dark'] .formula-box {
+  background: rgba(30, 41, 59, 0.5);
+  border-color: rgba(100, 116, 139, 0.3);
+}
+
+/* ── 자기 점검 체크리스트 ── */
+.self-check {
+  position: relative;
+  background: var(--ai-emerald-bg);
+  border: 2px solid rgba(16, 185, 129, 0.2);
+  padding: 1.5rem;
+  margin: 1.5rem 0;
+  border-radius: 0.75rem;
+}
+
+.self-check::before {
+  content: '자기 점검';
+  position: absolute;
+  top: -0.75rem;
+  left: 1rem;
+  background: var(--ai-emerald);
+  color: white;
+  padding: 0.15rem 0.75rem;
+  border-radius: 9999px;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+}
+
+.self-check ul {
+  list-style: none;
+  padding-left: 0.5rem;
+  margin: 0.5rem 0;
+}
+
+.self-check li {
+  position: relative;
+  padding-left: 2rem;
+  margin: 0.6rem 0;
+  line-height: 1.7;
+}
+
+.self-check li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.35rem;
+  width: 1.2rem;
+  height: 1.2rem;
+  border: 2px solid var(--ai-emerald);
+  border-radius: 0.25rem;
+  background: white;
+}
+
+[data-theme='dark'] .self-check li::before {
+  background: #1e293b;
+}
+
+/* ── 활동 링크 카드 ── */
+.activity-link {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1.25rem 1.5rem;
+  margin: 1.5rem 0;
+  border: 2px solid rgba(59, 130, 246, 0.3);
+  border-radius: 0.75rem;
+  background: linear-gradient(135deg, var(--ai-blue-bg), transparent);
+  text-decoration: none;
+  color: var(--sl-color-text);
+  transition: all 0.2s ease;
+}
+
+.activity-link:hover {
+  border-color: var(--ai-blue);
+  box-shadow: 0 4px 12px rgba(59, 130, 246, 0.15);
+  transform: translateY(-1px);
+}
+
+.activity-link .link-icon {
+  font-size: 2rem;
+  flex-shrink: 0;
+}
+
+.activity-link .link-body {
+  flex: 1;
+}
+
+.activity-link .link-label {
+  display: block;
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--ai-blue);
+  font-weight: 700;
+  margin-bottom: 0.25rem;
+}
+
+.activity-link .link-title {
+  display: block;
+  font-size: 1.05rem;
+  font-weight: 600;
+}
+
+.activity-link .link-desc {
+  display: block;
+  font-size: 0.85rem;
+  color: var(--ai-slate);
+  margin-top: 0.15rem;
+}
+
+.activity-link .link-arrow {
+  font-size: 1.25rem;
+  color: var(--ai-blue);
+  flex-shrink: 0;
+}
+
+/* ── 스텝 바이 스텝 진행 표시 ── */
+.step-indicator {
+  display: flex;
+  gap: 0.5rem;
+  margin: 1.5rem 0;
+  flex-wrap: wrap;
+}
+
+.step-indicator .step {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  border-radius: 9999px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  background: var(--sl-color-gray-6, #f1f5f9);
+  color: var(--sl-color-gray-2, #475569);
+  transition: all 0.2s ease;
+}
+
+.step-indicator .step.active {
+  background: var(--ai-blue);
+  color: white;
+}
+
+.step-indicator .step.done {
+  background: var(--ai-emerald);
+  color: white;
+}
+
+.step-indicator .step-num {
+  width: 1.5rem;
+  height: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.3);
+  font-size: 0.75rem;
+  font-weight: 800;
+}
+
+/* ── 타임라인 마커 ── */
+.timeline-marker {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.2rem 0.6rem;
+  background: var(--ai-violet-bg);
+  border: 1px solid rgba(139, 92, 246, 0.2);
+  border-radius: 9999px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--ai-violet);
+}
+
+/* ── 뱃지 ── */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.125rem 0.5rem;
+  border-radius: 9999px;
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+.badge-blue {
+  background: rgba(59, 130, 246, 0.15);
+  color: #2563eb;
+}
+
+.badge-violet {
+  background: rgba(139, 92, 246, 0.15);
+  color: #7c3aed;
+}
+
+.badge-amber {
+  background: rgba(245, 158, 11, 0.15);
+  color: #d97706;
+}
+
+.badge-emerald {
+  background: rgba(16, 185, 129, 0.15);
+  color: #059669;
+}
+
+.badge-rose {
+  background: rgba(244, 63, 94, 0.15);
+  color: #e11d48;
+}
+
+/* ── 선택 → 결과 → 서프라이즈 테이블 ── */
+.sl-markdown-content table {
+  font-size: 0.9rem;
+}
+
+.sl-markdown-content th {
+  background: var(--ai-blue-bg);
+  font-weight: 700;
+}
+
+/* ── 난이도 표시 ── */
+.difficulty-dots span.filled {
+  color: var(--ai-blue);
+}
+
+.difficulty-dots span.empty {
+  color: var(--sl-color-gray-4, #94a3b8);
+}
+
+/* ── 비교 그리드 (좌우 분할) ── */
+.compare-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  margin: 1.5rem 0;
+}
+
+.compare-card {
+  border: 2px solid var(--sl-color-gray-5, #e2e8f0);
+  border-radius: 0.75rem;
+  padding: 1.25rem;
+}
+
+.compare-card.before {
+  border-color: rgba(244, 63, 94, 0.3);
+  background: var(--ai-rose-bg);
+}
+
+.compare-card.after {
+  border-color: rgba(16, 185, 129, 0.3);
+  background: var(--ai-emerald-bg);
+}
+
+/* ── 반응형 ── */
+@media (max-width: 640px) {
+  .compare-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .sl-markdown-content table {
+    font-size: 0.8rem;
+  }
+
+  .story-box,
+  .history-reveal,
+  .concept-card,
+  .surprise-box {
+    padding: 1rem 1rem 1rem 1.25rem;
+  }
+}
+
+/* ── 다크 모드 ── */
+[data-theme='dark'] .story-box {
+  background: linear-gradient(135deg, rgba(139, 92, 246, 0.1), transparent);
+}
+
+[data-theme='dark'] .history-reveal {
+  background: linear-gradient(135deg, rgba(139, 92, 246, 0.08), rgba(59, 130, 246, 0.08));
+}
+
+[data-theme='dark'] .concept-card {
+  background: rgba(59, 130, 246, 0.08);
+}
+
+[data-theme='dark'] .surprise-box {
+  background: rgba(245, 158, 11, 0.08);
+}
+
+[data-theme='dark'] .self-check {
+  background: rgba(16, 185, 129, 0.06);
+}
+
+[data-theme='dark'] .activity-link {
+  background: linear-gradient(135deg, rgba(59, 130, 246, 0.06), transparent);
+}
+
+[data-theme='dark'] .badge-blue { color: #60a5fa; }
+[data-theme='dark'] .badge-violet { color: #a78bfa; }
+[data-theme='dark'] .badge-amber { color: #fbbf24; }
+[data-theme='dark'] .badge-emerald { color: #34d399; }
+[data-theme='dark'] .badge-rose { color: #fb7185; }

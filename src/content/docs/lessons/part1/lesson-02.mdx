@@ -1,0 +1,419 @@
+---
+title: "2차시: 기계가 스스로 학습할 수 있는가?"
+description: "퍼셉트론, 결정 경계, XOR의 벽 — 기계 학습의 첫 번째 성공과 좌절"
+---
+
+import { Card, CardGrid, LinkCard } from '@astrojs/starlight/components';
+import PerceptronSimulator from '../../../../components/neural/PerceptronSimulator';
+import PerceptronLearning from '../../../../components/neural/PerceptronLearning';
+
+<p style="color: var(--sl-color-gray-3); margin-bottom: 0.25rem;">AI의 시작 &gt; 2차시</p>
+
+# 기계가 스스로 학습할 수 있는가?
+
+> <strong>오늘의 질문:</strong> "기계가 스스로 배울 수 있는가?"
+
+<p style="color: var(--sl-color-gray-3);">
+50분 | 퍼셉트론 · 결정 경계 · XOR 문제 | 난이도 ●●○○○
+</p>
+
+---
+
+## 생각은 어디에서 오는가?
+
+<div class="story-box">
+
+지난 시간에 우리는 "기계가 생각할 수 있는가?"를 물었습니다. 오늘은 한 걸음 더 들어갑니다 — <strong>"기계가 스스로 배울 수 있는가?"</strong>
+
+이 질문에 답하기 전에, 먼저 하나 물어봅시다.
+
+<strong>사람은 어디에서 생각할까요?</strong> — 뇌입니다.
+
+그렇다면 <strong>뇌는 어떻게 생각을 할까요?</strong> — 뇌를 이루는 약 860억 개의 세포, <strong>뉴런(neuron)</strong>이 서로 신호를 주고받으면서 생각이 만들어집니다.
+
+80여 년 전, 이 단순한 사실에서 출발한 두 과학자가 있었습니다.
+
+</div>
+
+### 뉴런이 하는 일
+
+뇌의 뉴런은 놀랍도록 단순한 방식으로 작동합니다:
+
+1. <strong>수상돌기</strong>로 여러 신호를 받는다
+2. <strong>세포체</strong>에서 신호를 합산한다
+3. 합산된 신호가 <strong>임계값을 넘으면</strong> 축삭으로 신호를 보낸다 ("발화")
+4. 학습이 일어나면 <strong>시냅스 연결 강도가 변한다</strong>
+
+1943년, 이 단순한 원리에 주목한 두 사람이 있었습니다.
+
+### 맥컬록과 피츠: 뉴런을 수학적으로 표현하다
+
+신경과학자 <strong>워런 맥컬록(Warren McCulloch)</strong>과 수학자 <strong>월터 피츠(Walter Pitts)</strong>가 중요한 논문을 발표합니다: [*"A Logical Calculus of the Ideas Immanent in Nervous Activity"*](https://www.cs.cmu.edu/~./epxing/Class/10715/reading/McCulloch.and.Pitts.pdf).
+
+<div style="display: flex; gap: 16px; margin: 1rem 0; flex-wrap: wrap;">
+  <figure style="flex: 1; min-width: 160px; margin: 0; text-align: center;">
+    <img src="/ai-basic-textbook/images/lesson02/warren-mcculloch.jpg" alt="워런 맥컬록(Warren McCulloch, 1898-1969)" style="width: 100%; max-width: 220px; border-radius: 10px;" />
+    <figcaption style="color: var(--sl-color-gray-3); font-size: 12px; margin-top: 6px;">워런 맥컬록 (1898-1969)<br/>사진 출처: Flickr/Paul Pangaro</figcaption>
+  </figure>
+  <figure style="flex: 1; min-width: 160px; margin: 0; text-align: center;">
+    <img src="/ai-basic-textbook/images/lesson02/walter-pitts.jpg" alt="월터 피츠(Walter Pitts, 1923-1969)" style="width: 100%; max-width: 220px; border-radius: 10px;" />
+    <figcaption style="color: var(--sl-color-gray-3); font-size: 12px; margin-top: 6px;">월터 피츠 (1923-1969)<br/>사진 출처: Wikimedia Commons (Public Domain)</figcaption>
+  </figure>
+</div>
+
+이 논문의 핵심 통찰은 이렇습니다:
+
+> 뉴런은 <strong>발화하거나(1), 안 하거나(0)</strong>. 이것은 곧 <strong>참(TRUE) 또는 거짓(FALSE)</strong>이다.
+
+즉, 뉴런의 작동 방식이 <strong>논리 연산(AND, OR, NOT)과 본질적으로 같다</strong>는 것입니다. 이것은 우연한 비유가 아니라 근본적인 원리입니다.
+
+맥컬록과 피츠는 이것을 수학으로 옮겨 <strong>인공 뉴런</strong>을 제안했습니다 — 세상 최초의 인공 신경 모델이었습니다.
+
+<details>
+<summary>심화: 맥컬록과 피츠의 이야기</summary>
+
+월터 피츠는 독학으로 수학을 배운 천재였습니다. 12세에 버트런드 러셀의 <em>Principia Mathematica</em>를 읽고 오류를 발견해 편지를 보냈고, 15세에 집을 떠나 시카고 대학 도서관에서 혼자 공부했습니다. 정식 학생이 아니었지만, 수학과 논리학에 대한 뛰어난 이해력으로 교수들의 주목을 받았습니다.
+
+맥컬록은 신경과학자이자 시인, 철학자였습니다. "뇌가 어떻게 생각을 만들어내는가?"라는 질문에 평생을 바쳤습니다. 피츠의 수학적 재능을 알아본 맥컬록은 그를 자신의 집에 초대해 함께 연구했습니다.
+
+두 사람의 만남이 만들어낸 1943년 논문은 인공지능의 수학적 토대가 되었습니다.
+
+</details>
+
+하지만 이 모델에는 <strong>치명적인 한계</strong>가 있었습니다:
+
+- 입력과 출력이 <strong>0과 1만</strong> 가능
+- <strong>자동 학습 알고리즘이 없었다</strong> — 사람이 답을 미리 알고 가중치를 수동으로 설정해야 함
+- 새로운 문제마다 <strong>사람이 직접</strong> 가중치를 다시 계산해야 함
+
+뉴런을 수학적으로 표현한 것은 대단한 성과였지만, <strong>기계가 스스로 배우는 것</strong>과는 거리가 멀었습니다.
+
+---
+
+## 15년 뒤, 한 과학자의 돌파
+
+1958년, 코넬 항공연구소의 심리학자 <strong>프랭크 로젠블랫(Frank Rosenblatt)</strong>이 맥컬록-피츠의 한계를 돌파합니다.
+
+<div style="display: flex; gap: 16px; margin: 1rem 0; flex-wrap: wrap;">
+  <figure style="flex: 1; min-width: 200px; margin: 0; text-align: center;">
+    <img src="/ai-basic-textbook/images/lesson02/frank-rosenblatt.jpg" alt="프랭크 로젠블랫(Frank Rosenblatt, 1928-1971)" style="width: 100%; max-width: 280px; border-radius: 10px;" />
+    <figcaption style="color: var(--sl-color-gray-3); font-size: 12px; margin-top: 6px;">프랭크 로젠블랫 (1928-1971)<br/>사진 출처: Cornell Chronicle</figcaption>
+  </figure>
+  <figure style="flex: 1; min-width: 200px; margin: 0; text-align: center;">
+    <img src="/ai-basic-textbook/images/lesson02/rosenblatt-perceptron.jpg" alt="Mark I 퍼셉트론 기계" style="width: 100%; max-width: 280px; border-radius: 10px;" />
+    <figcaption style="color: var(--sl-color-gray-3); font-size: 12px; margin-top: 6px;">Mark I 퍼셉트론<br/>사진 출처: Wikimedia Commons</figcaption>
+  </figure>
+</div>
+
+그가 만든 기계의 이름은 <strong>퍼셉트론(Perceptron)</strong>. 퍼셉트론의 혁신은 바로 <strong>"학습"을 추가한 것</strong>입니다 — 기계가 데이터를 보면서 <strong>스스로 가중치를 찾아가는</strong> 알고리즘을 넣은 것입니다. 사람이 답을 알려줄 필요 없이, 기계 자체가 시행착오를 통해 최적의 가중치를 찾습니다.
+
+### 퍼셉트론이 하는 일
+
+그래서 퍼셉트론이 실제로 무엇을 할 수 있었을까요? 1960년 시연에서 퍼셉트론은 <strong>글자를 읽었습니다</strong>.
+
+<img src="/ai-basic-textbook/images/lesson02/pattern-recognition.svg" alt="퍼셉트론의 패턴 인식: 5x5 그리드의 밝기를 입력으로 받아 글자 X와 O를 구별한다. 학습 이미지 20장으로 100% 정확도 달성." style="width: 100%; max-width: 760px; margin: 1.5rem auto; display: block; border-radius: 12px;" />
+
+20x20 격자의 각 칸이 밝은지 어두운지를 입력으로 받아, "이 글자가 X인가 O인가"를 출력합니다. 학습 이미지 20장만으로 X와 O를 100% 구별했고, 더 어려운 E와 F도 80% 이상 맞혔습니다. ([Mark I Perceptron — Wikipedia](https://en.wikipedia.org/wiki/Mark_I_Perceptron))
+
+수학적으로 보면, 퍼셉트론이 하는 일은 <strong>직선 하나를 그어서 데이터를 두 그룹으로 나누는 것</strong>입니다.
+
+<img src="/ai-basic-textbook/images/lesson02/perceptron-structure.svg" alt="퍼셉트론의 구조: 입력(x1, x2)에 가중치(w1, w2)를 곱하고, 편향(b)을 더한 후, 활성화 함수를 거쳐 출력(0 또는 1)을 만든다." style="width: 100%; max-width: 760px; margin: 1.5rem auto; display: block; border-radius: 12px;" />
+
+눈치채셨나요? 이것은 앞에서 배운 뉴런의 작동 방식과 정확히 같습니다:
+
+<img src="/ai-basic-textbook/images/lesson02/neuron-comparison.svg" alt="생물학적 뉴런과 퍼셉트론의 비교: 수상돌기→입력, 시냅스 강도→가중치, 세포체 합산→Σ, 임계값 발화→활성화 함수" style="width: 100%; max-width: 760px; margin: 1.5rem auto; display: block; border-radius: 12px;" />
+
+이 구조를 이해하려면 "가중치"라는 단어를 알아야 합니다. 어렵지 않습니다.
+
+### "가중치"가 뭔데?
+
+대학 입시에서 "수학에 가중치 1.2를 둔다"는 말을 들어본 적 있나요? 수학 100점을 받으면 <strong>100 × 1.2 = 120점</strong>으로 계산됩니다. 영어의 가중치가 0.8이라면, 영어 100점은 80점이 됩니다. 같은 100점이어도 <strong>가중치에 따라 영향력이 달라지는</strong> 것이죠.
+
+퍼셉트론에서도 똑같습니다:
+
+| 용어 | 입시 비유 | 퍼셉트론에서의 의미 |
+|------|----------|-----------------|
+| <strong>가중치(Weight)</strong> w₁, w₂ | 과목별 반영 비율 (수학 1.2, 영어 0.8) | 각 입력이 결과에 미치는 영향력 |
+| <strong>편향(Bias)</strong> b | 합격 커트라인 | 기준점을 올리거나 내리는 것 |
+| <strong>활성화 함수</strong> | 커트라인 넘으면 합격, 못 넘으면 불합격 | 임계값 넘으면 1, 아니면 0 |
+| <strong>학습(Learning)</strong> | — | 최적의 가중치와 편향을 찾는 과정 |
+
+---
+
+## 글자를 읽는 것보다 더 큰 의미
+
+퍼셉트론이 글자를 읽는 것도 놀라웠지만, 사실 그보다 더 중요한 발견이 있었습니다. 퍼셉트론이 <strong>AND와 OR을 배울 수 있다</strong>는 것입니다. 이게 왜 대단한 걸까요?
+
+여러분이 지금 보고 있는 화면, 스마트폰, 노트북 — 이 모든 기기의 핵심에는 <strong>논리 게이트(Logic Gate)</strong>가 있습니다.
+
+| 게이트 | 하는 일 | 비유 |
+|--------|---------|------|
+| AND | 둘 다 1일 때만 1 | "비밀번호 <em>그리고</em> 얼굴 인식 — 둘 다 맞아야 통과" |
+| OR | 하나라도 1이면 1 | "카드 <em>또는</em> 현금 — 하나만 있으면 결제" |
+| NOT | 0이면 1, 1이면 0 | "스위치를 뒤집는다" |
+
+이 세 가지(AND, OR, NOT)만 있으면 <strong>모든 논리 연산이 가능합니다</strong>. 컴퓨터가 하는 모든 계산의 기초가 이것입니다.
+
+<div class="concept-card">
+
+<strong>퍼셉트론이 AND와 OR을 배울 수 있다면?</strong>
+
+당시 사람들이 흥분한 직접적인 이유는 <strong>패턴 인식</strong>이었습니다 — 기계가 글자를 읽고, 이미지를 분류하는 모습은 충격적이었죠.
+
+하지만 이론적으로 더 큰 의미가 있었습니다. 퍼셉트론이 AND와 OR을 <strong>데이터만 보고 스스로 학습</strong>한다면, 원리적으로는 <strong>컴퓨터의 기본 연산을 배우는 기계</strong>가 가능하다는 뜻이었습니다.
+
+글자를 읽는 것은 시작일 뿐, 가능성은 무한해 보였습니다.
+
+</div>
+
+---
+
+## 직접 확인해봅시다
+
+그래서 정말 되는지 직접 해봅시다. 아래 시뮬레이터에서 슬라이더를 조절해 빨간 점(1)과 파란 점(0)을 직선으로 나눠보세요.
+
+:::tip[사용법]
+1. **AND 모드**에서 시작하세요. 빨간 점(1)은 하나, 파란 점(0)은 세 개입니다.
+2. **w₁ 슬라이더**를 움직이면 직선이 기울어집니다. **w₂**도 마찬가지입니다. **b**를 움직이면 직선이 통째로 이동합니다.
+3. 직선을 움직여서 빨간 점은 한쪽에, 파란 점은 반대쪽에 오도록 나눠보세요. <strong>4/4</strong>가 되면 성공!
+4. **OR 모드**로 바꿔서 다시 도전해보세요.
+:::
+
+<PerceptronSimulator client:visible />
+
+AND — 성공! OR — 성공! 직선 하나로 데이터를 완벽하게 나눌 수 있습니다.
+
+### 퍼셉트론은 어떻게 "학습"하는가?
+
+방금 여러분은 슬라이더를 직접 조절해서 정답을 찾았습니다. 퍼셉트론은 이 과정을 <strong>자동으로</strong> 합니다:
+
+1. 처음에 가중치(w₁, w₂)와 편향(b)을 <strong>아무 값으로</strong> 설정합니다
+2. 데이터를 하나 넣고 예측합니다
+3. <strong>틀렸으면</strong> 가중치를 수정합니다
+   - 1이어야 하는데 0으로 예측했으면 → 그때 들어온 입력값(x₁, x₂)을 가중치에 <strong>더한다</strong> (w₁ += x₁, w₂ += x₂)
+   - 0이어야 하는데 1로 예측했으면 → 그때 들어온 입력값을 가중치에서 <strong>뺀다</strong> (w₁ -= x₁, w₂ -= x₂)
+4. <strong>맞았으면</strong> 가중치를 그대로 둡니다
+5. 모든 데이터에 대해 2~4를 반복합니다
+
+한마디로: <strong>"틀리면 고치고, 맞으면 냅둔다."</strong>
+
+AND 게이트를 예로 들어봅시다. 목표는 (1,1)일 때만 1, 나머지는 0입니다.
+
+<strong>시작:</strong> w₁=0, w₂=0, b=0 (아무것도 모르는 상태)
+
+| 입력 | 정답 | 계산 | 예측 | 맞음? | 조치 |
+|------|------|------|------|-------|------|
+| (0,0) | 0 | 0×0+0×0+0=0 → 1 | 1 | ✗ | 0이어야 하는데 1 → w₁+=0, w₂+=0, b-=1 → b=-1 |
+| (0,1) | 0 | 0×0+0×1+(-1)=-1 → 0 | 0 | ✓ | 그대로 |
+| (1,0) | 0 | 0×1+0×0+(-1)=-1 → 0 | 0 | ✓ | 그대로 |
+| (1,1) | 1 | 0×1+0×1+(-1)=-1 → 0 | 0 | ✗ | 1이어야 하는데 0 → w₁+=1, w₂+=1, b+=1 |
+
+첫 라운드에서 2개를 틀렸습니다. 하지만 가중치가 수정되었으니 두 번째 라운드에서는 더 잘 맞출 겁니다. 이것을 반복하면 결국 w₁=1, w₂=1, b=-1.5 같은 값에 도달합니다 — 시뮬레이터에서 AND를 4/4 맞추는 바로 그 직선입니다.
+
+이것이 <strong>퍼셉트론 학습 규칙(Perceptron Learning Rule)</strong>입니다.
+
+여기서 주목할 점이 있습니다. 로젠블랫의 퍼셉트론은 <strong>계단 함수</strong>를 사용하기 때문에, 출력이 0 아니면 1로 딱 끊어집니다. 수학적으로 계단 함수는 중간이 끊겨 있어서 <strong>미분이 불가능합니다</strong>. 따라서 로젠블랫은 오차를 수식으로 미분한 것이 아니라, <strong>"틀렸으면 정답 방향으로 가중치를 밀어준다"</strong>는 기하학적 직관으로 학습 규칙을 만들었습니다.
+
+이 직관적 방법으로도 AND나 OR처럼 직선 하나로 나눌 수 있는 문제는 <strong>반드시 정답에 도달한다</strong>는 것이 증명되어 있습니다. 하지만 이 방법은 <strong>층이 하나일 때만</strong> 작동합니다. (여러 층을 쌓았을 때는? 그 이야기가 3차시의 주제입니다.)
+
+<details>
+<summary>심화: 퍼셉트론 수렴 정리란?</summary>
+
+퍼셉트론 수렴 정리(Perceptron Convergence Theorem)는 1962년 로젠블랫 자신이 증명한 정리입니다. 핵심 내용은 이렇습니다:
+
+<strong>"데이터가 직선 하나로 나눌 수 있는 경우(선형 분리 가능), 퍼셉트론 학습 규칙은 유한한 횟수의 반복 안에 반드시 정답에 도달한다."</strong>
+
+즉, AND나 OR처럼 직선으로 나눌 수 있는 문제라면, 처음에 가중치를 아무렇게나 놓아도 "틀리면 고치기"를 반복하다 보면 <strong>언젠가는 반드시</strong> 모든 데이터를 정확히 분류하는 직선을 찾는다는 것입니다. "운이 좋아야" 되는 게 아니라, 수학적으로 보장됩니다.
+
+반대로, XOR처럼 직선 하나로 나눌 수 없는 문제에서는 이 정리가 적용되지 않습니다 — 아무리 반복해도 정답에 도달하지 못합니다.
+
+[퍼셉트론 수렴 정리 — Wikipedia](https://en.wikipedia.org/wiki/Perceptron#Convergence)
+
+</details>
+
+### 직접 눈으로 확인해봅시다
+
+위의 규칙을 말로만 읽으면 와닿지 않습니다. 아래 시뮬레이션에서 방금 표에서 본 과정을 <strong>실시간 애니메이션</strong>으로 확인할 수 있습니다.
+
+:::tip[체험 순서]
+1. **AND 모드**에서 "학습 시작"을 누르세요 — 직선이 스텝마다 움직입니다
+2. **오른쪽 해설 패널**을 지켜보세요: 매 스텝마다 "왜 이 가중치가 바뀌었는가"를 수식과 함께 보여줍니다
+3. 정확도 4/4에 도달하면 자동으로 멈춥니다 — 방금 표에서 본 과정과 같습니다!
+4. **OR 모드**로 바꿔서 다시 학습해보세요. 속도를 "느림"으로 하면 더 자세히 관찰할 수 있습니다
+:::
+
+<PerceptronLearning client:visible />
+
+AND와 OR 모두, 몇 번의 시행착오만으로 학습이 완료됩니다. "틀리면 고치고, 맞으면 냅둔다" — 이 단순한 규칙만으로 기계가 <strong>스스로 정답을 찾아갑니다</strong>. 당시 사람들이 왜 열광했는지 이해가 되나요?
+
+<details>
+<summary>심화: 직선의 수학</summary>
+
+시뮬레이터에서 보이는 수식 <strong>w₁·x₁ + w₂·x₂ + b = 0</strong> — 이것은 2차원 평면에서 <strong>직선의 방정식</strong>입니다.
+
+- w₁과 w₂가 <strong>직선의 기울기</strong>를 결정합니다 (어느 방향으로 기울어지는가)
+- b가 <strong>직선의 위치</strong>를 결정합니다 (위아래로 이동)
+- 직선을 기준으로 <strong>한쪽 영역</strong>(w₁·x₁ + w₂·x₂ + b ≥ 0)은 1로 분류
+- <strong>반대쪽 영역</strong>(w₁·x₁ + w₂·x₂ + b &lt; 0)은 0으로 분류
+
+뉴런은 신호의 합이 임계값을 넘으면 발화(1)하고, 넘지 못하면 발화하지 않습니다(0). 이것을 수학으로 옮긴 것이 <strong>계단 함수(Step Function)</strong>입니다. 편향 b를 조절하면 이 임계값을 높이거나 낮추는 효과가 있습니다.
+
+여러분이 시뮬레이터에서 직선을 움직인 것은, 수학적으로는 이 방정식의 계수(w₁, w₂, b)를 바꾼 것입니다. 퍼셉트론의 "학습"이란 이 계수를 자동으로 찾아가는 과정입니다.
+
+</details>
+
+---
+
+## 뉴욕타임스가 쓴 미래
+
+이 소식에 세상은 열광했습니다. 1958년 7월 8일, 뉴욕타임스 1면에 이런 기사가 실렸습니다:
+
+<div class="history-reveal">
+
+<strong>"NEW NAVY DEVICE LEARNS BY DOING"</strong>
+
+해군은 오늘 전자 컴퓨터의 초기 모델을 공개했다. 이 기계는 장차 <strong>"걷고, 말하고, 보고, 쓰고, 스스로를 인식할 수 있을 것"</strong>으로 기대된다.
+
+— <em>The New York Times</em>, 1958년 7월 8일
+
+</div>
+
+펀치카드 50장의 좌/우를 구별하는 수준의 기계를 보고, 뉴욕타임스는 "걷고 말하는 기계"라고 썼습니다. 과장이 있었지만, 흥분할 만한 이유는 분명했습니다. AND와 OR을 배울 수 있다면, 원리적으로 <strong>모든 논리 연산을 배울 수 있을 것이라 기대</strong>했으니까요.
+
+:::note[잠깐 생각해봅시다]
+이 기사를 읽고 어떤 생각이 드나요? 방금 시뮬레이터에서 확인한 퍼셉트론의 실제 능력과 비교하면, 이 기사는 정확한 보도일까요?
+:::
+
+---
+
+## 11년 후, 한 권의 책
+
+기대가 한껏 올라 있던 1969년, MIT의 <strong>마빈 민스키(Marvin Minsky)</strong>와 <strong>시모어 파퍼트(Seymour Papert)</strong>가 <em>"Perceptrons"</em>라는 책을 출판합니다.
+
+<div style="display: flex; gap: 16px; margin: 1rem 0; flex-wrap: wrap;">
+  <figure style="flex: 1; min-width: 160px; margin: 0; text-align: center;">
+    <img src="/ai-basic-textbook/images/lesson02/marvin-minsky.jpg" alt="마빈 민스키(Marvin Minsky, 1927-2016)" style="width: 100%; max-width: 220px; border-radius: 10px;" />
+    <figcaption style="color: var(--sl-color-gray-3); font-size: 12px; margin-top: 6px;">마빈 민스키 (1927-2016)<br/>사진 출처: Wikimedia Commons (CC BY 3.0)</figcaption>
+  </figure>
+  <figure style="flex: 1; min-width: 160px; margin: 0; text-align: center;">
+    <img src="/ai-basic-textbook/images/lesson02/seymour-papert.jpg" alt="시모어 파퍼트(Seymour Papert, 1928-2016)" style="width: 100%; max-width: 220px; border-radius: 10px;" />
+    <figcaption style="color: var(--sl-color-gray-3); font-size: 12px; margin-top: 6px;">시모어 파퍼트 (1928-2016)<br/>사진 출처: Wikimedia Commons (CC BY-SA 3.0)</figcaption>
+  </figure>
+</div>
+
+이 책의 핵심 주장은 단순하고 치명적이었습니다:
+
+<div class="surprise-box">
+
+<strong>"퍼셉트론은 XOR을 풀 수 없다."</strong>
+
+시뮬레이터에서 XOR 모드를 켜고 직접 확인해보세요. 직선을 아무리 움직여도 4/4가 되지 않습니다. <strong>이것은 버그가 아닙니다</strong> — 수학적으로 불가능합니다.
+
+</div>
+
+<img src="/ai-basic-textbook/images/lesson02/xor-comparison.svg" alt="AND는 직선 하나로 분류 가능하지만, XOR은 직선 하나로 절대 분류할 수 없다" style="width: 100%; max-width: 560px; margin: 1.5rem auto; display: block; border-radius: 12px;" />
+
+XOR(배타적 OR)은 "둘 중 하나만 1일 때 1"인 연산입니다. 빨간 점과 파란 점이 <strong>대각선으로 번갈아</strong> 배치되어 있어서, 어떤 직선으로도 나눌 수 없습니다.
+
+퍼셉트론이 AND와 OR을 배울 수 있어서 "모든 논리 연산을 배울 수 있을 것"이라 기대했는데, <strong>XOR 하나를 학습할 수 없다</strong>는 것은 그 꿈에 금이 간다는 뜻이었습니다. 여러 퍼셉트론을 층으로 쌓으면 이론상 가능하지만, <strong>다층 구조를 자동으로 학습시킬 방법이 알려져 있지 않았습니다</strong>.
+
+정말 안 되는지 직접 확인해봅시다. "학습 시작"을 누르면 퍼셉트론이 XOR을 학습하려고 시도합니다. 직선이 어떻게 움직이는지 지켜보세요.
+
+<PerceptronLearning client:visible modes={["XOR"]} title="XOR을 학습할 수 있을까?" subtitle="아까 AND와 OR에서 성공했던 그 알고리즘으로 XOR에 도전합니다" />
+
+---
+
+## AI 겨울의 시작
+
+민스키의 수학적 증명 자체는 <strong>정확했습니다</strong> — 단층 퍼셉트론이 XOR을 풀 수 없다는 것은 사실이었습니다. 그리고 민스키 자신도 다층 신경망의 가능성을 부정하지 않았습니다. 진짜 문제는 다른 곳에 있었습니다 — <strong>다층 구조의 가중치를 자동으로 학습시킬 방법이 없었던 것</strong>입니다. "해결할 수 있다, 하지만 방법을 모른다" — 이것이 연구를 멈추게 만들었습니다.
+
+여기에 계산 자원의 부족, 정부 펀딩(DARPA) 감소까지 겹치면서, 신경망 연구에 대한 관심이 급격히 식었습니다. 약 <strong>20년간의 "AI 겨울"</strong>이 시작되었습니다.
+
+<img src="/ai-basic-textbook/images/lesson02/ai-winter-timeline.svg" alt="1958년 퍼셉트론 발명부터 1969년 AI 겨울 시작, 1986년 역전파 알고리즘으로 반등 시작까지의 타임라인" style="width: 100%; max-width: 760px; margin: 1.5rem auto; display: block; border-radius: 12px;" />
+
+---
+
+## 그래서 무엇을 배웠나
+
+오늘의 여정을 정리합니다:
+
+1. 퍼셉트론은 <strong>뇌의 뉴런을 수학으로 모방</strong>한 기계입니다
+2. 글자를 읽고, AND와 OR을 배울 수 있어서 세상이 열광했습니다
+3. 하지만 <strong>단일 퍼셉트론은 XOR을 학습할 수 없습니다</strong> — 수학적으로 불가능
+4. XOR을 학습할 수 없으면, "스스로 모든 연산을 배우는 기계"라는 꿈이 깨집니다
+5. 다층으로 쌓으면 가능하지만, <strong>학습 방법이 없었고</strong>, 약 20년간 AI 겨울이 찾아왔습니다
+
+<div class="concept-card">
+
+<strong>3차시 예고</strong>
+
+퍼셉트론을 <strong>여러 층으로 쌓으면</strong> XOR을 풀 수 있다는 것은 이미 알려져 있었습니다. 문제는 다른 곳에 있었습니다 — 여러 층의 <strong>가중치를 자동으로 학습시킬 방법이 없었던 것</strong>입니다.
+
+이 문제를 푸는 데 약 20년이 걸렸습니다. 모두가 포기했을 때 혼자 버텨낸 연구자의 이야기, 그리고 그가 찾아낸 <strong>역전파(Backpropagation)</strong>라는 해법이 3차시의 주제입니다.
+
+</div>
+
+---
+
+## 참고자료
+
+<CardGrid>
+  <LinkCard
+    title="Rosenblatt (1958) 원문 논문"
+    description="퍼셉트론의 원래 논문. 생물학적 뇌의 정보 저장을 수학적으로 모델링한 첫 시도."
+    href="https://www.ling.upenn.edu/courses/cogs501/Rosenblatt1958.pdf"
+  />
+  <LinkCard
+    title="NYT 기사 (1958.7.8)"
+    description="'NEW NAVY DEVICE LEARNS BY DOING' — 뉴욕타임스가 퍼셉트론을 1면에 보도한 기사."
+    href="https://www.cs.ucf.edu/~lboloni/Teaching/CAP5636_Fall2023/homeworks/Reading%201%20-%20Perceptron-NYTimes-1958-07-13.pdf"
+  />
+  <LinkCard
+    title="Perceptrons (1969) — MIT Press"
+    description="민스키와 파퍼트의 책. XOR 한계를 수학적으로 증명하여 AI 겨울을 촉발한 저작."
+    href="https://direct.mit.edu/books/monograph/3132/PerceptronsAn-Introduction-to-Computational"
+  />
+  <LinkCard
+    title="Perceptrons, XOR, and the First AI Winter"
+    description="Sean Trott의 해설. 고등학생도 읽을 수 있는 수준으로 퍼셉트론과 XOR 문제를 설명."
+    href="https://seantrott.substack.com/p/perceptrons-xor-and-the-first-ai"
+  />
+  <LinkCard
+    title="McCulloch & Pitts (1943) — 인공 뉴런의 시작"
+    description="뉴런의 발화를 논리 연산으로 모델링한 최초의 논문. 퍼셉트론의 이론적 토대."
+    href="https://www.cs.cmu.edu/~./epxing/Class/10715/reading/McCulloch.and.Pitts.pdf"
+  />
+  <LinkCard
+    title="NNMOC: The McCulloch-Pitts Artificial Neuron"
+    description="McCulloch-Pitts 모델을 코드와 함께 설명하는 온라인 교재. AND, OR, NOR 구현 포함."
+    href="https://nnmoc.pabloinsente.com/intro-to-nn/the-mcculloch-pitts-artificial-neuron.html"
+  />
+</CardGrid>
+
+---
+
+## 성찰
+
+다음 질문에 대해 생각해보세요 (구글 설문에 기록합니다):
+
+1. 퍼셉트론이 XOR을 풀 수 없다는 것을 알았을 때, <strong>어떤 해결 방법</strong>이 떠올랐나요?
+2. 민스키가 XOR 문제로 퍼셉트론의 한계를 증명했는데, 여러분이라면 이 한계를 <strong>어떻게 극복</strong>하려 했을까요?
+3. 오늘 실습에서 AND/OR은 성공하고 XOR은 실패하는 것을 직접 보았습니다. <strong>이 차이가 왜 생기는지</strong> 자신의 말로 설명해보세요.
+
+:::note[이 질문은 3차시에서 다시 만납니다]
+"직선 여러 개를 쓰면 되지 않을까?"라는 아이디어를 떠올렸다면, 여러분의 직관이 정확했습니다. 3차시에서 확인합니다.
+:::
+
+---
+
+## 자기 점검 체크리스트
+
+<div class="self-check">
+
+- 퍼셉트론이 무엇인지 한 문장으로 설명할 수 있다
+- "가중치"가 무엇인지 입시 비유를 들어 설명할 수 있다
+- AND/OR은 직선 하나로 되지만 XOR은 안 되는 이유를 설명할 수 있다
+- XOR을 학습할 수 없다는 것이 왜 큰 문제인지 설명할 수 있다
+- "다층으로 쌓으면 되지 않을까?"라는 아이디어가 왜 바로 실현되지 못했는지 설명할 수 있다
+
+</div>

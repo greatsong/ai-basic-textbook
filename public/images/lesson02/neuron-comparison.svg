@@ -1,0 +1,119 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 440" font-family="system-ui, -apple-system, 'Apple SD Gothic Neo', 'Noto Sans KR', sans-serif">
+  <rect width="760" height="440" rx="16" fill="#1a1b26" opacity="0.95"/>
+  <text x="380" y="32" text-anchor="middle" fill="#e2e8f0" font-size="18" font-weight="700">생물학적 뉴런 vs 퍼셉트론</text>
+
+  <!-- ===== LEFT: Biological Neuron ===== -->
+  <rect x="20" y="50" width="350" height="370" rx="12" fill="rgba(16,185,129,0.06)" stroke="#10b981" stroke-width="1"/>
+  <text x="195" y="75" text-anchor="middle" fill="#6ee7b7" font-size="15" font-weight="700">생물학적 뉴런</text>
+
+  <!-- Dendrites (inputs) -->
+  <line x1="60" y1="140" x2="120" y2="180" stroke="#6ee7b7" stroke-width="2.5"/>
+  <line x1="60" y1="200" x2="120" y2="190" stroke="#6ee7b7" stroke-width="2.5"/>
+  <line x1="60" y1="260" x2="120" y2="210" stroke="#6ee7b7" stroke-width="2.5"/>
+
+  <!-- Dendrite branches -->
+  <line x1="40" y1="125" x2="60" y2="140" stroke="#6ee7b7" stroke-width="1.5"/>
+  <line x1="35" y1="145" x2="60" y2="140" stroke="#6ee7b7" stroke-width="1.5"/>
+  <line x1="40" y1="185" x2="60" y2="200" stroke="#6ee7b7" stroke-width="1.5"/>
+  <line x1="35" y1="215" x2="60" y2="200" stroke="#6ee7b7" stroke-width="1.5"/>
+  <line x1="40" y1="245" x2="60" y2="260" stroke="#6ee7b7" stroke-width="1.5"/>
+  <line x1="35" y1="275" x2="60" y2="260" stroke="#6ee7b7" stroke-width="1.5"/>
+
+  <text x="45" y="115" text-anchor="middle" fill="#6ee7b7" font-size="12" font-weight="600">수상돌기</text>
+  <text x="45" y="100" text-anchor="middle" fill="#94a3b8" font-size="10">(Dendrite)</text>
+
+  <!-- Cell body -->
+  <ellipse cx="155" cy="200" rx="40" ry="35" fill="rgba(168,85,247,0.15)" stroke="#a855f7" stroke-width="2.5"/>
+  <text x="155" y="195" text-anchor="middle" fill="#d8b4fe" font-size="13" font-weight="700">세포체</text>
+  <text x="155" y="212" text-anchor="middle" fill="#94a3b8" font-size="10">(Soma)</text>
+
+  <!-- Axon -->
+  <line x1="195" y1="200" x2="310" y2="200" stroke="#f97316" stroke-width="3"/>
+
+  <!-- Myelin sheaths -->
+  <rect x="210" y="192" width="20" height="16" rx="8" fill="rgba(249,115,22,0.2)" stroke="#f97316" stroke-width="1.5"/>
+  <rect x="240" y="192" width="20" height="16" rx="8" fill="rgba(249,115,22,0.2)" stroke="#f97316" stroke-width="1.5"/>
+  <rect x="270" y="192" width="20" height="16" rx="8" fill="rgba(249,115,22,0.2)" stroke="#f97316" stroke-width="1.5"/>
+
+  <text x="250" y="170" text-anchor="middle" fill="#fdba74" font-size="12" font-weight="600">축삭</text>
+  <text x="250" y="155" text-anchor="middle" fill="#94a3b8" font-size="10">(Axon)</text>
+
+  <!-- Axon terminal -->
+  <circle cx="325" cy="190" r="5" fill="#ef4444"/>
+  <circle cx="330" cy="200" r="5" fill="#ef4444"/>
+  <circle cx="325" cy="210" r="5" fill="#ef4444"/>
+
+  <text x="340" y="230" text-anchor="end" fill="#fca5a5" font-size="11" font-weight="600">축삭 말단</text>
+  <text x="340" y="244" text-anchor="end" fill="#94a3b8" font-size="10">(Axon Terminal)</text>
+
+  <!-- Bio neuron labels -->
+  <rect x="35" y="300" width="320" height="105" rx="8" fill="rgba(30,41,59,0.6)"/>
+  <text x="195" y="322" text-anchor="middle" fill="#cbd5e1" font-size="12" font-weight="600">작동 원리</text>
+  <text x="195" y="342" text-anchor="middle" fill="#94a3b8" font-size="11">① 수상돌기로 신호를 받는다</text>
+  <text x="195" y="360" text-anchor="middle" fill="#94a3b8" font-size="11">② 세포체에서 신호를 합산한다</text>
+  <text x="195" y="378" text-anchor="middle" fill="#94a3b8" font-size="11">③ 임계값을 넘으면 축삭으로 신호를 보낸다</text>
+  <text x="195" y="396" text-anchor="middle" fill="#94a3b8" font-size="11">④ 시냅스 연결 강도가 학습으로 변한다</text>
+
+  <!-- ===== CENTER: Equals sign ===== -->
+  <text x="390" y="205" text-anchor="middle" fill="#94a3b8" font-size="32" font-weight="700">≈</text>
+  <text x="390" y="230" text-anchor="middle" fill="#64748b" font-size="11">모방</text>
+
+  <!-- ===== RIGHT: Perceptron ===== -->
+  <rect x="410" y="50" width="330" height="370" rx="12" fill="rgba(59,130,246,0.06)" stroke="#3b82f6" stroke-width="1"/>
+  <text x="575" y="75" text-anchor="middle" fill="#93c5fd" font-size="15" font-weight="700">퍼셉트론 (인공 뉴런)</text>
+
+  <!-- Inputs -->
+  <circle cx="455" cy="140" r="16" fill="rgba(59,130,246,0.15)" stroke="#3b82f6" stroke-width="2"/>
+  <text x="455" y="145" text-anchor="middle" fill="#93c5fd" font-size="13" font-weight="700">x₁</text>
+
+  <circle cx="455" cy="200" r="16" fill="rgba(59,130,246,0.15)" stroke="#3b82f6" stroke-width="2"/>
+  <text x="455" y="205" text-anchor="middle" fill="#93c5fd" font-size="13" font-weight="700">x₂</text>
+
+  <circle cx="455" cy="260" r="16" fill="rgba(59,130,246,0.15)" stroke="#3b82f6" stroke-width="2"/>
+  <text x="455" y="265" text-anchor="middle" fill="#93c5fd" font-size="13" font-weight="700">x₃</text>
+
+  <text x="435" y="115" text-anchor="middle" fill="#93c5fd" font-size="12" font-weight="600">입력</text>
+  <text x="435" y="100" text-anchor="middle" fill="#94a3b8" font-size="10">(Input)</text>
+
+  <!-- Weight arrows -->
+  <line x1="472" y1="140" x2="555" y2="188" stroke="#f97316" stroke-width="2"/>
+  <line x1="472" y1="200" x2="555" y2="200" stroke="#f97316" stroke-width="2"/>
+  <line x1="472" y1="260" x2="555" y2="212" stroke="#f97316" stroke-width="2"/>
+
+  <text x="510" y="155" fill="#fdba74" font-size="11" font-weight="600">×w₁</text>
+  <text x="520" y="193" fill="#fdba74" font-size="11" font-weight="600">×w₂</text>
+  <text x="510" y="248" fill="#fdba74" font-size="11" font-weight="600">×w₃</text>
+
+  <!-- Summation node -->
+  <circle cx="575" cy="200" r="22" fill="rgba(168,85,247,0.15)" stroke="#a855f7" stroke-width="2.5"/>
+  <text x="575" y="196" text-anchor="middle" fill="#d8b4fe" font-size="20" font-weight="700">Σ</text>
+  <text x="575" y="213" text-anchor="middle" fill="#94a3b8" font-size="9">합산</text>
+
+  <!-- Activation arrow -->
+  <line x1="597" y1="200" x2="645" y2="200" stroke="#94a3b8" stroke-width="2" marker-end="url(#neuron-arr)"/>
+
+  <!-- Activation box -->
+  <rect x="648" y="185" width="50" height="30" rx="8" fill="rgba(16,185,129,0.15)" stroke="#10b981" stroke-width="2"/>
+  <text x="673" y="205" text-anchor="middle" fill="#6ee7b7" font-size="12" font-weight="700">f(·)</text>
+
+  <!-- Output -->
+  <line x1="700" y1="200" x2="725" y2="200" stroke="#10b981" stroke-width="2.5" marker-end="url(#neuron-arr-g)"/>
+  <text x="735" y="205" fill="#6ee7b7" font-size="14" font-weight="700">y</text>
+
+  <!-- Perceptron labels -->
+  <rect x="425" y="300" width="300" height="105" rx="8" fill="rgba(30,41,59,0.6)"/>
+  <text x="575" y="322" text-anchor="middle" fill="#cbd5e1" font-size="12" font-weight="600">대응 관계</text>
+  <text x="575" y="342" text-anchor="middle" fill="#94a3b8" font-size="11">수상돌기 → 입력 (x₁, x₂, ...)</text>
+  <text x="575" y="360" text-anchor="middle" fill="#94a3b8" font-size="11">시냅스 강도 → 가중치 (w₁, w₂, ...)</text>
+  <text x="575" y="378" text-anchor="middle" fill="#94a3b8" font-size="11">세포체 합산 → Σ (가중합)</text>
+  <text x="575" y="396" text-anchor="middle" fill="#94a3b8" font-size="11">임계값 발화 → 활성화 함수 f(·)</text>
+
+  <defs>
+    <marker id="neuron-arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#94a3b8"/>
+    </marker>
+    <marker id="neuron-arr-g" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#10b981"/>
+    </marker>
+  </defs>
+</svg>

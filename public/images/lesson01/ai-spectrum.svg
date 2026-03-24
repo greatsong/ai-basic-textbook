@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 220" font-family="'Pretendard', 'Noto Sans KR', sans-serif">
+  <rect width="720" height="220" rx="16" fill="#1a1b26" opacity="0.95"/>
+
+  <!-- Title -->
+  <text x="360" y="32" text-anchor="middle" fill="#e2e8f0" font-size="16" font-weight="700">약한 AI vs 강한 AI — 현재 우리는 어디에?</text>
+
+  <!-- Spectrum bar -->
+  <defs>
+    <linearGradient id="spectrum" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#10b981"/>
+      <stop offset="50%" stop-color="#6366f1"/>
+      <stop offset="100%" stop-color="#ef4444"/>
+    </linearGradient>
+  </defs>
+  <rect x="60" y="60" width="600" height="14" rx="7" fill="url(#spectrum)" opacity="0.7"/>
+
+  <!-- Labels -->
+  <text x="60" y="95" fill="#6ee7b7" font-size="14" font-weight="700">약한 AI</text>
+  <text x="60" y="112" fill="#94a3b8" font-size="11">Weak / Narrow AI</text>
+  <text x="570" y="95" fill="#fca5a5" font-size="14" font-weight="700" text-anchor="end">강한 AI</text>
+  <text x="570" y="112" fill="#94a3b8" font-size="11" text-anchor="end">Strong / General AI</text>
+
+  <!-- Current position marker -->
+  <circle cx="180" cy="67" r="10" fill="#10b981" stroke="#e2e8f0" stroke-width="2"/>
+  <text x="180" y="71" text-anchor="middle" fill="#fff" font-size="10" font-weight="700">▼</text>
+  <line x1="180" y1="77" x2="180" y2="100" stroke="#10b981" stroke-width="1.5" stroke-dasharray="3,2"/>
+  <text x="180" y="115" text-anchor="middle" fill="#6ee7b7" font-size="12" font-weight="600">현재 AI</text>
+
+  <!-- Examples on left -->
+  <text x="80" y="145" fill="#cbd5e1" font-size="12">📱 시리</text>
+  <text x="80" y="165" fill="#cbd5e1" font-size="12">💬 ChatGPT</text>
+  <text x="80" y="185" fill="#cbd5e1" font-size="12">🌐 구글 번역</text>
+  <text x="80" y="205" fill="#cbd5e1" font-size="12">🎨 이미지 생성 AI</text>
+
+  <!-- Examples on right -->
+  <text x="500" y="145" fill="#94a3b8" font-size="12">🎬 영화 〈그녀(Her)〉</text>
+  <text x="500" y="165" fill="#94a3b8" font-size="12">🎬 〈엑스 마키나〉</text>
+  <text x="500" y="185" fill="#94a3b8" font-size="12">🤖 스스로 목표를 세움</text>
+  <text x="500" y="205" fill="#64748b" font-size="12" font-style="italic">존재 여부 자체가 논쟁 중</text>
+
+  <!-- Divider -->
+  <line x1="360" y1="130" x2="360" y2="210" stroke="#475569" stroke-width="1" stroke-dasharray="4,3"/>
+  <text x="290" y="148" fill="#818cf8" font-size="11">"유용한가?"</text>
+  <text x="380" y="148" fill="#818cf8" font-size="11">"의식이 있는가?"</text>
+</svg>
