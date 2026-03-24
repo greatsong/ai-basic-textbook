@@ -1,0 +1,68 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 550">
+  <style>@import url("https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700&amp;display=swap");</style>
+  <defs>
+    <filter id="shadow" x="-5%" y="-5%" width="115%" height="115%">
+      <feDropShadow dx="1" dy="2" stdDeviation="3" flood-color="#000" flood-opacity="0.08"/>
+    </filter>
+  </defs>
+  <!-- Background -->
+  <rect width="900" height="550" rx="16" fill="#FAFBFF"/>
+  <text x="450" y="40" text-anchor="middle" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="22" font-weight="bold" fill="#1E293B">Before vs After: 개념적 성장</text>
+
+  <!-- Left: Before (1차시) -->
+  <rect x="30" y="65" width="390" height="430" rx="16" fill="#FEE2E2" filter="url(#shadow)"/>
+  <rect x="30" y="65" width="390" height="48" rx="16" fill="#EF4444"/>
+  <rect x="30" y="97" width="390" height="16" fill="#EF4444"/>
+  <text x="225" y="96" text-anchor="middle" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="17" font-weight="bold" fill="#fff">1차시 (Before)</text>
+  <text x="225" y="145" text-anchor="middle" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="13" fill="#94A3B8">직감과 인상에 기반한 답변</text>
+
+  <!-- Before answers -->
+  <rect x="55" y="170" width="340" height="70" rx="10" fill="#fff" filter="url(#shadow)"/>
+  <text x="70" y="195" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="13" fill="#475569">"AI는 프로그래밍된 대로만</text>
+  <text x="70" y="215" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="13" fill="#475569"> 하니까 생각이 아니다"</text>
+
+  <rect x="55" y="255" width="340" height="70" rx="10" fill="#fff" filter="url(#shadow)"/>
+  <text x="70" y="280" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="13" fill="#475569">"ChatGPT가 대화하는 건</text>
+  <text x="70" y="300" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="13" fill="#475569"> 생각하는 것 같다"</text>
+
+  <rect x="55" y="340" width="340" height="70" rx="10" fill="#fff" filter="url(#shadow)"/>
+  <text x="70" y="365" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="13" fill="#475569">"AI는 멍청해서 틀린다"</text>
+
+  <!-- Before label -->
+  <rect x="130" y="425" width="180" height="36" rx="10" fill="#EF4444" opacity="0.15"/>
+  <text x="220" y="449" text-anchor="middle" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="13" font-weight="bold" fill="#EF4444">근거 없는 직감</text>
+
+  <!-- Big arrow in center -->
+  <polygon points="435,200 480,270 455,270 455,350 415,350 415,270 390,270" fill="#4F46E5" opacity="0.15"/>
+  <text x="450" y="295" text-anchor="middle" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="32" font-weight="bold" fill="#4F46E5">→</text>
+  <text x="450" y="240" text-anchor="middle" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="12" font-weight="bold" fill="#4F46E5">9주간의</text>
+  <text x="450" y="257" text-anchor="middle" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="12" font-weight="bold" fill="#4F46E5">학습</text>
+
+  <!-- Right: After (9차시) -->
+  <rect x="480" y="65" width="390" height="430" rx="16" fill="#D1FAE5" filter="url(#shadow)"/>
+  <rect x="480" y="65" width="390" height="48" rx="16" fill="#10B981"/>
+  <rect x="480" y="97" width="390" height="16" fill="#10B981"/>
+  <text x="675" y="96" text-anchor="middle" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="17" font-weight="bold" fill="#fff">9차시 (After)</text>
+  <text x="675" y="145" text-anchor="middle" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="13" fill="#94A3B8">개념과 원리에 기반한 답변</text>
+
+  <!-- After answers -->
+  <rect x="505" y="170" width="340" height="70" rx="10" fill="#fff" filter="url(#shadow)"/>
+  <text x="520" y="195" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="13" fill="#475569">"AI는 데이터에서 학습한 패턴을</text>
+  <text x="520" y="215" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="13" fill="#475569"> 확률적으로 예측하는 것"</text>
+
+  <rect x="505" y="255" width="340" height="70" rx="10" fill="#fff" filter="url(#shadow)"/>
+  <text x="520" y="280" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="13" fill="#475569">"대화는 다음 토큰의 확률 분포에서</text>
+  <text x="520" y="300" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="13" fill="#475569"> 선택하는 과정"</text>
+
+  <rect x="505" y="340" width="340" height="70" rx="10" fill="#fff" filter="url(#shadow)"/>
+  <text x="520" y="365" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="13" fill="#475569">"AI의 한계는 구조적이다:</text>
+  <text x="520" y="385" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="13" fill="#475569"> 토큰 처리, 확률적 예측, 학습 데이터"</text>
+
+  <!-- After label -->
+  <rect x="580" y="425" width="180" height="36" rx="10" fill="#10B981" opacity="0.15"/>
+  <text x="670" y="449" text-anchor="middle" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="13" font-weight="bold" fill="#10B981">개념 기반 논증</text>
+
+  <!-- Bottom message -->
+  <rect x="200" y="508" width="500" height="34" rx="8" fill="#E0E7FF"/>
+  <text x="450" y="530" text-anchor="middle" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="14" font-weight="bold" fill="#3730A3">달라진 것은 답이 아니라 "근거"입니다. 이것이 학습입니다.</text>
+</svg>

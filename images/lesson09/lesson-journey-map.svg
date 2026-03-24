@@ -1,0 +1,83 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 550">
+  <style>@import url("https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700&amp;display=swap");</style>
+  <defs>
+    <filter id="shadow" x="-5%" y="-5%" width="115%" height="115%">
+      <feDropShadow dx="1" dy="2" stdDeviation="3" flood-color="#000" flood-opacity="0.08"/>
+    </filter>
+  </defs>
+  <!-- Background -->
+  <rect width="900" height="550" rx="16" fill="#FAFBFF"/>
+  <text x="450" y="38" text-anchor="middle" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="22" font-weight="bold" fill="#1E293B">우리가 걸어온 9차시 여정</text>
+
+  <!-- Curved path connecting all lessons -->
+  <path d="M 100,100 C 200,100 250,180 350,180 C 450,180 500,100 600,100 C 700,100 750,180 800,180
+           C 800,250 700,280 600,280 C 500,280 450,350 350,350 C 250,350 200,280 100,280
+           C 50,330 100,420 200,420 C 350,420 450,420 550,420"
+        stroke="#C7D2FE" stroke-width="5" fill="none" stroke-linecap="round" opacity="0.6"/>
+
+  <!-- Lesson 1 -->
+  <circle cx="100" cy="100" r="28" fill="#4F46E5" filter="url(#shadow)"/>
+  <text x="100" y="105" text-anchor="middle" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="18" font-weight="bold" fill="#fff">1</text>
+  <text x="100" y="145" text-anchor="middle" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="11" font-weight="bold" fill="#4F46E5">튜링 테스트</text>
+  <text x="100" y="160" text-anchor="middle" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="10" fill="#475569">중국어 방</text>
+
+  <!-- Lesson 2 -->
+  <circle cx="245" cy="155" r="28" fill="#10B981" filter="url(#shadow)"/>
+  <text x="245" y="160" text-anchor="middle" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="18" font-weight="bold" fill="#fff">2</text>
+  <text x="245" y="198" text-anchor="middle" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="11" font-weight="bold" fill="#10B981">퍼셉트론</text>
+  <text x="245" y="213" text-anchor="middle" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="10" fill="#475569">XOR의 벽</text>
+
+  <!-- Lesson 3 -->
+  <circle cx="400" cy="110" r="28" fill="#8B5CF6" filter="url(#shadow)"/>
+  <text x="400" y="115" text-anchor="middle" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="18" font-weight="bold" fill="#fff">3</text>
+  <text x="400" y="72" text-anchor="middle" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="11" font-weight="bold" fill="#8B5CF6">활성화함수</text>
+  <text x="400" y="87" text-anchor="middle" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="10" fill="#475569">다층 신경망</text>
+
+  <!-- Lesson 4 -->
+  <circle cx="545" cy="110" r="28" fill="#F59E0B" filter="url(#shadow)"/>
+  <text x="545" y="115" text-anchor="middle" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="18" font-weight="bold" fill="#fff">4</text>
+  <text x="545" y="72" text-anchor="middle" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="11" font-weight="bold" fill="#F59E0B">손실함수</text>
+  <text x="545" y="87" text-anchor="middle" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="10" fill="#475569">학습의 정의</text>
+
+  <!-- Lesson 5 -->
+  <circle cx="700" cy="145" r="28" fill="#4F46E5" filter="url(#shadow)"/>
+  <text x="700" y="150" text-anchor="middle" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="18" font-weight="bold" fill="#fff">5</text>
+  <text x="700" y="188" text-anchor="middle" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="11" font-weight="bold" fill="#4F46E5">경사하강법</text>
+  <text x="700" y="203" text-anchor="middle" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="10" fill="#475569">학습률</text>
+
+  <!-- Lesson 6 -->
+  <circle cx="700" cy="280" r="28" fill="#10B981" filter="url(#shadow)"/>
+  <text x="700" y="285" text-anchor="middle" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="18" font-weight="bold" fill="#fff">6</text>
+  <text x="770" y="278" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="11" font-weight="bold" fill="#10B981">역전파</text>
+  <text x="770" y="293" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="10" fill="#475569">연쇄법칙</text>
+
+  <!-- Lesson 7 -->
+  <circle cx="450" cy="320" r="28" fill="#8B5CF6" filter="url(#shadow)"/>
+  <text x="450" y="325" text-anchor="middle" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="18" font-weight="bold" fill="#fff">7</text>
+  <text x="450" y="365" text-anchor="middle" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="11" font-weight="bold" fill="#8B5CF6">토큰화</text>
+  <text x="450" y="380" text-anchor="middle" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="10" fill="#475569">임베딩</text>
+
+  <!-- Lesson 8 -->
+  <circle cx="200" cy="350" r="28" fill="#F59E0B" filter="url(#shadow)"/>
+  <text x="200" y="355" text-anchor="middle" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="18" font-weight="bold" fill="#fff">8</text>
+  <text x="200" y="393" text-anchor="middle" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="11" font-weight="bold" fill="#F59E0B">트랜스포머</text>
+  <text x="200" y="408" text-anchor="middle" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="10" fill="#475569">어텐션, 환각</text>
+
+  <!-- Lesson 9 (current - highlighted) -->
+  <circle cx="400" cy="440" r="36" fill="#4F46E5" filter="url(#shadow)" stroke="#818CF8" stroke-width="4"/>
+  <text x="400" y="445" text-anchor="middle" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="22" font-weight="bold" fill="#fff">9</text>
+  <rect x="310" y="485" width="180" height="30" rx="8" fill="#E0E7FF"/>
+  <text x="400" y="505" text-anchor="middle" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="13" font-weight="bold" fill="#4F46E5">나의 진로와 AI</text>
+
+  <!-- Arrow to future -->
+  <line x1="440" y1="440" x2="540" y2="440" stroke="#4F46E5" stroke-width="3" stroke-dasharray="8,4"/>
+  <polygon points="540,430 560,440 540,450" fill="#4F46E5"/>
+
+  <!-- Future box -->
+  <rect x="570" y="415" width="160" height="50" rx="12" fill="#F0F4FF" stroke="#4F46E5" stroke-width="2" stroke-dasharray="4,3"/>
+  <text x="650" y="437" text-anchor="middle" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="12" font-weight="bold" fill="#4F46E5">10차시: 퍼셉트론에서</text>
+  <text x="650" y="455" text-anchor="middle" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="12" font-weight="bold" fill="#4F46E5">ChatGPT까지</text>
+
+  <!-- Bottom message -->
+  <text x="450" y="540" text-anchor="middle" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="14" fill="#94A3B8">1차시의 질문으로 돌아와 근거를 가지고 답할 수 있게 되었습니다</text>
+</svg>

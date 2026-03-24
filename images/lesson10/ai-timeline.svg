@@ -1,0 +1,108 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 500">
+  <style>@import url("https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700&amp;display=swap");</style>
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#FAFBFF;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#E0E7FF;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="lineGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#4F46E5;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#818CF8;stop-opacity:1" />
+    </linearGradient>
+    <filter id="shadow">
+      <feDropShadow dx="0" dy="2" stdDeviation="3" flood-color="#000" flood-opacity="0.1"/>
+    </filter>
+  </defs>
+  <rect width="900" height="500" fill="url(#bgGrad)" rx="12"/>
+  <text x="450" y="45" text-anchor="middle" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="22" font-weight="bold" fill="#1E293B">AI 역사 타임라인: 220년의 여정</text>
+
+  <!-- Main timeline line -->
+  <line x1="60" y1="250" x2="840" y2="250" stroke="url(#lineGrad)" stroke-width="4" stroke-linecap="round"/>
+
+  <!-- 1801 - Gauss -->
+  <circle cx="100" cy="250" r="18" fill="#F59E0B" filter="url(#shadow)"/>
+  <text x="100" y="255" text-anchor="middle" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="10" font-weight="bold" fill="#FFF">1801</text>
+  <rect x="60" y="100" width="80" height="55" rx="8" fill="#FFF" filter="url(#shadow)"/>
+  <text x="100" y="118" text-anchor="middle" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="10" font-weight="bold" fill="#F59E0B">가우스</text>
+  <text x="100" y="133" text-anchor="middle" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="9" fill="#475569">최소제곱법</text>
+  <text x="100" y="146" text-anchor="middle" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="8" fill="#94A3B8">손실함수의 기원</text>
+  <line x1="100" y1="155" x2="100" y2="232" stroke="#F59E0B" stroke-width="1.5" stroke-dasharray="4,3"/>
+
+  <!-- 1958 - Perceptron -->
+  <circle cx="230" cy="250" r="18" fill="#4F46E5" filter="url(#shadow)"/>
+  <text x="230" y="255" text-anchor="middle" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="10" font-weight="bold" fill="#FFF">1958</text>
+  <rect x="185" y="280" width="90" height="55" rx="8" fill="#FFF" filter="url(#shadow)"/>
+  <text x="230" y="298" text-anchor="middle" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="10" font-weight="bold" fill="#4F46E5">퍼셉트론</text>
+  <text x="230" y="313" text-anchor="middle" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="9" fill="#475569">로젠블랫</text>
+  <text x="230" y="326" text-anchor="middle" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="8" fill="#94A3B8">기계 학습의 시작</text>
+  <line x1="230" y1="268" x2="230" y2="280" stroke="#4F46E5" stroke-width="1.5" stroke-dasharray="4,3"/>
+
+  <!-- 1969 - XOR / AI Winter -->
+  <circle cx="310" cy="250" r="18" fill="#EF4444" filter="url(#shadow)"/>
+  <text x="310" y="255" text-anchor="middle" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="10" font-weight="bold" fill="#FFF">1969</text>
+  <rect x="265" y="100" width="90" height="55" rx="8" fill="#FEE2E2" filter="url(#shadow)"/>
+  <text x="310" y="118" text-anchor="middle" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="10" font-weight="bold" fill="#EF4444">XOR 한계</text>
+  <text x="310" y="133" text-anchor="middle" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="9" fill="#475569">민스키 & 패퍼트</text>
+  <text x="310" y="146" text-anchor="middle" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="8" fill="#EF4444">AI 겨울 시작</text>
+  <line x1="310" y1="155" x2="310" y2="232" stroke="#EF4444" stroke-width="1.5" stroke-dasharray="4,3"/>
+
+  <!-- AI Winter zone -->
+  <rect x="320" y="238" width="120" height="24" rx="4" fill="#FEE2E2" opacity="0.5"/>
+  <text x="380" y="254" text-anchor="middle" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="9" fill="#EF4444">AI 겨울 ~20년</text>
+
+  <!-- 1986 - Backpropagation -->
+  <circle cx="450" cy="250" r="18" fill="#10B981" filter="url(#shadow)"/>
+  <text x="450" y="255" text-anchor="middle" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="10" font-weight="bold" fill="#FFF">1986</text>
+  <rect x="405" y="280" width="90" height="55" rx="8" fill="#D1FAE5" filter="url(#shadow)"/>
+  <text x="450" y="298" text-anchor="middle" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="10" font-weight="bold" fill="#10B981">역전파</text>
+  <text x="450" y="313" text-anchor="middle" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="9" fill="#475569">힌튼 등</text>
+  <text x="450" y="326" text-anchor="middle" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="8" fill="#94A3B8">다층 학습 해결</text>
+  <line x1="450" y1="268" x2="450" y2="280" stroke="#10B981" stroke-width="1.5" stroke-dasharray="4,3"/>
+
+  <!-- 2012 - AlexNet -->
+  <circle cx="570" cy="250" r="18" fill="#F59E0B" filter="url(#shadow)"/>
+  <text x="570" y="255" text-anchor="middle" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="10" font-weight="bold" fill="#FFF">2012</text>
+  <rect x="525" y="100" width="90" height="55" rx="8" fill="#FEF3C7" filter="url(#shadow)"/>
+  <text x="570" y="118" text-anchor="middle" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="10" font-weight="bold" fill="#F59E0B">AlexNet</text>
+  <text x="570" y="133" text-anchor="middle" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="9" fill="#475569">ReLU + GPU</text>
+  <text x="570" y="146" text-anchor="middle" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="8" fill="#94A3B8">딥러닝 부활</text>
+  <line x1="570" y1="155" x2="570" y2="232" stroke="#F59E0B" stroke-width="1.5" stroke-dasharray="4,3"/>
+
+  <!-- 2013 - Word2Vec -->
+  <circle cx="620" cy="250" r="14" fill="#8B5CF6" filter="url(#shadow)"/>
+  <text x="620" y="254" text-anchor="middle" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="8" font-weight="bold" fill="#FFF">2013</text>
+  <rect x="590" y="345" width="60" height="40" rx="6" fill="#FFF" filter="url(#shadow)"/>
+  <text x="620" y="362" text-anchor="middle" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="9" font-weight="bold" fill="#8B5CF6">Word2Vec</text>
+  <text x="620" y="377" text-anchor="middle" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="8" fill="#94A3B8">단어=벡터</text>
+  <line x1="620" y1="264" x2="620" y2="345" stroke="#8B5CF6" stroke-width="1.5" stroke-dasharray="4,3"/>
+
+  <!-- 2017 - Transformer -->
+  <circle cx="720" cy="250" r="18" fill="#4F46E5" filter="url(#shadow)"/>
+  <text x="720" y="255" text-anchor="middle" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="10" font-weight="bold" fill="#FFF">2017</text>
+  <rect x="675" y="100" width="90" height="55" rx="8" fill="#E0E7FF" filter="url(#shadow)"/>
+  <text x="720" y="118" text-anchor="middle" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="10" font-weight="bold" fill="#4F46E5">트랜스포머</text>
+  <text x="720" y="133" text-anchor="middle" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="9" fill="#475569">어텐션 메커니즘</text>
+  <text x="720" y="146" text-anchor="middle" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="8" fill="#94A3B8">현대 AI의 기반</text>
+  <line x1="720" y1="155" x2="720" y2="232" stroke="#4F46E5" stroke-width="1.5" stroke-dasharray="4,3"/>
+
+  <!-- 2022 - ChatGPT -->
+  <circle cx="810" cy="250" r="22" fill="#3730A3" filter="url(#shadow)" stroke="#818CF8" stroke-width="3"/>
+  <text x="810" y="255" text-anchor="middle" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="10" font-weight="bold" fill="#FFF">2022</text>
+  <rect x="762" y="280" width="96" height="55" rx="8" fill="#FFF" filter="url(#shadow)" stroke="#3730A3" stroke-width="2"/>
+  <text x="810" y="298" text-anchor="middle" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="11" font-weight="bold" fill="#3730A3">ChatGPT</text>
+  <text x="810" y="313" text-anchor="middle" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="9" fill="#475569">생성형 AI</text>
+  <text x="810" y="326" text-anchor="middle" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="8" fill="#94A3B8">1억 사용자/2개월</text>
+  <line x1="810" y1="272" x2="810" y2="280" stroke="#3730A3" stroke-width="1.5" stroke-dasharray="4,3"/>
+
+  <!-- Legend -->
+  <rect x="50" y="420" width="800" height="55" rx="8" fill="#FFF" opacity="0.7"/>
+  <circle cx="100" cy="447" r="8" fill="#4F46E5"/>
+  <text x="115" y="451" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="10" fill="#475569">돌파</text>
+  <circle cx="200" cy="447" r="8" fill="#EF4444"/>
+  <text x="215" y="451" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="10" fill="#475569">한계/위기</text>
+  <circle cx="320" cy="447" r="8" fill="#10B981"/>
+  <text x="335" y="451" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="10" fill="#475569">해결</text>
+  <circle cx="420" cy="447" r="8" fill="#F59E0B"/>
+  <text x="435" y="451" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="10" fill="#475569">혁신</text>
+  <text x="600" y="451" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="11" font-weight="bold" fill="#3730A3">각 사건이 다음 연구의 출발점이 됩니다</text>
+</svg>

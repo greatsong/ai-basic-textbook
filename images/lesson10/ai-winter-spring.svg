@@ -1,0 +1,119 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 500">
+  <style>@import url("https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700&amp;display=swap");</style>
+  <defs>
+    <linearGradient id="bg4" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#FAFBFF;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#F0F4FF;stop-opacity:1" />
+    </linearGradient>
+    <filter id="sh4">
+      <feDropShadow dx="0" dy="2" stdDeviation="3" flood-color="#000" flood-opacity="0.1"/>
+    </filter>
+  </defs>
+  <rect width="900" height="500" fill="url(#bg4)" rx="12"/>
+  <text x="450" y="40" text-anchor="middle" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="20" font-weight="bold" fill="#1E293B">AI 겨울과 봄: 기대와 실망의 사이클</text>
+
+  <!-- Temperature/interest graph -->
+  <text x="25" y="85" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="10" fill="#475569" transform="rotate(-90,25,180)">관심/투자</text>
+
+  <!-- Y axis -->
+  <line x1="80" y1="70" x2="80" y2="400" stroke="#94A3B8" stroke-width="1.5"/>
+  <!-- X axis -->
+  <line x1="80" y1="400" x2="860" y2="400" stroke="#94A3B8" stroke-width="1.5"/>
+
+  <!-- X axis labels -->
+  <text x="120" y="420" text-anchor="middle" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="9" fill="#475569">1950</text>
+  <text x="220" y="420" text-anchor="middle" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="9" fill="#475569">1960</text>
+  <text x="320" y="420" text-anchor="middle" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="9" fill="#475569">1970</text>
+  <text x="420" y="420" text-anchor="middle" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="9" fill="#475569">1980</text>
+  <text x="520" y="420" text-anchor="middle" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="9" fill="#475569">1990</text>
+  <text x="620" y="420" text-anchor="middle" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="9" fill="#475569">2000</text>
+  <text x="720" y="420" text-anchor="middle" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="9" fill="#475569">2010</text>
+  <text x="820" y="420" text-anchor="middle" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="9" fill="#475569">2020</text>
+
+  <!-- Winter zones -->
+  <rect x="300" y="70" width="150" height="330" rx="0" fill="#E0F2FE" opacity="0.3"/>
+  <text x="375" y="90" text-anchor="middle" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="10" font-weight="bold" fill="#0EA5E9" opacity="0.6">1차 AI 겨울</text>
+
+  <rect x="520" y="70" width="80" height="330" rx="0" fill="#E0F2FE" opacity="0.3"/>
+  <text x="560" y="90" text-anchor="middle" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="10" font-weight="bold" fill="#0EA5E9" opacity="0.6">2차 AI 겨울</text>
+
+  <!-- The curve -->
+  <path d="M 100 360
+           C 130 360 150 320 180 200
+           Q 210 120 230 130
+           Q 260 140 290 200
+           C 320 280 350 350 400 370
+           C 430 380 440 370 460 300
+           Q 480 240 490 220
+           Q 510 170 520 280
+           C 540 370 560 380 580 370
+           C 600 350 630 320 670 200
+           Q 700 130 730 100
+           Q 760 80 800 70
+           L 840 65"
+    stroke="#4F46E5" stroke-width="3" fill="none"/>
+
+  <!-- Gradient fill under curve -->
+  <path d="M 100 360
+           C 130 360 150 320 180 200
+           Q 210 120 230 130
+           Q 260 140 290 200
+           C 320 280 350 350 400 370
+           C 430 380 440 370 460 300
+           Q 480 240 490 220
+           Q 510 170 520 280
+           C 540 370 560 380 580 370
+           C 600 350 630 320 670 200
+           Q 700 130 730 100
+           Q 760 80 800 70
+           L 840 65
+           L 840 400 L 100 400 Z"
+    fill="#4F46E5" opacity="0.06"/>
+
+  <!-- Key event markers -->
+  <!-- Turing 1950 -->
+  <circle cx="120" cy="350" r="8" fill="#F59E0B" filter="url(#sh4)"/>
+  <rect x="85" y="310" width="70" height="30" rx="5" fill="#FFF" filter="url(#sh4)"/>
+  <text x="120" y="323" text-anchor="middle" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="8" font-weight="bold" fill="#F59E0B">튜링 테스트</text>
+  <text x="120" y="334" text-anchor="middle" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="7" fill="#475569">1950</text>
+
+  <!-- Perceptron 1958 peak -->
+  <circle cx="190" cy="190" r="10" fill="#4F46E5" filter="url(#sh4)"/>
+  <rect x="145" y="140" width="90" height="40" rx="5" fill="#FFF" filter="url(#sh4)"/>
+  <text x="190" y="155" text-anchor="middle" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="9" font-weight="bold" fill="#4F46E5">퍼셉트론</text>
+  <text x="190" y="170" text-anchor="middle" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="8" fill="#475569">1958 - 큰 기대!</text>
+
+  <!-- XOR crash -->
+  <circle cx="310" cy="230" r="10" fill="#EF4444" filter="url(#sh4)"/>
+  <rect x="265" y="185" width="90" height="40" rx="5" fill="#FEE2E2" filter="url(#sh4)"/>
+  <text x="310" y="200" text-anchor="middle" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="9" font-weight="bold" fill="#EF4444">XOR 한계</text>
+  <text x="310" y="215" text-anchor="middle" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="8" fill="#EF4444">1969 - 펀딩 급감</text>
+
+  <!-- Backprop -->
+  <circle cx="480" cy="230" r="10" fill="#10B981" filter="url(#sh4)"/>
+  <rect x="440" y="185" width="80" height="40" rx="5" fill="#D1FAE5" filter="url(#sh4)"/>
+  <text x="480" y="200" text-anchor="middle" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="9" font-weight="bold" fill="#10B981">역전파</text>
+  <text x="480" y="215" text-anchor="middle" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="8" fill="#475569">1986</text>
+
+  <!-- AlexNet -->
+  <circle cx="700" cy="160" r="10" fill="#F59E0B" filter="url(#sh4)"/>
+  <rect x="660" y="115" width="80" height="40" rx="5" fill="#FEF3C7" filter="url(#sh4)"/>
+  <text x="700" y="130" text-anchor="middle" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="9" font-weight="bold" fill="#F59E0B">AlexNet</text>
+  <text x="700" y="145" text-anchor="middle" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="8" fill="#475569">2012 - 딥러닝 폭발</text>
+
+  <!-- ChatGPT -->
+  <circle cx="830" cy="68" r="12" fill="#3730A3" filter="url(#sh4)" stroke="#818CF8" stroke-width="2"/>
+  <rect x="778" y="75" width="104" height="40" rx="5" fill="#FFF" filter="url(#sh4)" stroke="#3730A3" stroke-width="1.5"/>
+  <text x="830" y="90" text-anchor="middle" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="10" font-weight="bold" fill="#3730A3">ChatGPT</text>
+  <text x="830" y="105" text-anchor="middle" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="8" fill="#475569">2022 - 전례 없는 성장</text>
+
+  <!-- Snowflakes for winter -->
+  <text x="360" y="300" text-anchor="middle" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="28" fill="#94A3B8" opacity="0.4">*</text>
+  <text x="390" y="330" text-anchor="middle" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="22" fill="#94A3B8" opacity="0.3">*</text>
+  <text x="545" y="310" text-anchor="middle" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="22" fill="#94A3B8" opacity="0.3">*</text>
+
+  <!-- Insight box -->
+  <rect x="100" y="440" width="700" height="45" rx="8" fill="#FFF" filter="url(#sh4)" stroke="#4F46E5" stroke-width="1.5"/>
+  <text x="450" y="460" text-anchor="middle" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="12" font-weight="bold" fill="#3730A3">교훈: 과대 기대 --> 실망(겨울) --> 조용한 연구 --> 다시 돌파</text>
+  <text x="450" y="476" text-anchor="middle" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="10" fill="#475569">한계를 극복하려는 끈질긴 연구가 결국 AI 봄을 만듭니다</text>
+</svg>

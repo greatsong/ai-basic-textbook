@@ -1,0 +1,86 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400">
+  <style>@import url("https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700&amp;display=swap");</style>
+  <defs>
+    <linearGradient id="bg5" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#F0F9FF"/>
+      <stop offset="100%" stop-color="#EDE9FE"/>
+    </linearGradient>
+    <filter id="sh5">
+      <feDropShadow dx="0" dy="2" stdDeviation="3" flood-opacity="0.1"/>
+    </filter>
+  </defs>
+
+  <rect width="800" height="400" fill="url(#bg5)" rx="12"/>
+  <text x="400" y="35" text-anchor="middle" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="20" font-weight="bold" fill="#1E293B">경사하강법의 역사: 수학에서 AI까지</text>
+
+  <!-- Timeline line -->
+  <line x1="80" y1="100" x2="720" y2="100" stroke="#CBD5E1" stroke-width="3"/>
+
+  <!-- 1847 - Cauchy -->
+  <circle cx="130" cy="100" r="12" fill="#8B5CF6" stroke="white" stroke-width="3"/>
+  <text x="130" y="80" text-anchor="middle" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="14" font-weight="bold" fill="#8B5CF6">1847</text>
+  <rect x="60" y="120" width="140" height="100" rx="10" fill="white" stroke="#8B5CF6" stroke-width="1.5" filter="url(#sh5)"/>
+  <text x="130" y="142" text-anchor="middle" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="13" font-weight="bold" fill="#8B5CF6">코시 (Cauchy)</text>
+  <text x="130" y="162" text-anchor="middle" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="11" fill="#475569">경사하강법을</text>
+  <text x="130" y="178" text-anchor="middle" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="11" fill="#475569">수학으로 정리</text>
+  <!-- Simple person icon -->
+  <circle cx="130" cy="204" r="8" fill="#EDE9FE"/>
+  <text x="130" y="208" text-anchor="middle" font-size="12">📐</text>
+
+  <!-- 1986 - Backprop -->
+  <circle cx="310" cy="100" r="12" fill="#3B82F6" stroke="white" stroke-width="3"/>
+  <text x="310" y="80" text-anchor="middle" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="14" font-weight="bold" fill="#3B82F6">1986</text>
+  <rect x="240" y="120" width="140" height="100" rx="10" fill="white" stroke="#3B82F6" stroke-width="1.5" filter="url(#sh5)"/>
+  <text x="310" y="142" text-anchor="middle" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="13" font-weight="bold" fill="#3B82F6">힌튼 (Hinton)</text>
+  <text x="310" y="162" text-anchor="middle" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="11" fill="#475569">역전파로 신경망에</text>
+  <text x="310" y="178" text-anchor="middle" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="11" fill="#475569">경사하강법 적용</text>
+  <circle cx="310" cy="204" r="8" fill="#DBEAFE"/>
+  <text x="310" y="208" text-anchor="middle" font-size="12">🧠</text>
+
+  <!-- 2012 - AlexNet -->
+  <circle cx="490" cy="100" r="14" fill="#10B981" stroke="white" stroke-width="3"/>
+  <text x="490" y="78" text-anchor="middle" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="15" font-weight="bold" fill="#10B981">2012</text>
+  <rect x="410" y="120" width="160" height="120" rx="10" fill="white" stroke="#10B981" stroke-width="2" filter="url(#sh5)"/>
+  <text x="490" y="142" text-anchor="middle" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="14" font-weight="bold" fill="#10B981">AlexNet</text>
+  <text x="490" y="162" text-anchor="middle" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="11" fill="#475569">GPU로 경사하강법</text>
+  <text x="490" y="178" text-anchor="middle" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="11" fill="#475569">대규모 신경망 학습</text>
+  <text x="490" y="196" text-anchor="middle" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="11" fill="#10B981" font-weight="bold">ImageNet 우승!</text>
+  <text x="490" y="216" text-anchor="middle" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="11" fill="#64748B">2위와 10%+ 격차</text>
+  <circle cx="490" cy="230" r="8" fill="#D1FAE5"/>
+  <text x="490" y="234" text-anchor="middle" font-size="12">🏆</text>
+
+  <!-- 2024 - Now -->
+  <circle cx="670" cy="100" r="14" fill="#F59E0B" stroke="white" stroke-width="3"/>
+  <text x="670" y="78" text-anchor="middle" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="15" font-weight="bold" fill="#F59E0B">현재</text>
+  <rect x="590" y="120" width="160" height="120" rx="10" fill="white" stroke="#F59E0B" stroke-width="2" filter="url(#sh5)"/>
+  <text x="670" y="142" text-anchor="middle" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="14" font-weight="bold" fill="#F59E0B">GPT, Claude 등</text>
+  <text x="670" y="162" text-anchor="middle" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="11" fill="#475569">수천억 파라미터를</text>
+  <text x="670" y="178" text-anchor="middle" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="11" fill="#475569">경사하강법으로 학습</text>
+  <text x="670" y="196" text-anchor="middle" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="11" fill="#F59E0B" font-weight="bold">같은 원리, 더 큰 규모</text>
+  <text x="670" y="216" text-anchor="middle" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="11" fill="#64748B">NVIDIA 시가총액 3조$</text>
+  <circle cx="670" cy="230" r="8" fill="#FEF3C7"/>
+  <text x="670" y="234" text-anchor="middle" font-size="12">🤖</text>
+
+  <!-- Connecting arrows between events -->
+  <path d="M145,100 L295,100" stroke="#CBD5E1" stroke-width="2" fill="none" marker-end="url(#timeArrow)"/>
+  <path d="M325,100 L475,100" stroke="#CBD5E1" stroke-width="2" fill="none"/>
+  <path d="M505,100 L655,100" stroke="#CBD5E1" stroke-width="2" fill="none"/>
+
+  <!-- Bottom insight box -->
+  <rect x="80" y="270" width="640" height="55" rx="12" fill="white" stroke="#0EA5E9" stroke-width="1.5" filter="url(#sh5)"/>
+  <text x="400" y="293" text-anchor="middle" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="14" font-weight="bold" fill="#0C4A6E">180년 전의 수학 아이디어가 오늘날 AI를 움직이는 핵심 엔진</text>
+  <text x="400" y="313" text-anchor="middle" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="12" fill="#64748B">코시의 경사하강법 → 힌튼의 역전파 → GPU 가속 → 현대 AI 혁명</text>
+
+  <!-- People labels -->
+  <rect x="80" y="340" width="170" height="45" rx="8" fill="#EDE9FE"/>
+  <text x="165" y="360" text-anchor="middle" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="11" fill="#6D28D9">크리제프스키 · 수츠케버</text>
+  <text x="165" y="376" text-anchor="middle" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="11" fill="#6D28D9">힌튼 (AlexNet 팀)</text>
+
+  <rect x="280" y="340" width="170" height="45" rx="8" fill="#D1FAE5"/>
+  <text x="365" y="360" text-anchor="middle" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="11" fill="#065F46">젠슨 황 (NVIDIA CEO)</text>
+  <text x="365" y="376" text-anchor="middle" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="11" fill="#065F46">AI 전용 칩에 베팅</text>
+
+  <rect x="480" y="340" width="220" height="45" rx="8" fill="#FEF3C7"/>
+  <text x="590" y="360" text-anchor="middle" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="11" fill="#92400E">게이머를 위해 만든 칩이</text>
+  <text x="590" y="376" text-anchor="middle" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="11" fill="#92400E" font-weight="bold">AI 시대를 여는 열쇠가 되다</text>
+</svg>

@@ -1,4 +1,5 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 340" font-family="'Pretendard', 'Noto Sans KR', sans-serif">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 340" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif">
+  <style>@import url("https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700&amp;display=swap");</style>
   <defs>
     <linearGradient id="interrogator-bg" x1="0" y1="0" x2="0" y2="1">
       <stop offset="0%" stop-color="#6366f1"/>
@@ -46,7 +47,7 @@
   <text x="440" y="232" fill="#e2e8f0" font-size="28">🤖</text>
   <text x="480" y="225" fill="#fcd34d" font-size="15" font-weight="700">기계 (Machine)</text>
   <text x="480" y="247" fill="#cbd5e1" font-size="12">사람인 척 대화</text>
-  <text x="480" y="267" fill="#cbd5e1" font-size="12">"나도 사람이에요!" (속이기)</text>
+  <text x="480" y="267" fill="#cbd5e1" font-size="12">"나도 사람이에요!" (모방하기)</text>
 
   <!-- Arrows -->
   <line x1="300" y1="150" x2="350" y2="120" stroke="#818cf8" stroke-width="2" stroke-dasharray="6,3" marker-end="url(#arrow-purple)"/>

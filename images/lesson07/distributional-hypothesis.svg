@@ -1,0 +1,79 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450">
+  <style>@import url("https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700&amp;display=swap");</style>
+  <defs>
+    <linearGradient id="bg5" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#FAFBFF;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#F0F4FF;stop-opacity:1" />
+    </linearGradient>
+    <filter id="s5" x="-3%" y="-3%" width="106%" height="112%">
+      <feDropShadow dx="1" dy="2" stdDeviation="2" flood-color="#000" flood-opacity="0.08"/>
+    </filter>
+  </defs>
+  <rect width="800" height="450" fill="url(#bg5)" rx="16"/>
+
+  <text x="400" y="38" text-anchor="middle" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="22" font-weight="bold" fill="#1E293B">분포 가설: 주변 단어가 의미를 결정한다</text>
+
+  <!-- Quote -->
+  <rect x="80" y="55" width="640" height="40" rx="10" fill="#EEF2FF" stroke="#4F46E5" stroke-width="1.5"/>
+  <text x="400" y="80" text-anchor="middle" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="14" font-style="italic" fill="#3730A3">"You shall know a word by the company it keeps" - J.R. Firth, 1957</text>
+
+  <!-- Example 1: 왕 context -->
+  <rect x="40" y="115" width="350" height="145" rx="12" fill="white" stroke="#4F46E5" stroke-width="1.5" filter="url(#s5)"/>
+  <rect x="40" y="115" width="350" height="32" rx="12" fill="#4F46E5"/>
+  <text x="215" y="137" text-anchor="middle" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="14" font-weight="bold" fill="white">"왕"의 주변 단어들</text>
+
+  <text x="60" y="172" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="13" fill="#475569">... <tspan fill="#94A3B8">궁전</tspan>에서 <tspan font-weight="bold" fill="#4F46E5">왕</tspan>이 <tspan fill="#94A3B8">통치</tspan>하고 ...</text>
+  <text x="60" y="197" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="13" fill="#475569">... <tspan fill="#94A3B8">왕관</tspan>을 쓴 <tspan font-weight="bold" fill="#4F46E5">왕</tspan>은 <tspan fill="#94A3B8">신하</tspan>들에게 ...</text>
+  <text x="60" y="222" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="13" fill="#475569">... <tspan fill="#94A3B8">국가</tspan>의 <tspan font-weight="bold" fill="#4F46E5">왕</tspan>이 <tspan fill="#94A3B8">왕좌</tspan>에 ...</text>
+
+  <!-- Context words for 왕 -->
+  <rect x="80" y="235" width="45" height="20" rx="4" fill="#C7D2FE"/>
+  <text x="102" y="249" text-anchor="middle" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="10" fill="#3730A3">궁전</text>
+  <rect x="135" y="235" width="45" height="20" rx="4" fill="#C7D2FE"/>
+  <text x="157" y="249" text-anchor="middle" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="10" fill="#3730A3">통치</text>
+  <rect x="190" y="235" width="45" height="20" rx="4" fill="#C7D2FE"/>
+  <text x="212" y="249" text-anchor="middle" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="10" fill="#3730A3">왕관</text>
+  <rect x="245" y="235" width="45" height="20" rx="4" fill="#C7D2FE"/>
+  <text x="267" y="249" text-anchor="middle" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="10" fill="#3730A3">국가</text>
+  <rect x="300" y="235" width="45" height="20" rx="4" fill="#C7D2FE"/>
+  <text x="322" y="249" text-anchor="middle" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="10" fill="#3730A3">왕좌</text>
+
+  <!-- Example 2: 여왕 context -->
+  <rect x="410" y="115" width="350" height="145" rx="12" fill="white" stroke="#8B5CF6" stroke-width="1.5" filter="url(#s5)"/>
+  <rect x="410" y="115" width="350" height="32" rx="12" fill="#8B5CF6"/>
+  <text x="585" y="137" text-anchor="middle" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="14" font-weight="bold" fill="white">"여왕"의 주변 단어들</text>
+
+  <text x="430" y="172" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="13" fill="#475569">... <tspan fill="#94A3B8">궁전</tspan>에서 <tspan font-weight="bold" fill="#8B5CF6">여왕</tspan>이 <tspan fill="#94A3B8">통치</tspan>하며 ...</text>
+  <text x="430" y="197" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="13" fill="#475569">... <tspan fill="#94A3B8">왕관</tspan>을 쓴 <tspan font-weight="bold" fill="#8B5CF6">여왕</tspan>의 <tspan fill="#94A3B8">신하</tspan>들이 ...</text>
+  <text x="430" y="222" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="13" fill="#475569">... <tspan fill="#94A3B8">국가</tspan>의 <tspan font-weight="bold" fill="#8B5CF6">여왕</tspan>이 <tspan fill="#94A3B8">왕좌</tspan>에 ...</text>
+
+  <!-- Context words for 여왕 -->
+  <rect x="450" y="235" width="45" height="20" rx="4" fill="#EDE9FE"/>
+  <text x="472" y="249" text-anchor="middle" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="10" fill="#6D28D9">궁전</text>
+  <rect x="505" y="235" width="45" height="20" rx="4" fill="#EDE9FE"/>
+  <text x="527" y="249" text-anchor="middle" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="10" fill="#6D28D9">통치</text>
+  <rect x="560" y="235" width="45" height="20" rx="4" fill="#EDE9FE"/>
+  <text x="582" y="249" text-anchor="middle" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="10" fill="#6D28D9">왕관</text>
+  <rect x="615" y="235" width="45" height="20" rx="4" fill="#EDE9FE"/>
+  <text x="637" y="249" text-anchor="middle" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="10" fill="#6D28D9">국가</text>
+  <rect x="670" y="235" width="45" height="20" rx="4" fill="#EDE9FE"/>
+  <text x="692" y="249" text-anchor="middle" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="10" fill="#6D28D9">왕좌</text>
+
+  <!-- Similarity arrow -->
+  <rect x="200" y="275" width="400" height="45" rx="10" fill="#D1FAE5" stroke="#10B981" stroke-width="2"/>
+  <text x="400" y="303" text-anchor="middle" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="15" font-weight="bold" fill="#059669">주변 단어가 거의 같다 → 의미가 비슷하다!</text>
+
+  <!-- Contrast: 바나나 -->
+  <rect x="40" y="340" width="350" height="100" rx="12" fill="white" stroke="#F59E0B" stroke-width="1.5" filter="url(#s5)"/>
+  <rect x="40" y="340" width="350" height="32" rx="12" fill="#F59E0B"/>
+  <text x="215" y="362" text-anchor="middle" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="14" font-weight="bold" fill="white">"바나나"의 주변 단어들</text>
+
+  <text x="60" y="395" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="13" fill="#475569">... <tspan fill="#94A3B8">과일</tspan> 중에서 <tspan font-weight="bold" fill="#D97706">바나나</tspan>가 <tspan fill="#94A3B8">달콤</tspan>하고 ...</text>
+  <text x="60" y="420" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="13" fill="#475569">... <tspan fill="#94A3B8">노란</tspan> <tspan font-weight="bold" fill="#D97706">바나나</tspan>를 <tspan fill="#94A3B8">껍질</tspan> 벗겨 ...</text>
+
+  <!-- Conclusion -->
+  <rect x="410" y="340" width="350" height="100" rx="12" fill="#FEE2E2" stroke="#EF4444" stroke-width="1.5" filter="url(#s5)"/>
+  <text x="585" y="375" text-anchor="middle" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="14" font-weight="bold" fill="#DC2626">주변 단어가 완전히 다르다!</text>
+  <text x="585" y="400" text-anchor="middle" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="13" fill="#475569">"왕"과 "바나나"는</text>
+  <text x="585" y="422" text-anchor="middle" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="14" font-weight="bold" fill="#EF4444">임베딩 공간에서 멀리 배치</text>
+</svg>

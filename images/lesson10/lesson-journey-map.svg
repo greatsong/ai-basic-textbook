@@ -1,0 +1,102 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 500">
+  <style>@import url("https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700&amp;display=swap");</style>
+  <defs>
+    <linearGradient id="bg6" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#FAFBFF;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#E0E7FF;stop-opacity:1" />
+    </linearGradient>
+    <filter id="sh6">
+      <feDropShadow dx="0" dy="2" stdDeviation="3" flood-color="#000" flood-opacity="0.1"/>
+    </filter>
+    <marker id="arr6" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-auto">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#818CF8"/>
+    </marker>
+  </defs>
+  <rect width="900" height="500" fill="url(#bg6)" rx="12"/>
+  <text x="450" y="38" text-anchor="middle" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="20" font-weight="bold" fill="#1E293B">10차시 여정 지도: 원을 그리며 돌아오다</text>
+
+  <!-- Spiral path -->
+  <path d="M 120 250
+           C 120 140 280 80 350 120
+           C 420 160 450 200 480 170
+           C 510 140 570 100 640 130
+           C 710 160 750 220 750 250
+           C 750 330 680 390 600 380
+           C 520 370 460 340 430 360
+           C 400 380 330 410 270 380
+           C 210 350 160 310 170 270"
+    stroke="#818CF8" stroke-width="3" fill="none" stroke-dasharray="8,4" opacity="0.5"/>
+
+  <!-- Lesson nodes around the spiral -->
+  <!-- 1 - Start -->
+  <circle cx="120" cy="250" r="28" fill="#4F46E5" filter="url(#sh6)"/>
+  <text x="120" y="245" text-anchor="middle" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="14" font-weight="bold" fill="#FFF">1</text>
+  <text x="120" y="260" text-anchor="middle" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="7" fill="#C7D2FE">시작</text>
+  <rect x="55" y="285" width="130" height="30" rx="5" fill="#FFF" filter="url(#sh6)"/>
+  <text x="120" y="300" text-anchor="middle" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="9" fill="#4F46E5" font-weight="bold">기계가 생각할 수 있는가?</text>
+  <text x="120" y="312" text-anchor="middle" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="8" fill="#94A3B8">튜링 테스트</text>
+
+  <!-- 2 -->
+  <circle cx="230" cy="130" r="24" fill="#4F46E5" filter="url(#sh6)"/>
+  <text x="230" y="134" text-anchor="middle" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="13" font-weight="bold" fill="#FFF">2</text>
+  <rect x="175" y="82" width="110" height="28" rx="5" fill="#FFF" filter="url(#sh6)"/>
+  <text x="230" y="97" text-anchor="middle" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="8" fill="#4F46E5" font-weight="bold">퍼셉트론, XOR의 벽</text>
+
+  <!-- 3 -->
+  <circle cx="350" cy="115" r="24" fill="#10B981" filter="url(#sh6)"/>
+  <text x="350" y="119" text-anchor="middle" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="13" font-weight="bold" fill="#FFF">3</text>
+  <rect x="295" y="67" width="110" height="28" rx="5" fill="#FFF" filter="url(#sh6)"/>
+  <text x="350" y="82" text-anchor="middle" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="8" fill="#10B981" font-weight="bold">활성화함수, 비선형</text>
+
+  <!-- 4 -->
+  <circle cx="470" cy="155" r="24" fill="#F59E0B" filter="url(#sh6)"/>
+  <text x="470" y="159" text-anchor="middle" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="13" font-weight="bold" fill="#FFF">4</text>
+  <rect x="415" y="107" width="110" height="28" rx="5" fill="#FFF" filter="url(#sh6)"/>
+  <text x="470" y="122" text-anchor="middle" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="8" fill="#F59E0B" font-weight="bold">손실함수, MSE</text>
+
+  <!-- 5 -->
+  <circle cx="570" cy="115" r="24" fill="#EF4444" filter="url(#sh6)"/>
+  <text x="570" y="119" text-anchor="middle" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="13" font-weight="bold" fill="#FFF">5</text>
+  <rect x="515" y="67" width="110" height="28" rx="5" fill="#FFF" filter="url(#sh6)"/>
+  <text x="570" y="82" text-anchor="middle" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="8" fill="#EF4444" font-weight="bold">경사하강법, 학습률</text>
+
+  <!-- 6 -->
+  <circle cx="690" cy="145" r="24" fill="#8B5CF6" filter="url(#sh6)"/>
+  <text x="690" y="149" text-anchor="middle" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="13" font-weight="bold" fill="#FFF">6</text>
+  <rect x="635" y="97" width="110" height="28" rx="5" fill="#FFF" filter="url(#sh6)"/>
+  <text x="690" y="112" text-anchor="middle" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="8" fill="#8B5CF6" font-weight="bold">역전파, 연쇄법칙</text>
+
+  <!-- 7 -->
+  <circle cx="750" cy="260" r="24" fill="#14B8A6" filter="url(#sh6)"/>
+  <text x="750" y="264" text-anchor="middle" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="13" font-weight="bold" fill="#FFF">7</text>
+  <rect x="695" y="212" width="110" height="28" rx="5" fill="#FFF" filter="url(#sh6)"/>
+  <text x="750" y="227" text-anchor="middle" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="8" fill="#14B8A6" font-weight="bold">토큰화, 임베딩</text>
+
+  <!-- 8 -->
+  <circle cx="650" cy="370" r="24" fill="#4F46E5" filter="url(#sh6)"/>
+  <text x="650" y="374" text-anchor="middle" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="13" font-weight="bold" fill="#FFF">8</text>
+  <rect x="595" y="400" width="110" height="28" rx="5" fill="#FFF" filter="url(#sh6)"/>
+  <text x="650" y="415" text-anchor="middle" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="8" fill="#4F46E5" font-weight="bold">트랜스포머, 어텐션</text>
+
+  <!-- 9 -->
+  <circle cx="430" cy="380" r="24" fill="#F59E0B" filter="url(#sh6)"/>
+  <text x="430" y="384" text-anchor="middle" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="13" font-weight="bold" fill="#FFF">9</text>
+  <rect x="375" y="410" width="110" height="28" rx="5" fill="#FFF" filter="url(#sh6)"/>
+  <text x="430" y="425" text-anchor="middle" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="8" fill="#F59E0B" font-weight="bold">진로 탐색, 미래</text>
+
+  <!-- 10 - End (near start but elevated) -->
+  <circle cx="200" cy="340" r="32" fill="#3730A3" filter="url(#sh6)" stroke="#818CF8" stroke-width="3"/>
+  <text x="200" y="335" text-anchor="middle" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="16" font-weight="bold" fill="#FFF">10</text>
+  <text x="200" y="352" text-anchor="middle" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="7" fill="#C7D2FE">FINALE</text>
+  <rect x="130" y="378" width="140" height="36" rx="5" fill="#FFF" filter="url(#sh6)" stroke="#3730A3" stroke-width="1.5"/>
+  <text x="200" y="393" text-anchor="middle" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="9" fill="#3730A3" font-weight="bold">AI 역사의 인과관계</text>
+  <text x="200" y="408" text-anchor="middle" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="8" fill="#475569">같은 질문, 다른 깊이</text>
+
+  <!-- Connection from 1 to 10 -->
+  <path d="M 140 270 C 150 300 170 320 185 330" stroke="#3730A3" stroke-width="2" fill="none" stroke-dasharray="4,3"/>
+
+  <!-- Labels -->
+  <rect x="40" y="440" width="820" height="45" rx="8" fill="#FFF" filter="url(#sh6)" stroke="#4F46E5" stroke-width="1.5"/>
+  <text x="450" y="460" text-anchor="middle" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="13" font-weight="bold" fill="#3730A3">1차시의 "기계가 생각할 수 있는가?"에서 출발하여, 같은 질문에 전혀 다른 깊이로 답할 수 있게 되었습니다</text>
+  <text x="450" y="477" text-anchor="middle" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="10" fill="#475569">원을 그리며 돌아왔지만, 같은 자리가 아닙니다.</text>
+</svg>

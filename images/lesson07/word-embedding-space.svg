@@ -1,0 +1,88 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500">
+  <style>@import url("https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700&amp;display=swap");</style>
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#FAFBFF;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#E0E7FF;stop-opacity:1" />
+    </linearGradient>
+    <filter id="shadow" x="-5%" y="-5%" width="110%" height="110%">
+      <feDropShadow dx="1" dy="2" stdDeviation="3" flood-color="#000" flood-opacity="0.1"/>
+    </filter>
+  </defs>
+  <rect width="800" height="500" fill="url(#bgGrad)" rx="16"/>
+
+  <!-- Title -->
+  <text x="400" y="40" text-anchor="middle" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="22" font-weight="bold" fill="#1E293B">워드 임베딩 공간: 의미가 가까운 단어는 가까이</text>
+
+  <!-- Axes -->
+  <line x1="80" y1="440" x2="760" y2="440" stroke="#94A3B8" stroke-width="2" marker-end="url(#arrow)"/>
+  <line x1="80" y1="440" x2="80" y2="60" stroke="#94A3B8" stroke-width="2" marker-end="url(#arrow)"/>
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#94A3B8"/>
+    </marker>
+  </defs>
+  <text x="770" y="455" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="14" fill="#475569">차원 1 (왕족↔평민)</text>
+  <text x="45" y="55" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="14" fill="#475569" text-anchor="middle">차원 2</text>
+  <text x="45" y="72" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="14" fill="#475569" text-anchor="middle">(남성↔여성)</text>
+
+  <!-- Royalty cluster -->
+  <rect x="450" y="70" width="200" height="180" rx="20" fill="#EEF2FF" fill-opacity="0.6" stroke="#818CF8" stroke-width="1.5" stroke-dasharray="6,3"/>
+  <text x="550" y="92" text-anchor="middle" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="12" fill="#818CF8" font-weight="bold">왕족 영역</text>
+
+  <!-- Animal cluster -->
+  <rect x="120" y="250" width="180" height="150" rx="20" fill="#D1FAE5" fill-opacity="0.5" stroke="#10B981" stroke-width="1.5" stroke-dasharray="6,3"/>
+  <text x="210" y="272" text-anchor="middle" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="12" fill="#10B981" font-weight="bold">동물 영역</text>
+
+  <!-- Fruit cluster -->
+  <rect x="350" y="290" width="160" height="120" rx="20" fill="#FEF3C7" fill-opacity="0.5" stroke="#F59E0B" stroke-width="1.5" stroke-dasharray="6,3"/>
+  <text x="430" y="312" text-anchor="middle" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="12" fill="#F59E0B" font-weight="bold">과일 영역</text>
+
+  <!-- Word dots - Royalty -->
+  <circle cx="500" cy="130" r="18" fill="#4F46E5" filter="url(#shadow)"/>
+  <text x="500" y="136" text-anchor="middle" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="14" font-weight="bold" fill="white">왕</text>
+  <circle cx="600" cy="180" r="18" fill="#8B5CF6" filter="url(#shadow)"/>
+  <text x="600" y="186" text-anchor="middle" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="14" font-weight="bold" fill="white">여왕</text>
+  <circle cx="520" cy="210" r="16" fill="#6366F1" filter="url(#shadow)"/>
+  <text x="520" y="216" text-anchor="middle" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="13" font-weight="bold" fill="white">왕자</text>
+  <circle cx="610" cy="230" r="16" fill="#A78BFA" filter="url(#shadow)"/>
+  <text x="610" y="236" text-anchor="middle" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="13" font-weight="bold" fill="white">공주</text>
+
+  <!-- Word dots - Animals -->
+  <circle cx="170" cy="310" r="16" fill="#10B981" filter="url(#shadow)"/>
+  <text x="170" y="316" text-anchor="middle" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="13" font-weight="bold" fill="white">고양이</text>
+  <circle cx="240" cy="340" r="16" fill="#059669" filter="url(#shadow)"/>
+  <text x="240" y="346" text-anchor="middle" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="13" font-weight="bold" fill="white">강아지</text>
+  <circle cx="200" cy="380" r="14" fill="#34D399" filter="url(#shadow)"/>
+  <text x="200" y="385" text-anchor="middle" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="11" font-weight="bold" fill="white">토끼</text>
+
+  <!-- Word dots - Fruits -->
+  <circle cx="400" cy="350" r="15" fill="#F59E0B" filter="url(#shadow)"/>
+  <text x="400" y="355" text-anchor="middle" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="12" font-weight="bold" fill="white">사과</text>
+  <circle cx="460" cy="370" r="15" fill="#D97706" filter="url(#shadow)"/>
+  <text x="460" y="375" text-anchor="middle" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="12" font-weight="bold" fill="white">바나나</text>
+  <circle cx="420" cy="395" r="14" fill="#FBBF24" filter="url(#shadow)"/>
+  <text x="420" y="400" text-anchor="middle" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="11" font-weight="bold" fill="#7C2D12">포도</text>
+
+  <!-- Gender arrow -->
+  <line x1="500" y1="148" x2="600" y2="168" stroke="#EF4444" stroke-width="2" stroke-dasharray="5,3" marker-end="url(#redArrow)"/>
+  <defs>
+    <marker id="redArrow" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+      <polygon points="0 0, 8 3, 0 6" fill="#EF4444"/>
+    </marker>
+  </defs>
+  <text x="565" y="145" text-anchor="middle" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="11" fill="#EF4444" font-weight="bold">성별 방향</text>
+
+  <!-- Distance annotation -->
+  <line x1="240" y1="340" x2="400" y2="350" stroke="#94A3B8" stroke-width="1" stroke-dasharray="3,3"/>
+  <text x="310" y="332" text-anchor="middle" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="10" fill="#94A3B8">의미 거리 = 멀다</text>
+
+  <!-- Legend -->
+  <rect x="620" y="400" width="160" height="80" rx="8" fill="white" stroke="#E0E7FF" stroke-width="1"/>
+  <circle cx="640" cy="420" r="6" fill="#4F46E5"/>
+  <text x="655" y="424" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="11" fill="#475569">왕족</text>
+  <circle cx="640" cy="440" r="6" fill="#10B981"/>
+  <text x="655" y="444" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="11" fill="#475569">동물</text>
+  <circle cx="640" cy="460" r="6" fill="#F59E0B"/>
+  <text x="655" y="464" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="11" fill="#475569">과일</text>
+</svg>

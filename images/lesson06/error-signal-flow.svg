@@ -1,0 +1,102 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 500">
+  <style>@import url("https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700&amp;display=swap");</style>
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#FAFBFF;stop-opacity:1"/>
+      <stop offset="100%" style="stop-color:#F0F4FF;stop-opacity:1"/>
+    </linearGradient>
+    <linearGradient id="errorGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#EF4444;stop-opacity:0.9"/>
+      <stop offset="100%" style="stop-color:#F59E0B;stop-opacity:0.6"/>
+    </linearGradient>
+    <marker id="arrowRed" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#EF4444"/>
+    </marker>
+    <marker id="arrowBlue" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#4F46E5"/>
+    </marker>
+    <filter id="shadow">
+      <feDropShadow dx="2" dy="2" stdDeviation="3" flood-color="#000" flood-opacity="0.1"/>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="900" height="500" fill="url(#bgGrad)" rx="12"/>
+
+  <!-- Title -->
+  <text x="450" y="42" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="22" font-weight="bold" fill="#1E293B" text-anchor="middle">오차 신호의 흐름: 출력에서 입력 방향으로</text>
+
+  <!-- Forward pass arrow (top) -->
+  <text x="450" y="78" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="14" fill="#4F46E5" text-anchor="middle" font-weight="bold">순전파 (Forward)</text>
+  <line x1="130" y1="88" x2="770" y2="88" stroke="#4F46E5" stroke-width="2" marker-end="url(#arrowBlue)" stroke-dasharray="8,4"/>
+
+  <!-- Layers -->
+  <!-- Input Layer -->
+  <rect x="60" y="120" width="140" height="260" rx="16" fill="white" stroke="#C7D2FE" stroke-width="2" filter="url(#shadow)"/>
+  <rect x="60" y="120" width="140" height="40" rx="16" fill="#4F46E5"/>
+  <rect x="60" y="144" width="140" height="16" fill="#4F46E5"/>
+  <text x="130" y="146" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="14" font-weight="bold" fill="white" text-anchor="middle">입력층</text>
+
+  <circle cx="130" cy="210" r="28" fill="#E0E7FF" stroke="#4F46E5" stroke-width="2"/>
+  <text x="130" y="215" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="13" fill="#4F46E5" text-anchor="middle" font-weight="bold">x₁</text>
+
+  <circle cx="130" cy="310" r="28" fill="#E0E7FF" stroke="#4F46E5" stroke-width="2"/>
+  <text x="130" y="315" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="13" fill="#4F46E5" text-anchor="middle" font-weight="bold">x₂</text>
+
+  <!-- Hidden Layer -->
+  <rect x="290" y="120" width="140" height="260" rx="16" fill="white" stroke="#C7D2FE" stroke-width="2" filter="url(#shadow)"/>
+  <rect x="290" y="120" width="140" height="40" rx="16" fill="#818CF8"/>
+  <rect x="290" y="144" width="140" height="16" fill="#818CF8"/>
+  <text x="360" y="146" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="14" font-weight="bold" fill="white" text-anchor="middle">은닉층</text>
+
+  <circle cx="360" cy="260" r="32" fill="#E0E7FF" stroke="#818CF8" stroke-width="2"/>
+  <text x="360" y="255" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="13" fill="#818CF8" text-anchor="middle" font-weight="bold">h₁</text>
+  <text x="360" y="273" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="10" fill="#475569" text-anchor="middle">σ(z₁)</text>
+
+  <!-- Output Layer -->
+  <rect x="520" y="120" width="140" height="260" rx="16" fill="white" stroke="#C7D2FE" stroke-width="2" filter="url(#shadow)"/>
+  <rect x="520" y="120" width="140" height="40" rx="16" fill="#3730A3"/>
+  <rect x="520" y="144" width="140" height="16" fill="#3730A3"/>
+  <text x="590" y="146" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="14" font-weight="bold" fill="white" text-anchor="middle">출력층</text>
+
+  <circle cx="590" cy="260" r="32" fill="#E0E7FF" stroke="#3730A3" stroke-width="2"/>
+  <text x="590" y="255" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="13" fill="#3730A3" text-anchor="middle" font-weight="bold">ŷ</text>
+  <text x="590" y="273" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="10" fill="#475569" text-anchor="middle">0.632</text>
+
+  <!-- Loss -->
+  <rect x="720" y="200" width="140" height="120" rx="16" fill="#FEE2E2" stroke="#EF4444" stroke-width="2" filter="url(#shadow)"/>
+  <text x="790" y="245" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="14" font-weight="bold" fill="#EF4444" text-anchor="middle">오차 (E)</text>
+  <text x="790" y="270" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="20" font-weight="bold" fill="#EF4444" text-anchor="middle">0.135</text>
+  <text x="790" y="300" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="11" fill="#475569" text-anchor="middle">(정답: 1.0)</text>
+
+  <!-- Forward connections -->
+  <line x1="158" y1="210" x2="328" y2="250" stroke="#C7D2FE" stroke-width="2"/>
+  <text x="230" y="218" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="11" fill="#475569" text-anchor="middle">w₁</text>
+  <line x1="158" y1="310" x2="328" y2="270" stroke="#C7D2FE" stroke-width="2"/>
+  <text x="230" y="302" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="11" fill="#475569" text-anchor="middle">w₂</text>
+  <line x1="392" y1="260" x2="558" y2="260" stroke="#C7D2FE" stroke-width="2"/>
+  <text x="475" y="250" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="11" fill="#475569" text-anchor="middle">w₃</text>
+  <line x1="622" y1="260" x2="718" y2="260" stroke="#C7D2FE" stroke-width="2"/>
+
+  <!-- Backward pass arrows (RED, thick, bottom) -->
+  <text x="450" y="445" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="14" fill="#EF4444" text-anchor="middle" font-weight="bold">역전파 (Backward) — 오차 신호 전파</text>
+  <line x1="770" y1="455" x2="130" y2="455" stroke="#EF4444" stroke-width="3" marker-end="url(#arrowRed)"/>
+
+  <!-- Error signal annotations -->
+  <rect x="630" y="395" width="120" height="32" rx="8" fill="#FEE2E2"/>
+  <text x="690" y="416" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="11" fill="#EF4444" text-anchor="middle" font-weight="bold">δ출력 = -0.172</text>
+
+  <rect x="310" y="395" width="120" height="32" rx="8" fill="#FEF3C7"/>
+  <text x="370" y="416" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="11" fill="#F59E0B" text-anchor="middle" font-weight="bold">δ은닉 = -0.019</text>
+
+  <!-- Signal magnitude bars -->
+  <rect x="650" y="350" width="80" height="12" rx="4" fill="url(#errorGrad)" opacity="0.9"/>
+  <text x="645" y="360" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="9" fill="#475569" text-anchor="end">큰 신호</text>
+
+  <rect x="330" y="350" width="30" height="12" rx="4" fill="url(#errorGrad)" opacity="0.5"/>
+  <text x="325" y="360" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="9" fill="#475569" text-anchor="end">작은 신호</text>
+
+  <!-- Legend -->
+  <rect x="50" y="460" width="800" height="30" rx="6" fill="#E0E7FF" opacity="0.5"/>
+  <text x="450" y="480" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="12" fill="#475569" text-anchor="middle">출력에 가까울수록 오차 신호가 크다 → 가중치 업데이트 양도 크다</text>
+</svg>

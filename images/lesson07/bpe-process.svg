@@ -1,0 +1,93 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 480">
+  <style>@import url("https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700&amp;display=swap");</style>
+  <defs>
+    <linearGradient id="bg3" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#FAFBFF;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#F0F4FF;stop-opacity:1" />
+    </linearGradient>
+    <filter id="s3" x="-3%" y="-3%" width="106%" height="112%">
+      <feDropShadow dx="1" dy="2" stdDeviation="2" flood-color="#000" flood-opacity="0.08"/>
+    </filter>
+  </defs>
+  <rect width="800" height="480" fill="url(#bg3)" rx="16"/>
+
+  <text x="400" y="38" text-anchor="middle" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="22" font-weight="bold" fill="#1E293B">BPE 토큰화 과정: "안녕하세요"가 토큰이 되기까지</text>
+
+  <!-- Step 1 -->
+  <rect x="40" y="65" width="720" height="75" rx="12" fill="white" stroke="#C7D2FE" stroke-width="1.5" filter="url(#s3)"/>
+  <circle cx="75" cy="102" r="22" fill="#4F46E5"/>
+  <text x="75" y="108" text-anchor="middle" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="16" font-weight="bold" fill="white">1</text>
+  <text x="110" y="92" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="14" font-weight="bold" fill="#3730A3">초기 상태: 글자 하나씩 분리</text>
+  <rect x="110" y="105" width="35" height="28" rx="6" fill="#EEF2FF" stroke="#818CF8" stroke-width="1.5"/>
+  <text x="127" y="124" text-anchor="middle" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="14" fill="#3730A3">안</text>
+  <rect x="155" y="105" width="35" height="28" rx="6" fill="#EEF2FF" stroke="#818CF8" stroke-width="1.5"/>
+  <text x="172" y="124" text-anchor="middle" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="14" fill="#3730A3">녕</text>
+  <rect x="200" y="105" width="35" height="28" rx="6" fill="#EEF2FF" stroke="#818CF8" stroke-width="1.5"/>
+  <text x="217" y="124" text-anchor="middle" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="14" fill="#3730A3">하</text>
+  <rect x="245" y="105" width="35" height="28" rx="6" fill="#EEF2FF" stroke="#818CF8" stroke-width="1.5"/>
+  <text x="262" y="124" text-anchor="middle" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="14" fill="#3730A3">세</text>
+  <rect x="290" y="105" width="35" height="28" rx="6" fill="#EEF2FF" stroke="#818CF8" stroke-width="1.5"/>
+  <text x="307" y="124" text-anchor="middle" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="14" fill="#3730A3">요</text>
+  <text x="580" y="107" text-anchor="middle" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="13" fill="#94A3B8">토큰 수:</text>
+  <circle cx="650" cy="102" r="18" fill="#EF4444"/>
+  <text x="650" y="108" text-anchor="middle" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="16" font-weight="bold" fill="white">5</text>
+
+  <!-- Arrow -->
+  <polygon points="390,148 380,160 400,160" fill="#818CF8"/>
+
+  <!-- Step 2 -->
+  <rect x="40" y="168" width="720" height="75" rx="12" fill="white" stroke="#C7D2FE" stroke-width="1.5" filter="url(#s3)"/>
+  <circle cx="75" cy="205" r="22" fill="#4F46E5"/>
+  <text x="75" y="211" text-anchor="middle" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="16" font-weight="bold" fill="white">2</text>
+  <text x="110" y="195" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="14" font-weight="bold" fill="#3730A3">가장 자주 붙는 쌍 합치기: "하" + "세" → "하세"</text>
+  <rect x="110" y="208" width="35" height="28" rx="6" fill="#EEF2FF" stroke="#818CF8" stroke-width="1.5"/>
+  <text x="127" y="227" text-anchor="middle" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="14" fill="#3730A3">안</text>
+  <rect x="155" y="208" width="35" height="28" rx="6" fill="#EEF2FF" stroke="#818CF8" stroke-width="1.5"/>
+  <text x="172" y="227" text-anchor="middle" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="14" fill="#3730A3">녕</text>
+  <rect x="200" y="208" width="50" height="28" rx="6" fill="#D1FAE5" stroke="#10B981" stroke-width="2"/>
+  <text x="225" y="227" text-anchor="middle" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="14" font-weight="bold" fill="#059669">하세</text>
+  <rect x="260" y="208" width="35" height="28" rx="6" fill="#EEF2FF" stroke="#818CF8" stroke-width="1.5"/>
+  <text x="277" y="227" text-anchor="middle" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="14" fill="#3730A3">요</text>
+  <text x="580" y="210" text-anchor="middle" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="13" fill="#94A3B8">토큰 수:</text>
+  <circle cx="650" cy="205" r="18" fill="#F59E0B"/>
+  <text x="650" y="211" text-anchor="middle" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="16" font-weight="bold" fill="white">4</text>
+
+  <!-- Arrow -->
+  <polygon points="390,251 380,263 400,263" fill="#818CF8"/>
+
+  <!-- Step 3 -->
+  <rect x="40" y="271" width="720" height="75" rx="12" fill="white" stroke="#C7D2FE" stroke-width="1.5" filter="url(#s3)"/>
+  <circle cx="75" cy="308" r="22" fill="#4F46E5"/>
+  <text x="75" y="314" text-anchor="middle" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="16" font-weight="bold" fill="white">3</text>
+  <text x="110" y="298" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="14" font-weight="bold" fill="#3730A3">다음 빈번 쌍 합치기: "하세" + "요" → "하세요"</text>
+  <rect x="110" y="311" width="35" height="28" rx="6" fill="#EEF2FF" stroke="#818CF8" stroke-width="1.5"/>
+  <text x="127" y="330" text-anchor="middle" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="14" fill="#3730A3">안</text>
+  <rect x="155" y="311" width="35" height="28" rx="6" fill="#EEF2FF" stroke="#818CF8" stroke-width="1.5"/>
+  <text x="172" y="330" text-anchor="middle" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="14" fill="#3730A3">녕</text>
+  <rect x="200" y="311" width="65" height="28" rx="6" fill="#D1FAE5" stroke="#10B981" stroke-width="2"/>
+  <text x="232" y="330" text-anchor="middle" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="14" font-weight="bold" fill="#059669">하세요</text>
+  <text x="580" y="313" text-anchor="middle" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="13" fill="#94A3B8">토큰 수:</text>
+  <circle cx="650" cy="308" r="18" fill="#10B981"/>
+  <text x="650" y="314" text-anchor="middle" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="16" font-weight="bold" fill="white">3</text>
+
+  <!-- Arrow -->
+  <polygon points="390,354 380,366 400,366" fill="#818CF8"/>
+
+  <!-- Step 4 -->
+  <rect x="40" y="374" width="720" height="75" rx="12" fill="white" stroke="#C7D2FE" stroke-width="1.5" filter="url(#s3)"/>
+  <circle cx="75" cy="411" r="22" fill="#4F46E5"/>
+  <text x="75" y="417" text-anchor="middle" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="16" font-weight="bold" fill="white">4</text>
+  <text x="110" y="401" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="14" font-weight="bold" fill="#3730A3">계속 반복: "안" + "녕" → "안녕" (자주 쓰이는 조합이면)</text>
+  <rect x="110" y="414" width="50" height="28" rx="6" fill="#D1FAE5" stroke="#10B981" stroke-width="2"/>
+  <text x="135" y="433" text-anchor="middle" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="14" font-weight="bold" fill="#059669">안녕</text>
+  <rect x="170" y="414" width="65" height="28" rx="6" fill="#D1FAE5" stroke="#10B981" stroke-width="2"/>
+  <text x="202" y="433" text-anchor="middle" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="14" font-weight="bold" fill="#059669">하세요</text>
+  <text x="580" y="416" text-anchor="middle" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="13" fill="#94A3B8">토큰 수:</text>
+  <circle cx="650" cy="411" r="18" fill="#4F46E5"/>
+  <text x="650" y="417" text-anchor="middle" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="16" font-weight="bold" fill="white">2</text>
+
+  <!-- Key insight -->
+  <rect x="430" y="385" width="310" height="55" rx="10" fill="#FEF3C7" stroke="#F59E0B" stroke-width="1.5"/>
+  <text x="585" y="408" text-anchor="middle" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="12" font-weight="bold" fill="#92400E">자주 쓰이는 조합일수록 하나의 토큰!</text>
+  <text x="585" y="428" text-anchor="middle" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="11" fill="#92400E">영어 "hello"는 이미 자주 나와 토큰 1개</text>
+</svg>

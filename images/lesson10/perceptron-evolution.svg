@@ -1,0 +1,130 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 500">
+  <style>@import url("https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700&amp;display=swap");</style>
+  <defs>
+    <linearGradient id="bg3" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#FAFBFF;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#F0F4FF;stop-opacity:1" />
+    </linearGradient>
+    <filter id="sh3">
+      <feDropShadow dx="0" dy="2" stdDeviation="3" flood-color="#000" flood-opacity="0.1"/>
+    </filter>
+    <marker id="arr3" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-auto">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#4F46E5"/>
+    </marker>
+  </defs>
+  <rect width="900" height="500" fill="url(#bg3)" rx="12"/>
+  <text x="450" y="40" text-anchor="middle" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="20" font-weight="bold" fill="#1E293B">퍼셉트론에서 딥러닝까지: 구조의 진화</text>
+
+  <!-- Stage 1: Single Perceptron -->
+  <rect x="30" y="70" width="250" height="170" rx="12" fill="#FFF" filter="url(#sh3)"/>
+  <rect x="30" y="70" width="250" height="35" rx="12" fill="#4F46E5"/>
+  <rect x="30" y="93" width="250" height="12" fill="#4F46E5"/>
+  <text x="155" y="93" text-anchor="middle" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="13" font-weight="bold" fill="#FFF">1단계: 단층 퍼셉트론 (1958)</text>
+
+  <!-- Input nodes -->
+  <circle cx="70" cy="145" r="14" fill="#E0E7FF" stroke="#4F46E5" stroke-width="2"/>
+  <text x="70" y="149" text-anchor="middle" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="9" fill="#4F46E5">x1</text>
+  <circle cx="70" cy="195" r="14" fill="#E0E7FF" stroke="#4F46E5" stroke-width="2"/>
+  <text x="70" y="199" text-anchor="middle" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="9" fill="#4F46E5">x2</text>
+
+  <!-- Output node -->
+  <circle cx="210" cy="170" r="20" fill="#4F46E5"/>
+  <text x="210" y="174" text-anchor="middle" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="9" font-weight="bold" fill="#FFF">출력</text>
+
+  <!-- Connections -->
+  <line x1="84" y1="145" x2="190" y2="165" stroke="#818CF8" stroke-width="2"/>
+  <line x1="84" y1="195" x2="190" y2="175" stroke="#818CF8" stroke-width="2"/>
+
+  <text x="155" y="225" text-anchor="middle" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="10" fill="#EF4444" font-weight="bold">직선 1개 = AND, OR만 가능</text>
+
+  <!-- Arrow to stage 2 -->
+  <line x1="280" y1="155" x2="320" y2="155" stroke="#4F46E5" stroke-width="2" marker-end="url(#arr3)"/>
+  <text x="300" y="145" text-anchor="middle" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="8" fill="#EF4444">XOR 불가!</text>
+
+  <!-- Stage 2: Multi-layer -->
+  <rect x="328" y="70" width="250" height="170" rx="12" fill="#FFF" filter="url(#sh3)"/>
+  <rect x="328" y="70" width="250" height="35" rx="12" fill="#10B981"/>
+  <rect x="328" y="93" width="250" height="12" fill="#10B981"/>
+  <text x="453" y="93" text-anchor="middle" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="13" font-weight="bold" fill="#FFF">2단계: 다층 신경망 (1986)</text>
+
+  <!-- Input -->
+  <circle cx="368" cy="145" r="12" fill="#D1FAE5" stroke="#10B981" stroke-width="2"/>
+  <circle cx="368" cy="195" r="12" fill="#D1FAE5" stroke="#10B981" stroke-width="2"/>
+  <!-- Hidden -->
+  <circle cx="445" cy="130" r="12" fill="#10B981"/>
+  <circle cx="445" cy="170" r="12" fill="#10B981"/>
+  <circle cx="445" cy="210" r="12" fill="#10B981"/>
+  <!-- Output -->
+  <circle cx="530" cy="170" r="16" fill="#10B981"/>
+  <text x="530" y="174" text-anchor="middle" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="8" font-weight="bold" fill="#FFF">출력</text>
+
+  <!-- Connections -->
+  <line x1="380" y1="145" x2="433" y2="130" stroke="#86EFAC" stroke-width="1.5"/>
+  <line x1="380" y1="145" x2="433" y2="170" stroke="#86EFAC" stroke-width="1.5"/>
+  <line x1="380" y1="145" x2="433" y2="210" stroke="#86EFAC" stroke-width="1.5"/>
+  <line x1="380" y1="195" x2="433" y2="130" stroke="#86EFAC" stroke-width="1.5"/>
+  <line x1="380" y1="195" x2="433" y2="170" stroke="#86EFAC" stroke-width="1.5"/>
+  <line x1="380" y1="195" x2="433" y2="210" stroke="#86EFAC" stroke-width="1.5"/>
+  <line x1="457" y1="130" x2="514" y2="166" stroke="#86EFAC" stroke-width="1.5"/>
+  <line x1="457" y1="170" x2="514" y2="170" stroke="#86EFAC" stroke-width="1.5"/>
+  <line x1="457" y1="210" x2="514" y2="174" stroke="#86EFAC" stroke-width="1.5"/>
+
+  <text x="453" y="225" text-anchor="middle" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="10" fill="#10B981" font-weight="bold">역전파로 다층 학습 가능!</text>
+
+  <!-- Arrow to stage 3 -->
+  <line x1="578" y1="155" x2="618" y2="155" stroke="#4F46E5" stroke-width="2" marker-end="url(#arr3)"/>
+  <text x="598" y="145" text-anchor="middle" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="8" fill="#F59E0B">ReLU+GPU</text>
+
+  <!-- Stage 3: Deep Learning -->
+  <rect x="626" y="70" width="250" height="170" rx="12" fill="#FFF" filter="url(#sh3)" stroke="#3730A3" stroke-width="2"/>
+  <rect x="626" y="70" width="250" height="35" rx="12" fill="#3730A3"/>
+  <rect x="626" y="93" width="250" height="12" fill="#3730A3"/>
+  <text x="751" y="93" text-anchor="middle" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="13" font-weight="bold" fill="#FFF">3단계: 딥러닝 (2012~)</text>
+
+  <!-- Deep network representation -->
+  <g>
+    <!-- Layer columns -->
+    <circle cx="660" cy="140" r="8" fill="#C7D2FE"/><circle cx="660" cy="160" r="8" fill="#C7D2FE"/><circle cx="660" cy="180" r="8" fill="#C7D2FE"/><circle cx="660" cy="200" r="8" fill="#C7D2FE"/>
+    <circle cx="700" cy="130" r="8" fill="#818CF8"/><circle cx="700" cy="150" r="8" fill="#818CF8"/><circle cx="700" cy="170" r="8" fill="#818CF8"/><circle cx="700" cy="190" r="8" fill="#818CF8"/><circle cx="700" cy="210" r="8" fill="#818CF8"/>
+    <circle cx="740" cy="130" r="8" fill="#6366F1"/><circle cx="740" cy="150" r="8" fill="#6366F1"/><circle cx="740" cy="170" r="8" fill="#6366F1"/><circle cx="740" cy="190" r="8" fill="#6366F1"/><circle cx="740" cy="210" r="8" fill="#6366F1"/>
+    <circle cx="780" cy="140" r="8" fill="#4F46E5"/><circle cx="780" cy="160" r="8" fill="#4F46E5"/><circle cx="780" cy="180" r="8" fill="#4F46E5"/><circle cx="780" cy="200" r="8" fill="#4F46E5"/>
+    <circle cx="820" cy="155" r="8" fill="#3730A3"/><circle cx="820" cy="175" r="8" fill="#3730A3"/>
+    <circle cx="850" cy="165" r="10" fill="#3730A3" stroke="#FFF" stroke-width="2"/>
+  </g>
+  <text x="751" y="225" text-anchor="middle" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="10" fill="#3730A3" font-weight="bold">수백~수천 층, 수천억 파라미터</text>
+
+  <!-- Bottom comparison -->
+  <rect x="50" y="280" width="240" height="90" rx="10" fill="#FFF" filter="url(#sh3)"/>
+  <text x="170" y="305" text-anchor="middle" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="12" font-weight="bold" fill="#4F46E5">분류 능력 비교</text>
+  <!-- Linear -->
+  <line x1="80" y1="320" x2="150" y2="350" stroke="#4F46E5" stroke-width="2"/>
+  <circle cx="100" cy="330" r="4" fill="#EF4444"/><circle cx="130" cy="340" r="4" fill="#EF4444"/>
+  <circle cx="110" cy="350" r="4" fill="#4F46E5"/><circle cx="90" cy="355" r="4" fill="#4F46E5"/>
+  <text x="115" y="370" text-anchor="middle" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="9" fill="#94A3B8">단층: 직선</text>
+  <!-- Curve -->
+  <path d="M 195 350 Q 220 310 250 340" stroke="#10B981" stroke-width="2" fill="none"/>
+  <circle cx="205" cy="335" r="4" fill="#EF4444"/><circle cx="240" cy="330" r="4" fill="#EF4444"/>
+  <circle cx="215" cy="350" r="4" fill="#10B981"/><circle cx="235" cy="355" r="4" fill="#10B981"/>
+  <text x="225" y="370" text-anchor="middle" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="9" fill="#94A3B8">다층: 곡선</text>
+
+  <!-- Key numbers -->
+  <rect x="340" y="280" width="520" height="90" rx="10" fill="#FFF" filter="url(#sh3)"/>
+  <text x="600" y="303" text-anchor="middle" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="12" font-weight="bold" fill="#3730A3">규모의 변화</text>
+
+  <rect x="360" y="315" width="140" height="42" rx="6" fill="#E0E7FF"/>
+  <text x="430" y="335" text-anchor="middle" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="11" font-weight="bold" fill="#4F46E5">퍼셉트론</text>
+  <text x="430" y="350" text-anchor="middle" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="10" fill="#475569">파라미터 ~3개</text>
+
+  <rect x="520" y="315" width="140" height="42" rx="6" fill="#D1FAE5"/>
+  <text x="590" y="335" text-anchor="middle" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="11" font-weight="bold" fill="#10B981">AlexNet</text>
+  <text x="590" y="350" text-anchor="middle" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="10" fill="#475569">~6천만 개</text>
+
+  <rect x="680" y="315" width="160" height="42" rx="6" fill="#E0E7FF" stroke="#3730A3" stroke-width="2"/>
+  <text x="760" y="335" text-anchor="middle" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="11" font-weight="bold" fill="#3730A3">GPT-3</text>
+  <text x="760" y="350" text-anchor="middle" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="10" fill="#475569">1,750억 개</text>
+
+  <!-- Bottom message -->
+  <rect x="200" y="410" width="500" height="50" rx="25" fill="#3730A3" filter="url(#sh3)"/>
+  <text x="450" y="430" text-anchor="middle" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="13" font-weight="bold" fill="#FFF">같은 원리, 다른 규모</text>
+  <text x="450" y="448" text-anchor="middle" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="10" fill="#C7D2FE">가중치 x 입력 + 편향 --> 활성화함수 --> 출력 (모든 단계에서 동일)</text>
+</svg>

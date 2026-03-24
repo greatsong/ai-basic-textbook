@@ -1,0 +1,87 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 550">
+  <style>@import url("https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700&amp;display=swap");</style>
+  <defs>
+    <filter id="shadow" x="-5%" y="-5%" width="115%" height="115%">
+      <feDropShadow dx="1" dy="2" stdDeviation="3" flood-color="#000" flood-opacity="0.08"/>
+    </filter>
+    <linearGradient id="arrowGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#4F46E5;stop-opacity:0.3"/>
+      <stop offset="100%" style="stop-color:#4F46E5;stop-opacity:1"/>
+    </linearGradient>
+  </defs>
+  <!-- Background -->
+  <rect width="900" height="550" rx="16" fill="#FAFBFF"/>
+  <text x="450" y="40" text-anchor="middle" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="22" font-weight="bold" fill="#1E293B">이 수업에서 배운 것 → 진로 연결</text>
+
+  <!-- Column headers -->
+  <rect x="40" y="60" width="260" height="40" rx="10" fill="#4F46E5"/>
+  <text x="170" y="86" text-anchor="middle" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="15" font-weight="bold" fill="#fff">배운 개념 (차시)</text>
+  <rect x="350" y="60" width="210" height="40" rx="10" fill="#818CF8"/>
+  <text x="455" y="86" text-anchor="middle" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="15" font-weight="bold" fill="#fff">핵심 역량</text>
+  <rect x="610" y="60" width="260" height="40" rx="10" fill="#3730A3"/>
+  <text x="740" y="86" text-anchor="middle" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="15" font-weight="bold" fill="#fff">진로에서의 활용</text>
+
+  <!-- Row 1: 손실함수 -->
+  <rect x="40" y="115" width="260" height="55" rx="8" fill="#E0E7FF" filter="url(#shadow)"/>
+  <text x="55" y="138" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="13" font-weight="bold" fill="#4F46E5">손실함수 (4차시)</text>
+  <text x="55" y="156" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="11" fill="#475569">AI가 왜 틀릴 수 있는지</text>
+  <rect x="315" y="133" width="20" height="3" fill="#C7D2FE"/>
+  <rect x="350" y="115" width="210" height="55" rx="8" fill="#F0F4FF"/>
+  <text x="455" y="140" text-anchor="middle" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="13" font-weight="bold" fill="#4F46E5">구조적 이해</text>
+  <text x="455" y="158" text-anchor="middle" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="11" fill="#475569">AI 한계 인식</text>
+  <rect x="575" y="133" width="20" height="3" fill="#C7D2FE"/>
+  <rect x="610" y="115" width="260" height="55" rx="8" fill="#E0E7FF" filter="url(#shadow)"/>
+  <text x="625" y="138" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="13" font-weight="bold" fill="#3730A3">경영 / 데이터 분석</text>
+  <text x="625" y="156" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="11" fill="#475569">예측과 실제 차이 최소화</text>
+
+  <!-- Row 2: 토큰화 -->
+  <rect x="40" y="185" width="260" height="55" rx="8" fill="#D1FAE5" filter="url(#shadow)"/>
+  <text x="55" y="208" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="13" font-weight="bold" fill="#10B981">토큰화 (7차시)</text>
+  <text x="55" y="226" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="11" fill="#475569">AI의 언어 처리 방식</text>
+  <rect x="315" y="203" width="20" height="3" fill="#A7F3D0"/>
+  <rect x="350" y="185" width="210" height="55" rx="8" fill="#F0FDF4"/>
+  <text x="455" y="210" text-anchor="middle" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="13" font-weight="bold" fill="#10B981">프롬프트 설계</text>
+  <text x="455" y="228" text-anchor="middle" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="11" fill="#475569">질문하는 능력</text>
+  <rect x="575" y="203" width="20" height="3" fill="#A7F3D0"/>
+  <rect x="610" y="185" width="260" height="55" rx="8" fill="#D1FAE5" filter="url(#shadow)"/>
+  <text x="625" y="208" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="13" font-weight="bold" fill="#065F46">미디어 / 콘텐츠</text>
+  <text x="625" y="226" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="11" fill="#475569">자동 번역, 콘텐츠 추천</text>
+
+  <!-- Row 3: 어텐션 -->
+  <rect x="40" y="255" width="260" height="55" rx="8" fill="#EDE9FE" filter="url(#shadow)"/>
+  <text x="55" y="278" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="13" font-weight="bold" fill="#8B5CF6">어텐션 (8차시)</text>
+  <text x="55" y="296" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="11" fill="#475569">문맥에서 중요한 부분에 집중</text>
+  <rect x="315" y="273" width="20" height="3" fill="#DDD6FE"/>
+  <rect x="350" y="255" width="210" height="55" rx="8" fill="#FAF5FF"/>
+  <text x="455" y="280" text-anchor="middle" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="13" font-weight="bold" fill="#8B5CF6">비판적 사고</text>
+  <text x="455" y="298" text-anchor="middle" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="11" fill="#475569">AI 결과 검증</text>
+  <rect x="575" y="273" width="20" height="3" fill="#DDD6FE"/>
+  <rect x="610" y="255" width="260" height="55" rx="8" fill="#EDE9FE" filter="url(#shadow)"/>
+  <text x="625" y="278" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="13" font-weight="bold" fill="#5B21B6">의료 / 법률</text>
+  <text x="625" y="296" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="11" fill="#475569">패턴 발견, 판례 검색</text>
+
+  <!-- Row 4: 역전파 -->
+  <rect x="40" y="325" width="260" height="55" rx="8" fill="#FEF3C7" filter="url(#shadow)"/>
+  <text x="55" y="348" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="13" font-weight="bold" fill="#F59E0B">역전파 (6차시)</text>
+  <text x="55" y="366" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="11" fill="#475569">오차를 거꾸로 추적하여 개선</text>
+  <rect x="315" y="343" width="20" height="3" fill="#FDE68A"/>
+  <rect x="350" y="325" width="210" height="55" rx="8" fill="#FFFBEB"/>
+  <text x="455" y="350" text-anchor="middle" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="13" font-weight="bold" fill="#F59E0B">융합적 사고</text>
+  <text x="455" y="368" text-anchor="middle" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="11" fill="#475569">AI 모델 미세 조정</text>
+  <rect x="575" y="343" width="20" height="3" fill="#FDE68A"/>
+  <rect x="610" y="325" width="260" height="55" rx="8" fill="#FEF3C7" filter="url(#shadow)"/>
+  <text x="625" y="348" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="13" font-weight="bold" fill="#92400E">과학 / 공학</text>
+  <text x="625" y="366" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="11" fill="#475569">모델 최적화, 자율주행</text>
+
+  <!-- Bottom: Summary -->
+  <rect x="100" y="410" width="700" height="60" rx="14" fill="#4F46E5" filter="url(#shadow)"/>
+  <text x="450" y="436" text-anchor="middle" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="16" font-weight="bold" fill="#fff">AI의 원리를 아는 사람만이</text>
+  <text x="450" y="458" text-anchor="middle" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="16" font-weight="bold" fill="#C7D2FE">AI를 제대로 활용하고, AI의 한계를 인식할 수 있습니다</text>
+
+  <!-- Bottom note -->
+  <text x="450" y="508" text-anchor="middle" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="13" fill="#94A3B8">어떤 진로를 선택하든, AI 원리 이해가 핵심 경쟁력이 됩니다</text>
+
+  <!-- Decorative arrows -->
+  <path d="M 305,140 L 345,140" stroke="#C7D2FE" stroke-width="2" fill="none" marker-end="url(#arrowTip)"/>
+  <path d="M 565,140 L 605,140" stroke="#C7D2FE" stroke-width="2" fill="none"/>
+</svg>

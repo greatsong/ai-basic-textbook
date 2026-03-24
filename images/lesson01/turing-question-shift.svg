@@ -1,0 +1,65 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450">
+  <style>@import url("https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700&amp;display=swap");</style>
+  <defs>
+    <filter id="shadow" x="-5%" y="-5%" width="115%" height="115%">
+      <feDropShadow dx="0" dy="2" stdDeviation="4" flood-opacity="0.08"/>
+    </filter>
+    <marker id="arrowDown" markerWidth="12" markerHeight="12" refX="6" refY="6" orient="auto">
+      <path d="M2,2 L6,10 L10,2" fill="#4F46E5"/>
+    </marker>
+  </defs>
+
+  <!-- Background -->
+  <rect width="800" height="450" rx="16" fill="#FAFBFF"/>
+
+  <!-- Title -->
+  <text x="400" y="38" text-anchor="middle" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="20" font-weight="bold" fill="#1E293B">튜링의 질문 전환: 정의에서 관찰로</text>
+  <rect x="280" y="48" width="240" height="3" rx="1.5" fill="#818CF8"/>
+
+  <!-- Original Question (crossed out) -->
+  <rect x="80" y="72" width="640" height="80" rx="14" fill="white" stroke="#EF4444" stroke-width="2" stroke-dasharray="8,4" filter="url(#shadow)"/>
+  <circle cx="120" cy="112" r="22" fill="#FEE2E2"/>
+  <text x="120" y="119" text-anchor="middle" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="22" font-weight="bold" fill="#EF4444">X</text>
+  <text x="160" y="100" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="13" fill="#94A3B8">원래 질문</text>
+  <text x="160" y="124" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="18" font-weight="bold" fill="#94A3B8" text-decoration="line-through">"기계가 생각할 수 있는가?"</text>
+
+  <!-- Problem annotation -->
+  <rect x="540" y="82" width="160" height="52" rx="8" fill="#FEF3C7"/>
+  <text x="620" y="104" text-anchor="middle" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="12" font-weight="bold" fill="#92400E">문제:</text>
+  <text x="620" y="122" text-anchor="middle" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="12" fill="#92400E">"생각"을 정의할 수 없다</text>
+
+  <!-- Arrow down -->
+  <line x1="400" y1="160" x2="400" y2="210" stroke="#4F46E5" stroke-width="3" marker-end="url(#arrowDown)"/>
+  <rect x="350" y="170" width="100" height="28" rx="14" fill="#4F46E5"/>
+  <text x="400" y="189" text-anchor="middle" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="13" font-weight="bold" fill="white">전환!</text>
+
+  <!-- New Question (highlighted) -->
+  <rect x="80" y="220" width="640" height="90" rx="14" fill="white" stroke="#4F46E5" stroke-width="3" filter="url(#shadow)"/>
+  <circle cx="120" cy="265" r="22" fill="#D1FAE5"/>
+  <text x="120" y="272" text-anchor="middle" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="22" font-weight="bold" fill="#10B981">&#x2713;</text>
+  <text x="160" y="252" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="13" fill="#4F46E5" font-weight="bold">튜링의 새로운 질문</text>
+  <text x="160" y="280" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="18" font-weight="bold" fill="#1E293B">"사람인지 기계인지 구별할 수 없다면,</text>
+  <text x="170" y="302" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="18" font-weight="bold" fill="#3730A3"> 그 기계는 생각할 수 있는 것 아닌가?"</text>
+
+  <!-- Three key insight boxes -->
+  <rect x="40" y="336" width="226" height="96" rx="12" fill="#E0E7FF" filter="url(#shadow)"/>
+  <circle cx="72" cy="366" r="18" fill="#4F46E5"/>
+  <text x="72" y="372" text-anchor="middle" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="14" font-weight="bold" fill="white">1</text>
+  <text x="100" y="370" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="14" font-weight="bold" fill="#3730A3">정의 불가 해결</text>
+  <text x="56" y="396" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="12" fill="#475569">"생각"을 정의하지 않고도</text>
+  <text x="56" y="414" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="12" fill="#475569">테스트할 수 있게 됨</text>
+
+  <rect x="286" y="336" width="226" height="96" rx="12" fill="#E0E7FF" filter="url(#shadow)"/>
+  <circle cx="318" cy="366" r="18" fill="#4F46E5"/>
+  <text x="318" y="372" text-anchor="middle" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="14" font-weight="bold" fill="white">2</text>
+  <text x="346" y="370" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="14" font-weight="bold" fill="#3730A3">관찰 가능한 기준</text>
+  <text x="302" y="396" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="12" fill="#475569">내부 과정이 아니라</text>
+  <text x="302" y="414" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="12" fill="#475569">외부 행동으로 판단</text>
+
+  <rect x="532" y="336" width="226" height="96" rx="12" fill="#E0E7FF" filter="url(#shadow)"/>
+  <circle cx="564" cy="366" r="18" fill="#4F46E5"/>
+  <text x="564" y="372" text-anchor="middle" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="14" font-weight="bold" fill="white">3</text>
+  <text x="592" y="370" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="14" font-weight="bold" fill="#3730A3">실험 가능한 방법</text>
+  <text x="548" y="396" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="12" fill="#475569">누구나 실험을 통해</text>
+  <text x="548" y="414" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="12" fill="#475569">직접 검증할 수 있음</text>
+</svg>

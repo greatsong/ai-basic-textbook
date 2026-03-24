@@ -1,4 +1,5 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 360" font-family="system-ui, -apple-system, 'Apple SD Gothic Neo', 'Noto Sans KR', sans-serif">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 360" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif">
+  <style>@import url("https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700&amp;display=swap");</style>
   <rect width="760" height="360" rx="16" fill="#1a1b26" opacity="0.95"/>
   <text x="380" y="35" text-anchor="middle" fill="#e2e8f0" font-size="18" font-weight="700">퍼셉트론의 구조</text>
   <text x="380" y="57" text-anchor="middle" fill="#94a3b8" font-size="13">"직선의 위치를 결정하는 기계"</text>
