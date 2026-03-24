@@ -5,6 +5,7 @@ description: "활성화함수, 비선형성, 다층 신경망 — 스위치 하�
 
 import { Card, CardGrid, LinkCard } from '@astrojs/starlight/components';
 import ActivationToggle from '../../../../components/neural/ActivationToggle';
+import ActivationComparison from '../../../../components/neural/ActivationComparison';
 
 <p style="color: var(--sl-color-gray-3); margin-bottom: 0.25rem;">AI의 시작 &gt; 3차시</p>
 
@@ -60,7 +61,9 @@ import ActivationToggle from '../../../../components/neural/ActivationToggle';
 
 </div>
 
-{/* TODO: LinearCollapse 다이어그램 — 활성화함수 없는 다층 네트워크가 결국 직선 하나로 축소되는 과정을 시각적으로 보여주는 SVG */}
+<figure style="margin: 1.5rem auto; text-align: center;">
+  <img src="/ai-basic-textbook/images/lesson03/linear-collapse.svg" alt="활성화함수 없이 층을 쌓으면 직선 하나로 축소되는 과정" style="width: 100%; max-width: 680px;" />
+</figure>
 
 층을 쌓는 것만으로는 부족합니다. 뭔가 하나가 빠져 있습니다. 시뮬레이터 화면에 꺼져 있는 <strong>스위치</strong>가 보이나요?
 
@@ -78,7 +81,7 @@ import ActivationToggle from '../../../../components/neural/ActivationToggle';
 
 <strong>성공합니다.</strong> 같은 2층 신경망, 같은 XOR 데이터인데 — 스위치 하나를 켰을 뿐인데 결과가 완전히 달라졌습니다. 대체 이 스위치가 무엇이길래?
 
-이 스위치의 정식 이름은 <strong>활성화함수(Activation Function)</strong>입니다.
+2차시에서 뉴런이 임계값을 넘으면 발화한다고 배웠습니다. <strong>활성화함수(Activation Function)</strong>는 바로 이 '임계값을 넘어야 출력한다'는 원리를 수학적으로 구현한 것입니다.
 
 ---
 
@@ -110,7 +113,7 @@ import ActivationToggle from '../../../../components/neural/ActivationToggle';
 
 대표적인 활성화함수 4가지를 비교해봅시다:
 
-{/* TODO: ActivationComparison 컴포넌트 — 4종 활성화함수의 그래프를 인터랙티브로 비교 */}
+<ActivationComparison client:visible />
 
 | 함수 | 그래프 모양 | 출력 범위 | 핵심 특징 |
 |------|-----------|----------|---------|
@@ -199,7 +202,10 @@ XOR을 해결한 것은 시작일 뿐입니다. 뉴런과 층을 더 쌓으면 �
 
 그의 이름은 <strong>제프리 힌튼(Geoffrey Hinton)</strong>입니다.
 
-{/* TODO: 힌튼 사진 */}
+<figure style="margin: 1.5rem auto; text-align: center; max-width: 320px;">
+  <img src="/ai-basic-textbook/images/lesson03/geoffrey-hinton.jpg" alt="제프리 힌튼(Geoffrey Hinton, 1947-)" style="width: 100%; max-width: 240px; border-radius: 10px;" />
+  <figcaption style="color: var(--sl-color-gray-3); font-size: 12px; margin-top: 6px;">제프리 힌튼 (1947-)<br/>2024년 노벨 물리학상 수상<br/>사진 출처: Wikimedia Commons (CC BY-SA 4.0)</figcaption>
+</figure>
 
 1970~80년대, 힌튼은 영국에서 캐나다로 건너가며 신경망 연구를 계속했습니다. 동료들은 "신경망은 끝났다"고 했고, 논문을 내도 주요 학회에서 거절당하기 일쑤였습니다. 펀딩을 받기 어려워 미국을 떠나야 했습니다.
 
@@ -246,7 +252,9 @@ XOR을 해결한 것은 시작일 뿐입니다. 뉴런과 층을 더 쌓으면 �
 
 그러다 2012년, 힌튼의 제자 <strong>알렉스 크리제프스키(Alex Krizhevsky)</strong>와 <strong>일리아 수츠케버(Ilya Sutskever)</strong>가 이미지 인식 대회(ImageNet)에 <strong>AlexNet</strong>이라는 신경망을 출전시킵니다.
 
-{/* TODO: AlexNet 사진, ImageNet 대회 결과 그래프 */}
+<figure style="margin: 1.5rem auto; text-align: center;">
+  <img src="/ai-basic-textbook/images/lesson03/alexnet-results.svg" alt="ImageNet 대회 오류율 변화 - AlexNet이 2012년 압도적 성과" style="width: 100%; max-width: 680px;" />
+</figure>
 
 결과는 압도적이었습니다:
 
@@ -281,7 +289,9 @@ AlexNet의 비결은 무엇이었을까요?
 
 지금까지의 여정을 정리합니다:
 
-{/* TODO: Timeline SVG — 1969 AI겨울 시작 → 1986 역전파 → 2012 AlexNet → 딥러닝 시대 */}
+<figure style="margin: 1.5rem auto; text-align: center;">
+  <img src="/ai-basic-textbook/images/lesson03/ai-spring-timeline.svg" alt="AI 겨울에서 봄으로 - 1969 AI겨울, 1986 역전파, 2012 AlexNet" style="width: 100%; max-width: 680px;" />
+</figure>
 
 1. 퍼셉트론은 <strong>계단 함수</strong>(0 또는 1)를 사용했고, 층을 쌓아도 직선 하나와 같았습니다
 2. <strong>활성화함수</strong>를 도입하면 공간을 구부릴 수 있어, 복잡한 패턴을 학습할 수 있습니다

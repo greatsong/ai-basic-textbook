@@ -1,0 +1,76 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 380" font-family="system-ui, -apple-system, 'Apple SD Gothic Neo', 'Noto Sans KR', sans-serif">
+  <rect width="760" height="380" rx="16" fill="#1a1b26" opacity="0.95"/>
+
+  <text x="380" y="32" text-anchor="middle" fill="#e2e8f0" font-size="18" font-weight="700">AI 겨울에서 봄으로</text>
+
+  <!-- Axes -->
+  <line x1="80" y1="280" x2="720" y2="280" stroke="#475569" stroke-width="1.5"/>
+  <line x1="80" y1="280" x2="80" y2="60" stroke="#475569" stroke-width="1.5"/>
+
+  <text x="30" y="170" text-anchor="middle" fill="#94a3b8" font-size="13" font-weight="600" transform="rotate(-90, 30, 170)">기대감 &#xB7; 성과</text>
+
+  <!-- Gradient fills -->
+  <defs>
+    <linearGradient id="spring-fill" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#10b981" stop-opacity="0"/>
+      <stop offset="40%" stop-color="#10b981" stop-opacity="0.1"/>
+      <stop offset="100%" stop-color="#10b981" stop-opacity="0.3"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Area fill under curve -->
+  <path d="M 120,255 C 160,258 200,260 260,258 C 290,257 320,250 340,235 C 370,215 420,210 480,200 C 520,185 550,140 580,95 C 600,70 640,58 680,50 L 680,280 L 120,280 Z"
+        fill="url(#spring-fill)" opacity="0.6"/>
+
+  <!-- Main curve -->
+  <path d="M 120,255 C 160,258 200,260 260,258 C 290,257 320,250 340,235 C 370,215 420,210 480,200 C 520,185 550,140 580,95 C 600,70 640,58 680,50"
+        fill="none" stroke="#10b981" stroke-width="3.5" stroke-linecap="round"/>
+
+  <!-- AI Winter zone -->
+  <rect x="125" y="244" width="180" height="32" rx="8" fill="rgba(71,85,105,0.35)" stroke="#475569" stroke-width="1" stroke-dasharray="5,3"/>
+  <text x="215" y="265" text-anchor="middle" fill="#64748b" font-size="13" font-style="italic">AI 겨울</text>
+
+  <!-- Deep Learning era zone -->
+  <rect x="530" y="45" width="160" height="28" rx="8" fill="rgba(16,185,129,0.15)" stroke="#10b981" stroke-width="1"/>
+  <text x="610" y="64" text-anchor="middle" fill="#6ee7b7" font-size="13" font-weight="700">딥러닝 시대</text>
+
+  <!-- 1969: AI Winter start -->
+  <circle cx="120" cy="255" r="7" fill="#ef4444" stroke="#e2e8f0" stroke-width="2"/>
+  <line x1="120" y1="262" x2="120" y2="280" stroke="#ef4444" stroke-width="1" stroke-dasharray="3,3" opacity="0.4"/>
+  <text x="120" y="296" text-anchor="middle" fill="#fca5a5" font-size="14" font-weight="700">1969</text>
+  <rect x="85" y="305" width="70" height="40" rx="6" fill="rgba(239,68,68,0.12)" stroke="#ef4444" stroke-width="1"/>
+  <text x="120" y="322" text-anchor="middle" fill="#fca5a5" font-size="11" font-weight="600">AI 겨울</text>
+  <text x="120" y="338" text-anchor="middle" fill="#94a3b8" font-size="10">연구비 중단</text>
+
+  <!-- 1986: Backpropagation -->
+  <circle cx="300" cy="248" r="7" fill="#f59e0b" stroke="#e2e8f0" stroke-width="2"/>
+  <line x1="300" y1="255" x2="300" y2="280" stroke="#f59e0b" stroke-width="1" stroke-dasharray="3,3" opacity="0.4"/>
+  <text x="300" y="296" text-anchor="middle" fill="#fcd34d" font-size="14" font-weight="700">1986</text>
+  <rect x="245" y="305" width="110" height="50" rx="6" fill="rgba(245,158,11,0.12)" stroke="#f59e0b" stroke-width="1"/>
+  <text x="300" y="322" text-anchor="middle" fill="#fcd34d" font-size="11" font-weight="600">역전파 발표</text>
+  <text x="300" y="337" text-anchor="middle" fill="#94a3b8" font-size="10">Nature 논문</text>
+  <text x="300" y="350" text-anchor="middle" fill="#94a3b8" font-size="10">힌튼, 럼멜하트, 윌리엄스</text>
+
+  <!-- Small upward arrow at 1986 -->
+  <text x="315" y="240" fill="#fcd34d" font-size="14">&#x2197;</text>
+
+  <!-- 2012: AlexNet -->
+  <circle cx="570" cy="95" r="8" fill="#10b981" stroke="#e2e8f0" stroke-width="2"/>
+  <line x1="570" y1="103" x2="570" y2="280" stroke="#10b981" stroke-width="1" stroke-dasharray="3,3" opacity="0.4"/>
+  <text x="570" y="296" text-anchor="middle" fill="#6ee7b7" font-size="14" font-weight="700">2012</text>
+  <rect x="510" y="305" width="120" height="50" rx="6" fill="rgba(16,185,129,0.15)" stroke="#10b981" stroke-width="1"/>
+  <text x="570" y="322" text-anchor="middle" fill="#6ee7b7" font-size="12" font-weight="700">AlexNet</text>
+  <text x="570" y="337" text-anchor="middle" fill="#94a3b8" font-size="10">ImageNet 대회 우승</text>
+  <text x="570" y="350" text-anchor="middle" fill="#94a3b8" font-size="10">ReLU + GPU + 빅데이터</text>
+
+  <!-- Steep rise annotation -->
+  <path d="M 555,120 L 555,100 L 548,108" fill="none" stroke="#6ee7b7" stroke-width="2" stroke-linecap="round"/>
+  <text x="535" y="135" fill="#6ee7b7" font-size="11" font-weight="600">급상승!</text>
+
+  <!-- 26 years annotation -->
+  <line x1="300" y1="250" x2="570" y2="250" stroke="#64748b" stroke-width="1" stroke-dasharray="4,3" opacity="0.5"/>
+  <text x="435" y="245" text-anchor="middle" fill="#64748b" font-size="10" font-style="italic">26년의 기다림</text>
+
+  <!-- Bottom annotation -->
+  <text x="380" y="372" text-anchor="middle" fill="#64748b" font-size="11">혼자 남은 연구자의 26년이 AI의 역사를 바꾸었습니다</text>
+</svg>
