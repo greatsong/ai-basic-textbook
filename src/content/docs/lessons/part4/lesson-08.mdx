@@ -1,24 +1,27 @@
 ---
-title: "8차시: 다음 단어를 맞춰보세요"
+title: "8차시: ChatGPT의 작동 원리, 다음 단어 맞추기"
 description: "트랜스포머와 어텐션 — ChatGPT의 심장부"
 ---
 
 import { Card, CardGrid, LinkCard } from '@astrojs/starlight/components';
 import NextWordPrediction from '../../../../components/language/NextWordPrediction.tsx';
+import AttentionVisualization from '../../../../components/language/AttentionVisualization';
 
 <p style="color: var(--sl-color-gray-3); margin-bottom: 0.25rem;">언어를 이해하는 AI &gt; 8차시</p>
 
-# 다음 단어를 맞춰보세요
 
 > <strong>오늘의 질문:</strong> "AI가 하는 일의 본질이 '다음 단어 맞추기'라면, 왜 이렇게 똑똑해 보일까?"
 
 <p style="color: var(--sl-color-gray-3);">
 50분 | 확률적 예측 · Temperature · 어텐션 · 환각 | 난이도 ●●●●○
 </p>
+<p style="color: var(--sl-color-gray-3); font-size: 13px; margin-top: 0.5rem;">
+<strong>학습목표:</strong> 언어 모델의 다음 단어 예측 원리를 이해할 수 있다.
+</p>
 
 ---
 
-## 마지막 퍼즐 조각
+## Attention Is All You Need
 
 7차시에서 우리는 문장을 토큰으로 쪼개고, 임베딩으로 의미가 담긴 숫자 벡터로 바꾸는 과정을 배웠습니다. 글자를 숫자로 바꾸는 다리가 놓인 것입니다. 이제 마지막 퍼즐 조각이 남았습니다.
 
@@ -111,7 +114,7 @@ Temperature의 수학적 원리는 이렇습니다. AI가 계산한 각 단어�
 
 또 다른 예를 봅시다. "나는 <strong>은행</strong>에 갔다"와 "강 <strong>은행</strong>에 꽃이 피었다" — 같은 글자 "은행"이지만 의미가 완전히 다릅니다. 사람은 앞뒤 단어를 보고 어떤 "은행"인지 즉시 판단합니다. 어텐션도 똑같습니다 — 각 단어가 문장의 다른 단어들과 <strong>얼마나 관련이 있는지</strong>를 점수로 계산하여, 관련 높은 단어의 정보를 더 많이 가져옵니다.
 
-{/* TODO: AttentionVisualization 컴포넌트 (문장에서 단어 간 어텐션 가중치를 선으로 시각화) */}
+<AttentionVisualization client:visible />
 
 7차시에서 "같은 글자 '사과'도 의미에 따라 임베딩 공간의 다른 위치에 놓일 수 있다"고 했던 것을 기억하나요? 어텐션이 바로 그것을 가능하게 합니다. 문맥에 따라 같은 단어의 의미를 다르게 파악하는 것입니다.
 
@@ -231,7 +234,7 @@ Temperature 실습을 다시 떠올려보세요. Temperature가 높으면 엉뚱
 
 그때 여러분은 아직 뉴런도, 가중치도, 손실함수도 몰랐습니다. AI가 어떻게 작동하는지 전혀 모르는 상태에서, 직감으로 답을 썼습니다.
 
-8주가 지난 지금, 여러분은 AI의 내부를 알고 있습니다.
+8시간이 지난 지금, 여러분은 AI의 내부를 알고 있습니다.
 
 AI가 하는 일의 본질은 <strong>다음 토큰의 확률을 예측하는 것</strong>입니다. 이것을 엄청난 규모로 반복하면 번역을 하고, 시를 쓰고, 코드를 짜고, 대화를 합니다.
 
@@ -266,7 +269,7 @@ AI가 하는 일의 본질은 <strong>다음 토큰의 확률을 예측하는 �
 - <strong>토큰화와 임베딩</strong> (7차시) — 텍스트를 신경망이 처리할 수 있는 숫자로
 - <strong>어텐션과 확률적 예측</strong> (8차시) — 트랜스포머의 핵심 메커니즘
 
-여러분은 이제 이 논문의 핵심 아이디어를 자신의 말로 설명할 수 있습니다. 8주 전에는 상상도 못했을 일입니다.
+여러분은 이제 이 논문의 핵심 아이디어를 자신의 말로 설명할 수 있습니다. 8시간 전에는 상상도 못했을 일입니다.
 
 ---
 

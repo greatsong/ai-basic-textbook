@@ -1,0 +1,102 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" font-family="system-ui, -apple-system, 'Apple SD Gothic Neo', 'Noto Sans KR', sans-serif">
+  <rect width="800" height="400" rx="16" fill="#1a1b26" opacity="0.95"/>
+
+  <text x="400" y="32" text-anchor="middle" fill="#e2e8f0" font-size="18" font-weight="700">단어 벡터의 산술 연산</text>
+  <text x="400" y="52" text-anchor="middle" fill="#94a3b8" font-size="13">왕 - 남자 + 여자 = 여왕</text>
+
+  <defs>
+    <marker id="vecViolet" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#818cf8"/>
+    </marker>
+    <marker id="vecRose" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#ef4444"/>
+    </marker>
+    <marker id="vecEmerald" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#10b981"/>
+    </marker>
+    <marker id="vecAmber" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#f59e0b"/>
+    </marker>
+  </defs>
+
+  <!-- Vector space (left half) -->
+  <text x="250" y="80" text-anchor="middle" fill="#94a3b8" font-size="13" font-weight="600">벡터 공간</text>
+
+  <!-- Axes -->
+  <line x1="80" y1="330" x2="440" y2="330" stroke="#475569" stroke-width="1"/>
+  <line x1="80" y1="330" x2="80" y2="90" stroke="#475569" stroke-width="1"/>
+  <text x="440" y="348" fill="#64748b" font-size="10">성별 축</text>
+  <text x="52" y="95" fill="#64748b" font-size="10">지위 축</text>
+
+  <!-- Grid lines (subtle) -->
+  <line x1="80" y1="210" x2="440" y2="210" stroke="#475569" stroke-width="0.3" opacity="0.3"/>
+  <line x1="260" y1="330" x2="260" y2="90" stroke="#475569" stroke-width="0.3" opacity="0.3"/>
+
+  <!-- Vector: 남자 (rose) - bottom left area -->
+  <line x1="80" y1="330" x2="175" y2="280" stroke="#ef4444" stroke-width="2.5" marker-end="url(#vecRose)"/>
+  <circle cx="180" cy="278" r="6" fill="#ef4444" opacity="0.3"/>
+  <rect x="140" y="287" width="50" height="20" rx="4" fill="rgba(239,68,68,0.2)"/>
+  <text x="165" y="301" text-anchor="middle" fill="#fca5a5" font-size="12" font-weight="700">남자</text>
+
+  <!-- Vector: 여자 (emerald) - bottom right area -->
+  <line x1="80" y1="330" x2="340" y2="280" stroke="#10b981" stroke-width="2.5" marker-end="url(#vecEmerald)"/>
+  <circle cx="345" cy="278" r="6" fill="#10b981" opacity="0.3"/>
+  <rect x="310" y="287" width="50" height="20" rx="4" fill="rgba(16,185,129,0.2)"/>
+  <text x="335" y="301" text-anchor="middle" fill="#6ee7b7" font-size="12" font-weight="700">여자</text>
+
+  <!-- Vector: 왕 (violet) - top left area -->
+  <line x1="80" y1="330" x2="175" y2="130" stroke="#818cf8" stroke-width="2.5" marker-end="url(#vecViolet)"/>
+  <circle cx="180" cy="128" r="6" fill="#818cf8" opacity="0.3"/>
+  <rect x="150" y="108" width="40" height="20" rx="4" fill="rgba(129,140,248,0.2)"/>
+  <text x="170" y="122" text-anchor="middle" fill="#c7d2fe" font-size="12" font-weight="700">왕</text>
+
+  <!-- Vector: 여왕 (amber) - top right area -->
+  <line x1="80" y1="330" x2="340" y2="130" stroke="#f59e0b" stroke-width="2.5" marker-end="url(#vecAmber)"/>
+  <circle cx="345" cy="128" r="6" fill="#f59e0b" opacity="0.3"/>
+  <rect x="310" y="108" width="50" height="20" rx="4" fill="rgba(245,158,11,0.2)"/>
+  <text x="335" y="122" text-anchor="middle" fill="#fcd34d" font-size="12" font-weight="700">여왕</text>
+
+  <!-- Dashed arrow: 왕 to 여왕 (horizontal) -->
+  <line x1="190" y1="130" x2="305" y2="130" stroke="#60a5fa" stroke-width="2" stroke-dasharray="6,4" opacity="0.7"/>
+  <polygon points="303,125 313,130 303,135" fill="#60a5fa" opacity="0.7"/>
+
+  <!-- Dashed arrow: 남자 to 여자 (horizontal) -->
+  <line x1="190" y1="280" x2="305" y2="280" stroke="#60a5fa" stroke-width="2" stroke-dasharray="6,4" opacity="0.7"/>
+  <polygon points="303,275 313,280 303,285" fill="#60a5fa" opacity="0.7"/>
+
+  <!-- "Same direction" annotation -->
+  <text x="250" y="120" text-anchor="middle" fill="#60a5fa" font-size="10">같은 방향!</text>
+  <text x="250" y="272" text-anchor="middle" fill="#60a5fa" font-size="10">같은 방향!</text>
+
+  <!-- Right side: Equation -->
+  <rect x="475" y="80" width="300" height="240" rx="12" fill="rgba(71,85,105,0.15)" stroke="#475569" stroke-width="1"/>
+
+  <text x="625" y="110" text-anchor="middle" fill="#e2e8f0" font-size="15" font-weight="700">벡터 산술 연산</text>
+
+  <!-- Equation steps -->
+  <rect x="510" y="130" width="230" height="35" rx="6" fill="rgba(129,140,248,0.12)"/>
+  <circle cx="530" cy="148" r="8" fill="rgba(129,140,248,0.3)" stroke="#818cf8" stroke-width="1"/>
+  <text x="625" y="152" text-anchor="middle" fill="#c7d2fe" font-size="14" font-weight="600">왕 [0.9, 0.8, 0.1]</text>
+
+  <text x="625" y="180" text-anchor="middle" fill="#ef4444" font-size="16" font-weight="700">&#x2212;</text>
+
+  <rect x="510" y="190" width="230" height="35" rx="6" fill="rgba(239,68,68,0.12)"/>
+  <circle cx="530" cy="208" r="8" fill="rgba(239,68,68,0.3)" stroke="#ef4444" stroke-width="1"/>
+  <text x="625" y="212" text-anchor="middle" fill="#fca5a5" font-size="14" font-weight="600">남자 [0.1, 0.8, 0.0]</text>
+
+  <text x="625" y="240" text-anchor="middle" fill="#10b981" font-size="16" font-weight="700">&#x2b;</text>
+
+  <rect x="510" y="250" width="230" height="35" rx="6" fill="rgba(16,185,129,0.12)"/>
+  <circle cx="530" cy="268" r="8" fill="rgba(16,185,129,0.3)" stroke="#10b981" stroke-width="1"/>
+  <text x="625" y="272" text-anchor="middle" fill="#6ee7b7" font-size="14" font-weight="600">여자 [0.1, 0.1, 0.0]</text>
+
+  <line x1="510" y1="295" x2="740" y2="295" stroke="#475569" stroke-width="1"/>
+  <text x="540" y="310" fill="#f59e0b" font-size="16" font-weight="700">&#x2248;</text>
+
+  <rect x="555" y="297" width="185" height="30" rx="6" fill="rgba(245,158,11,0.2)" stroke="#f59e0b" stroke-width="1.5"/>
+  <text x="647" y="316" text-anchor="middle" fill="#fcd34d" font-size="14" font-weight="700">여왕 [0.9, 0.1, 0.1]</text>
+
+  <!-- Bottom insight -->
+  <rect x="100" y="350" width="600" height="35" rx="8" fill="rgba(71,85,105,0.2)" stroke="#475569" stroke-width="0.5"/>
+  <text x="400" y="372" text-anchor="middle" fill="#94a3b8" font-size="12">임베딩이 잘 학습되면, 벡터 연산으로 단어 간의 관계를 포착할 수 있습니다</text>
+</svg>

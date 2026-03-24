@@ -1,23 +1,29 @@
 ---
-title: "6차시: 오차를 거꾸로 보내다"
+title: "6차시: 오차를 줄이는 과정을 자동화하려면"
 description: "역전파 — 오차의 '책임'을 거꾸로 추적하는 학습의 핵심"
 ---
 
 import { Card, CardGrid, LinkCard } from '@astrojs/starlight/components';
+import ForwardPassCalculator from '../../../../components/backprop/ForwardPassCalculator';
+import BackpropAnimation from '../../../../components/backprop/BackpropAnimation';
+import BackpropToggle from '../../../../components/backprop/BackpropToggle';
+import BackpropTrainer from '../../../../components/backprop/BackpropTrainer';
 
 <p style="color: var(--sl-color-gray-3); margin-bottom: 0.25rem;">학습의 원리 &gt; 6차시</p>
 
-# 오차를 거꾸로 보내다
 
 > <strong>오늘의 질문:</strong> "신경망은 어떻게 자기가 틀렸다는 걸 알고, 스스로 고칠까?"
 
 <p style="color: var(--sl-color-gray-3);">
 50분 | 순전파 · 역전파 · 가중치 업데이트 · 연쇄법칙 | 난이도 ●●●●●
 </p>
+<p style="color: var(--sl-color-gray-3); font-size: 13px; margin-top: 0.5rem;">
+<strong>학습목표:</strong> 역전파 알고리즘의 개념을 이해하고, 신경망이 학습하는 과정을 설명할 수 있다.
+</p>
 
 ---
 
-## 5차시에서 빠뜨린 한 가지
+## 경사하강법의 치명적 문제
 
 <div class="story-box">
 
@@ -39,7 +45,7 @@ import { Card, CardGrid, LinkCard } from '@astrojs/starlight/components';
 
 아래는 아주 작은 신경망입니다. 입력 2개, 은닉 뉴런 1개, 출력 1개 — <strong>2-1-1 네트워크</strong>입니다.
 
-{/* TODO: ForwardPassCalculator 컴포넌트 — 2-1-1 네트워크 시각화, 학생이 직접 계산값을 입력하는 인터랙티브 체험 */}
+<ForwardPassCalculator client:visible />
 
 :::tip[체험 순서 — Phase 1: 순전파]
 이 체험에서는 신경망이 입력을 받아 출력을 내보내는 과정을 <strong>여러분이 직접 계산</strong>합니다. 계산기를 사용해도 됩니다.
@@ -99,7 +105,7 @@ z₂ = w₃ × a₁ + b₂ = 0.5 × 0.679 + 0.2 ≈ 0.540
 
 정답은 1.0인데, 신경망의 출력은 0.632입니다. 4차시에서 배운 <strong>MSE(Mean Squared Error)</strong>로 오차를 계산하면:
 
-오차 = (정답 - 예측)² = (1.0 - 0.632)² = (0.368)² ≈ <strong>0.135</strong>
+오차 = (예측 - 정답)² = (0.632 - 1.0)² = (-0.368)² ≈ <strong>0.135</strong>
 
 이 숫자의 의미를 자연어로 풀면: <strong>"이 신경망은 정답 1.0을 맞춰야 하는데 0.632라고 답했고, 그 틀린 정도는 0.135이다."</strong>
 
@@ -139,9 +145,9 @@ z₂ = w₃ × a₁ + b₂ = 0.5 × 0.679 + 0.2 ≈ 0.540
 4. 이번에는 모든 층의 가중치가 바뀝니다 — 왜 이런 차이가 생기는 걸까요?
 :::
 
-{/* TODO: BackpropToggle 컴포넌트 — 역전파 ON/OFF 토글로, OFF일 때 깊은 층의 가중치가 안 바뀌는 것을 시각화 */}
+<BackpropToggle client:visible />
 
-{/* TODO: BackpropagationAnimation 컴포넌트 — 빨간 오차 신호가 역방향으로 이동하면서 각 가중치의 업데이트량을 보여주는 애니메이션 */}
+<BackpropAnimation client:visible />
 
 :::tip[체험 순서 — Phase 3: 역전파 애니메이션]
 1. <strong>"역전파 시작"</strong> 버튼을 누르세요
@@ -176,6 +182,10 @@ z₂ = w₃ × a₁ + b₂ = 0.5 × 0.679 + 0.2 ≈ 0.540
 
 </div>
 
+<figure style="margin: 1.5rem auto; text-align: center;">
+  <img src="/ai-basic-textbook/images/lesson06/chain-rule-visualization.svg" alt="연쇄법칙: w₁에서 E까지 각 단계의 편미분을 차례로 곱하면 최종 기울기를 구할 수 있다" style="width: 100%; max-width: 800px;" />
+</figure>
+
 신경망에서도 마찬가지입니다. 입력층의 가중치 w₁이 최종 오차에 미치는 영향을 알려면:
 
 "w₁이 바뀌면 은닉 뉴런의 출력이 얼마나 바뀌는가" × "은닉 뉴런의 출력이 바뀌면 최종 오차가 얼마나 바뀌는가"
@@ -187,7 +197,7 @@ z₂ = w₃ × a₁ + b₂ = 0.5 × 0.679 + 0.2 ≈ 0.540
 
 우리 네트워크에서 오차 E에 대한 w₁의 기울기(편미분)를 구해봅시다.
 
-E = (y - ŷ)²
+E = (ŷ - y)²
 
 ŷ = σ(z₂) = σ(w₃ × a₁ + b₂)
 
@@ -198,7 +208,7 @@ a₁ = σ(z₁) = σ(w₁ × x₁ + w₂ × x₂ + b₁)
 ∂E/∂w₁ = ∂E/∂ŷ × ∂ŷ/∂z₂ × ∂z₂/∂a₁ × ∂a₁/∂z₁ × ∂z₁/∂w₁
 
 각 항을 풀면:
-- ∂E/∂ŷ = -2(y - ŷ) = -2(1.0 - 0.632) = -0.736
+- ∂E/∂ŷ = 2(ŷ - y) = 2(0.632 - 1.0) = -0.736
 - ∂ŷ/∂z₂ = σ(z₂)(1 - σ(z₂)) = 0.632 × 0.368 = 0.233
 - ∂z₂/∂a₁ = w₃ = 0.5
 - ∂a₁/∂z₁ = σ(z₁)(1 - σ(z₁)) = 0.679 × 0.321 = 0.218
@@ -233,6 +243,10 @@ w₁이 0.3에서 0.309로 조금 증가합니다. "오차를 줄이려면 w₁�
 
 이 네 단계를 반복하는 것이 <strong>신경망 학습의 전부</strong>입니다. 한 번 반복할 때마다 오차가 조금씩 줄어들고, 충분히 반복하면 오차가 거의 0에 가까워집니다.
 
+<figure style="margin: 1.5rem auto; text-align: center;">
+  <img src="/ai-basic-textbook/images/lesson06/learning-cycle.svg" alt="신경망 학습의 네 박자: 순전파→오차 계산→역전파→가중치 업데이트 순환" style="width: 100%; max-width: 800px;" />
+</figure>
+
 ---
 
 ## 반복하면 정말 배울까?
@@ -246,7 +260,7 @@ w₁이 0.3에서 0.309로 조금 증가합니다. "오차를 줄이려면 w₁�
 4. 처음의 예측값(0.632)과 100회 학습 후의 예측값을 비교해보세요
 :::
 
-{/* TODO: BackpropagationTrainer 컴포넌트 — 학습 반복 버튼, 손실 그래프, 가중치 변화 추적 */}
+<BackpropTrainer client:visible />
 
 반복할수록 손실이 줄어드는 것을 직접 확인했습니다. 이것이 <strong>신경망이 "배우는" 과정</strong>입니다:
 

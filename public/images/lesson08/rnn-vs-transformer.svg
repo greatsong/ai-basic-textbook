@@ -1,0 +1,116 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" font-family="system-ui, -apple-system, 'Apple SD Gothic Neo', 'Noto Sans KR', sans-serif">
+  <rect width="800" height="400" rx="16" fill="#1a1b26" opacity="0.95"/>
+
+  <text x="400" y="30" text-anchor="middle" fill="#e2e8f0" font-size="18" font-weight="700">RNN vs 트랜스포머</text>
+  <text x="400" y="50" text-anchor="middle" fill="#94a3b8" font-size="13">"나는 프랑스에서 태어났다. 그래서 프랑스어를 잘한다."</text>
+
+  <!-- Divider -->
+  <line x1="400" y1="65" x2="400" y2="390" stroke="#475569" stroke-width="1" stroke-dasharray="4,4" opacity="0.4"/>
+
+  <!-- LEFT: RNN -->
+  <rect x="20" y="65" width="370" height="325" rx="12" fill="rgba(239,68,68,0.05)" stroke="#ef4444" stroke-width="1" stroke-opacity="0.2"/>
+  <text x="205" y="90" text-anchor="middle" fill="#fca5a5" font-size="15" font-weight="700">RNN (순환 신경망)</text>
+  <text x="205" y="108" text-anchor="middle" fill="#94a3b8" font-size="11">순차적으로 한 단어씩 처리</text>
+
+  <!-- RNN tokens - sequential chain -->
+  <rect x="40" y="130" width="60" height="30" rx="6" fill="rgba(129,140,248,0.3)" stroke="#818cf8" stroke-width="1"/>
+  <text x="70" y="150" text-anchor="middle" fill="#c7d2fe" font-size="10">나는</text>
+
+  <line x1="100" y1="145" x2="115" y2="145" stroke="#818cf8" stroke-width="1.5"/>
+  <polygon points="113,141 120,145 113,149" fill="#818cf8"/>
+
+  <rect x="120" y="130" width="65" height="30" rx="6" fill="rgba(129,140,248,0.25)" stroke="#818cf8" stroke-width="1" opacity="0.85"/>
+  <text x="152" y="150" text-anchor="middle" fill="#c7d2fe" font-size="10" opacity="0.85">프랑스</text>
+
+  <line x1="185" y1="145" x2="197" y2="145" stroke="#818cf8" stroke-width="1.5" opacity="0.7"/>
+  <polygon points="195,141 202,145 195,149" fill="#818cf8" opacity="0.7"/>
+
+  <rect x="200" y="130" width="65" height="30" rx="6" fill="rgba(129,140,248,0.18)" stroke="#818cf8" stroke-width="1" opacity="0.6"/>
+  <text x="232" y="150" text-anchor="middle" fill="#c7d2fe" font-size="10" opacity="0.7">에서</text>
+
+  <line x1="265" y1="145" x2="280" y2="145" stroke="#818cf8" stroke-width="1.5" opacity="0.5"/>
+  <polygon points="278,141 285,145 278,149" fill="#818cf8" opacity="0.5"/>
+
+  <rect x="283" y="130" width="65" height="30" rx="6" fill="rgba(129,140,248,0.1)" stroke="#818cf8" stroke-width="1" opacity="0.4"/>
+  <text x="315" y="150" text-anchor="middle" fill="#c7d2fe" font-size="10" opacity="0.5">태어났다</text>
+
+  <!-- Fading colors annotation -->
+  <text x="205" y="180" text-anchor="middle" fill="#ef4444" font-size="11" font-weight="600">&#x2190; 점점 흐려짐 = 앞부분을 잊어버림!</text>
+
+  <!-- Second sentence RNN -->
+  <rect x="40" y="200" width="65" height="30" rx="6" fill="rgba(129,140,248,0.1)" stroke="#818cf8" stroke-width="1" opacity="0.3"/>
+  <text x="72" y="220" text-anchor="middle" fill="#c7d2fe" font-size="10" opacity="0.4">그래서</text>
+
+  <line x1="105" y1="215" x2="120" y2="215" stroke="#818cf8" stroke-width="1.5" opacity="0.3"/>
+  <polygon points="118,211 125,215 118,219" fill="#818cf8" opacity="0.3"/>
+
+  <rect x="123" y="200" width="80" height="30" rx="6" fill="rgba(245,158,11,0.15)" stroke="#f59e0b" stroke-width="1.5"/>
+  <text x="163" y="220" text-anchor="middle" fill="#fcd34d" font-size="10" font-weight="600">프랑스어를</text>
+
+  <line x1="203" y1="215" x2="220" y2="215" stroke="#818cf8" stroke-width="1.5" opacity="0.3"/>
+  <polygon points="218,211 225,215 218,219" fill="#818cf8" opacity="0.3"/>
+
+  <rect x="223" y="200" width="65" height="30" rx="6" fill="rgba(129,140,248,0.08)" stroke="#818cf8" stroke-width="1" opacity="0.25"/>
+  <text x="255" y="220" text-anchor="middle" fill="#c7d2fe" font-size="10" opacity="0.35">잘한다</text>
+
+  <!-- Problem annotation -->
+  <rect x="45" y="250" width="320" height="60" rx="8" fill="rgba(239,68,68,0.1)" stroke="#ef4444" stroke-width="1"/>
+  <text x="205" y="270" text-anchor="middle" fill="#fca5a5" font-size="12" font-weight="600">문제: "프랑스어를" 처리할 때</text>
+  <text x="205" y="288" text-anchor="middle" fill="#94a3b8" font-size="11">"프랑스에서"의 정보가 많이 사라짐</text>
+  <text x="205" y="304" text-anchor="middle" fill="#ef4444" font-size="10">&#x2192; 장거리 의존성 문제</text>
+
+  <!-- RNN summary -->
+  <rect x="70" y="320" width="270" height="55" rx="8" fill="rgba(71,85,105,0.2)"/>
+  <text x="205" y="342" text-anchor="middle" fill="#fca5a5" font-size="12" font-weight="600">순차 처리 &#x2192; 느림</text>
+  <text x="205" y="362" text-anchor="middle" fill="#94a3b8" font-size="11">긴 문장에서 앞부분 정보 손실</text>
+
+  <!-- RIGHT: Transformer -->
+  <rect x="410" y="65" width="370" height="325" rx="12" fill="rgba(16,185,129,0.05)" stroke="#10b981" stroke-width="1.5" stroke-opacity="0.3"/>
+  <text x="595" y="90" text-anchor="middle" fill="#6ee7b7" font-size="15" font-weight="700">트랜스포머</text>
+  <text x="595" y="108" text-anchor="middle" fill="#94a3b8" font-size="11">모든 단어를 동시에 처리</text>
+
+  <!-- Transformer tokens - all at once, same opacity -->
+  <rect x="430" y="130" width="60" height="30" rx="6" fill="rgba(16,185,129,0.25)" stroke="#10b981" stroke-width="1.5"/>
+  <text x="460" y="150" text-anchor="middle" fill="#6ee7b7" font-size="10">나는</text>
+
+  <rect x="500" y="130" width="65" height="30" rx="6" fill="rgba(129,140,248,0.3)" stroke="#818cf8" stroke-width="2"/>
+  <text x="532" y="150" text-anchor="middle" fill="#c7d2fe" font-size="10" font-weight="600">프랑스</text>
+
+  <rect x="575" y="130" width="55" height="30" rx="6" fill="rgba(16,185,129,0.25)" stroke="#10b981" stroke-width="1.5"/>
+  <text x="602" y="150" text-anchor="middle" fill="#6ee7b7" font-size="10">에서</text>
+
+  <rect x="640" y="130" width="65" height="30" rx="6" fill="rgba(16,185,129,0.25)" stroke="#10b981" stroke-width="1.5"/>
+  <text x="672" y="150" text-anchor="middle" fill="#6ee7b7" font-size="10">태어났다</text>
+
+  <rect x="715" y="130" width="55" height="30" rx="6" fill="rgba(16,185,129,0.25)" stroke="#10b981" stroke-width="1.5"/>
+  <text x="742" y="150" text-anchor="middle" fill="#6ee7b7" font-size="10">그래서</text>
+
+  <!-- Second row -->
+  <rect x="430" y="200" width="80" height="30" rx="6" fill="rgba(245,158,11,0.2)" stroke="#f59e0b" stroke-width="2"/>
+  <text x="470" y="220" text-anchor="middle" fill="#fcd34d" font-size="10" font-weight="600">프랑스어를</text>
+
+  <rect x="520" y="200" width="60" height="30" rx="6" fill="rgba(16,185,129,0.25)" stroke="#10b981" stroke-width="1.5"/>
+  <text x="550" y="220" text-anchor="middle" fill="#6ee7b7" font-size="10">잘한다</text>
+
+  <!-- Attention lines connecting "프랑스에서" to "프랑스어를" -->
+  <line x1="532" y1="163" x2="470" y2="198" stroke="#f59e0b" stroke-width="2.5" opacity="0.7"/>
+  <line x1="460" y1="163" x2="470" y2="198" stroke="#f59e0b" stroke-width="1.5" opacity="0.4"/>
+  <line x1="602" y1="163" x2="470" y2="198" stroke="#f59e0b" stroke-width="1.5" opacity="0.4"/>
+  <line x1="672" y1="163" x2="470" y2="198" stroke="#f59e0b" stroke-width="1" opacity="0.25"/>
+  <line x1="742" y1="163" x2="470" y2="198" stroke="#f59e0b" stroke-width="1" opacity="0.2"/>
+
+  <!-- Attention annotation -->
+  <rect x="560" y="188" width="170" height="24" rx="6" fill="rgba(245,158,11,0.15)"/>
+  <text x="645" y="204" text-anchor="middle" fill="#fcd34d" font-size="11" font-weight="600">어텐션으로 직접 연결!</text>
+
+  <!-- Benefit annotation -->
+  <rect x="435" y="250" width="320" height="60" rx="8" fill="rgba(16,185,129,0.1)" stroke="#10b981" stroke-width="1"/>
+  <text x="595" y="270" text-anchor="middle" fill="#6ee7b7" font-size="12" font-weight="600">해결: "프랑스어를" 처리할 때</text>
+  <text x="595" y="288" text-anchor="middle" fill="#94a3b8" font-size="11">"프랑스에서"에 직접 주목 (어텐션)</text>
+  <text x="595" y="304" text-anchor="middle" fill="#10b981" font-size="10">&#x2192; 거리와 상관없이 연결!</text>
+
+  <!-- Transformer summary -->
+  <rect x="460" y="320" width="270" height="55" rx="8" fill="rgba(71,85,105,0.2)"/>
+  <text x="595" y="342" text-anchor="middle" fill="#6ee7b7" font-size="12" font-weight="600">병렬 처리 &#x2192; 빠름</text>
+  <text x="595" y="362" text-anchor="middle" fill="#94a3b8" font-size="11">어텐션으로 어떤 거리든 연결 가능</text>
+</svg>

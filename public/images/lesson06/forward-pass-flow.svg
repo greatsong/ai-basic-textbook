@@ -1,0 +1,76 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" font-family="system-ui, -apple-system, 'Apple SD Gothic Neo', 'Noto Sans KR', sans-serif">
+  <rect width="800" height="400" rx="16" fill="#1a1b26" opacity="0.95"/>
+
+  <text x="400" y="30" text-anchor="middle" fill="#e2e8f0" font-size="18" font-weight="700">순전파 (Forward Pass)</text>
+  <text x="400" y="50" text-anchor="middle" fill="#60a5fa" font-size="13" font-weight="600">입력 &#x2192; 은닉층 &#x2192; 출력 (데이터가 앞으로 흐름)</text>
+
+  <defs>
+    <marker id="fwdArrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#60a5fa"/>
+    </marker>
+  </defs>
+
+  <!-- Input layer -->
+  <text x="120" y="80" text-anchor="middle" fill="#818cf8" font-size="13" font-weight="600">입력층</text>
+
+  <!-- Input node 1: x1 = 1.0 -->
+  <circle cx="120" cy="140" r="30" fill="rgba(129,140,248,0.2)" stroke="#818cf8" stroke-width="2"/>
+  <text x="120" y="136" text-anchor="middle" fill="#c7d2fe" font-size="12" font-weight="600">x&#x2081;</text>
+  <text x="120" y="152" text-anchor="middle" fill="#818cf8" font-size="11">= 1.0</text>
+
+  <!-- Input node 2: x2 = 0.5 -->
+  <circle cx="120" cy="260" r="30" fill="rgba(129,140,248,0.2)" stroke="#818cf8" stroke-width="2"/>
+  <text x="120" y="256" text-anchor="middle" fill="#c7d2fe" font-size="12" font-weight="600">x&#x2082;</text>
+  <text x="120" y="272" text-anchor="middle" fill="#818cf8" font-size="11">= 0.5</text>
+
+  <!-- Hidden layer -->
+  <text x="380" y="80" text-anchor="middle" fill="#10b981" font-size="13" font-weight="600">은닉층</text>
+
+  <!-- Hidden node -->
+  <circle cx="380" cy="200" r="35" fill="rgba(16,185,129,0.2)" stroke="#10b981" stroke-width="2"/>
+  <text x="380" y="192" text-anchor="middle" fill="#6ee7b7" font-size="11">z&#x2081; = 0.75</text>
+  <text x="380" y="207" text-anchor="middle" fill="#6ee7b7" font-size="10">&#x2192; sigmoid</text>
+  <text x="380" y="222" text-anchor="middle" fill="#10b981" font-size="12" font-weight="700">a&#x2081; = 0.679</text>
+
+  <!-- Output layer -->
+  <text x="640" y="80" text-anchor="middle" fill="#f59e0b" font-size="13" font-weight="600">출력층</text>
+
+  <!-- Output node -->
+  <circle cx="640" cy="200" r="35" fill="rgba(245,158,11,0.2)" stroke="#f59e0b" stroke-width="2"/>
+  <text x="640" y="192" text-anchor="middle" fill="#fcd34d" font-size="11">z&#x2082; = 0.540</text>
+  <text x="640" y="207" text-anchor="middle" fill="#fcd34d" font-size="10">&#x2192; sigmoid</text>
+  <text x="640" y="222" text-anchor="middle" fill="#f59e0b" font-size="12" font-weight="700">&#x177; = 0.632</text>
+
+  <!-- Connection: x1 to hidden (w1) -->
+  <line x1="150" y1="140" x2="345" y2="190" stroke="#60a5fa" stroke-width="2" marker-end="url(#fwdArrow)" opacity="0.8"/>
+  <rect x="210" y="145" width="70" height="22" rx="4" fill="rgba(96,165,250,0.15)"/>
+  <text x="245" y="160" text-anchor="middle" fill="#93c5fd" font-size="11" font-weight="600">w&#x2081; = 0.3</text>
+
+  <!-- Connection: x2 to hidden (w2) -->
+  <line x1="150" y1="260" x2="345" y2="210" stroke="#60a5fa" stroke-width="2" marker-end="url(#fwdArrow)" opacity="0.8"/>
+  <rect x="210" y="240" width="70" height="22" rx="4" fill="rgba(96,165,250,0.15)"/>
+  <text x="245" y="255" text-anchor="middle" fill="#93c5fd" font-size="11" font-weight="600">w&#x2082; = 0.7</text>
+
+  <!-- Connection: hidden to output (w3) -->
+  <line x1="415" y1="200" x2="605" y2="200" stroke="#60a5fa" stroke-width="2" marker-end="url(#fwdArrow)" opacity="0.8"/>
+  <rect x="480" y="178" width="70" height="22" rx="4" fill="rgba(96,165,250,0.15)"/>
+  <text x="515" y="193" text-anchor="middle" fill="#93c5fd" font-size="11" font-weight="600">w&#x2083; = 0.5</text>
+
+  <!-- Bias labels -->
+  <rect x="340" y="250" width="80" height="20" rx="4" fill="rgba(71,85,105,0.3)"/>
+  <text x="380" y="264" text-anchor="middle" fill="#94a3b8" font-size="10">b&#x2081; = 0.1</text>
+
+  <rect x="600" y="250" width="80" height="20" rx="4" fill="rgba(71,85,105,0.3)"/>
+  <text x="640" y="264" text-anchor="middle" fill="#94a3b8" font-size="10">b&#x2082; = 0.2</text>
+
+  <!-- Computation details at bottom -->
+  <rect x="50" y="300" width="320" height="80" rx="10" fill="rgba(16,185,129,0.1)" stroke="#10b981" stroke-width="1"/>
+  <text x="210" y="322" text-anchor="middle" fill="#6ee7b7" font-size="12" font-weight="600">은닉층 계산</text>
+  <text x="210" y="342" text-anchor="middle" fill="#94a3b8" font-size="11">z&#x2081; = (1.0&#xd7;0.3) + (0.5&#xd7;0.7) + 0.1 = 0.75</text>
+  <text x="210" y="360" text-anchor="middle" fill="#94a3b8" font-size="11">a&#x2081; = sigmoid(0.75) = 0.679</text>
+
+  <rect x="430" y="300" width="320" height="80" rx="10" fill="rgba(245,158,11,0.1)" stroke="#f59e0b" stroke-width="1"/>
+  <text x="590" y="322" text-anchor="middle" fill="#fcd34d" font-size="12" font-weight="600">출력층 계산</text>
+  <text x="590" y="342" text-anchor="middle" fill="#94a3b8" font-size="11">z&#x2082; = (0.679&#xd7;0.5) + 0.2 = 0.540</text>
+  <text x="590" y="360" text-anchor="middle" fill="#94a3b8" font-size="11">&#x177; = sigmoid(0.540) = 0.632</text>
+</svg>

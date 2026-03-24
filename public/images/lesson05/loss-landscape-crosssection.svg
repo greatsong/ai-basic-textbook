@@ -1,0 +1,88 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 350" font-family="system-ui, -apple-system, 'Apple SD Gothic Neo', 'Noto Sans KR', sans-serif">
+  <rect width="800" height="350" rx="16" fill="#1a1b26" opacity="0.95"/>
+
+  <text x="400" y="30" text-anchor="middle" fill="#e2e8f0" font-size="18" font-weight="700">손실 지형의 단면도</text>
+  <text x="400" y="50" text-anchor="middle" fill="#94a3b8" font-size="13">로컬 미니마 vs 글로벌 미니마</text>
+
+  <defs>
+    <marker id="arrowLabel" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#94a3b8"/>
+    </marker>
+  </defs>
+
+  <!-- Axes -->
+  <line x1="60" y1="280" x2="740" y2="280" stroke="#475569" stroke-width="1.5"/>
+  <line x1="60" y1="280" x2="60" y2="70" stroke="#475569" stroke-width="1.5"/>
+  <text x="740" y="298" text-anchor="middle" fill="#94a3b8" font-size="12">파라미터 (w)</text>
+  <text x="38" y="75" fill="#94a3b8" font-size="12">손실</text>
+
+  <!-- Wavy loss curve with local and global minima -->
+  <path d="M 80,120
+           Q 120,115 150,140
+           Q 180,165 200,210
+           Q 215,240 230,245
+           Q 250,250 260,245
+           Q 280,230 300,190
+           Q 320,150 340,130
+           Q 370,105 400,120
+           Q 430,135 450,170
+           Q 470,210 490,240
+           Q 510,260 530,265
+           Q 555,270 570,260
+           Q 590,245 610,210
+           Q 630,170 660,145
+           Q 690,120 720,110"
+    stroke="#818cf8" stroke-width="3" fill="none" stroke-linecap="round"/>
+
+  <!-- Gradient fill under curve -->
+  <path d="M 80,120
+           Q 120,115 150,140
+           Q 180,165 200,210
+           Q 215,240 230,245
+           Q 250,250 260,245
+           Q 280,230 300,190
+           Q 320,150 340,130
+           Q 370,105 400,120
+           Q 430,135 450,170
+           Q 470,210 490,240
+           Q 510,260 530,265
+           Q 555,270 570,260
+           Q 590,245 610,210
+           Q 630,170 660,145
+           Q 690,120 720,110
+           L 720,280 L 80,280 Z"
+    fill="rgba(129,140,248,0.08)"/>
+
+  <!-- Local minimum 1 annotation -->
+  <circle cx="240" cy="247" r="6" fill="#f59e0b"/>
+  <line x1="240" y1="237" x2="240" y2="185" stroke="#94a3b8" stroke-width="1" stroke-dasharray="3,3"/>
+  <rect x="185" y="163" width="110" height="24" rx="6" fill="rgba(245,158,11,0.2)" stroke="#f59e0b" stroke-width="1"/>
+  <text x="240" y="180" text-anchor="middle" fill="#fcd34d" font-size="12" font-weight="600">로컬 미니마</text>
+
+  <!-- Ball trapped at local minimum -->
+  <circle cx="240" cy="247" r="8" fill="#f59e0b" opacity="0.3"/>
+
+  <!-- Annotation for being trapped -->
+  <rect x="140" y="95" width="170" height="45" rx="8" fill="rgba(239,68,68,0.15)" stroke="#ef4444" stroke-width="1"/>
+  <text x="225" y="114" text-anchor="middle" fill="#fca5a5" font-size="12" font-weight="600">여기에 빠지면...</text>
+  <text x="225" y="131" text-anchor="middle" fill="#94a3b8" font-size="11">"충분히 좋다"고 착각!</text>
+  <line x1="240" y1="140" x2="240" y2="163" stroke="#ef4444" stroke-width="1" stroke-dasharray="3,3"/>
+
+  <!-- Global minimum annotation -->
+  <circle cx="540" cy="267" r="6" fill="#10b981"/>
+  <line x1="540" y1="257" x2="540" y2="205" stroke="#94a3b8" stroke-width="1" stroke-dasharray="3,3"/>
+  <rect x="475" y="183" width="130" height="24" rx="6" fill="rgba(16,185,129,0.2)" stroke="#10b981" stroke-width="1.5"/>
+  <text x="540" y="200" text-anchor="middle" fill="#6ee7b7" font-size="12" font-weight="700">글로벌 미니마</text>
+
+  <!-- Star at global minimum -->
+  <circle cx="540" cy="267" r="10" fill="#10b981" opacity="0.2"/>
+  <text x="540" y="273" text-anchor="middle" fill="#6ee7b7" font-size="14">&#x2605;</text>
+
+  <!-- Local minimum 2 (shallow) -->
+  <line x1="400" y1="122" x2="400" y2="145" stroke="#94a3b8" stroke-width="1" stroke-dasharray="3,3"/>
+  <text x="400" y="158" text-anchor="middle" fill="#94a3b8" font-size="10">얕은 골짜기</text>
+
+  <!-- Bottom note -->
+  <rect x="150" y="300" width="500" height="35" rx="8" fill="rgba(71,85,105,0.2)" stroke="#475569" stroke-width="0.5"/>
+  <text x="400" y="322" text-anchor="middle" fill="#94a3b8" font-size="12">실제 AI 모델의 손실 지형은 수십억 차원 &#x2014; 로컬 미니마에서 탈출하는 것이 핵심 과제</text>
+</svg>

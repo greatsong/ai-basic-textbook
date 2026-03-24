@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 680 200" font-family="'Pretendard Variable', Pretendard, -apple-system, sans-serif">
+  <defs>
+    <linearGradient id="inBg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#1e293b"/>
+      <stop offset="100%" stop-color="#0f172a"/>
+    </linearGradient>
+  </defs>
+  <rect width="680" height="200" rx="12" fill="url(#inBg)"/>
+
+  <text x="340" y="24" text-anchor="middle" fill="#e2e8f0" font-size="14" font-weight="600">ImageNet — 1,400만 장의 이미지, 1,000개 카테고리</text>
+
+  <!-- Category cards -->
+  <g transform="translate(20,40)">
+    <!-- Card 1 -->
+    <rect x="0" y="0" width="120" height="100" rx="8" fill="rgba(59,130,246,0.15)" stroke="rgba(59,130,246,0.3)" stroke-width="1"/>
+    <text x="60" y="45" text-anchor="middle" fill="#e2e8f0" font-size="28">🐕</text>
+    <text x="60" y="72" text-anchor="middle" fill="#94a3b8" font-size="11">골든 리트리버</text>
+    <text x="60" y="88" text-anchor="middle" fill="#64748b" font-size="9">120종의 개 품종</text>
+
+    <!-- Card 2 -->
+    <rect x="132" y="0" width="120" height="100" rx="8" fill="rgba(239,68,68,0.15)" stroke="rgba(239,68,68,0.3)" stroke-width="1"/>
+    <text x="192" y="45" text-anchor="middle" fill="#e2e8f0" font-size="28">🌋</text>
+    <text x="192" y="72" text-anchor="middle" fill="#94a3b8" font-size="11">화산</text>
+    <text x="192" y="88" text-anchor="middle" fill="#64748b" font-size="9">자연 풍경 분류</text>
+
+    <!-- Card 3 -->
+    <rect x="264" y="0" width="120" height="100" rx="8" fill="rgba(245,158,11,0.15)" stroke="rgba(245,158,11,0.3)" stroke-width="1"/>
+    <text x="324" y="45" text-anchor="middle" fill="#e2e8f0" font-size="28">🍕</text>
+    <text x="324" y="72" text-anchor="middle" fill="#94a3b8" font-size="11">피자</text>
+    <text x="324" y="88" text-anchor="middle" fill="#64748b" font-size="9">음식 종류 분류</text>
+
+    <!-- Card 4 -->
+    <rect x="396" y="0" width="120" height="100" rx="8" fill="rgba(139,92,246,0.15)" stroke="rgba(139,92,246,0.3)" stroke-width="1"/>
+    <text x="456" y="45" text-anchor="middle" fill="#e2e8f0" font-size="28">🎻</text>
+    <text x="456" y="72" text-anchor="middle" fill="#94a3b8" font-size="11">바이올린</text>
+    <text x="456" y="88" text-anchor="middle" fill="#64748b" font-size="9">악기 분류</text>
+
+    <!-- Card 5: ... -->
+    <rect x="528" y="0" width="120" height="100" rx="8" fill="rgba(71,85,105,0.15)" stroke="rgba(71,85,105,0.3)" stroke-width="1" stroke-dasharray="4,3"/>
+    <text x="588" y="50" text-anchor="middle" fill="#64748b" font-size="14">+ 996개</text>
+    <text x="588" y="72" text-anchor="middle" fill="#64748b" font-size="11">카테고리</text>
+    <text x="588" y="88" text-anchor="middle" fill="#475569" font-size="9">세상의 거의 모든 사물</text>
+  </g>
+
+  <!-- Stats bar -->
+  <g transform="translate(20,155)">
+    <rect x="0" y="0" width="200" height="30" rx="6" fill="rgba(59,130,246,0.1)" stroke="rgba(59,130,246,0.2)" stroke-width="1"/>
+    <text x="100" y="19" text-anchor="middle" fill="#3b82f6" font-size="11" font-weight="600">📷 1,400만+ 장의 이미지</text>
+
+    <rect x="216" y="0" width="200" height="30" rx="6" fill="rgba(16,185,129,0.1)" stroke="rgba(16,185,129,0.2)" stroke-width="1"/>
+    <text x="316" y="19" text-anchor="middle" fill="#10b981" font-size="11" font-weight="600">🏷️ 사람이 직접 분류</text>
+
+    <rect x="432" y="0" width="210" height="30" rx="6" fill="rgba(245,158,11,0.1)" stroke="rgba(245,158,11,0.2)" stroke-width="1"/>
+    <text x="537" y="19" text-anchor="middle" fill="#f59e0b" font-size="11" font-weight="600">🏆 매년 분류 정확도 대회</text>
+  </g>
+</svg>

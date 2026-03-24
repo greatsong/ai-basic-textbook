@@ -1,0 +1,74 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 300" font-family="system-ui, -apple-system, 'Apple SD Gothic Neo', 'Noto Sans KR', sans-serif">
+  <rect width="800" height="300" rx="16" fill="#1a1b26" opacity="0.95"/>
+
+  <text x="400" y="30" text-anchor="middle" fill="#e2e8f0" font-size="18" font-weight="700">연쇄법칙 (Chain Rule) 시각화</text>
+  <text x="400" y="50" text-anchor="middle" fill="#94a3b8" font-size="13">도미노처럼 각 단계의 변화가 연쇄적으로 전달됩니다</text>
+
+  <!-- Domino 1: w1 -->
+  <rect x="55" y="80" width="80" height="110" rx="10" fill="rgba(129,140,248,0.2)" stroke="#818cf8" stroke-width="2"/>
+  <text x="95" y="120" text-anchor="middle" fill="#c7d2fe" font-size="15" font-weight="700">w&#x2081;</text>
+  <text x="95" y="145" text-anchor="middle" fill="#94a3b8" font-size="10">가중치</text>
+  <text x="95" y="162" text-anchor="middle" fill="#818cf8" font-size="11">= 0.3</text>
+
+  <!-- Arrow + derivative between 1 and 2 -->
+  <line x1="140" y1="135" x2="170" y2="135" stroke="#60a5fa" stroke-width="2"/>
+  <polygon points="168,130 178,135 168,140" fill="#60a5fa"/>
+  <text x="159" y="115" text-anchor="middle" fill="#60a5fa" font-size="9">&#x2202;z&#x2081;/&#x2202;w&#x2081;</text>
+
+  <!-- Domino 2: z1 -->
+  <rect x="180" y="80" width="80" height="110" rx="10" fill="rgba(96,165,250,0.2)" stroke="#60a5fa" stroke-width="2"/>
+  <text x="220" y="120" text-anchor="middle" fill="#93c5fd" font-size="15" font-weight="700">z&#x2081;</text>
+  <text x="220" y="145" text-anchor="middle" fill="#94a3b8" font-size="10">가중합</text>
+  <text x="220" y="162" text-anchor="middle" fill="#60a5fa" font-size="11">= 0.75</text>
+
+  <!-- Arrow + derivative between 2 and 3 -->
+  <line x1="265" y1="135" x2="295" y2="135" stroke="#60a5fa" stroke-width="2"/>
+  <polygon points="293,130 303,135 293,140" fill="#60a5fa"/>
+  <text x="284" y="115" text-anchor="middle" fill="#60a5fa" font-size="9">&#x2202;a&#x2081;/&#x2202;z&#x2081;</text>
+
+  <!-- Domino 3: a1 -->
+  <rect x="305" y="80" width="80" height="110" rx="10" fill="rgba(16,185,129,0.2)" stroke="#10b981" stroke-width="2"/>
+  <text x="345" y="120" text-anchor="middle" fill="#6ee7b7" font-size="15" font-weight="700">a&#x2081;</text>
+  <text x="345" y="145" text-anchor="middle" fill="#94a3b8" font-size="10">활성화</text>
+  <text x="345" y="162" text-anchor="middle" fill="#10b981" font-size="11">= 0.679</text>
+
+  <!-- Arrow + derivative between 3 and 4 -->
+  <line x1="390" y1="135" x2="420" y2="135" stroke="#60a5fa" stroke-width="2"/>
+  <polygon points="418,130 428,135 418,140" fill="#60a5fa"/>
+  <text x="409" y="115" text-anchor="middle" fill="#60a5fa" font-size="9">&#x2202;z&#x2082;/&#x2202;a&#x2081;</text>
+
+  <!-- Domino 4: z2 -->
+  <rect x="430" y="80" width="80" height="110" rx="10" fill="rgba(245,158,11,0.2)" stroke="#f59e0b" stroke-width="2"/>
+  <text x="470" y="120" text-anchor="middle" fill="#fcd34d" font-size="15" font-weight="700">z&#x2082;</text>
+  <text x="470" y="145" text-anchor="middle" fill="#94a3b8" font-size="10">가중합</text>
+  <text x="470" y="162" text-anchor="middle" fill="#f59e0b" font-size="11">= 0.540</text>
+
+  <!-- Arrow + derivative between 4 and 5 -->
+  <line x1="515" y1="135" x2="545" y2="135" stroke="#60a5fa" stroke-width="2"/>
+  <polygon points="543,130 553,135 543,140" fill="#60a5fa"/>
+  <text x="534" y="115" text-anchor="middle" fill="#60a5fa" font-size="9">&#x2202;&#x177;/&#x2202;z&#x2082;</text>
+
+  <!-- Domino 5: y-hat -->
+  <rect x="555" y="80" width="80" height="110" rx="10" fill="rgba(245,158,11,0.2)" stroke="#f59e0b" stroke-width="2"/>
+  <text x="595" y="120" text-anchor="middle" fill="#fcd34d" font-size="15" font-weight="700">&#x177;</text>
+  <text x="595" y="145" text-anchor="middle" fill="#94a3b8" font-size="10">예측값</text>
+  <text x="595" y="162" text-anchor="middle" fill="#f59e0b" font-size="11">= 0.632</text>
+
+  <!-- Arrow + derivative between 5 and 6 -->
+  <line x1="640" y1="135" x2="670" y2="135" stroke="#60a5fa" stroke-width="2"/>
+  <polygon points="668,130 678,135 668,140" fill="#60a5fa"/>
+  <text x="659" y="115" text-anchor="middle" fill="#60a5fa" font-size="9">&#x2202;E/&#x2202;&#x177;</text>
+
+  <!-- Domino 6: E (Error) -->
+  <rect x="680" y="80" width="80" height="110" rx="10" fill="rgba(239,68,68,0.2)" stroke="#ef4444" stroke-width="2"/>
+  <text x="720" y="120" text-anchor="middle" fill="#fca5a5" font-size="15" font-weight="700">E</text>
+  <text x="720" y="145" text-anchor="middle" fill="#94a3b8" font-size="10">오차</text>
+  <text x="720" y="162" text-anchor="middle" fill="#ef4444" font-size="11">= 0.135</text>
+
+  <!-- Bottom formula box -->
+  <rect x="80" y="210" width="640" height="75" rx="12" fill="rgba(71,85,105,0.25)" stroke="#475569" stroke-width="1"/>
+
+  <text x="400" y="235" text-anchor="middle" fill="#e2e8f0" font-size="14" font-weight="700">연쇄법칙: 최종 오차의 변화 = 각 단계 변화의 곱</text>
+
+  <text x="400" y="262" text-anchor="middle" fill="#93c5fd" font-size="13">&#x2202;E/&#x2202;w&#x2081; = (&#x2202;z&#x2081;/&#x2202;w&#x2081;) &#xd7; (&#x2202;a&#x2081;/&#x2202;z&#x2081;) &#xd7; (&#x2202;z&#x2082;/&#x2202;a&#x2081;) &#xd7; (&#x2202;&#x177;/&#x2202;z&#x2082;) &#xd7; (&#x2202;E/&#x2202;&#x177;)</text>
+</svg>

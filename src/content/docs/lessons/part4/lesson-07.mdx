@@ -1,24 +1,28 @@
 ---
-title: "7차시: 왕에서 남자를 빼면"
+title: "7차시: 단어를 숫자로 표현하면 계산할 수 있다"
 description: "토큰화와 임베딩 — 컴퓨터가 단어의 '의미'를 이해하는 방법"
 ---
 
 import { Card, CardGrid, LinkCard } from '@astrojs/starlight/components';
 import TokenizerPlayground from '../../../../components/language/TokenizerPlayground.tsx';
+import VectorArithmetic from '../../../../components/language/VectorArithmetic';
+import EmbeddingGalaxy from '../../../../components/language/EmbeddingGalaxy';
 
 <p style="color: var(--sl-color-gray-3); margin-bottom: 0.25rem;">언어를 이해하는 AI &gt; 7차시</p>
 
-# 왕에서 남자를 빼면
 
-> <strong>오늘의 질문:</strong> "'왕 - 남자 + 여자 = 여왕' — 컴퓨터가 정말 의미를 이해하는 걸까?"
+> <strong>오늘의 질문:</strong> "'왕 - 남자 + 여자 = 여왕' — 단어를 더하고 빼면?"
 
 <p style="color: var(--sl-color-gray-3);">
 50분 | 토큰화 · 임베딩 · 의미적 거리 · Word2Vec | 난이도 ●●●○○
 </p>
+<p style="color: var(--sl-color-gray-3); font-size: 13px; margin-top: 0.5rem;">
+<strong>학습목표:</strong> 워드 임베딩의 개념을 이해하고, 단어 간 관계를 벡터로 표현하는 방법을 설명할 수 있다.
+</p>
 
 ---
 
-## 숫자밖에 모르는 기계에게 글을 읽히려면
+## AI에게 글자도, 그림도, 음악도 모두 숫자일 뿐이다
 
 지난 6차시까지 우리는 신경망이 <strong>숫자를 입력받아 숫자를 출력하는 기계</strong>라는 것을 배웠습니다. 입력이 숫자이고, 가중치가 숫자이고, 출력도 숫자입니다. 역전파도, 경사하강법도, 손실함수도 — 전부 숫자 사이의 계산이었습니다.
 
@@ -102,10 +106,10 @@ import TokenizerPlayground from '../../../../components/language/TokenizerPlaygr
 
 | 단어 | 토큰 번호 | 임베딩 벡터 (단순화) |
 |------|----------|---------------------|
-| 왕 | 4512 | [0.9, 0.8, 0.1] |
-| 여왕 | 6103 | [0.9, 0.2, 0.1] |
-| 남자 | 3287 | [0.1, 0.8, 0.0] |
-| 여자 | 3412 | [0.1, 0.2, 0.0] |
+| 왕 | 4512 | [0.9, 0.9, 0.2] |
+| 여왕 | 6103 | [0.9, 0.2, 0.2] |
+| 남자 | 3287 | [0.2, 0.9, 0.1] |
+| 여자 | 3412 | [0.2, 0.2, 0.1] |
 
 실제 임베딩 벡터는 수백~수천 개의 숫자로 이루어져 있지만, 원리를 이해하기 위해 3개로 단순화했습니다. 핵심은 이것입니다:
 
@@ -113,7 +117,7 @@ import TokenizerPlayground from '../../../../components/language/TokenizerPlaygr
 
 <strong>의미가 비슷한 단어는 비슷한 숫자를 가진다.</strong>
 
-"왕"과 "여왕"은 <strong>왕족이라는 의미</strong>가 같으므로, 벡터의 첫 번째 값(0.9)이 비슷합니다. "왕"과 "남자"는 <strong>성별이라는 차원</strong>에서 같으므로, 두 번째 값(0.8)이 비슷합니다.
+"왕"과 "여왕"은 <strong>왕족이라는 의미</strong>가 같으므로, 벡터의 첫 번째 값(0.9)이 비슷합니다. "왕"과 "남자"는 <strong>성별이라는 차원</strong>에서 같으므로, 두 번째 값(0.9)이 비슷합니다.
 
 이 숫자 묶음을 좌표로 생각하면, 단어들은 <strong>고차원 공간의 한 점</strong>에 배치됩니다. 의미가 가까운 단어끼리는 가까이, 먼 단어끼리는 멀리 놓이는 것입니다.
 
@@ -127,17 +131,17 @@ import TokenizerPlayground from '../../../../components/language/TokenizerPlaygr
 
 <strong>왕 - 남자 + 여자</strong>
 
-= [0.9, 0.8, 0.1] - [0.1, 0.8, 0.0] + [0.1, 0.2, 0.0]
+= [0.9, 0.9, 0.2] - [0.2, 0.9, 0.1] + [0.2, 0.2, 0.1]
 
-= [0.9, 0.2, 0.1]
+= [0.9, 0.2, 0.2]
 
-이 결과 [0.9, 0.2, 0.1]은 — <strong>"여왕"의 벡터와 정확히 같습니다.</strong>
+이 결과 [0.9, 0.2, 0.2]는 — <strong>"여왕"의 벡터와 정확히 같습니다.</strong>
 
 어떻게 이런 일이 가능할까요? "왕"에서 "남자"를 빼면, 남아 있는 것은 <strong>"왕족이라는 의미"</strong>입니다. 여기에 "여자"를 더하면 <strong>"여성 왕족"</strong>, 즉 "여왕"이 됩니다.
 
 이것은 우연이 아닙니다. 임베딩 공간에서 <strong>"남자→여자" 방향</strong>과 <strong>"왕→여왕" 방향</strong>이 같기 때문에 가능한 것입니다. 단어의 <strong>관계</strong>가 벡터의 <strong>방향</strong>으로 포착된 것입니다.
 
-{/* TODO: VectorArithmetic 다이어그램 (왕-남자+여자=여왕 벡터 연산 시각화) */}
+<VectorArithmetic client:only="react" />
 
 <details>
 <summary>심화: 다른 예시들</summary>
@@ -168,7 +172,7 @@ import TokenizerPlayground from '../../../../components/language/TokenizerPlaygr
 5. 친구들과 함께 단어를 등록하면서, <strong>의미의 지도</strong>가 어떻게 만들어지는지 관찰해보세요.
 :::
 
-{/* TODO: EmbeddingGalaxy 3D 인터랙티브 컴포넌트 삽입 */}
+<EmbeddingGalaxy client:only="react" />
 
 임베딩 갤럭시에서 흥미로운 배치를 발견했을 겁니다. 그런데 여기까지 오면 당연한 질문이 떠오릅니다.
 
@@ -176,7 +180,7 @@ import TokenizerPlayground from '../../../../components/language/TokenizerPlaygr
 
 ## 이 숫자는 누가 정한 걸까?
 
-"왕"이 [0.9, 0.8, 0.1]이라는 벡터를 가진다고 했는데, <strong>이 숫자는 누가 정한 걸까요?</strong> 사람이 수작업으로 "왕은 왕족이니까 첫 번째 값을 0.9로 하자"라고 정한 걸까요?
+"왕"이 [0.9, 0.9, 0.2]라는 벡터를 가진다고 했는데, <strong>이 숫자는 누가 정한 걸까요?</strong> 사람이 수작업으로 "왕은 왕족이니까 첫 번째 값을 0.9로 하자"라고 정한 걸까요?
 
 아닙니다. <strong>기계가 스스로 학습한 것</strong>입니다.
 

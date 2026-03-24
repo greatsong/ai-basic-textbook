@@ -246,6 +246,14 @@ export default function LossContour() {
             style={{ width: '100%', height: 'auto', display: 'block', cursor: 'crosshair' }}
             onClick={handleSvgClick}
           >
+            {/* 화살표 마커 정의 (항상 SVG 최상위에 존재해야 함) */}
+            <defs>
+              <marker id="arrowHead" markerWidth="10" markerHeight="10"
+                refX="9" refY="3" orient="auto" markerUnits="strokeWidth">
+                <path d="M0,0 L0,6 L9,3 z" fill={C.emerald} />
+              </marker>
+            </defs>
+
             {/* 히트맵 셀 */}
             {grid.map((row, j) =>
               row.map((mse, i) => (
@@ -290,16 +298,6 @@ export default function LossContour() {
               return null;
             })}
 
-            {/* 최적점 표시 */}
-            <circle
-              cx={toSvgX(optimal.w)} cy={toSvgY(optimal.b)} r={6}
-              fill="none" stroke="#fff" strokeWidth={2} opacity={0.4}
-            />
-            <circle
-              cx={toSvgX(optimal.w)} cy={toSvgY(optimal.b)} r={2}
-              fill="#fff" opacity={0.5}
-            />
-
             {/* 기울기 화살표 */}
             {showGradient && gradMag > 0.01 && (
               <g>
@@ -314,13 +312,7 @@ export default function LossContour() {
                   strokeLinecap="round"
                   markerEnd="url(#arrowHead)"
                 />
-                {/* 화살표 머리 */}
-                <defs>
-                  <marker id="arrowHead" markerWidth="10" markerHeight="10"
-                    refX="9" refY="3" orient="auto" markerUnits="strokeWidth">
-                    <path d="M0,0 L0,6 L9,3 z" fill={C.emerald} />
-                  </marker>
-                </defs>
+                {/* 화살표 머리 마커는 SVG 최상위 <defs>에서 정의됨 */}
               </g>
             )}
 
@@ -389,7 +381,7 @@ export default function LossContour() {
               {currentMSE.toFixed(2)}
             </div>
             <div style={{ color: C.dim, fontSize: 11, marginTop: 6 }}>
-              최적 MSE: <span style={{ color: C.emerald, fontFamily: mono }}>{optimalMSE.toFixed(2)}</span>
+              최적 MSE: <span style={{ color: C.emerald, fontFamily: mono }}>{optimalMSE < 0.01 ? optimalMSE.toFixed(3) : optimalMSE.toFixed(2)}</span>
             </div>
           </div>
 

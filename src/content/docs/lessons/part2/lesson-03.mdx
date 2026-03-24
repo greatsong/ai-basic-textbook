@@ -1,19 +1,23 @@
 ---
-title: "3차시: 모두가 포기했을 때"
-description: "활성화함수, 비선형성, 다층 신경망 — 스위치 하나가 만든 딥러닝의 부활"
+title: "3차시: AI의 겨울을 이겨낸 알고리즘의 발견"
+description: "활성화함수, 비선형성, 역전파 — AI 겨울을 끝낸 알고리즘과 딥러닝의 부활"
 ---
 
 import { Card, CardGrid, LinkCard } from '@astrojs/starlight/components';
 import ActivationToggle from '../../../../components/neural/ActivationToggle';
+import ActivationComparison from '../../../../components/neural/ActivationComparison';
+import NetworkBuilder from '../../../../components/neural/NetworkBuilder';
 
 <p style="color: var(--sl-color-gray-3); margin-bottom: 0.25rem;">AI의 시작 &gt; 3차시</p>
 
-# 모두가 포기했을 때
 
-> <strong>오늘의 질문:</strong> "스위치 하나가 모든 걸 바꿀 수 있을까?"
+> <strong>오늘의 질문:</strong> "알고리즘 하나가 불가능을 가능으로 바꿀 수 있을까?"
 
 <p style="color: var(--sl-color-gray-3);">
 50분 | 활성화함수 · 비선형성 · 다층 신경망 · AlexNet | 난이도 ●●●○○
+</p>
+<p style="color: var(--sl-color-gray-3); font-size: 13px; margin-top: 0.5rem;">
+<strong>학습목표:</strong> 활성화 함수의 역할과 종류를 이해할 수 있다.
 </p>
 
 ---
@@ -24,7 +28,7 @@ import ActivationToggle from '../../../../components/neural/ActivationToggle';
 
 지난 시간에 우리는 퍼셉트론이 XOR을 풀 수 없다는 것을 확인했습니다. 민스키와 파퍼트의 증명 이후 연구비가 끊기고, 약 20년간의 <strong>AI 겨울</strong>이 찾아왔습니다. 학회에서 "신경망"이라는 단어를 꺼내면 진지하게 받아들이는 사람이 거의 없던 시절입니다.
 
-여러분은 2차시 끝에서 이런 생각을 했을 수 있습니다 — "직선을 여러 개 쓰면 되지 않을까?" 실제로 그 직관은 정확했습니다. 2차시의 XOR 다이어그램을 떠올려보세요. 빨간 점과 파란 점이 대각선으로 번갈아 놓여 있어서 직선 <strong>하나</strong>로는 안 되지만, 직선 <strong>두 개</strong>를 쓰면 나눌 수 있었습니다. 퍼셉트론을 여러 층으로 쌓으면 직선을 여러 개 쓸 수 있으니까, XOR도 풀 수 있지 않을까요?
+여러분은 2차시 끝에서 이런 생각을 했을 수 있습니다 — "퍼셉트론 하나로 안 되면, <strong>여러 개를 쌓으면</strong> 되지 않을까?" 퍼셉트론을 2층으로 쌓으면 더 복잡한 패턴을 배울 수 있을 것 같지 않나요? 과연 그럴까요?
 
 그럼 한번 해봅시다.
 
@@ -34,7 +38,7 @@ import ActivationToggle from '../../../../components/neural/ActivationToggle';
 
 ## 2층으로 쌓아도 안 된다고?
 
-아래에 2층짜리 신경망이 있습니다. 층이 2개이니 직선 2개를 쓸 수 있을 겁니다. 2차시에서 직선 2개면 XOR이 풀렸으니까, 이번에도 될까요?
+아래에 2층짜리 신경망이 있습니다. 은닉 뉴런이 2개이니, 구조상 직선 2개를 쓸 수 있을 것처럼 보입니다. 정말 될까요?
 
 :::tip[체험 순서]
 1. 아래 시뮬레이터에서 <strong>"학습 시작"</strong>을 눌러보세요
@@ -44,7 +48,7 @@ import ActivationToggle from '../../../../components/neural/ActivationToggle';
 
 <ActivationToggle client:visible initialActivation={false} title="활성화함수 OFF — 2층 신경망으로 XOR 도전" subtitle="층을 쌓았으니 XOR이 풀릴까요? 학습 시작을 눌러 확인해보세요" />
 
-층을 쌓았는데 안 됩니다. 2차시에서 직선 2개면 XOR이 됐는데, 왜 2층 신경망은 실패할까요?
+뉴런을 여러 층(멀티 레이어)으로 쌓았는데, 안 됩니다. 왜 XOR이 풀리지 않을까요?
 
 그 이유는 놀랍도록 단순합니다:
 
@@ -60,27 +64,31 @@ import ActivationToggle from '../../../../components/neural/ActivationToggle';
 
 </div>
 
-고1 수학에서 <strong>함수의 합성</strong> f(g(x))를 배운 적 있나요? 일차함수 g(x) = ax + b에 또 다른 일차함수 f(y) = cy + d를 합성하면 f(g(x)) = c(ax + b) + d = (ca)x + (cb + d)입니다. 아무리 합성해도 결과는 일차함수 — 직선입니다. 신경망에서 활성화함수 없이 층을 쌓는 것이 바로 이 상황입니다. <strong>직선의 합성은 직선</strong>이라는 수학적 사실이, 2층 신경망의 실패를 설명합니다.
+숫자로 확인해봅시다. 1층이 "입력을 2배 하고 1을 더하는" 함수(2x + 1)이고, 2층이 "입력을 3배 하고 4를 더하는" 함수(3y + 4)라면:
+
+2층의 결과 = 3 × (2x + 1) + 4 = 6x + 3 + 4 = <strong>6x + 7</strong>
+
+결국 "입력을 6배 하고 7을 더하는" 하나의 직선이 됩니다. 층을 2개 거쳤는데, 결과는 직선 하나와 똑같습니다. 10층을 쌓아도 마찬가지입니다 — 곱하기와 더하기만 반복하면 결과는 항상 직선입니다. <strong>직선을 아무리 합쳐도 직선</strong>이라는 이 단순한 사실이, 2층 신경망의 실패를 설명합니다.
 
 <figure style="margin: 1.5rem auto; text-align: center;">
   <img src="/ai-basic-textbook/images/lesson03/linear-collapse.svg" alt="활성화함수 없이 층을 쌓으면 직선 하나로 축소되는 과정" style="width: 100%; max-width: 680px;" />
 </figure>
 
-층을 쌓는 것만으로는 부족합니다. 뭔가 하나가 빠져 있습니다. 시뮬레이터 화면에 꺼져 있는 <strong>스위치</strong>가 보이나요?
+층을 쌓는 것만으로는 부족합니다. 뭔가 하나가 빠져 있습니다. 시뮬레이터 화면에 꺼져 있는 <strong>활성화함수</strong>가 보이나요?
 
 ---
 
-## 스위치를 켜봅시다
+## 활성화함수를 켜봅시다
 
 :::tip[체험 순서]
-1. 시뮬레이터에서 <strong>활성화함수 스위치를 켜세요</strong>
+1. 시뮬레이터에서 <strong>활성화함수를 켜세요</strong>
 2. 다시 "학습 시작"을 눌러보세요
-3. 같은 2층 신경망인데, 스위치 하나로 결과가 완전히 달라집니다
+3. 같은 2층 신경망인데, 활성화함수 하나로 결과가 완전히 달라집니다
 :::
 
-<ActivationToggle client:visible initialActivation={true} title="활성화함수 ON — 스위치 하나의 차이" subtitle="같은 2층 신경망, 같은 XOR 데이터 — 스위치를 켜고 다시 학습해보세요" />
+<ActivationToggle client:visible initialActivation={true} title="활성화함수 ON — 함수 하나의 차이" subtitle="같은 2층 신경망, 같은 XOR 데이터 — 활성화함수를 켜고 다시 학습해보세요" />
 
-<strong>성공합니다.</strong> 같은 2층 신경망, 같은 XOR 데이터인데 — 스위치 하나를 켰을 뿐인데 결과가 완전히 달라졌습니다. 대체 이 스위치가 무엇이길래?
+<strong>성공합니다.</strong> 같은 2층 신경망, 같은 XOR 데이터인데 — 활성화함수 하나를 켰을 뿐인데 결과가 완전히 달라졌습니다. 대체 이 함수가 무엇이길래?
 
 2차시에서 뉴런이 임계값을 넘으면 발화한다고 배웠습니다. <strong>활성화함수(Activation Function)</strong>는 바로 이 '임계값을 넘어야 출력한다'는 원리를 수학적으로 구현한 것입니다. 그리고 이 작은 장치 하나가, 직선의 합성이 직선이라는 한계를 부수는 열쇠가 됩니다.
 
@@ -94,7 +102,7 @@ import ActivationToggle from '../../../../components/neural/ActivationToggle';
 
 > <strong>직선적인 계산 결과를 곡선으로 구부려서, 신경망이 복잡한 패턴을 표현할 수 있게 만든다.</strong>
 
-왜 직선이면 안 되는 걸까요? 세상의 대부분의 문제는 직선으로 나눌 수 없기 때문입니다. 얼굴 인식을 생각해보세요 — "이 사진이 고양이인가 강아지인가?"를 판별하려면 수많은 픽셀 값의 복잡한 패턴을 읽어야 합니다. 음성 인식, 번역, 질병 진단 — 현실 세계의 문제들은 거의 모두 직선 하나로는 해결할 수 없는 <strong>비선형적</strong> 문제입니다.
+왜 직선이면 안 되는 걸까요? 세상의 대부분의 문제는 직선으로 나눌 수 없기 때문입니다. "이 사진이 고양이인가 강아지인가?"를 판별하려면 수많은 픽셀 값의 복잡한 패턴을 읽어야 합니다. 음성 인식, 번역, 질병 진단 — 현실 세계의 문제들은 거의 모두 직선 하나로는 해결할 수 없는 <strong>비선형적</strong> 문제입니다.
 
 활성화함수가 없으면 층 사이의 계산이 곱하기와 더하기뿐이라, 아무리 쌓아도 직선 하나로 뭉개집니다. 활성화함수가 층 사이에서 결과를 <strong>"구부려주면"</strong>, 비로소 층을 쌓는 의미가 생깁니다.
 
@@ -104,21 +112,45 @@ import ActivationToggle from '../../../../components/neural/ActivationToggle';
 
 직선만으로는 대각선 방향의 데이터를 나눌 수 없었지만, 공간을 구부리면 가능해집니다. 이것이 <strong>비선형성(Non-linearity)</strong>의 위력입니다.
 
-{/* TODO: SpaceBending 다이어그램 — 활성화함수가 2D 공간을 어떻게 구부려서 XOR을 선형 분리 가능하게 만드는지 보여주는 SVG */}
+<figure style="margin: 1.5rem auto; text-align: center;">
+  <img src="/ai-basic-textbook/images/lesson03/space-bending.svg" alt="활성화함수가 공간을 구부려서 XOR을 선형 분리 가능하게 만드는 과정" style="width: 100%; max-width: 720px;" />
+</figure>
 
 <details>
-<summary>심화: "공간을 구부린다"는 것의 구체적 의미</summary>
+<summary>심화: "공간을 구부린다"는 것의 수학적 의미</summary>
 
-XOR 데이터를 2차원 평면에 놓으면, (0,0)과 (1,1)이 파란 점(0), (0,1)과 (1,0)이 빨간 점(1)입니다. 어떤 직선을 그어도 빨간 점과 파란 점을 완벽하게 나눌 수 없습니다 — 이것이 2차시에서 확인한 사실입니다.
+은닉 뉴런 2개가 ReLU를 적용하면 어떤 일이 벌어지는지, 실제 숫자로 따라가봅시다. 학습이 끝난 후 가중치가 다음과 같다고 가정합니다:
 
-그런데 이 2차원 데이터를 <strong>3차원으로 들어올리면</strong> 어떨까요? 활성화함수가 하는 일이 바로 이것입니다. 각 뉴런의 활성화함수가 데이터의 좌표를 변환하면서, 마치 종이를 구겨서 접듯이 공간을 뒤트는 것입니다. 2차원에서는 직선으로 나눌 수 없던 점들이, 3차원으로 올라가면 <strong>평면 하나로 깔끔하게 나뉩니다</strong>.
+<strong>은닉 뉴런 h₁ = ReLU(x₁ − x₂)</strong> → "x₁이 x₂보다 큰 정도"를 감지
 
-1층의 뉴런 2개가 각각 직선을 긋고, 활성화함수가 그 결과를 구부리면, 원래 2차원이던 데이터가 새로운 좌표 공간으로 이동합니다. 2층은 그 새로운 공간에서 직선(평면) 하나를 그어 데이터를 나눕니다. 겉으로 보면 원래 공간에서 곡선으로 나눈 것처럼 보이지만, 실제로는 구부러진 공간에서 직선으로 나눈 것입니다.
+<strong>은닉 뉴런 h₂ = ReLU(x₂ − x₁)</strong> → "x₂가 x₁보다 큰 정도"를 감지
+
+각 데이터가 은닉층을 통과하면 <strong>새로운 좌표</strong> (h₁, h₂)를 얻습니다:
+
+| 원래 (x₁, x₂) | h₁ = ReLU(x₁ − x₂) | h₂ = ReLU(x₂ − x₁) | 새 좌표 (h₁, h₂) | 정답 |
+|:---:|:---:|:---:|:---:|:---:|
+| (0, 0) | ReLU(0) = 0 | ReLU(0) = 0 | (0, 0) | 0 |
+| (0, 1) | ReLU(−1) = 0 | ReLU(1) = 1 | (0, 1) | 1 |
+| (1, 0) | ReLU(1) = 1 | ReLU(−1) = 0 | (1, 0) | 1 |
+| (1, 1) | ReLU(0) = 0 | ReLU(0) = 0 | (0, 0) | 0 |
+
+원래 공간에서 대각선으로 엇갈려 있던 4개의 점이, 변환된 공간에서는 이렇게 바뀝니다:
+
+- 파란 점(0): (0,0)과 (1,1)이 <strong>둘 다 (0, 0)으로 모임</strong>
+- 빨간 점(1): (0,1)은 (0, 1)로, (1,0)은 (1, 0)으로 이동
+
+<figure style="margin: 1rem auto; text-align: center;">
+  <img src="/ai-basic-textbook/images/lesson03/coordinate-transform.svg" alt="ReLU 변환 전후 좌표 비교 — 변환 후 직선으로 분리 가능" style="width: 100%; max-width: 720px;" />
+</figure>
+
+변환된 공간에서 h₁ + h₂ = 0.5 이라는 <strong>직선 하나</strong>를 그으면, 파란 점(원점)과 빨간 점(축 위)이 깔끔하게 나뉩니다. 원래 공간에서는 불가능했던 분류가, 좌표를 변환하니 가능해진 것입니다.
+
+이것이 "공간을 구부린다"의 정확한 의미입니다. 활성화함수(ReLU)가 원래 좌표를 <strong>새로운 좌표로 변환</strong>하고, 그 변환된 공간에서는 원래 불가능했던 분류가 직선 하나로 가능해집니다.
 
 </details>
 
 :::note[눈치채셨나요?]
-2차시에서 "직선 2개면 된다"는 것을 확인했습니다. 활성화함수는 그 "직선 2개를 쓰는 것"을 수학적으로 가능하게 만드는 장치입니다. 직선은 여전히 직선이지만, 활성화함수가 공간 자체를 구부려서 원래는 직선으로 나눌 수 없던 것을 나눌 수 있게 만듭니다.
+방금 확인했습니다 — 활성화함수를 켜니 같은 2층 신경망이 XOR을 풀었습니다. 활성화함수는 각 은닉 뉴런이 그은 직선의 결과를 <strong>구부려서</strong>, 출력 뉴런이 이를 조합할 수 있게 만드는 장치입니다. 원래 공간에서 직선 하나로 나눌 수 없던 XOR이, 활성화함수가 변환한 공간에서는 나눌 수 있게 됩니다.
 :::
 
 그렇다면 활성화함수에도 종류가 있을까요? 어떤 것이 더 효과적일까요?
@@ -129,12 +161,12 @@ XOR 데이터를 2차원 평면에 놓으면, (0,0)과 (1,1)이 파란 점(0), (
 
 대표적인 활성화함수 4가지를 비교해봅시다. 각각은 AI 역사의 서로 다른 시대에 등장했고, 새로운 활성화함수가 등장할 때마다 이전에 불가능했던 것이 가능해졌습니다:
 
-{/* TODO: ActivationComparison 컴포넌트 — 4종 활성화함수의 그래프를 인터랙티브로 비교 */}
+<ActivationComparison client:visible />
 
 | 함수 | 그래프 모양 | 출력 범위 | 핵심 특징 | 등장 시기 |
 |------|-----------|----------|---------|----------|
 | <strong>계단 함수(Step)</strong> | 0에서 1로 뚝 | 0 또는 1 | 2차시의 퍼셉트론이 사용. 중간 값이 없어서 미분 불가 | 1958년 (로젠블랫) |
-| <strong>시그모이드(Sigmoid)</strong> | 부드러운 S자 | 0 ~ 1 | 계단 함수를 부드럽게 만든 것. 미분 가능! | 1986년 (역전파와 함께) |
+| <strong>시그모이드(Sigmoid)</strong> | 부드러운 S자 | 0 ~ 1 | 계단 함수를 부드럽게 만든 것. 미분 가능! | 1986년 (신경망에 적용) |
 | <strong>하이퍼볼릭 탄젠트(Tanh)</strong> | 눕힌 S자 | -1 ~ 1 | 시그모이드와 비슷하지만, 음수도 표현 가능 | 1990년대 (르쿤 등) |
 | <strong>렐루(ReLU)</strong> | 꺾은선 | 0 ~ 무한대 | 음수는 0, 양수는 그대로. 계산이 극도로 단순 | 2012년 (AlexNet에서 대중화) |
 
@@ -157,14 +189,7 @@ XOR 데이터를 2차원 평면에 놓으면, (0,0)과 (1,1)이 파란 점(0), (
 
 이제 이 차이를 직접 느껴봅시다. 활성화함수의 종류를 바꿔가며 학습 과정을 비교해보세요.
 
-:::tip[체험 순서]
-1. <strong>Sigmoid</strong>로 XOR 학습을 시작하세요. 몇 에폭 만에 성공하는지 확인합니다
-2. <strong>Tanh</strong>로 바꿔서 같은 실험을 해보세요
-3. <strong>ReLU</strong>로 바꿔보세요 — 학습 속도가 어떻게 달라지나요?
-4. 각 활성화함수에서 <strong>결정 경계의 모양</strong>을 관찰하세요
-:::
-
-{/* TODO: ActivationExplorer 컴포넌트 — Sigmoid/Tanh/ReLU 전환하며 XOR 학습, 에폭 수와 결정 경계 변화 비교 */}
+위의 인터랙티브 비교기에서 각 활성화함수의 그래프와 기울기를 비교해보세요. 특히 <strong>기울기(미분값)</strong>에 주목하면 — Step은 기울기가 0이라 학습이 불가능하고, Sigmoid는 양 끝에서 기울기가 사라지며, ReLU는 양수 영역에서 항상 1입니다.
 
 같은 구조의 신경망인데, 활성화함수에 따라 학습 속도와 결과가 달라집니다. 왜 그럴까요? 그 이유는 각 활성화함수가 "공간을 구부리는 방식"과 "기울기를 전달하는 효율"이 다르기 때문입니다:
 
@@ -175,15 +200,21 @@ XOR 데이터를 2차원 평면에 놓으면, (0,0)과 (1,1)이 파란 점(0), (
 | <strong>ReLU</strong> | 계산이 극도로 단순 (max(0, x)), 기울기 소실 없음, 빠름 | 음수 입력이면 뉴런이 영원히 죽을 수 있음 (<strong>dying ReLU</strong>) |
 
 <details>
-<summary>심화: 기울기 소실 문제란?</summary>
+<summary>심화: 기울기 소실 문제 — 왜 시그모이드로는 깊이 쌓지 못했나</summary>
 
-시그모이드의 출력은 0에서 1 사이입니다. 미분값(기울기)은 최대 0.25밖에 되지 않습니다. 층이 3개면 0.25 x 0.25 x 0.25 = 0.016, 층이 5개면 0.00098. 기울기가 거의 0에 가까워져서, 입력 쪽 가중치는 사실상 학습이 안 됩니다.
+시그모이드의 미분값(기울기)은 최대 0.25밖에 되지 않습니다. 역전파는 이 기울기를 층마다 곱해가며 전달하는데, 층이 3개면 0.25 × 0.25 × 0.25 = 0.016, 층이 5개면 0.00098. 입력 쪽 가중치는 사실상 학습이 안 됩니다.
 
-이것이 <strong>기울기 소실 문제(Vanishing Gradient Problem)</strong>입니다. 1980~90년대에 신경망을 깊게 쌓지 못했던 핵심 이유 중 하나입니다. 시그모이드라는 알고리즘 덕분에 역전파가 가능해졌지만, 바로 그 시그모이드의 특성 때문에 깊은 신경망은 여전히 학습이 어려웠습니다. 한 가지 알고리즘이 열어준 문을 통과하니, 그 너머에 또 다른 벽이 기다리고 있었던 것입니다.
+<figure style="margin: 1.5rem auto; text-align: center;">
+  <img src="/ai-basic-textbook/images/lesson03/vanishing-gradient.svg" alt="Sigmoid는 층이 깊어질수록 기울기가 소실되지만 ReLU는 기울기가 유지된다" style="width: 100%; max-width: 720px;" />
+</figure>
 
-ReLU는 이 문제를 놀랍도록 단순하게 해결합니다. 양수 영역에서 기울기가 항상 1이므로, 아무리 층이 깊어도 기울기가 사라지지 않습니다. max(0, x) — 음수는 0으로, 양수는 그대로 통과시키는 것. 이 단순한 알고리즘이 딥러닝의 핵심 열쇠가 된 이유입니다.
+이것이 <strong>기울기 소실 문제(Vanishing Gradient Problem)</strong>입니다. 1980~90년대에 신경망을 깊게 쌓지 못했던 핵심 이유입니다. 시그모이드라는 알고리즘 덕분에 역전파가 가능해졌지만, 바로 그 시그모이드의 특성 때문에 깊은 신경망은 여전히 학습이 어려웠습니다.
+
+ReLU는 이 문제를 놀랍도록 단순하게 해결합니다. 양수 영역에서 기울기가 항상 1이므로, 아무리 층이 깊어도 기울기가 사라지지 않습니다. max(0, x) — 이 단순한 함수가 신경망을 <strong>"깊게"</strong> 쌓을 수 있게 만든 열쇠입니다.
 
 </details>
+
+그런데 왜 Sigmoid보다 ReLU가 깊은 신경망에 유리할까요? 핵심만 말하면, Sigmoid는 층이 깊어질수록 학습 신호가 점점 약해져서 앞쪽 뉴런이 거의 배우지 못합니다. ReLU는 이 문제가 없어서 층을 깊이 쌓을 수 있고, 이것이 바로 <strong>"딥(deep)"러닝</strong>이라는 이름의 근거입니다. 딥러닝이 "딥"인 이유는 층이 깊다는 뜻이고, 깊이 쌓을 수 있게 된 것은 ReLU 덕분입니다.
 
 ---
 
@@ -192,27 +223,21 @@ ReLU는 이 문제를 놀랍도록 단순하게 해결합니다. 양수 영역�
 XOR을 해결한 것은 시작일 뿐입니다. 뉴런과 층을 더 쌓으면 어떤 일이 벌어질까요?
 
 :::tip[체험 순서]
-1. 은닉층의 뉴런 수를 <strong>2개에서 4개, 8개</strong>로 늘려보세요
-2. <strong>결정 경계</strong>가 어떻게 변하는지 관찰하세요
-3. 화면 한쪽의 <strong>파라미터 카운터</strong>를 확인하세요 — 뉴런을 추가할 때마다 숫자가 올라갑니다
-4. 뉴런 하나를 클릭하면 그 뉴런의 <strong>가중합과 활성화값</strong>을 볼 수 있습니다
+1. <strong>은닉 뉴런 수</strong>를 2개 → 4개 → 8개로 바꿔가며 각각 학습해보세요. 결정 경계가 어떻게 달라지나요?
+2. <strong>은닉층 수</strong>를 1층에서 2층으로 바꿔보세요. 파라미터 수가 어떻게 변하나요? 이것이 "딥(deep)"의 의미입니다
+3. <strong>네트워크 구조도</strong>에서 연결선의 색상(양수=초록, 음수=빨강)과 두께가 학습 후 어떻게 변하는지 보세요
+4. 아래쪽 <strong>파라미터 규모 비교 바</strong>에서 현재 신경망이 GPT-4와 얼마나 다른지 확인하세요
 :::
 
-{/* TODO: NetworkBuilder 컴포넌트 — 뉴런/층 추가, 파라미터 카운터, 뉴런 클릭 시 내부 값 팝업 */}
+<NetworkBuilder client:visible />
 
-뉴런이 많아지면 결정 경계가 더 복잡한 형태를 띱니다. 뉴런 2개면 직선 2개, 뉴런 4개면 더 세밀한 경계, 뉴런 8개면 거의 어떤 패턴이든 잡아냅니다. 각 뉴런이 공간을 한 번씩 구부리고, 활성화함수가 그 구부림을 유지시켜주기 때문입니다.
+뉴런이 많아지면 결정 경계가 더 복잡한 형태를 띱니다. 뉴런 2개면 단순한 꺾인선, 뉴런 4개면 더 세밀한 경계, 뉴런 8개면 거의 어떤 패턴이든 잡아냅니다. 각 뉴런이 공간을 한 번씩 구부리고, 활성화함수가 그 구부림을 유지시켜주기 때문입니다.
 
-여기서 <strong>파라미터 카운터</strong>에 주목해봅시다:
+그리고 <strong>은닉층을 2층으로</strong> 바꿔보면? 같은 뉴런 수라도 파라미터가 크게 늘어납니다. 뉴런 8개 × 1층 = 33개이지만, 뉴런 8개 × 2층 = 105개. 층이 깊어질수록 표현할 수 있는 패턴이 복잡해지고, 이것이 바로 <strong>"딥러닝"</strong>의 "딥"입니다. 층을 깊이 쌓을 수 있게 된 열쇠가 활성화함수(특히 ReLU)였습니다.
 
-| 구조 | 파라미터 수 |
-|------|-----------|
-| 입력 2 → 은닉 2 → 출력 1 | 9개 |
-| 입력 2 → 은닉 4 → 출력 1 | 17개 |
-| 입력 2 → 은닉 8 → 출력 1 | 33개 |
+파라미터 규모 비교 바를 다시 보세요. 여러분이 다루는 수십 개의 파라미터와 GPT-4의 추정 수천억~수조 개 (공식 미공개) 사이에는 엄청난 차이가 있습니다. 하지만 원리는 같습니다 — 활성화함수를 가진 뉴런을 층으로 쌓고, 오차를 줄이는 방향으로 파라미터를 수정하는 것. 여러분이 지금 이해하고 있는 것이 바로 그 거대한 시스템의 기본 원리입니다.
 
-이 작은 신경망도 수십 개의 파라미터가 필요합니다. GPT-4 같은 대형 모델의 파라미터는 <strong>수천억 개</strong>입니다. 여러분이 지금 조작하고 있는 것은 바로 그 거대한 시스템의 가장 기본 단위입니다.
-
-방금 시뮬레이터에서 스위치 하나를 켜는 것만으로 XOR이 풀리고, 활성화함수의 종류에 따라 성능이 달라지고, 뉴런을 쌓을수록 복잡한 패턴을 잡아내는 것을 직접 확인했습니다. 이 모든 것을 가능하게 만든 아이디어는 누구로부터 나온 것일까요?
+방금 시뮬레이터에서 활성화함수 하나를 켜는 것만으로 XOR이 풀리고, 활성화함수의 종류에 따라 성능이 달라지고, 뉴런과 층을 쌓을수록 복잡한 패턴을 잡아내는 것을 직접 확인했습니다. 이 모든 것을 가능하게 만든 아이디어는 누구로부터 나온 것일까요?
 
 ---
 
@@ -227,7 +252,7 @@ XOR을 해결한 것은 시작일 뿐입니다. 뉴런과 층을 더 쌓으면 �
   <figcaption style="color: var(--sl-color-gray-3); font-size: 12px; margin-top: 6px;">제프리 힌튼 (1947-)<br/>2024년 노벨 물리학상 수상<br/>사진 출처: Wikimedia Commons (CC BY-SA 4.0)</figcaption>
 </figure>
 
-힌튼은 영국의 학자 집안에서 태어났습니다. 증조부는 <strong>부울 대수(Boolean Algebra)</strong>의 창시자 <strong>조지 부울(George Boole)</strong> — 2차시에서 퍼셉트론이 배운 AND, OR, NOT의 수학적 토대를 만든 바로 그 사람입니다. 또 다른 증조부 <strong>조지 에버리스트(George Everest)</strong>는 에베레스트산의 이름이 된 측량사였습니다. 학문의 역사가 혈관 속에 흐르고 있었지만, 힌튼이 택한 연구 주제는 학계에서 환영받지 못했습니다.
+힌튼은 영국의 학자 집안에서 태어났습니다. 고조부는 <strong>부울 대수(Boolean Algebra)</strong>의 창시자 <strong>조지 부울(George Boole)</strong> — 2차시에서 퍼셉트론이 배운 AND, OR, NOT의 수학적 토대를 만든 바로 그 사람입니다. 또한 외가 쪽으로 에베레스트산의 이름이 된 측량사 <strong>조지 에버리스트(George Everest)</strong>와도 친척 관계였습니다. 학문의 역사가 혈관 속에 흐르고 있었지만, 힌튼이 택한 연구 주제는 학계에서 환영받지 못했습니다.
 
 1970~80년대, 힌튼은 "뇌가 학습하는 방식을 수학적으로 모방할 수 있다"고 확신했습니다. 하지만 민스키와 파퍼트의 <em>Perceptrons</em> 이후 학계의 분위기는 냉담했습니다. 논문을 제출하면 주요 학회에서 거절당하기 일쑤였고, "신경망은 이미 끝난 이야기"라는 반응이 돌아왔습니다.
 
@@ -236,15 +261,13 @@ XOR을 해결한 것은 시작일 뿐입니다. 뉴런과 층을 더 쌓으면 �
 <details>
 <summary>심화: 힌튼의 가계와 부울 대수의 연결</summary>
 
-제프리 힌튼의 증조부 조지 부울(1815-1864)은 독학으로 수학을 배운 영국의 수학자입니다. 그가 1854년에 발표한 <em>The Laws of Thought</em>는 논리를 수학으로 표현할 수 있다는 것을 보여주었습니다. AND, OR, NOT을 0과 1로 계산하는 체계 — 오늘날 모든 컴퓨터의 기초가 된 <strong>부울 대수</strong>입니다.
+제프리 힌튼의 고조부 조지 부울(1815-1864)은 독학으로 수학을 배운 영국의 수학자입니다. 그가 1854년에 발표한 <em>The Laws of Thought</em>는 논리를 수학으로 표현할 수 있다는 것을 보여주었습니다. AND, OR, NOT을 0과 1로 계산하는 체계 — 오늘날 모든 컴퓨터의 기초가 된 <strong>부울 대수</strong>입니다.
 
 2차시에서 퍼셉트론이 AND와 OR을 학습하는 것을 봤습니다. 퍼셉트론이 배우는 것이 바로 부울의 논리 연산이었고, 그 부울의 후손이 퍼셉트론을 넘어서는 신경망을 만든 것입니다. 역사의 우연치고는 놀라운 연결입니다.
 
-힌튼 집안에는 또 다른 유명인도 있습니다. 4차원 큐브의 이름('tesseract')을 붙인 수학자 찰스 하워드 힌튼이 할아버지이고, 에베레스트산의 이름이 된 측량사 조지 에버리스트도 증조부입니다.
-
 </details>
 
-그런데 힌튼이 집착한 아이디어는 놀랍도록 단순한 것이었습니다 — 여러분이 방금 시뮬레이터에서 켠 바로 그 스위치:
+그런데 힌튼이 집착한 아이디어는 놀랍도록 단순한 것이었습니다 — 여러분이 방금 시뮬레이터에서 켠 바로 그 활성화함수:
 
 <div class="concept-card">
 
@@ -252,7 +275,7 @@ XOR을 해결한 것은 시작일 뿐입니다. 뉴런과 층을 더 쌓으면 �
 
 2차시에서 배운 퍼셉트론은 <strong>계단 함수</strong>를 사용합니다 — 임계값을 넘으면 1, 못 넘으면 0. 중간이 없습니다.
 
-힌튼의 통찰은 이것이었습니다: 이 딱딱한 스위치를 <strong>부드러운 곡선(시그모이드)</strong>으로 바꾸면, 수학적으로 미분이 가능해지고, 미분이 가능하면 <strong>여러 층을 거슬러 올라가며 가중치를 자동으로 수정</strong>할 수 있다는 것.
+힌튼의 통찰은 이것이었습니다: 이 딱딱한 계단 함수를 <strong>부드러운 곡선(시그모이드)</strong>으로 바꾸면, 수학적으로 미분이 가능해지고, 미분이 가능하면 <strong>여러 층을 거슬러 올라가며 가중치를 자동으로 수정</strong>할 수 있다는 것.
 
 </div>
 
@@ -266,7 +289,7 @@ XOR을 해결한 것은 시작일 뿐입니다. 뉴런과 층을 더 쌓으면 �
 >
 > — Rumelhart, Hinton, Williams (1986). <em>Nature</em>, 323, 533-536.
 
-{/* TODO: 럼멜하트, 힌튼, 윌리엄스 사진 */}
+럼멜하트는 인지심리학에서 출발한 연구자였고, 윌리엄스는 강화학습의 개척자가 됩니다. 서로 다른 배경의 세 사람이 모여 하나의 알고리즘을 완성한 것입니다.
 
 이 논문의 핵심 아이디어는 이렇습니다: 출력에서 발생한 오차를, <strong>거꾸로 각 층을 따라 보내면서</strong> 각 가중치가 오차에 얼마나 책임이 있는지를 계산한다. 책임이 큰 가중치는 많이 수정하고, 작은 가중치는 조금만 수정한다 — 이것이 <strong>역전파(Backpropagation)</strong>입니다.
 
@@ -281,7 +304,7 @@ XOR을 해결한 것은 시작일 뿐입니다. 뉴런과 층을 더 쌓으면 �
 
 </details>
 
-### 1986년 이후: 또 다른 벽
+### 1986년 이후: 또 다른 벽, 그리고 딥러닝의 탄생
 
 역전파가 발표된 1986년 이후에도 신경망은 바로 주류가 되지 못했습니다. 이론적으로는 역전파가 다층 신경망을 학습시킬 수 있었지만, 실제로는 여러 난관이 있었습니다:
 
@@ -301,13 +324,51 @@ XOR을 해결한 것은 시작일 뿐입니다. 뉴런과 층을 더 쌓으면 �
 
 2012년의 사건을 이해하려면, 먼저 <strong>ImageNet</strong>이 뭔지 알아야 합니다.
 
+<figure style="float: right; margin: 0 0 1rem 1.5rem; text-align: center; max-width: 160px;">
+  <img src="/ai-basic-textbook/images/lesson03/fei-fei-li.jpg" alt="페이페이 리(Fei-Fei Li)" style="width: 100%; border-radius: 10px;" />
+  <figcaption style="color: var(--sl-color-gray-3); font-size: 11px; margin-top: 4px;">페이페이 리<br/>사진: ITU (CC BY 2.0)</figcaption>
+</figure>
+
 스탠퍼드 대학의 <strong>페이페이 리(Fei-Fei Li)</strong> 교수가 주도한 ImageNet 프로젝트는 인터넷에서 <strong>1,400만 장 이상의 이미지</strong>를 수집하고, 사람이 직접 하나하나 <strong>1,000개 카테고리</strong>로 분류한 거대한 데이터셋입니다. "골든 리트리버", "화산", "피자", "바이올린" — 이 세상의 거의 모든 사물이 들어 있었습니다.
+
+<div style="background: rgba(15,23,42,0.96); border-radius: 12px; padding: 16px; border: 1px solid rgba(71,85,105,0.25); margin: 1.5rem 0;">
+  <p style="text-align: center; color: #e2e8f0; font-size: 14px; font-weight: 600; margin: 0 0 12px;">ImageNet — 1,400만 장의 실제 이미지, 1,000개 카테고리</p>
+  <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; margin-bottom: 12px;">
+    <div style="text-align: center;">
+      <img src="/ai-basic-textbook/images/lesson03/imagenet-dog.jpg" alt="골든 리트리버" style="width: 100%; border-radius: 8px; aspect-ratio: 1; object-fit: cover;" />
+      <p style="color: #94a3b8; font-size: 11px; margin: 4px 0 0;">골든 리트리버</p>
+    </div>
+    <div style="text-align: center;">
+      <img src="/ai-basic-textbook/images/lesson03/imagenet-volcano.jpg" alt="화산" style="width: 100%; border-radius: 8px; aspect-ratio: 1; object-fit: cover;" />
+      <p style="color: #94a3b8; font-size: 11px; margin: 4px 0 0;">화산</p>
+    </div>
+    <div style="text-align: center;">
+      <img src="/ai-basic-textbook/images/lesson03/imagenet-pizza.jpg" alt="피자" style="width: 100%; border-radius: 8px; aspect-ratio: 1; object-fit: cover;" />
+      <p style="color: #94a3b8; font-size: 11px; margin: 4px 0 0;">피자</p>
+    </div>
+    <div style="text-align: center;">
+      <img src="/ai-basic-textbook/images/lesson03/imagenet-violin.jpg" alt="바이올린" style="width: 100%; border-radius: 8px; aspect-ratio: 1; object-fit: cover;" />
+      <p style="color: #94a3b8; font-size: 11px; margin: 4px 0 0;">바이올린</p>
+    </div>
+  </div>
+  <div style="display: flex; gap: 8px; flex-wrap: wrap; justify-content: center;">
+    <span style="background: rgba(59,130,246,0.1); border: 1px solid rgba(59,130,246,0.2); border-radius: 6px; padding: 4px 12px; color: #3b82f6; font-size: 11px; font-weight: 600;">1,400만+ 장의 이미지</span>
+    <span style="background: rgba(16,185,129,0.1); border: 1px solid rgba(16,185,129,0.2); border-radius: 6px; padding: 4px 12px; color: #10b981; font-size: 11px; font-weight: 600;">사람이 직접 분류</span>
+    <span style="background: rgba(245,158,11,0.1); border: 1px solid rgba(245,158,11,0.2); border-radius: 6px; padding: 4px 12px; color: #f59e0b; font-size: 11px; font-weight: 600;">+ 996개 카테고리</span>
+  </div>
+  <p style="text-align: center; color: #475569; font-size: 10px; margin: 8px 0 0;">사진 출처: Wikimedia Commons (CC BY-SA / Public Domain)</p>
+</div>
 
 매년 열리는 <strong>ILSVRC(ImageNet Large Scale Visual Recognition Challenge)</strong> 대회에서, 전 세계 연구팀이 "컴퓨터가 이미지를 얼마나 정확하게 분류할 수 있는가"를 겨뤘습니다. 2010년과 2011년의 우승팀은 모두 <strong>전통적 컴퓨터 비전</strong> 방법을 사용했습니다 — 사람이 직접 설계한 특징 추출 알고리즘(SIFT, HOG 등)으로 이미지의 패턴을 찾는 방식이었죠. 당시 "컴퓨터 비전"과 "신경망"은 완전히 다른 분야로 여겨졌고, 대부분의 컴퓨터 비전 연구자는 신경망에 관심이 없었습니다.
 
 ### 2012년: AlexNet의 충격
 
-2012년, 힌튼의 토론토 대학 연구실에서 온 세 명의 연구자가 대회에 참가합니다. 힌튼의 제자인 <strong>알렉스 크리제프스키(Alex Krizhevsky)</strong>와 <strong>일리아 수츠케버(Ilya Sutskever)</strong>, 그리고 힌튼 자신이었습니다. 그들이 제출한 신경망의 이름은 <strong>AlexNet</strong>.
+<figure style="float: right; margin: 0 0 1rem 1.5rem; text-align: center; max-width: 180px;">
+  <img src="/ai-basic-textbook/images/lesson03/ilya-sutskever.jpg" alt="일리아 수츠케버와 샘 알트먼" style="width: 100%; border-radius: 10px;" />
+  <figcaption style="color: var(--sl-color-gray-3); font-size: 11px; margin-top: 4px;">일리아 수츠케버(왼쪽)와<br/>샘 알트먼(오른쪽)<br/>사진: Wikimedia (CC BY-SA 4.0)</figcaption>
+</figure>
+
+2012년, 힌튼의 토론토 대학 연구실에서 온 세 명의 연구자가 대회에 참가합니다. 힌튼의 제자인 <strong>알렉스 크리제프스키(Alex Krizhevsky)</strong>와 <strong>일리아 수츠케버(Ilya Sutskever)</strong>, 그리고 힌튼 자신이었습니다. 그들이 제출한 신경망의 이름은 <strong>AlexNet</strong>. (수츠케버는 이후 <strong>OpenAI의 공동 창립자이자 수석 과학자</strong>가 됩니다. 오른쪽 사진에서 함께 있는 사람이 OpenAI CEO <strong>샘 알트먼(Sam Altman)</strong>입니다.)
 
 흥미로운 것은 그들의 장비였습니다. 당시 다른 팀들이 대규모 서버 클러스터를 사용하던 것과 달리, 크리제프스키는 <strong>NVIDIA GTX 580</strong> 그래픽 카드 <strong>2장</strong>으로 AlexNet을 학습시켰습니다. 이것은 원래 게이머들이 3D 게임을 돌리기 위해 사는 그래픽 카드였습니다. 게임용 GPU의 대규모 병렬 연산 능력이 신경망의 행렬 곱셈에 딱 맞는다는 것을 발견한 것입니다.
 
@@ -341,7 +402,7 @@ AlexNet의 충격 이후, ImageNet 대회의 판도가 완전히 바뀌었습니
 
 AlexNet의 비결은 무엇이었을까요?
 
-1. <strong>활성화함수: ReLU</strong> — 시그모이드 대신 ReLU를 사용해 기울기 소실 문제를 해결하고, 학습 속도를 6배 이상 높였습니다. 여러분이 방금 시뮬레이터에서 켠 바로 그 스위치입니다
+1. <strong>활성화함수: ReLU</strong> — 시그모이드 대신 ReLU를 사용해 기울기 소실 문제를 해결하고, 학습 속도를 6배 이상 높였습니다. 여러분이 시뮬레이터에서 체험한 바로 그 활성화함수입니다
 2. <strong>GPU</strong> — 게이머용 NVIDIA 그래픽 카드 2장이 신경망의 대규모 행렬 연산에 적합하다는 것을 발견했습니다. 게임용 그래픽 카드가 AI를 위해 쓰일 줄은, 만든 NVIDIA조차 몰랐습니다
 3. <strong>대규모 데이터</strong> — ImageNet의 120만 장 학습 이미지가 깊은 신경망의 수많은 파라미터를 학습시키기에 충분했습니다
 
@@ -350,6 +411,11 @@ AlexNet의 비결은 무엇이었을까요?
 ---
 
 ## 노벨상을 받은 컴퓨터 과학자
+
+<figure style="float: right; margin: 0 0 1rem 1.5rem; text-align: center; max-width: 180px;">
+  <img src="/ai-basic-textbook/images/lesson03/hinton-nobel.jpg" alt="제프리 힌튼, 2024 노벨 물리학상 수상" style="width: 100%; border-radius: 10px;" />
+  <figcaption style="color: var(--sl-color-gray-3); font-size: 11px; margin-top: 4px;">2024 노벨 물리학상 수상<br/>사진: Nobel Prize Outreach (CC BY-SA 4.0)</figcaption>
+</figure>
 
 2024년 10월, 놀라운 소식이 전해졌습니다. <strong>제프리 힌튼이 노벨 물리학상을 수상</strong>한 것입니다. 컴퓨터 과학자가 물리학상을 받은 것은 이례적인 일이었습니다. 수상 이유는 "인공 신경망을 이용한 기계 학습을 가능하게 한 근본적 발견"이었습니다.
 
@@ -367,11 +433,11 @@ AlexNet의 비결은 무엇이었을까요?
 
 | 수학 개념 | 이 차시에서 어떻게 쓰였나 | 어디서 배우나 |
 |----------|----------------------|-------------|
-| <strong>함수의 합성</strong> f(g(x)) | 활성화함수 없이 층을 쌓으면 일차함수의 합성 → 결국 일차함수 | 고1 수학 |
-| <strong>비선형 함수</strong> | 시그모이드, ReLU 같은 활성화함수가 직선의 합성을 깨뜨린다 | 고1 수학 (이차함수 이상) |
+| <strong>직선(일차함수)의 합성</strong> | 활성화함수 없이 층을 쌓으면 직선을 합쳐도 직선 → 결국 직선 하나 | 중학 수학 (일차함수) |
+| <strong>비선형 함수</strong> | 시그모이드, ReLU 같은 활성화함수가 직선의 한계를 깨뜨린다 | 고등 수학 (이차함수 이상) |
 | <strong>미분 가능성</strong> | 시그모이드는 미분 가능 → 역전파 가능, 계단 함수는 불가능 → 역전파 불가 | 수학II (미분) |
 
-고1 수학에서 배운 <strong>함수의 합성 f(g(x))</strong>를 기억하나요? 신경망은 바로 이 합성 구조입니다. 1층의 출력이 2층의 입력이 되고, 2층의 출력이 3층의 입력이 됩니다. 그런데 일차함수를 아무리 합성해도 일차함수라는 사실이, "활성화함수 없이는 층을 쌓아도 소용없다"는 오늘의 핵심 발견으로 이어졌습니다.
+신경망은 함수를 합성하는 구조입니다. 1층의 출력이 2층의 입력이 되고, 2층의 출력이 3층의 입력이 됩니다. 앞에서 숫자로 확인했듯이, 직선(일차함수)을 아무리 합쳐도 결과는 직선입니다. "활성화함수 없이는 층을 쌓아도 소용없다"는 오늘의 핵심 발견이 바로 이 사실에서 나옵니다.
 
 그리고 <strong>"미분이 가능하다"는 것이 왜 중요한가</strong> — 이것은 6차시에서 역전파를 본격적으로 배울 때 다시 돌아옵니다. 합성함수의 미분법(연쇄법칙)이 바로 역전파의 수학적 핵심이기 때문입니다. 오늘은 "미분이 가능해야 학습 방향을 알 수 있다"는 직관만 기억해두세요.
 
@@ -393,7 +459,19 @@ AlexNet의 비결은 무엇이었을까요?
 
 매번 벽에 부딪힐 때마다, 그것을 넘게 해준 것은 <strong>새로운 알고리즘</strong>이었습니다. 계단 함수의 벽은 시그모이드가 넘었고, 시그모이드의 벽(기울기 소실)은 ReLU가 넘었습니다. 하드웨어와 데이터도 중요했지만, "어떻게 계산할 것인가"라는 아이디어의 진화가 AI의 겨울을 봄으로 바꾼 근본적인 힘이었습니다.
 
-1차시에서 "기계가 생각할 수 있는가?"를 물었습니다. 오늘 배운 것은 그 질문에 대한 중요한 실마리입니다 — 스위치 하나(활성화함수)를 넣는 것만으로 기계가 복잡한 패턴을 배울 수 있게 되었다는 것. 하지만 "배울 수 있다"와 "생각한다"는 같은 말일까요? 이 질문은 9~10차시까지 계속됩니다.
+1차시에서 "기계가 생각할 수 있는가?"를 물었습니다. 오늘 배운 것은 그 질문에 대한 중요한 실마리입니다 — 활성화함수라는 알고리즘 하나를 넣는 것만으로 기계가 복잡한 패턴을 배울 수 있게 되었다는 것. 하지만 "배울 수 있다"와 "생각한다"는 같은 말일까요? 이 질문은 9~10차시까지 계속됩니다.
+
+<div class="concept-card">
+
+<strong>AI가 학습한다 = 오차를 줄여간다</strong>
+
+2차시에서는 "틀리면 고친다"였습니다. 3차시에서 한 단계 더 나아갑니다:
+
+<strong>"활성화함수 덕분에 복잡한 패턴도 고칠 수 있다."</strong>
+
+활성화함수가 공간을 구부려주기 때문에 직선으로 나눌 수 없던 XOR도 학습할 수 있게 되었고, 미분이 가능하기 때문에 여러 층의 가중치를 동시에 수정할 수 있게 되었습니다. "오차를 줄인다"는 같은 원리가, 이제 <strong>더 복잡한 문제</strong>에도 적용될 수 있게 된 것입니다.
+
+</div>
 
 <div class="concept-card">
 
@@ -455,7 +533,7 @@ AlexNet이 이미지 인식 대회를 압도했다고 했습니다. 그런데 "�
 <div class="self-check">
 
 - 활성화함수가 무엇인지 한 문장으로 설명할 수 있다
-- 활성화함수 없이 층을 쌓으면 왜 직선 하나와 같은지, 함수의 합성과 연결하여 이해한다
+- 활성화함수 없이 층을 쌓으면 왜 직선 하나와 같은지 이해한다
 - Sigmoid, Tanh, ReLU의 차이점과 각각의 역사적 등장 배경을 설명할 수 있다
 - "비선형성"이 왜 중요한지 XOR 문제와 연결하여 설명할 수 있다
 - AlexNet이 성공한 핵심 요인 3가지를 말할 수 있다

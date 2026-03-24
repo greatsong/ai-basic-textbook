@@ -1,5 +1,5 @@
 ---
-title: "4차시: 얼마나 틀렸는가"
+title: "4차시: \"잘 학습됐다\"는 것을 어떻게 알 수 있을까?"
 description: "손실함수와 MSE — '틀린 정도'를 숫자로 재는 방법"
 ---
 
@@ -9,17 +9,19 @@ import LossContour from '../../../../components/loss/LossContour';
 
 <p style="color: var(--sl-color-gray-3); margin-bottom: 0.25rem;">신경망의 비밀 &gt; 4차시</p>
 
-# 얼마나 틀렸는가
 
 > <strong>오늘의 질문:</strong> "틀린 정도를 숫자 하나로 요약할 수 있을까?"
 
 <p style="color: var(--sl-color-gray-3);">
 50분 | 손실함수 · MSE · 데이터 품질 · 손실 등고선 | 난이도 ●●●○○
 </p>
+<p style="color: var(--sl-color-gray-3); font-size: 13px; margin-top: 0.5rem;">
+<strong>학습목표:</strong> 손실 함수의 개념을 이해하고, 모델의 오차를 측정하는 방법을 설명할 수 있다.
+</p>
 
 ---
 
-## "잘한다"는 것을 어떻게 알 수 있을까?
+## 오차를 계산하는 방법
 
 <div class="story-box">
 
@@ -142,10 +144,14 @@ MSE = (1/3) x (1.00 + 0.25 + 0.00) = <strong>0.42</strong>
 <strong>기계 학습(Machine Learning) = 손실함수의 값을 최소로 만드는 파라미터(w, b)를 찾는 과정</strong>
 
 - 2차시의 퍼셉트론: "틀리면 가중치를 고친다" → 암묵적으로 오차를 줄이는 과정
-- 3차시의 역전파: 오차를 거꾸로 보내 각 가중치의 책임을 계산 → 오차를 줄이는 방향으로 수정
+- 3차시의 활성화함수: 공간을 구부려 복잡한 패턴도 표현 → 다층 신경망으로 XOR도 해결
 - 그리고 오늘: 그 "오차"를 정확히 숫자로 정의하는 법 = <strong>손실함수</strong>
 
 </div>
+
+:::note[잠깐 — 손실이 0이면 완벽한 걸까?]
+손실을 줄이는 것이 학습이라면, 손실이 0이 되면 AI가 모든 것을 "아는" 걸까요? 그렇지 않습니다. **손실 최소화는 학습 데이터에 대해 가장 잘 맞추는 것이지, 세상의 모든 진실을 아는 것이 아닙니다.** 데이터에 없는 패턴은 학습이 불가능합니다 — 이 이야기는 8차시에서 다시 만납니다.
+:::
 
 3차시까지는 "틀리면 고친다"를 직관적으로 이해했습니다. 오늘은 그 "틀린 정도"를 <strong>정확한 숫자로 표현</strong>하는 방법을 배운 것입니다. 숫자로 표현할 수 있어야 체계적으로 줄일 수 있습니다.
 
@@ -198,13 +204,25 @@ w와 b의 모든 조합에 대해 손실값을 계산한 뒤, 그것을 지도�
 
 1801년 1월 1일, 이탈리아의 천문학자 <strong>주세페 피아치(Giuseppe Piazzi)</strong>가 망원경으로 작은 천체를 발견했습니다. 화성과 목성 사이를 도는 소행성, 이름은 <strong>세레스(Ceres)</strong>.
 
-{/* TODO: 피아치 사진 */}
+<div style="display: flex; gap: 16px; margin: 1rem 0; flex-wrap: wrap;">
+  <figure style="flex: 1; min-width: 160px; margin: 0; text-align: center;">
+    <img src="/ai-basic-textbook/images/lesson04/giuseppe-piazzi.jpg" alt="주세페 피아치(Giuseppe Piazzi, 1746-1826)" style="width: 100%; max-width: 220px; border-radius: 10px;" />
+    <figcaption style="color: var(--sl-color-gray-3); font-size: 12px; margin-top: 6px;">주세페 피아치 (1746-1826)<br/>사진 출처: Wikimedia Commons (Public Domain)</figcaption>
+  </figure>
+  <figure style="flex: 1; min-width: 160px; margin: 0; text-align: center;">
+    <img src="/ai-basic-textbook/images/lesson04/ceres.jpg" alt="소행성 세레스 — NASA Dawn 탐사선 촬영" style="width: 100%; max-width: 220px; border-radius: 10px;" />
+    <figcaption style="color: var(--sl-color-gray-3); font-size: 12px; margin-top: 6px;">소행성 세레스<br/>사진 출처: NASA/JPL-Caltech (Public Domain)</figcaption>
+  </figure>
+</div>
 
 피아치는 41일간 세레스를 관측했습니다. 하지만 세레스가 태양 뒤로 사라지자 더 이상 관측할 수 없었습니다. 문제는, 태양 반대편에서 다시 나타날 때 <strong>어디를 봐야 하는지</strong> 아무도 몰랐다는 것입니다. 41일치 관측 데이터에는 오차가 잔뜩 섞여 있었습니다. 대기 흔들림, 망원경의 한계, 측정자의 실수 — 어떤 데이터도 완벽하지 않았습니다.
 
 당시 24세의 수학자가 이 문제에 도전합니다.
 
-{/* TODO: 가우스 사진 */}
+<figure style="margin: 1rem auto; text-align: center; max-width: 280px;">
+  <img src="/ai-basic-textbook/images/lesson04/carl-gauss.jpg" alt="카를 프리드리히 가우스(Carl Friedrich Gauss, 1777-1855)" style="width: 100%; max-width: 220px; border-radius: 10px;" />
+  <figcaption style="color: var(--sl-color-gray-3); font-size: 12px; margin-top: 6px;">카를 프리드리히 가우스 (1777-1855)<br/>사진 출처: Wikimedia Commons (Public Domain)</figcaption>
+</figure>
 
 <strong>카를 프리드리히 가우스(Carl Friedrich Gauss)</strong>. 그가 발명한 방법은 놀랍도록 단순하면서 강력했습니다:
 
