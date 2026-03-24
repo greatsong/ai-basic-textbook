@@ -1,8 +1,103 @@
 ---
 title: 참고자료
-description: "차시별 참고 논문, 영상, 웹사이트 모음"
+description: "각 차시에서 다루는 논문, 영상, 인터랙티브 데모 링크"
 ---
 
 # 참고자료
 
-*각 차시에서 다루는 논문, 영상, 인터랙티브 데모 링크를 정리합니다. 차시별 콘텐츠 완성 후 업데이트됩니다.*
+*각 차시에서 소개하는 논문, 영상, 인터랙티브 데모, 해설 글을 차시별로 정리한 목록입니다.*
+
+---
+
+## 1차시: 기계가 생각할 수 있는가?
+
+- **[Computing Machinery and Intelligence (1950)](https://courses.cs.umbc.edu/471/papers/turing.pdf)** — 앨런 튜링의 원래 논문. Section 1 'The Imitation Game'만 읽어도 핵심을 파악할 수 있습니다.
+- **[Stanford Encyclopedia: 중국어 방](https://plato.stanford.edu/entries/chinese-room/)** — 존 설의 중국어 방 논증과 주요 반론들을 체계적으로 정리한 해설.
+- **[TED-Ed: 튜링 테스트 (4분 30초)](https://ed.ted.com/lessons/the-turing-test-can-a-computer-pass-for-a-human-alex-gendler)** — 튜링 테스트의 개념을 직관적으로 설명하는 짧은 영상.
+- **[블레츨리 선언 (2023)](https://www.gov.uk/government/publications/ai-safety-summit-2023-the-bletchley-declaration)** — 28개국이 서명한 AI 안전 선언문. 영국 정부 공식 문서.
+
+---
+
+## 2차시: 기계가 스스로 학습할 수 있는가?
+
+- **[Rosenblatt (1958) 원문 논문](https://www.ling.upenn.edu/courses/cogs501/Rosenblatt1958.pdf)** — 퍼셉트론의 원래 논문. 생물학적 뇌의 정보 저장을 수학적으로 모델링한 첫 시도.
+- **[NYT 기사 (1958.7.8)](https://www.cs.ucf.edu/~lboloni/Teaching/CAP5636_Fall2023/homeworks/Reading%201%20-%20Perceptron-NYTimes-1958-07-13.pdf)** — 'NEW NAVY DEVICE LEARNS BY DOING' — 뉴욕타임스가 퍼셉트론을 1면에 보도한 기사.
+- **[Perceptrons (1969) — MIT Press](https://direct.mit.edu/books/monograph/3132/PerceptronsAn-Introduction-to-Computational)** — 민스키와 파퍼트의 책. XOR 한계를 수학적으로 증명하여 AI 겨울을 촉발한 저작.
+- **[Perceptrons, XOR, and the First AI Winter](https://seantrott.substack.com/p/perceptrons-xor-and-the-first-ai)** — Sean Trott의 해설. 고등학생도 읽을 수 있는 수준으로 퍼셉트론과 XOR 문제를 설명.
+- **[McCulloch & Pitts (1943) — 인공 뉴런의 시작](https://www.cs.cmu.edu/~./epxing/Class/10715/reading/McCulloch.and.Pitts.pdf)** — 뉴런의 발화를 논리 연산으로 모델링한 최초의 논문. 퍼셉트론의 이론적 토대.
+- **[NNMOC: The McCulloch-Pitts Artificial Neuron](https://nnmoc.pabloinsente.com/intro-to-nn/the-mcculloch-pitts-artificial-neuron.html)** — McCulloch-Pitts 모델을 코드와 함께 설명하는 온라인 교재. AND, OR, NOR 구현 포함.
+
+---
+
+## 3차시: AI의 겨울을 이겨낸 알고리즘의 발견
+
+- **[AlexNet (2012) 원문 논문](https://papers.nips.cc/paper/4824-imagenet-classification-with-deep-convolutional-neural-networks)** — 'ImageNet Classification with Deep Convolutional Neural Networks' — 딥러닝 혁명의 시작을 알린 논문.
+- **[Rumelhart, Hinton & Williams (1986)](https://www.nature.com/articles/323533a0)** — 'Learning representations by back-propagating errors' — 역전파를 실험적으로 입증한 Nature 논문.
+- **[3Blue1Brown 신경망 시리즈](https://www.youtube.com/playlist?list=PLZHQObOWTQDNU6R1_67000Dx_LFPM5VWs)** — 직관적인 시각화로 신경망의 원리를 설명하는 영상 시리즈. 활성화함수와 역전파 편을 추천.
+- **[Stanford CS231n: Activation Functions](https://cs231n.github.io/neural-networks-1/#actfun)** — 다양한 활성화함수의 특성과 장단점을 정리한 강의 노트.
+
+---
+
+## 4차시: "잘 학습됐다"는 것을 어떻게 알 수 있을까?
+
+- **[가우스와 소행성 세레스](https://www.actuaries.asn.au/research-analysis/gauss-least-squares-and-the-missing-planet)** — 가우스가 최소제곱법으로 세레스의 궤도를 예측한 이야기. 손실 최소화의 역사적 기원.
+- **[가우스와 최소제곱법 — BookTells](https://blog.bookstellyouwhy.com/carl-friedrich-gauss-and-the-method-of-least-squares)** — 가우스의 최소제곱법 발명 과정을 읽기 쉽게 정리한 글.
+- **[3Blue1Brown: 경사하강법](https://www.youtube.com/watch?v=IHZwWFHWa-w)** — 손실함수와 경사하강법을 직관적 시각화로 설명. 등고선 이야기와 직접 연결됩니다.
+- **[Stanford CS229: Loss Functions](https://cs229.stanford.edu/notes2022fall/main_notes.pdf)** — 다양한 손실함수의 수학적 정의와 사용 맥락을 정리한 강의 노트.
+
+---
+
+## 5차시: 오차 줄이는 방향으로 나아가는 방법
+
+- **[Wikipedia: Gradient Descent](https://en.wikipedia.org/wiki/Gradient_descent)** — 경사하강법의 수학적 배경과 다양한 변형(SGD, Adam 등)을 다루는 백과사전 항목.
+- **[NVIDIA Blog: How GPUs Ignited the AI Era](https://blogs.nvidia.com/blog/first-gpu-gaming-ai/)** — GPU가 어떻게 게임용 하드웨어에서 AI 혁명의 핵심으로 변모했는지를 다룬 NVIDIA 공식 블로그.
+- **[FreeCodeCamp: From Pixels to Predictions](https://www.freecodecamp.org/news/from-pixels-to-predictions-how-gpus-started-powering-modern-ai/)** — GPU가 현대 AI를 가능하게 만든 과정을 초보자 수준에서 설명한 글.
+- **[3Blue1Brown 신경망 시리즈](https://www.youtube.com/playlist?list=PLZHQObOWTQDNU6R1_67000Dx_LFPM5VWs)** — 경사하강법과 역전파를 직관적 시각화로 설명하는 유튜브 시리즈.
+
+---
+
+## 6차시: 오차를 줄이는 과정을 자동화하려면
+
+- **[Rumelhart, Hinton, Williams (1986) — Nature](https://www.nature.com/articles/323533a0)** — 역전파를 세상에 알린 논문. 'Learning representations by back-propagating errors'.
+- **[3Blue1Brown 역전파 시리즈](https://www.youtube.com/playlist?list=PLZHQObOWTQDNU6R1_67000Dx_LFPM5VWs)** — 역전파의 수학적 원리를 직관적 시각화로 설명하는 유튜브 영상.
+- **[Google ML Crash Course: Backpropagation](https://developers.google.com/machine-learning/crash-course/neural-networks/backpropagation)** — 구글의 머신러닝 입문 강좌에서 역전파를 다루는 부분.
+- **[Jay Alammar: A Visual Guide to Backpropagation](https://jalammar.github.io/visual-guide-to-backpropagation/)** — 역전파를 시각적으로 단계별로 설명하는 블로그 글.
+
+---
+
+## 7차시: 단어를 숫자로 표현하면 계산할 수 있다
+
+- **[Mikolov et al. (2013) 원문 논문](https://arxiv.org/pdf/1301.3781)** — Word2Vec의 원래 논문. 단어를 벡터 공간에 효율적으로 표현하는 방법을 제안한 논문.
+- **[Jay Alammar: The Illustrated Word2Vec](https://jalammar.github.io/illustrated-word2vec/)** — Word2Vec의 작동 원리를 시각적으로 설명하는 블로그. 고등학생도 읽을 수 있는 수준.
+- **[CMU Word Embedding Demo](https://www.cs.cmu.edu/~dst/WordEmbeddingDemo/tutorial.html)** — 카네기멜론대학의 워드 임베딩 인터랙티브 데모. 단어 간 관계를 직접 탐색할 수 있음.
+- **[Hugging Face: BPE 토크나이저 설명](https://huggingface.co/learn/nlp-course/en/chapter6/5)** — 토큰화 알고리즘(BPE, WordPiece, Unigram)의 작동 원리를 단계별로 설명하는 튜토리얼.
+
+---
+
+## 8차시: ChatGPT의 작동 원리, 다음 단어 맞추기
+
+- **[Vaswani et al. (2017) 원문 논문](https://arxiv.org/abs/1706.03762)** — 'Attention Is All You Need' — 트랜스포머 아키텍처를 처음 제안한 논문.
+- **[Jay Alammar: The Illustrated Transformer](https://jalammar.github.io/illustrated-transformer/)** — 트랜스포머의 작동 원리를 시각적으로 설명하는 블로그. 어텐션 메커니즘의 직관적 이해에 최적.
+- **[Transformer Explainer (인터랙티브)](https://poloclub.github.io/transformer-explainer/)** — Georgia Tech 연구팀이 만든 인터랙티브 트랜스포머 시각화. 각 층의 연산을 실시간으로 확인.
+- **[GPT 시리즈 타임라인](https://datasciencedojo.com/blog/the-complete-history-of-openai-models/)** — GPT-1부터 GPT-4까지의 발전 과정을 정리한 타임라인. 파라미터 수와 성능 변화를 한눈에.
+
+---
+
+## 9차시: 퍼셉트론에서 ChatGPT까지, 인공지능 연구의 역사
+
+- **[Rosenblatt (1958) — 퍼셉트론 원문](https://www.ling.upenn.edu/courses/cogs501/Rosenblatt1958.pdf)** — 기계 학습의 시작. 뇌의 정보 저장을 수학적으로 모델링한 첫 시도.
+- **[Minsky & Papert (1969) — MIT Press](https://direct.mit.edu/books/monograph/3132/PerceptronsAn-Introduction-to-Computational)** — 퍼셉트론의 XOR 한계를 수학적으로 증명. AI 겨울을 촉발한 저작.
+- **[Rumelhart, Hinton & Williams (1986) — Nature](https://www.nature.com/articles/323533a0)** — 역전파 논문. 다층 신경망 학습의 열쇠를 제시한 기념비적 논문.
+- **[AlexNet (2012) — NeurIPS](https://papers.nips.cc/paper/4824-imagenet-classification-with-deep-convolutional-neural-networks)** — ReLU + GPU로 ImageNet 대회를 압도한 논문. 딥러닝 부활의 신호탄.
+- **[Word2Vec (2013) — arXiv](https://arxiv.org/pdf/1301.3781)** — 단어의 의미를 벡터 연산으로 표현한 혁신적 논문.
+- **[Attention Is All You Need (2017) — arXiv](https://arxiv.org/abs/1706.03762)** — 트랜스포머 구조를 제안한 논문. 현대 AI의 근간.
+- **[GPT 시리즈 타임라인](https://datasciencedojo.com/blog/the-complete-history-of-openai-models/)** — GPT-1부터 ChatGPT까지의 발전 과정을 정리한 해설.
+
+---
+
+## 10차시: 같은 질문, 다른 깊이
+
+- **[Turing (1950) — 원문 논문](https://courses.cs.umbc.edu/471/papers/turing.pdf)** — 'Computing Machinery and Intelligence'. 이 수업의 출발점이자 도착점인 질문을 처음 던진 논문.
+- **[Searle (1980) — 중국어 방](https://plato.stanford.edu/entries/chinese-room/)** — 'Minds, Brains, and Programs'. 기계의 '이해'에 대한 근본적 반론.
+- **[Jay Alammar: The Illustrated Transformer](https://jalammar.github.io/illustrated-transformer/)** — 트랜스포머의 작동 원리를 시각적으로 설명. 환각의 구조적 원인을 이해하는 데 도움.
+- **[Transformer Explainer (인터랙티브)](https://poloclub.github.io/transformer-explainer/)** — 트랜스포머의 각 구성요소를 직접 조작하며 이해할 수 있는 인터랙티브 데모.
