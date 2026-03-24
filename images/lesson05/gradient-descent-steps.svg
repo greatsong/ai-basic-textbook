@@ -1,0 +1,99 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 350" font-family="system-ui, -apple-system, 'Apple SD Gothic Neo', 'Noto Sans KR', sans-serif">
+  <rect width="800" height="350" rx="16" fill="#1a1b26" opacity="0.95"/>
+
+  <text x="400" y="30" text-anchor="middle" fill="#e2e8f0" font-size="18" font-weight="700">경사하강법의 원리</text>
+  <text x="400" y="50" text-anchor="middle" fill="#94a3b8" font-size="13">기울기가 클수록 큰 걸음, 작을수록 작은 걸음</text>
+
+  <defs>
+    <marker id="stepArrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#60a5fa"/>
+    </marker>
+    <marker id="stepArrowFade" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#10b981"/>
+    </marker>
+  </defs>
+
+  <!-- Axes -->
+  <line x1="80" y1="280" x2="720" y2="280" stroke="#475569" stroke-width="1.5"/>
+  <line x1="80" y1="280" x2="80" y2="70" stroke="#475569" stroke-width="1.5"/>
+  <text x="720" y="298" text-anchor="middle" fill="#94a3b8" font-size="12">파라미터 (w)</text>
+  <text x="58" y="75" fill="#94a3b8" font-size="12">손실</text>
+
+  <!-- Bowl-shaped curve -->
+  <path d="M 100,100
+           Q 150,105 200,140
+           Q 250,180 300,220
+           Q 340,248 380,262
+           Q 410,270 430,272
+           Q 460,270 490,262
+           Q 530,245 570,215
+           Q 610,180 650,140
+           Q 690,105 710,100"
+    stroke="#818cf8" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+
+  <!-- Fill under curve -->
+  <path d="M 100,100
+           Q 150,105 200,140
+           Q 250,180 300,220
+           Q 340,248 380,262
+           Q 410,270 430,272
+           Q 460,270 490,262
+           Q 530,245 570,215
+           Q 610,180 650,140
+           Q 690,105 710,100
+           L 710,280 L 100,280 Z"
+    fill="rgba(129,140,248,0.06)"/>
+
+  <!-- Step 1: Start (steep slope) -->
+  <circle cx="155" cy="108" r="7" fill="#60a5fa"/>
+  <text x="155" y="96" text-anchor="middle" fill="#93c5fd" font-size="12" font-weight="700">시작</text>
+
+  <!-- Arrow 1: Large step -->
+  <line x1="162" y1="112" x2="248" y2="178" stroke="#60a5fa" stroke-width="2.5" marker-end="url(#stepArrow)"/>
+
+  <!-- Step 2 -->
+  <circle cx="255" cy="183" r="6" fill="#60a5fa" opacity="0.9"/>
+
+  <!-- Arrow 2: Medium-large step -->
+  <line x1="261" y1="187" x2="328" y2="232" stroke="#60a5fa" stroke-width="2.2" marker-end="url(#stepArrow)" opacity="0.85"/>
+
+  <!-- Step 3 -->
+  <circle cx="335" cy="237" r="5.5" fill="#60a5fa" opacity="0.8"/>
+
+  <!-- Arrow 3: Medium step -->
+  <line x1="340" y1="240" x2="385" y2="260" stroke="#60a5fa" stroke-width="1.8" marker-end="url(#stepArrow)" opacity="0.7"/>
+
+  <!-- Step 4 -->
+  <circle cx="390" cy="263" r="5" fill="#60a5fa" opacity="0.7"/>
+
+  <!-- Arrow 4: Small step -->
+  <line x1="395" y1="265" x2="415" y2="270" stroke="#60a5fa" stroke-width="1.5" marker-end="url(#stepArrow)" opacity="0.6"/>
+
+  <!-- Step 5 -->
+  <circle cx="420" cy="271" r="4.5" fill="#60a5fa" opacity="0.6"/>
+
+  <!-- Arrow 5: Tiny step -->
+  <line x1="424" y1="272" x2="430" y2="272" stroke="#60a5fa" stroke-width="1.2" opacity="0.5"/>
+
+  <!-- Step 6: Converged -->
+  <circle cx="432" cy="272" r="8" fill="#10b981" opacity="0.3"/>
+  <circle cx="432" cy="272" r="5" fill="#10b981"/>
+
+  <!-- Label: big step annotation -->
+  <rect x="130" y="125" width="185" height="28" rx="6" fill="rgba(96,165,250,0.15)" stroke="#60a5fa" stroke-width="1"/>
+  <text x="222" y="144" text-anchor="middle" fill="#93c5fd" font-size="11" font-weight="600">기울기가 크다 &#x2192; 큰 스텝!</text>
+  <line x1="200" y1="153" x2="200" y2="170" stroke="#60a5fa" stroke-width="0.8" stroke-dasharray="3,2"/>
+
+  <!-- Label: small step annotation -->
+  <rect x="370" y="215" width="185" height="28" rx="6" fill="rgba(16,185,129,0.15)" stroke="#10b981" stroke-width="1"/>
+  <text x="462" y="234" text-anchor="middle" fill="#6ee7b7" font-size="11" font-weight="600">기울기가 작다 &#x2192; 작은 스텝</text>
+  <line x1="430" y1="243" x2="430" y2="265" stroke="#10b981" stroke-width="0.8" stroke-dasharray="3,2"/>
+
+  <!-- Convergence label -->
+  <text x="432" y="305" text-anchor="middle" fill="#10b981" font-size="14" font-weight="700">수렴!</text>
+  <line x1="432" y1="280" x2="432" y2="295" stroke="#10b981" stroke-width="1" stroke-dasharray="3,2"/>
+
+  <!-- Bottom formula box -->
+  <rect x="100" y="318" width="600" height="25" rx="6" fill="rgba(71,85,105,0.2)" stroke="#475569" stroke-width="0.5"/>
+  <text x="400" y="335" text-anchor="middle" fill="#94a3b8" font-size="12">업데이트 규칙:  w_new = w_old - &#x3b1; &#xd7; (&#x2202;Loss / &#x2202;w)    &#x3b1; = 학습률</text>
+</svg>

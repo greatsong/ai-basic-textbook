@@ -1,0 +1,70 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" font-family="'Noto Sans KR', system-ui, sans-serif">
+  <defs>
+    <marker id="arrow-blue" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto" fill="#60a5fa">
+      <polygon points="0 0, 10 3.5, 0 7"/>
+    </marker>
+    <marker id="arrow-red" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto" fill="#ef4444">
+      <polygon points="0 0, 10 3.5, 0 7"/>
+    </marker>
+    <marker id="arrow-green" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto" fill="#10b981">
+      <polygon points="0 0, 10 3.5, 0 7"/>
+    </marker>
+    <marker id="arrow-amber" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto" fill="#f59e0b">
+      <polygon points="0 0, 10 3.5, 0 7"/>
+    </marker>
+  </defs>
+
+  <!-- 배경 -->
+  <rect width="800" height="400" rx="16" fill="#1a1b26" opacity="0.95"/>
+
+  <!-- 제목 -->
+  <text x="400" y="40" text-anchor="middle" fill="#e2e8f0" font-size="20" font-weight="700">신경망 학습의 네 박자</text>
+  <text x="400" y="62" text-anchor="middle" fill="#94a3b8" font-size="13">이 사이클을 수천~수백만 번 반복하면 신경망이 스스로 배웁니다</text>
+
+  <!-- Step 1: 순전파 (좌상) -->
+  <rect x="80" y="100" width="200" height="90" rx="14" fill="rgba(59,130,246,0.15)" stroke="#60a5fa" stroke-width="2"/>
+  <circle cx="108" cy="125" r="14" fill="#60a5fa"/>
+  <text x="108" y="130" text-anchor="middle" fill="white" font-size="13" font-weight="700">1</text>
+  <text x="135" y="130" fill="#60a5fa" font-size="15" font-weight="700">순전파</text>
+  <text x="180" y="155" text-anchor="middle" fill="#94a3b8" font-size="12">입력 → 출력</text>
+  <text x="180" y="175" text-anchor="middle" fill="#e2e8f0" font-size="11">예측값을 계산한다</text>
+
+  <!-- Step 2: 오차 계산 (우상) -->
+  <rect x="520" y="100" width="200" height="90" rx="14" fill="rgba(245,158,11,0.15)" stroke="#f59e0b" stroke-width="2"/>
+  <circle cx="548" cy="125" r="14" fill="#f59e0b"/>
+  <text x="548" y="130" text-anchor="middle" fill="white" font-size="13" font-weight="700">2</text>
+  <text x="575" y="130" fill="#f59e0b" font-size="15" font-weight="700">오차 계산</text>
+  <text x="620" y="155" text-anchor="middle" fill="#94a3b8" font-size="12">4차시 손실함수</text>
+  <text x="620" y="175" text-anchor="middle" fill="#e2e8f0" font-size="11">얼마나 틀렸는지 숫자로 잰다</text>
+
+  <!-- Step 3: 역전파 (우하) -->
+  <rect x="520" y="240" width="200" height="90" rx="14" fill="rgba(239,68,68,0.15)" stroke="#ef4444" stroke-width="2"/>
+  <circle cx="548" cy="265" r="14" fill="#ef4444"/>
+  <text x="548" y="270" text-anchor="middle" fill="white" font-size="13" font-weight="700">3</text>
+  <text x="575" y="270" fill="#ef4444" font-size="15" font-weight="700">역전파</text>
+  <text x="620" y="295" text-anchor="middle" fill="#94a3b8" font-size="12">출력 → 입력</text>
+  <text x="620" y="315" text-anchor="middle" fill="#e2e8f0" font-size="11">각 가중치의 책임을 추적한다</text>
+
+  <!-- Step 4: 가중치 업데이트 (좌하) -->
+  <rect x="80" y="240" width="200" height="90" rx="14" fill="rgba(16,185,129,0.15)" stroke="#10b981" stroke-width="2"/>
+  <circle cx="108" cy="265" r="14" fill="#10b981"/>
+  <text x="108" y="270" text-anchor="middle" fill="white" font-size="13" font-weight="700">4</text>
+  <text x="135" y="270" fill="#10b981" font-size="15" font-weight="700">업데이트</text>
+  <text x="180" y="295" text-anchor="middle" fill="#94a3b8" font-size="12">5차시 경사하강법</text>
+  <text x="180" y="315" text-anchor="middle" fill="#e2e8f0" font-size="11">가중치를 조금씩 수정한다</text>
+
+  <!-- 화살표: 1→2 -->
+  <line x1="280" y1="145" x2="518" y2="145" stroke="#60a5fa" stroke-width="3" marker-end="url(#arrow-blue)"/>
+  <!-- 화살표: 2→3 -->
+  <line x1="620" y1="192" x2="620" y2="238" stroke="#f59e0b" stroke-width="3" marker-end="url(#arrow-amber)"/>
+  <!-- 화살표: 3→4 -->
+  <line x1="518" y1="285" x2="282" y2="285" stroke="#ef4444" stroke-width="3" marker-end="url(#arrow-red)"/>
+  <!-- 화살표: 4→1 (순환) -->
+  <line x1="180" y1="238" x2="180" y2="192" stroke="#10b981" stroke-width="3" marker-end="url(#arrow-green)"/>
+
+  <!-- 순환 표시 텍스트 -->
+  <text x="400" y="220" text-anchor="middle" fill="#64748b" font-size="12" font-style="italic">반복!</text>
+
+  <!-- 하단 설명 -->
+  <text x="400" y="370" text-anchor="middle" fill="#94a3b8" font-size="12">한 번 반복할 때마다 오차가 줄어들고, 충분히 반복하면 오차가 거의 0에 가까워집니다</text>
+</svg>

@@ -1,0 +1,723 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>2차시: 기계가 스스로 학습할 수 있는가?</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700;900&display=swap');
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #0f172a;
+      --bg-card: #1e293b;
+      --text: #f1f5f9;
+      --text-dim: #94a3b8;
+      --accent: #38bdf8;
+      --accent2: #a78bfa;
+      --success: #4ade80;
+      --danger: #f87171;
+      --warning: #fbbf24;
+    }
+
+    body {
+      font-family: 'Noto Sans KR', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      overflow: hidden;
+      height: 100vh;
+      width: 100vw;
+    }
+
+    .slide-container {
+      width: 100vw;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .slide {
+      display: none;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      height: 100%;
+      padding: 60px 80px;
+      text-align: center;
+    }
+
+    .slide.active { display: flex; }
+
+    h1 {
+      font-size: 52px;
+      font-weight: 900;
+      line-height: 1.3;
+      margin-bottom: 24px;
+    }
+
+    h2 {
+      font-size: 44px;
+      font-weight: 700;
+      line-height: 1.3;
+      margin-bottom: 20px;
+    }
+
+    .subtitle {
+      font-size: 30px;
+      color: var(--text-dim);
+      margin-bottom: 16px;
+    }
+
+    p, li {
+      font-size: 28px;
+      line-height: 1.6;
+    }
+
+    .big-text {
+      font-size: 36px;
+      font-weight: 700;
+      line-height: 1.5;
+    }
+
+    .huge-text {
+      font-size: 48px;
+      font-weight: 900;
+      line-height: 1.4;
+    }
+
+    .accent { color: var(--accent); }
+    .accent2 { color: var(--accent2); }
+    .success { color: var(--success); }
+    .danger { color: var(--danger); }
+    .warning { color: var(--warning); }
+    .dim { color: var(--text-dim); }
+
+    ul {
+      list-style: none;
+      text-align: left;
+      max-width: 900px;
+    }
+
+    ul li {
+      padding: 8px 0;
+      padding-left: 32px;
+      position: relative;
+    }
+
+    ul li::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 18px;
+      width: 12px;
+      height: 12px;
+      background: var(--accent);
+      border-radius: 50%;
+    }
+
+    .card {
+      background: var(--bg-card);
+      border-radius: 16px;
+      padding: 40px 48px;
+      max-width: 900px;
+      text-align: left;
+      border: 2px solid rgba(56, 189, 248, 0.3);
+    }
+
+    .quote-box {
+      background: var(--bg-card);
+      border-left: 6px solid var(--warning);
+      border-radius: 0 16px 16px 0;
+      padding: 36px 44px;
+      max-width: 900px;
+      text-align: left;
+      font-style: italic;
+    }
+
+    .quote-box .source {
+      font-style: normal;
+      color: var(--text-dim);
+      font-size: 22px;
+      margin-top: 16px;
+    }
+
+    table {
+      border-collapse: collapse;
+      margin: 16px auto;
+      font-size: 26px;
+    }
+
+    th, td {
+      padding: 14px 24px;
+      border: 2px solid #334155;
+      text-align: center;
+    }
+
+    th {
+      background: #1e293b;
+      color: var(--accent);
+      font-weight: 700;
+    }
+
+    td { background: rgba(30, 41, 59, 0.5); }
+
+    /* Diagram styles */
+    .diagram {
+      margin: 20px auto;
+      max-width: 800px;
+    }
+
+    .diagram svg {
+      width: 100%;
+      height: auto;
+    }
+
+    /* Comparison layout */
+    .compare {
+      display: flex;
+      gap: 40px;
+      align-items: flex-start;
+      max-width: 1000px;
+    }
+
+    .compare-item {
+      flex: 1;
+      background: var(--bg-card);
+      border-radius: 16px;
+      padding: 32px;
+      text-align: center;
+    }
+
+    .compare-item h3 {
+      font-size: 32px;
+      font-weight: 700;
+      margin-bottom: 12px;
+    }
+
+    /* Timeline */
+    .timeline {
+      display: flex;
+      align-items: center;
+      gap: 0;
+      max-width: 1000px;
+      margin: 20px auto;
+    }
+
+    .timeline-item {
+      text-align: center;
+      flex: 1;
+      position: relative;
+    }
+
+    .timeline-year {
+      font-size: 28px;
+      font-weight: 900;
+      color: var(--accent);
+    }
+
+    .timeline-label {
+      font-size: 22px;
+      color: var(--text-dim);
+      margin-top: 4px;
+    }
+
+    .timeline-arrow {
+      font-size: 28px;
+      color: var(--text-dim);
+      padding: 0 8px;
+    }
+
+    /* Navigation */
+    .nav {
+      position: fixed;
+      bottom: 24px;
+      right: 32px;
+      display: flex;
+      gap: 12px;
+      z-index: 100;
+    }
+
+    .nav button {
+      width: 52px;
+      height: 52px;
+      border-radius: 50%;
+      border: 2px solid var(--accent);
+      background: var(--bg-card);
+      color: var(--accent);
+      font-size: 22px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.2s;
+    }
+
+    .nav button:hover {
+      background: var(--accent);
+      color: var(--bg);
+    }
+
+    .slide-counter {
+      position: fixed;
+      bottom: 32px;
+      left: 32px;
+      font-size: 20px;
+      color: var(--text-dim);
+      z-index: 100;
+    }
+
+    /* Progress bar */
+    .progress {
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 4px;
+      background: var(--accent);
+      transition: width 0.3s;
+      z-index: 100;
+    }
+
+    .tag {
+      display: inline-block;
+      padding: 4px 16px;
+      border-radius: 20px;
+      font-size: 20px;
+      font-weight: 700;
+      margin: 4px;
+    }
+
+    .tag-blue { background: rgba(56, 189, 248, 0.2); color: var(--accent); }
+    .tag-purple { background: rgba(167, 139, 250, 0.2); color: var(--accent2); }
+    .tag-green { background: rgba(74, 222, 128, 0.2); color: var(--success); }
+    .tag-red { background: rgba(248, 113, 113, 0.2); color: var(--danger); }
+
+    .emoji { font-size: 64px; margin-bottom: 16px; }
+
+    .grid-2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+      max-width: 1000px;
+      text-align: left;
+    }
+
+    .step-num {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: var(--accent);
+      color: var(--bg);
+      font-weight: 900;
+      font-size: 22px;
+      margin-right: 12px;
+      flex-shrink: 0;
+    }
+
+    .step-row {
+      display: flex;
+      align-items: center;
+      font-size: 28px;
+      padding: 10px 0;
+    }
+  </style>
+</head>
+<body>
+  <div class="progress" id="progress"></div>
+
+  <!-- Slide 1: Title -->
+  <div class="slide active" id="slide-1">
+    <p class="dim" style="font-size: 24px; margin-bottom: 12px;">AI 기초 &mdash; 2차시</p>
+    <h1>기계가 스스로<br/><span class="accent">학습</span>할 수 있는가?</h1>
+    <p class="subtitle">퍼셉트론 &middot; 결정 경계 &middot; XOR 문제</p>
+    <div style="margin-top: 20px;">
+      <span class="tag tag-blue">50분</span>
+      <span class="tag tag-purple">시뮬레이터 실습</span>
+    </div>
+  </div>
+
+  <!-- Slide 2: Recall + Today's Question -->
+  <div class="slide" id="slide-2">
+    <p class="dim" style="margin-bottom: 24px;">지난 시간 &rarr; 오늘</p>
+    <div class="compare">
+      <div class="compare-item" style="border: 2px solid rgba(148,163,184,0.3);">
+        <h3 class="dim">1차시</h3>
+        <p style="font-size: 26px;">"기계가 <strong>생각</strong>할 수 있는가?"</p>
+      </div>
+      <div class="compare-item" style="border: 2px solid rgba(56,189,248,0.5);">
+        <h3 class="accent">2차시</h3>
+        <p style="font-size: 26px;">"기계가 스스로 <strong class="accent">학습</strong>할 수 있는가?"</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Slide 3: Where does thought come from? -->
+  <div class="slide" id="slide-3">
+    <h2>생각은 어디에서 오는가?</h2>
+    <div style="margin-top: 20px;">
+      <div class="step-row"><span class="step-num">1</span> 사람은 어디에서 생각할까요? &rarr; <strong class="accent">뇌</strong></div>
+      <div class="step-row"><span class="step-num">2</span> 뇌는 어떻게 생각할까요? &rarr; <strong class="accent">뉴런</strong> 860억 개</div>
+      <div class="step-row"><span class="step-num">3</span> 뉴런을 수학으로 옮길 수 있을까?</div>
+    </div>
+  </div>
+
+  <!-- Slide 4: Neuron -->
+  <div class="slide" id="slide-4">
+    <h2>뉴런이 하는 일</h2>
+    <div class="diagram">
+      <svg viewBox="0 0 800 220" xmlns="http://www.w3.org/2000/svg">
+        <!-- Inputs -->
+        <rect x="20" y="30" width="140" height="50" rx="12" fill="#1e293b" stroke="#38bdf8" stroke-width="3"/>
+        <text x="90" y="62" text-anchor="middle" fill="#f1f5f9" font-size="24" font-weight="700">신호 받기</text>
+        <!-- Arrow -->
+        <line x1="170" y1="55" x2="230" y2="55" stroke="#94a3b8" stroke-width="3" marker-end="url(#arr)"/>
+        <!-- Sum -->
+        <rect x="240" y="30" width="140" height="50" rx="12" fill="#1e293b" stroke="#a78bfa" stroke-width="3"/>
+        <text x="310" y="62" text-anchor="middle" fill="#f1f5f9" font-size="24" font-weight="700">합산하기</text>
+        <!-- Arrow -->
+        <line x1="390" y1="55" x2="450" y2="55" stroke="#94a3b8" stroke-width="3" marker-end="url(#arr)"/>
+        <!-- Threshold -->
+        <rect x="460" y="30" width="160" height="50" rx="12" fill="#1e293b" stroke="#fbbf24" stroke-width="3"/>
+        <text x="540" y="62" text-anchor="middle" fill="#f1f5f9" font-size="24" font-weight="700">임계값 비교</text>
+        <!-- Arrow -->
+        <line x1="630" y1="55" x2="690" y2="55" stroke="#94a3b8" stroke-width="3" marker-end="url(#arr)"/>
+        <!-- Output -->
+        <rect x="700" y="20" width="80" height="70" rx="12" fill="rgba(74,222,128,0.2)" stroke="#4ade80" stroke-width="3"/>
+        <text x="740" y="50" text-anchor="middle" fill="#4ade80" font-size="28" font-weight="900">1</text>
+        <text x="740" y="75" text-anchor="middle" fill="#f87171" font-size="22">or 0</text>
+        <!-- Labels below -->
+        <text x="90" y="120" text-anchor="middle" fill="#94a3b8" font-size="20">수상돌기</text>
+        <text x="310" y="120" text-anchor="middle" fill="#94a3b8" font-size="20">세포체</text>
+        <text x="540" y="120" text-anchor="middle" fill="#94a3b8" font-size="20">발화 여부</text>
+        <text x="740" y="120" text-anchor="middle" fill="#94a3b8" font-size="20">축삭</text>
+        <!-- Arrow marker -->
+        <defs>
+          <marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+            <path d="M 0 0 L 10 5 L 0 10 z" fill="#94a3b8"/>
+          </marker>
+        </defs>
+        <!-- Key insight -->
+        <text x="400" y="180" text-anchor="middle" fill="#38bdf8" font-size="26" font-weight="700">발화(1) 또는 안 함(0) = 참(TRUE) 또는 거짓(FALSE)</text>
+        <text x="400" y="210" text-anchor="middle" fill="#94a3b8" font-size="22">맥컬록 &amp; 피츠 (1943)</text>
+      </svg>
+    </div>
+  </div>
+
+  <!-- Slide 5: McCulloch-Pitts Limitation -->
+  <div class="slide" id="slide-5">
+    <h2>맥컬록-피츠 모델의 <span class="danger">한계</span></h2>
+    <ul style="margin-top: 20px;">
+      <li>입력과 출력이 <strong>0과 1</strong>만 가능</li>
+      <li><strong class="danger">자동 학습 알고리즘이 없다</strong></li>
+      <li>사람이 직접 가중치를 계산해야 함</li>
+    </ul>
+    <p class="big-text" style="margin-top: 36px;">뉴런을 수학으로 옮겼지만,<br/><span class="danger">"스스로 배우는 것"</span>과는 거리가 멀었다</p>
+  </div>
+
+  <!-- Slide 6: Rosenblatt -->
+  <div class="slide" id="slide-6">
+    <p class="dim" style="margin-bottom: 8px;">15년 뒤, 1958년</p>
+    <h2>프랭크 로젠블랫의 돌파</h2>
+    <p class="big-text" style="margin-top: 20px;">
+      <span class="accent">퍼셉트론(Perceptron)</span>
+    </p>
+    <p style="font-size: 30px; margin-top: 20px;">맥컬록-피츠 모델 + <strong class="success">"학습"</strong></p>
+    <p style="font-size: 28px; margin-top: 16px; color: var(--text-dim);">기계가 데이터를 보면서 <strong class="success">스스로 가중치를 찾아가는</strong> 알고리즘</p>
+  </div>
+
+  <!-- Slide 7: Weight Analogy -->
+  <div class="slide" id="slide-7">
+    <h2>"가중치"가 뭔데?</h2>
+    <table style="margin-top: 24px;">
+      <tr>
+        <th>용어</th>
+        <th>입시 비유</th>
+        <th>퍼셉트론</th>
+      </tr>
+      <tr>
+        <td><strong class="accent">가중치</strong> w</td>
+        <td>과목 반영 비율<br/><span class="dim" style="font-size:22px;">수학 1.2배, 영어 0.8배</span></td>
+        <td>입력의 영향력</td>
+      </tr>
+      <tr>
+        <td><strong class="accent2">편향</strong> b</td>
+        <td>합격 커트라인</td>
+        <td>기준점 조절</td>
+      </tr>
+      <tr>
+        <td><strong class="warning">활성화</strong></td>
+        <td>합격/불합격</td>
+        <td>1 또는 0</td>
+      </tr>
+    </table>
+  </div>
+
+  <!-- Slide 8: Perceptron = Decision Boundary -->
+  <div class="slide" id="slide-8">
+    <h2>퍼셉트론 = <span class="accent">직선 하나</span>로 나누기</h2>
+    <div class="diagram">
+      <svg viewBox="0 0 700 340" xmlns="http://www.w3.org/2000/svg">
+        <!-- Coordinate plane -->
+        <line x1="80" y1="280" x2="380" y2="280" stroke="#475569" stroke-width="3"/>
+        <line x1="80" y1="280" x2="80" y2="40" stroke="#475569" stroke-width="3"/>
+        <text x="380" y="310" text-anchor="middle" fill="#94a3b8" font-size="24">x₁</text>
+        <text x="50" y="40" text-anchor="middle" fill="#94a3b8" font-size="24">x₂</text>
+        <!-- Decision boundary -->
+        <line x1="60" y1="220" x2="350" y2="60" stroke="#38bdf8" stroke-width="4" stroke-dasharray="12,6"/>
+        <text x="360" y="50" fill="#38bdf8" font-size="22" font-weight="700">결정 경계</text>
+        <!-- Points for AND -->
+        <circle cx="140" cy="230" r="16" fill="#60a5fa" stroke="#93c5fd" stroke-width="3"/>
+        <circle cx="260" cy="230" r="16" fill="#60a5fa" stroke="#93c5fd" stroke-width="3"/>
+        <circle cx="140" cy="120" r="16" fill="#60a5fa" stroke="#93c5fd" stroke-width="3"/>
+        <circle cx="260" cy="120" r="16" fill="#f87171" stroke="#fca5a5" stroke-width="3"/>
+        <!-- Labels -->
+        <text x="140" y="265" text-anchor="middle" fill="#94a3b8" font-size="18">(0,0)</text>
+        <text x="260" y="265" text-anchor="middle" fill="#94a3b8" font-size="18">(1,0)</text>
+        <text x="140" y="108" text-anchor="middle" fill="#94a3b8" font-size="18">(0,1)</text>
+        <text x="260" y="108" text-anchor="middle" fill="#94a3b8" font-size="18">(1,1)</text>
+        <!-- Equation -->
+        <text x="540" y="100" text-anchor="middle" fill="#f1f5f9" font-size="26" font-weight="700">w₁x₁ + w₂x₂ + b = 0</text>
+        <text x="540" y="160" text-anchor="middle" fill="#4ade80" font-size="24">&ge; 0 &rarr; 1 (빨강)</text>
+        <text x="540" y="200" text-anchor="middle" fill="#60a5fa" font-size="24">&lt; 0 &rarr; 0 (파랑)</text>
+        <text x="540" y="280" text-anchor="middle" fill="#94a3b8" font-size="22">AND 게이트 예시</text>
+      </svg>
+    </div>
+  </div>
+
+  <!-- Slide 9: AND/OR Logic Gates -->
+  <div class="slide" id="slide-9">
+    <h2>글자를 읽는 것보다 <span class="accent">더 큰 의미</span></h2>
+    <div class="grid-2" style="margin-top: 24px;">
+      <div class="compare-item">
+        <h3 class="success">AND</h3>
+        <p style="font-size: 26px;">둘 다 1일 때만 1</p>
+        <p class="dim" style="font-size: 22px; margin-top: 8px;">비밀번호 + 얼굴 인식<br/>둘 다 맞아야 통과</p>
+      </div>
+      <div class="compare-item">
+        <h3 class="accent">OR</h3>
+        <p style="font-size: 26px;">하나라도 1이면 1</p>
+        <p class="dim" style="font-size: 22px; margin-top: 8px;">카드 또는 현금<br/>하나만 있으면 결제</p>
+      </div>
+    </div>
+    <p class="big-text" style="margin-top: 28px;">AND + OR + NOT = <span class="accent">모든 논리 연산</span></p>
+  </div>
+
+  <!-- Slide 10: Simulator Instruction -->
+  <div class="slide" id="slide-10">
+    <h2>직접 확인해봅시다</h2>
+    <div class="card" style="margin-top: 20px; text-align: left;">
+      <div class="step-row"><span class="step-num">1</span> <strong>AND 모드</strong>에서 시작</div>
+      <div class="step-row"><span class="step-num">2</span> w₁, w₂ 슬라이더로 직선 기울기 조절</div>
+      <div class="step-row"><span class="step-num">3</span> b 슬라이더로 직선 위치 이동</div>
+      <div class="step-row"><span class="step-num">4</span> <strong class="success">4/4</strong>가 되면 성공!</div>
+      <div class="step-row"><span class="step-num">5</span> <strong>OR 모드</strong>로 바꿔서 다시 도전</div>
+    </div>
+    <p class="dim" style="margin-top: 16px; font-size: 24px;">학생 교재 &rarr; "직접 확인해봅시다" 시뮬레이터</p>
+  </div>
+
+  <!-- Slide 11: NYT Article -->
+  <div class="slide" id="slide-11">
+    <p class="dim" style="margin-bottom: 12px;">1958년 7월 8일</p>
+    <div class="quote-box">
+      <p style="font-size: 32px; font-weight: 700; color: var(--warning);">"NEW NAVY DEVICE LEARNS BY DOING"</p>
+      <p style="font-size: 26px; margin-top: 16px;">이 기계는 장차 <strong>"걷고, 말하고, 보고, 쓰고,<br/>스스로를 인식할 수 있을 것"</strong>으로 기대된다.</p>
+      <p class="source">&mdash; The New York Times, 1958.7.8</p>
+    </div>
+    <p style="font-size: 26px; margin-top: 24px; color: var(--text-dim);">펀치카드 50장의 좌/우를 구별하는 수준이었는데...</p>
+  </div>
+
+  <!-- Slide 12: Excitement -->
+  <div class="slide" id="slide-12">
+    <h2>세상이 열광한 이유</h2>
+    <p class="big-text" style="margin-top: 24px;">
+      퍼셉트론이 <span class="success">AND</span>와 <span class="success">OR</span>을 배울 수 있다면?
+    </p>
+    <p style="font-size: 28px; margin-top: 20px;">원리적으로 <strong>컴퓨터의 기본 연산을 배우는 기계</strong>가 가능!</p>
+    <p style="font-size: 28px; margin-top: 12px; color: var(--text-dim);">글자를 읽는 것은 시작일 뿐, 가능성은 무한해 보였다</p>
+  </div>
+
+  <!-- Slide 13: Learning Rule -->
+  <div class="slide" id="slide-13">
+    <h2>퍼셉트론 <span class="accent">학습 규칙</span></h2>
+    <p class="huge-text" style="margin-top: 28px;">"틀리면 고치고,<br/>맞으면 냅둔다"</p>
+    <div style="margin-top: 28px; font-size: 26px;">
+      <p>1이어야 하는데 0? &rarr; 가중치에 입력값을 <span class="success">더한다</span></p>
+      <p style="margin-top: 8px;">0이어야 하는데 1? &rarr; 가중치에서 입력값을 <span class="danger">뺀다</span></p>
+      <p style="margin-top: 8px;">맞았으면? &rarr; 그대로 둔다</p>
+    </div>
+  </div>
+
+  <!-- Slide 14: Auto Learning Demo Instruction -->
+  <div class="slide" id="slide-14">
+    <h2>직접 눈으로 확인해봅시다</h2>
+    <div class="card" style="margin-top: 20px; text-align: left;">
+      <div class="step-row"><span class="step-num">1</span> <strong>AND 모드</strong>에서 "학습 시작" 클릭</div>
+      <div class="step-row"><span class="step-num">2</span> 오른쪽 <strong class="accent">해설 패널</strong>을 주목!</div>
+      <div class="step-row"><span class="step-num">3</span> 정확도 <strong class="success">4/4</strong>에서 자동 정지</div>
+      <div class="step-row"><span class="step-num">4</span> <strong>OR 모드</strong>로 바꿔서 다시 학습</div>
+    </div>
+    <p class="dim" style="margin-top: 16px; font-size: 24px;">학생 교재 &rarr; "직접 눈으로 확인해봅시다" 시뮬레이션</p>
+  </div>
+
+  <!-- Slide 15: 1969 — Minsky & Papert -->
+  <div class="slide" id="slide-15">
+    <p class="dim" style="margin-bottom: 12px;">11년 후, 1969년</p>
+    <h2>민스키 &amp; 파퍼트</h2>
+    <p style="font-size: 28px; margin-top: 16px;">MIT에서 책 한 권을 출판합니다</p>
+    <p class="huge-text" style="margin-top: 28px; color: var(--danger);">"퍼셉트론은<br/>XOR을 풀 수 없다"</p>
+  </div>
+
+  <!-- Slide 16: XOR Problem Visual -->
+  <div class="slide" id="slide-16">
+    <h2><span class="danger">XOR</span>: 직선으로 나눌 수 없다</h2>
+    <div class="diagram">
+      <svg viewBox="0 0 800 300" xmlns="http://www.w3.org/2000/svg">
+        <!-- AND (solvable) -->
+        <text x="180" y="30" text-anchor="middle" fill="#4ade80" font-size="28" font-weight="700">AND &#10003;</text>
+        <rect x="40" y="40" width="280" height="240" rx="12" fill="none" stroke="#334155" stroke-width="2"/>
+        <line x1="60" y1="220" x2="280" y2="60" stroke="#38bdf8" stroke-width="4"/>
+        <circle cx="120" cy="210" r="14" fill="#60a5fa" stroke="#93c5fd" stroke-width="3"/>
+        <circle cx="240" cy="210" r="14" fill="#60a5fa" stroke="#93c5fd" stroke-width="3"/>
+        <circle cx="120" cy="100" r="14" fill="#60a5fa" stroke="#93c5fd" stroke-width="3"/>
+        <circle cx="240" cy="100" r="14" fill="#f87171" stroke="#fca5a5" stroke-width="3"/>
+
+        <!-- XOR (impossible) -->
+        <text x="600" y="30" text-anchor="middle" fill="#f87171" font-size="28" font-weight="700">XOR &#10007;</text>
+        <rect x="460" y="40" width="280" height="240" rx="12" fill="none" stroke="#334155" stroke-width="2"/>
+        <!-- Dashed lines showing failure -->
+        <line x1="480" y1="240" x2="700" y2="60" stroke="#f87171" stroke-width="3" stroke-dasharray="8,6" opacity="0.4"/>
+        <line x1="480" y1="80" x2="700" y2="240" stroke="#f87171" stroke-width="3" stroke-dasharray="8,6" opacity="0.4"/>
+        <circle cx="540" cy="210" r="14" fill="#60a5fa" stroke="#93c5fd" stroke-width="3"/>
+        <circle cx="660" cy="210" r="14" fill="#f87171" stroke="#fca5a5" stroke-width="3"/>
+        <circle cx="540" cy="100" r="14" fill="#f87171" stroke="#fca5a5" stroke-width="3"/>
+        <circle cx="660" cy="100" r="14" fill="#60a5fa" stroke="#93c5fd" stroke-width="3"/>
+
+        <!-- Question mark -->
+        <text x="600" y="165" text-anchor="middle" fill="#f87171" font-size="48" font-weight="900" opacity="0.3">?</text>
+      </svg>
+    </div>
+    <p class="big-text" style="margin-top: 12px;">어떤 직선으로도 <span class="danger">대각선 패턴</span>을 나눌 수 없다</p>
+  </div>
+
+  <!-- Slide 17: XOR Challenge Instruction -->
+  <div class="slide" id="slide-17">
+    <h2>직접 확인해보세요</h2>
+    <p class="big-text" style="margin-top: 24px;">학생 교재에서 <span class="danger">XOR 시뮬레이터</span>를 실행하세요</p>
+    <div class="card" style="margin-top: 28px;">
+      <p style="font-size: 28px;">직선을 아무리 움직여도 <strong class="danger">4/4가 되지 않습니다</strong></p>
+      <p style="font-size: 24px; color: var(--text-dim); margin-top: 12px;">이것은 버그가 아닙니다 &mdash; 수학적으로 불가능합니다</p>
+    </div>
+    <p style="font-size: 26px; margin-top: 24px; color: var(--text-dim);">"학습 시작"도 눌러보세요 &mdash; 직선이 계속 흔들리기만 합니다</p>
+  </div>
+
+  <!-- Slide 18: AI Winter Timeline -->
+  <div class="slide" id="slide-18">
+    <h2><span class="accent2">AI 겨울</span>의 시작</h2>
+    <div class="timeline" style="margin-top: 36px;">
+      <div class="timeline-item">
+        <div class="timeline-year" style="color: var(--success);">1943</div>
+        <div class="timeline-label">맥컬록-피츠<br/>인공 뉴런</div>
+      </div>
+      <div class="timeline-arrow">&rarr;</div>
+      <div class="timeline-item">
+        <div class="timeline-year" style="color: var(--warning);">1958</div>
+        <div class="timeline-label">로젠블랫<br/>퍼셉트론</div>
+      </div>
+      <div class="timeline-arrow">&rarr;</div>
+      <div class="timeline-item">
+        <div class="timeline-year" style="color: var(--danger);">1969</div>
+        <div class="timeline-label">민스키 &amp; 파퍼트<br/>XOR 증명</div>
+      </div>
+      <div class="timeline-arrow">&rarr;</div>
+      <div class="timeline-item">
+        <div class="timeline-year" style="color: var(--accent2);">~1986</div>
+        <div class="timeline-label">약 20년간<br/>AI 겨울</div>
+      </div>
+    </div>
+    <p style="font-size: 26px; margin-top: 36px;">
+      다층으로 쌓으면 XOR을 풀 수 있지만,<br/>
+      <strong class="danger">학습 방법을 몰랐다</strong> &rarr; 연구 중단
+    </p>
+  </div>
+
+  <!-- Slide 19: Summary -->
+  <div class="slide" id="slide-19">
+    <h2>오늘 배운 것</h2>
+    <ul style="margin-top: 24px;">
+      <li>퍼셉트론 = 뇌의 뉴런을 <span class="accent">수학으로 모방</span>한 기계</li>
+      <li>AND, OR 학습 성공 &rarr; 세상이 열광</li>
+      <li><span class="danger">XOR은 직선 하나로 불가능</span> &rarr; 수학적으로 증명됨</li>
+      <li>다층으로 쌓으면 가능하지만, <span class="danger">학습 방법이 없었다</span></li>
+      <li>약 20년간 <span class="accent2">AI 겨울</span></li>
+    </ul>
+  </div>
+
+  <!-- Slide 20: Next + Reflection -->
+  <div class="slide" id="slide-20">
+    <h2>3차시 예고</h2>
+    <div class="card" style="margin-top: 20px;">
+      <p class="big-text">모두가 포기했을 때,<br/>혼자 버텨낸 연구자가 있었습니다</p>
+      <p style="font-size: 26px; margin-top: 16px; color: var(--text-dim);">
+        그가 찾아낸 해법 &mdash; <strong class="accent">역전파(Backpropagation)</strong>
+      </p>
+    </div>
+    <div style="margin-top: 32px;">
+      <p style="font-size: 28px;">성찰 질문 (구글 설문)</p>
+      <p class="dim" style="font-size: 24px; margin-top: 8px;">XOR의 한계를 어떻게 극복할 수 있을까요?</p>
+    </div>
+  </div>
+
+  <!-- Navigation -->
+  <div class="nav">
+    <button onclick="prevSlide()" aria-label="이전 슬라이드">&#9664;</button>
+    <button onclick="nextSlide()" aria-label="다음 슬라이드">&#9654;</button>
+  </div>
+  <div class="slide-counter" id="counter">1 / 20</div>
+
+  <script>
+    const slides = document.querySelectorAll('.slide');
+    let current = 0;
+    const total = slides.length;
+
+    function showSlide(n) {
+      slides[current].classList.remove('active');
+      current = (n + total) % total;
+      slides[current].classList.add('active');
+      document.getElementById('counter').textContent = `${current + 1} / ${total}`;
+      document.getElementById('progress').style.width = `${((current + 1) / total) * 100}%`;
+    }
+
+    function nextSlide() { showSlide(current + 1); }
+    function prevSlide() { showSlide(current - 1); }
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'ArrowRight' || e.key === ' ' || e.key === 'Enter') {
+        e.preventDefault();
+        nextSlide();
+      }
+      if (e.key === 'ArrowLeft' || e.key === 'Backspace') {
+        e.preventDefault();
+        prevSlide();
+      }
+      if (e.key === 'Home') { e.preventDefault(); showSlide(0); }
+      if (e.key === 'End') { e.preventDefault(); showSlide(total - 1); }
+    });
+
+    // Touch support
+    let touchStartX = 0;
+    document.addEventListener('touchstart', (e) => { touchStartX = e.touches[0].clientX; });
+    document.addEventListener('touchend', (e) => {
+      const diff = touchStartX - e.changedTouches[0].clientX;
+      if (Math.abs(diff) > 50) { diff > 0 ? nextSlide() : prevSlide(); }
+    });
+
+    // Initialize progress
+    document.getElementById('progress').style.width = `${(1 / total) * 100}%`;
+  </script>
+</body>
+</html>

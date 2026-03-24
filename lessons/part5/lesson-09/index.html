@@ -1,0 +1,859 @@
+<!DOCTYPE html><html lang="ko" dir="ltr" data-theme="dark" data-has-toc data-has-sidebar class="astro-bguv2lll"> <head><meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><title>9차시: 나의 진로와 AI | AI 기초</title><link rel="canonical" href="https://greatsong.github.io/ai-basic-textbook/lessons/part5/lesson-09/"/><link rel="sitemap" href="/ai-basic-textbook/sitemap-index.xml"/><link rel="shortcut icon" href="/ai-basic-textbook/favicon.svg" type="image/svg+xml"/><meta name="generator" content="Astro v5.18.1"/><meta name="generator" content="Starlight v0.37.7"/><meta property="og:title" content="9차시: 나의 진로와 AI"/><meta property="og:type" content="article"/><meta property="og:url" content="https://greatsong.github.io/ai-basic-textbook/lessons/part5/lesson-09/"/><meta property="og:locale" content="ko"/><meta property="og:description" content="나의 진로와 AI — 8주간 배운 지식을 무기로, AI 시대를 준비하는 나만의 전략을 세운다"/><meta property="og:site_name" content="AI 기초"/><meta name="twitter:card" content="summary_large_image"/><meta name="description" content="나의 진로와 AI — 8주간 배운 지식을 무기로, AI 시대를 준비하는 나만의 전략을 세운다"/><script>
+	window.StarlightThemeProvider = (() => {
+		const storedTheme =
+			typeof localStorage !== 'undefined' && localStorage.getItem('starlight-theme');
+		const theme =
+			storedTheme ||
+			(window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+		document.documentElement.dataset.theme = theme === 'light' ? 'light' : 'dark';
+		return {
+			updatePickers(theme = storedTheme || 'auto') {
+				document.querySelectorAll('starlight-theme-select').forEach((picker) => {
+					const select = picker.querySelector('select');
+					if (select) select.value = theme;
+					/** @type {HTMLTemplateElement | null} */
+					const tmpl = document.querySelector(`#theme-icons`);
+					const newIcon = tmpl && tmpl.content.querySelector('.' + theme);
+					if (newIcon) {
+						const oldIcon = picker.querySelector('svg.label-icon');
+						if (oldIcon) {
+							oldIcon.replaceChildren(...newIcon.cloneNode(true).childNodes);
+						}
+					}
+				});
+			},
+		};
+	})();
+</script><template id="theme-icons"><svg aria-hidden="true" class="light astro-c6vsoqas" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1em;"><path d="M5 12a1 1 0 0 0-1-1H3a1 1 0 0 0 0 2h1a1 1 0 0 0 1-1Zm.64 5-.71.71a1 1 0 0 0 0 1.41 1 1 0 0 0 1.41 0l.71-.71A1 1 0 0 0 5.64 17ZM12 5a1 1 0 0 0 1-1V3a1 1 0 0 0-2 0v1a1 1 0 0 0 1 1Zm5.66 2.34a1 1 0 0 0 .7-.29l.71-.71a1 1 0 1 0-1.41-1.41l-.66.71a1 1 0 0 0 0 1.41 1 1 0 0 0 .66.29Zm-12-.29a1 1 0 0 0 1.41 0 1 1 0 0 0 0-1.41l-.71-.71a1.004 1.004 0 1 0-1.43 1.41l.73.71ZM21 11h-1a1 1 0 0 0 0 2h1a1 1 0 0 0 0-2Zm-2.64 6A1 1 0 0 0 17 18.36l.71.71a1 1 0 0 0 1.41 0 1 1 0 0 0 0-1.41l-.76-.66ZM12 6.5a5.5 5.5 0 1 0 5.5 5.5A5.51 5.51 0 0 0 12 6.5Zm0 9a3.5 3.5 0 1 1 0-7 3.5 3.5 0 0 1 0 7Zm0 3.5a1 1 0 0 0-1 1v1a1 1 0 0 0 2 0v-1a1 1 0 0 0-1-1Z"/></svg><svg aria-hidden="true" class="dark astro-c6vsoqas" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1em;"><path d="M21.64 13a1 1 0 0 0-1.05-.14 8.049 8.049 0 0 1-3.37.73 8.15 8.15 0 0 1-8.14-8.1 8.59 8.59 0 0 1 .25-2A1 1 0 0 0 8 2.36a10.14 10.14 0 1 0 14 11.69 1 1 0 0 0-.36-1.05Zm-9.5 6.69A8.14 8.14 0 0 1 7.08 5.22v.27a10.15 10.15 0 0 0 10.14 10.14 9.784 9.784 0 0 0 2.1-.22 8.11 8.11 0 0 1-7.18 4.32v-.04Z"/></svg><svg aria-hidden="true" class="auto astro-c6vsoqas" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1em;"><path d="M21 14h-1V7a3 3 0 0 0-3-3H7a3 3 0 0 0-3 3v7H3a1 1 0 0 0-1 1v2a3 3 0 0 0 3 3h14a3 3 0 0 0 3-3v-2a1 1 0 0 0-1-1ZM6 7a1 1 0 0 1 1-1h10a1 1 0 0 1 1 1v7H6V7Zm14 10a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1v-1h16v1Z"/></svg></template><link rel="stylesheet" href="/ai-basic-textbook/_astro/print.DNXP8c50.css" media="print"><link rel="stylesheet" href="/ai-basic-textbook/_astro/index.DhmYAGC_.css">
+<style>@layer starlight.components{:root{--sl-badge-default-border: var(--sl-color-accent);--sl-badge-default-bg: var(--sl-color-accent-low);--sl-badge-default-text: #fff;--sl-badge-note-border: var(--sl-color-blue);--sl-badge-note-bg: var(--sl-color-blue-low);--sl-badge-note-text: #fff;--sl-badge-danger-border: var(--sl-color-red);--sl-badge-danger-bg: var(--sl-color-red-low);--sl-badge-danger-text: #fff;--sl-badge-success-border: var(--sl-color-green);--sl-badge-success-bg: var(--sl-color-green-low);--sl-badge-success-text: #fff;--sl-badge-caution-border: var(--sl-color-orange);--sl-badge-caution-bg: var(--sl-color-orange-low);--sl-badge-caution-text: #fff;--sl-badge-tip-border: var(--sl-color-purple);--sl-badge-tip-bg: var(--sl-color-purple-low);--sl-badge-tip-text: #fff}[data-theme=light]:root{--sl-badge-default-bg: var(--sl-color-accent-high);--sl-badge-note-bg: var(--sl-color-blue-high);--sl-badge-danger-bg: var(--sl-color-red-high);--sl-badge-success-bg: var(--sl-color-green-high);--sl-badge-caution-bg: var(--sl-color-orange-high);--sl-badge-tip-bg: var(--sl-color-purple-high)}.sl-badge:where(.astro-avdet4wd){display:inline-block;border:1px solid var(--sl-color-border-badge);border-radius:.25rem;font-family:var(--sl-font-system-mono);line-height:normal;color:var(--sl-color-text-badge);background-color:var(--sl-color-bg-badge);overflow-wrap:anywhere}.sidebar-content .sl-badge:where(.astro-avdet4wd){line-height:1;font-size:var(--sl-text-xs);padding:.125rem .375rem}.sidebar-content a[aria-current=page]>.sl-badge:where(.astro-avdet4wd){--sl-color-bg-badge: transparent;--sl-color-border-badge: currentColor;color:inherit}.default:where(.astro-avdet4wd){--sl-color-bg-badge: var(--sl-badge-default-bg);--sl-color-border-badge: var(--sl-badge-default-border);--sl-color-text-badge: var(--sl-badge-default-text)}.note:where(.astro-avdet4wd){--sl-color-bg-badge: var(--sl-badge-note-bg);--sl-color-border-badge: var(--sl-badge-note-border);--sl-color-text-badge: var(--sl-badge-note-text)}.danger:where(.astro-avdet4wd){--sl-color-bg-badge: var(--sl-badge-danger-bg);--sl-color-border-badge: var(--sl-badge-danger-border);--sl-color-text-badge: var(--sl-badge-danger-text)}.success:where(.astro-avdet4wd){--sl-color-bg-badge: var(--sl-badge-success-bg);--sl-color-border-badge: var(--sl-badge-success-border);--sl-color-text-badge: var(--sl-badge-success-text)}.tip:where(.astro-avdet4wd){--sl-color-bg-badge: var(--sl-badge-tip-bg);--sl-color-border-badge: var(--sl-badge-tip-border);--sl-color-text-badge: var(--sl-badge-tip-text)}.caution:where(.astro-avdet4wd){--sl-color-bg-badge: var(--sl-badge-caution-bg);--sl-color-border-badge: var(--sl-badge-caution-border);--sl-color-text-badge: var(--sl-badge-caution-text)}.small:where(.astro-avdet4wd){font-size:var(--sl-text-xs);padding:.125rem .25rem}.medium:where(.astro-avdet4wd){font-size:var(--sl-text-sm);padding:.175rem .35rem}.large:where(.astro-avdet4wd){font-size:var(--sl-text-base);padding:.225rem .45rem}.sl-markdown-content :is(h1,h2,h3,h4,h5,h6) .sl-badge:where(.astro-avdet4wd){vertical-align:middle}}
+@layer starlight.components{.card:where(.astro-v5tidmuc){--sl-card-border: var(--sl-color-purple);--sl-card-bg: var(--sl-color-purple-low);border:1px solid var(--sl-color-gray-5);background-color:var(--sl-color-black);padding:clamp(1rem,calc(.125rem + 3vw),2.5rem);flex-direction:column;gap:clamp(.5rem,calc(.125rem + 1vw),1rem)}.card:where(.astro-v5tidmuc):nth-child(4n+1){--sl-card-border: var(--sl-color-orange);--sl-card-bg: var(--sl-color-orange-low)}.card:where(.astro-v5tidmuc):nth-child(4n+3){--sl-card-border: var(--sl-color-green);--sl-card-bg: var(--sl-color-green-low)}.card:where(.astro-v5tidmuc):nth-child(4n+4){--sl-card-border: var(--sl-color-red);--sl-card-bg: var(--sl-color-red-low)}.card:where(.astro-v5tidmuc):nth-child(4n+5){--sl-card-border: var(--sl-color-blue);--sl-card-bg: var(--sl-color-blue-low)}.title:where(.astro-v5tidmuc){font-weight:600;font-size:var(--sl-text-h4);color:var(--sl-color-white);line-height:var(--sl-line-height-headings);gap:1rem;align-items:center}.card:where(.astro-v5tidmuc) .icon:where(.astro-v5tidmuc){border:1px solid var(--sl-card-border);background-color:var(--sl-card-bg);padding:.2em;border-radius:.25rem;flex-shrink:0}.card:where(.astro-v5tidmuc) .body:where(.astro-v5tidmuc){margin:0;font-size:clamp(var(--sl-text-sm),calc(.5rem + 1vw),var(--sl-text-body))}}
+@layer starlight.components{.card-grid:where(.astro-zntqmydn){display:grid;grid-template-columns:100%;gap:1rem}.card-grid:where(.astro-zntqmydn)>*{margin-top:0!important}@media(min-width:50rem){.card-grid:where(.astro-zntqmydn){grid-template-columns:1fr 1fr;gap:1.5rem}.stagger:where(.astro-zntqmydn){--stagger-height: 5rem;padding-bottom:var(--stagger-height)}.stagger:where(.astro-zntqmydn)>*:nth-child(2n){transform:translateY(var(--stagger-height))}}}
+@layer starlight.components{svg:where(.astro-c6vsoqas){color:var(--sl-icon-color);font-size:var(--sl-icon-size, 1em);width:1em;height:1em}}
+@layer starlight.components{.sl-link-card:where(.astro-mf7fz2mj){display:grid;grid-template-columns:1fr auto;gap:.5rem;border:1px solid var(--sl-color-gray-5);border-radius:.5rem;padding:1rem;box-shadow:var(--sl-shadow-sm);position:relative}a:where(.astro-mf7fz2mj){text-decoration:none;line-height:var(--sl-line-height-headings)}a:where(.astro-mf7fz2mj):before{content:"";position:absolute;inset:0}.stack:where(.astro-mf7fz2mj){flex-direction:column;gap:.5rem}.title:where(.astro-mf7fz2mj){color:var(--sl-color-white);font-weight:600;font-size:var(--sl-text-lg)}.description:where(.astro-mf7fz2mj){color:var(--sl-color-gray-3);line-height:1.5}.icon:where(.astro-mf7fz2mj){color:var(--sl-color-gray-3)}.sl-link-card:where(.astro-mf7fz2mj):hover{background:var(--sl-color-gray-7, var(--sl-color-gray-6));border-color:var(--sl-color-gray-2)}.sl-link-card:where(.astro-mf7fz2mj):hover .icon:where(.astro-mf7fz2mj){color:var(--sl-color-white)}}
+@layer starlight.components{.sl-steps{--bullet-size: calc(var(--sl-line-height) * 1rem);--bullet-margin: .375rem;list-style:none;counter-reset:steps-counter var(--sl-steps-start, 0);padding-inline-start:0}.sl-steps>li{counter-increment:steps-counter;position:relative;padding-inline-start:calc(var(--bullet-size) + 1rem);padding-bottom:1px;min-height:calc(var(--bullet-size) + var(--bullet-margin))}.sl-steps>li+li{margin-top:0}.sl-steps>li:before{content:counter(steps-counter);position:absolute;top:0;inset-inline-start:0;width:var(--bullet-size);height:var(--bullet-size);line-height:var(--bullet-size);font-size:var(--sl-text-xs);font-weight:600;text-align:center;color:var(--sl-color-white);background-color:var(--sl-color-gray-6);border-radius:99rem;box-shadow:inset 0 0 0 1px var(--sl-color-gray-5)}.sl-steps>li:after{--guide-width: 1px;content:"";position:absolute;top:calc(var(--bullet-size) + var(--bullet-margin));bottom:var(--bullet-margin);inset-inline-start:calc((var(--bullet-size) - var(--guide-width)) / 2);width:var(--guide-width);background-color:var(--sl-color-hairline-light)}}@layer starlight.content{.sl-steps>li>:first-child{--lh: calc(1em * var(--sl-line-height));--shift-y: calc(.5 * (var(--bullet-size) - var(--lh)));transform:translateY(var(--shift-y));margin-bottom:var(--shift-y)}.sl-steps>li>:first-child:where(h1,h2,h3,h4,h5,h6){--lh: calc(1em * var(--sl-line-height-headings))}@supports (--prop: 1lh){.sl-steps>li>:first-child{--lh: 1lh}}}
+@layer starlight.components{.sl-link-button:where(.astro-xwgiixxa){align-items:center;border:1px solid transparent;border-radius:999rem;display:inline-flex;font-size:var(--sl-text-sm);gap:.5em;line-height:1.1875;outline-offset:.25rem;padding:.4375rem 1.125rem;text-decoration:none}.sl-link-button:where(.astro-xwgiixxa).primary{background:var(--sl-color-text-accent);border-color:var(--sl-color-text-accent);color:var(--sl-color-black)}.sl-link-button:where(.astro-xwgiixxa).primary:hover{color:var(--sl-color-black)}.sl-link-button:where(.astro-xwgiixxa).secondary{border-color:inherit;color:var(--sl-color-white)}.sl-link-button:where(.astro-xwgiixxa).minimal{color:var(--sl-color-white);padding-inline:0}.sl-link-button:where(.astro-xwgiixxa) svg{flex-shrink:0}@media(min-width:50rem){.sl-link-button:where(.astro-xwgiixxa){font-size:var(--sl-text-base);padding:.9375rem 1.25rem}}.sl-markdown-content .sl-link-button:where(.astro-xwgiixxa){margin-inline-end:1rem}.sl-markdown-content .sl-link-button:where(.astro-xwgiixxa):not(:where(p *)){margin-block:1rem}}
+</style><script type="module" src="/ai-basic-textbook/_astro/page.B1D-nYk3.js"></script></head> <body class="astro-bguv2lll"> <a href="#_top" class="astro-7q3lir66">콘텐츠로 이동</a>  <div class="page sl-flex astro-vrdttmbt"> <header class="header astro-vrdttmbt"><div class="header astro-kmkmnagf"> <div class="title-wrapper sl-flex astro-kmkmnagf"> <a href="/ai-basic-textbook/" class="site-title sl-flex astro-m46x6ez3">  <span class="astro-m46x6ez3" translate="no"> AI 기초 </span> </a>  </div> <div class="sl-flex print:hidden astro-kmkmnagf"> <site-search class="astro-kmkmnagf astro-v37mnknz" data-translations="{&#34;placeholder&#34;:&#34;검색&#34;}"> <button data-open-modal disabled aria-label="검색" aria-keyshortcuts="Control+K" class="astro-v37mnknz"> <svg aria-hidden="true" class="astro-v37mnknz astro-c6vsoqas" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1em;"><path d="M21.71 20.29 18 16.61A9 9 0 1 0 16.61 18l3.68 3.68a.999.999 0 0 0 1.42 0 1 1 0 0 0 0-1.39ZM11 18a7 7 0 1 1 0-14 7 7 0 0 1 0 14Z"/></svg> <span class="sl-hidden md:sl-block astro-v37mnknz" aria-hidden="true">검색</span> <kbd class="sl-hidden md:sl-flex astro-v37mnknz" style="display: none;"> <kbd class="astro-v37mnknz">Ctrl</kbd><kbd class="astro-v37mnknz">K</kbd> </kbd> </button> <dialog style="padding:0" aria-label="검색" class="astro-v37mnknz"> <div class="dialog-frame sl-flex astro-v37mnknz">  <button data-close-modal class="sl-flex md:sl-hidden astro-v37mnknz"> 취소 </button> <div class="search-container astro-v37mnknz"> <div id="starlight__search" class="astro-v37mnknz"></div> </div> </div> </dialog> </site-search>  <script>
+	(() => {
+		const openBtn = document.querySelector('button[data-open-modal]');
+		const shortcut = openBtn?.querySelector('kbd');
+		if (!openBtn || !(shortcut instanceof HTMLElement)) return;
+		const platformKey = shortcut.querySelector('kbd');
+		if (platformKey && /(Mac|iPhone|iPod|iPad)/i.test(navigator.platform)) {
+			platformKey.textContent = '⌘';
+			openBtn.setAttribute('aria-keyshortcuts', 'Meta+K');
+		}
+		shortcut.style.display = '';
+	})();
+</script> <script type="module" src="/ai-basic-textbook/_astro/Search.astro_astro_type_script_index_0_lang.i25efOJV.js"></script>   </div> <div class="sl-hidden md:sl-flex print:hidden right-group astro-kmkmnagf"> <div class="sl-flex social-icons astro-kmkmnagf">  </div> <starlight-theme-select>  <label style="--sl-select-width: 6.25em" class="astro-4yphtoen"> <span class="sr-only astro-4yphtoen">테마 선택</span> <svg aria-hidden="true" class="icon label-icon astro-4yphtoen astro-c6vsoqas" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1em;"><path d="M21 14h-1V7a3 3 0 0 0-3-3H7a3 3 0 0 0-3 3v7H3a1 1 0 0 0-1 1v2a3 3 0 0 0 3 3h14a3 3 0 0 0 3-3v-2a1 1 0 0 0-1-1ZM6 7a1 1 0 0 1 1-1h10a1 1 0 0 1 1 1v7H6V7Zm14 10a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1v-1h16v1Z"/></svg> <select autocomplete="off" class="astro-4yphtoen"> <option value="dark" class="astro-4yphtoen">어두운 테마</option><option value="light" class="astro-4yphtoen">밝은 테마</option><option value="auto" selected class="astro-4yphtoen">자동</option> </select> <svg aria-hidden="true" class="icon caret astro-4yphtoen astro-c6vsoqas" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1em;"><path d="M17 9.17a1 1 0 0 0-1.41 0L12 12.71 8.46 9.17a1 1 0 1 0-1.41 1.42l4.24 4.24a1.002 1.002 0 0 0 1.42 0L17 10.59a1.002 1.002 0 0 0 0-1.42Z"/></svg> </label>  </starlight-theme-select>  <script>
+	StarlightThemeProvider.updatePickers();
+</script> <script type="module">const r="starlight-theme",o=e=>e==="auto"||e==="dark"||e==="light"?e:"auto",c=()=>o(typeof localStorage<"u"&&localStorage.getItem(r));function n(e){typeof localStorage<"u"&&localStorage.setItem(r,e==="light"||e==="dark"?e:"")}const l=()=>matchMedia("(prefers-color-scheme: light)").matches?"light":"dark";function t(e){StarlightThemeProvider.updatePickers(e),document.documentElement.dataset.theme=e==="auto"?l():e,n(e)}matchMedia("(prefers-color-scheme: light)").addEventListener("change",()=>{c()==="auto"&&t("auto")});class s extends HTMLElement{constructor(){super(),t(c()),this.querySelector("select")?.addEventListener("change",a=>{a.currentTarget instanceof HTMLSelectElement&&t(o(a.currentTarget.value))})}}customElements.define("starlight-theme-select",s);</script> <script type="module">class s extends HTMLElement{constructor(){super();const e=this.querySelector("select");e&&(e.addEventListener("change",t=>{t.currentTarget instanceof HTMLSelectElement&&(window.location.pathname=t.currentTarget.value)}),window.addEventListener("pageshow",t=>{if(!t.persisted)return;const n=e.querySelector("option[selected]")?.index;n!==e.selectedIndex&&(e.selectedIndex=n??0)}))}}customElements.define("starlight-lang-select",s);</script> </div> </div> </header> <nav class="sidebar print:hidden astro-vrdttmbt" aria-label="메인"> <starlight-menu-button class="print:hidden astro-jif73yzw"> <button aria-expanded="false" aria-label="메뉴" aria-controls="starlight__sidebar" class="sl-flex md:sl-hidden astro-jif73yzw"> <svg aria-hidden="true" class="open-menu astro-jif73yzw astro-c6vsoqas" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1em;"><path d="M3 8h18a1 1 0 1 0 0-2H3a1 1 0 0 0 0 2Zm18 8H3a1 1 0 0 0 0 2h18a1 1 0 0 0 0-2Zm0-5H3a1 1 0 0 0 0 2h18a1 1 0 0 0 0-2Z"/></svg> <svg aria-hidden="true" class="close-menu astro-jif73yzw astro-c6vsoqas" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1em;"><path d="m13.41 12 6.3-6.29a1.004 1.004 0 1 0-1.42-1.42L12 10.59l-6.29-6.3a1.004 1.004 0 0 0-1.42 1.42l6.3 6.29-6.3 6.29a1 1 0 0 0 0 1.42.998.998 0 0 0 1.42 0l6.29-6.3 6.29 6.3a.999.999 0 0 0 1.42 0 1 1 0 0 0 0-1.42L13.41 12Z"/></svg> </button> </starlight-menu-button> <script type="module">class s extends HTMLElement{constructor(){super(),this.btn=this.querySelector("button"),this.btn.addEventListener("click",()=>this.toggleExpanded());const t=this.closest("nav");t&&t.addEventListener("keyup",e=>this.closeOnEscape(e))}setExpanded(t){this.setAttribute("aria-expanded",String(t)),document.body.toggleAttribute("data-mobile-menu-expanded",t)}toggleExpanded(){this.setExpanded(this.getAttribute("aria-expanded")!=="true")}closeOnEscape(t){t.code==="Escape"&&(this.setExpanded(!1),this.btn.focus())}}customElements.define("starlight-menu-button",s);</script>   <div id="starlight__sidebar" class="sidebar-pane astro-vrdttmbt"> <div class="sidebar-content sl-flex astro-vrdttmbt"> <sl-sidebar-state-persist data-hash="11opmdp" class="astro-kku4brbg"> <script aria-hidden="true">
+		(() => {
+			try {
+				if (!matchMedia('(min-width: 50em)').matches) return;
+				/** @type {HTMLElement | null} */
+				const target = document.querySelector('sl-sidebar-state-persist');
+				const state = JSON.parse(sessionStorage.getItem('sl-sidebar-state') || '0');
+				if (!target || !state || target.dataset.hash !== state.hash) return;
+				window._starlightScrollRestore = state.scroll;
+				customElements.define(
+					'sl-sidebar-restore',
+					class SidebarRestore extends HTMLElement {
+						connectedCallback() {
+							try {
+								const idx = parseInt(this.dataset.index || '');
+								const details = this.closest('details');
+								if (details && typeof state.open[idx] === 'boolean') details.open = state.open[idx];
+							} catch {}
+						}
+					}
+				);
+			} catch {}
+		})();
+	</script>  <ul class="top-level astro-3ii7xxms"> <li class="astro-3ii7xxms"> <details open class="astro-3ii7xxms"> <summary class="astro-3ii7xxms"> <span class="group-label astro-3ii7xxms"> <span class="large astro-3ii7xxms">AI의 시작</span>  </span> <svg aria-hidden="true" class="caret astro-3ii7xxms astro-c6vsoqas" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1.25rem;"><path d="m14.83 11.29-4.24-4.24a1 1 0 1 0-1.42 1.41L12.71 12l-3.54 3.54a1 1 0 0 0 0 1.41 1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.24-4.24a1.002 1.002 0 0 0 0-1.42Z"/></svg> </summary> <sl-sidebar-restore data-index="0"></sl-sidebar-restore> <ul class="astro-3ii7xxms"> <li class="astro-3ii7xxms"> <a href="/ai-basic-textbook/lessons/part1/lesson-01/" class="astro-3ii7xxms"> <span class="astro-3ii7xxms">1차시: 기계가 생각할 수 있는가?</span>  </a> </li><li class="astro-3ii7xxms"> <a href="/ai-basic-textbook/lessons/part1/lesson-02/" class="astro-3ii7xxms"> <span class="astro-3ii7xxms">2차시: 기계가 스스로 학습할 수 있는가?</span>  </a> </li> </ul>  </details> </li><li class="astro-3ii7xxms"> <details open class="astro-3ii7xxms"> <summary class="astro-3ii7xxms"> <span class="group-label astro-3ii7xxms"> <span class="large astro-3ii7xxms">신경망의 비밀</span>  </span> <svg aria-hidden="true" class="caret astro-3ii7xxms astro-c6vsoqas" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1.25rem;"><path d="m14.83 11.29-4.24-4.24a1 1 0 1 0-1.42 1.41L12.71 12l-3.54 3.54a1 1 0 0 0 0 1.41 1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.24-4.24a1.002 1.002 0 0 0 0-1.42Z"/></svg> </summary> <sl-sidebar-restore data-index="1"></sl-sidebar-restore> <ul class="astro-3ii7xxms"> <li class="astro-3ii7xxms"> <a href="/ai-basic-textbook/lessons/part2/lesson-03/" class="astro-3ii7xxms"> <span class="astro-3ii7xxms">3차시: AI의 겨울을 이겨낸 알고리즘의 발견</span>  </a> </li><li class="astro-3ii7xxms"> <a href="/ai-basic-textbook/lessons/part2/lesson-04/" class="astro-3ii7xxms"> <span class="astro-3ii7xxms">4차시: &quot;잘 학습됐다&quot;는 것을 어떻게 알 수 있을까?</span>  </a> </li> </ul>  </details> </li><li class="astro-3ii7xxms"> <details open class="astro-3ii7xxms"> <summary class="astro-3ii7xxms"> <span class="group-label astro-3ii7xxms"> <span class="large astro-3ii7xxms">학습의 원리</span>  </span> <svg aria-hidden="true" class="caret astro-3ii7xxms astro-c6vsoqas" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1.25rem;"><path d="m14.83 11.29-4.24-4.24a1 1 0 1 0-1.42 1.41L12.71 12l-3.54 3.54a1 1 0 0 0 0 1.41 1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.24-4.24a1.002 1.002 0 0 0 0-1.42Z"/></svg> </summary> <sl-sidebar-restore data-index="2"></sl-sidebar-restore> <ul class="astro-3ii7xxms"> <li class="astro-3ii7xxms"> <a href="/ai-basic-textbook/lessons/part3/lesson-05/" class="astro-3ii7xxms"> <span class="astro-3ii7xxms">5차시: 오차 줄이는 방향으로 나아가는 방법</span>  </a> </li><li class="astro-3ii7xxms"> <a href="/ai-basic-textbook/lessons/part3/lesson-06/" class="astro-3ii7xxms"> <span class="astro-3ii7xxms">6차시: 오차를 줄이는 과정을 자동화하려면</span>  </a> </li> </ul>  </details> </li><li class="astro-3ii7xxms"> <details open class="astro-3ii7xxms"> <summary class="astro-3ii7xxms"> <span class="group-label astro-3ii7xxms"> <span class="large astro-3ii7xxms">언어를 이해하는 AI</span>  </span> <svg aria-hidden="true" class="caret astro-3ii7xxms astro-c6vsoqas" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1.25rem;"><path d="m14.83 11.29-4.24-4.24a1 1 0 1 0-1.42 1.41L12.71 12l-3.54 3.54a1 1 0 0 0 0 1.41 1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.24-4.24a1.002 1.002 0 0 0 0-1.42Z"/></svg> </summary> <sl-sidebar-restore data-index="3"></sl-sidebar-restore> <ul class="astro-3ii7xxms"> <li class="astro-3ii7xxms"> <a href="/ai-basic-textbook/lessons/part4/lesson-07/" class="astro-3ii7xxms"> <span class="astro-3ii7xxms">7차시: 단어를 숫자로 표현하면 계산할 수 있다</span>  </a> </li><li class="astro-3ii7xxms"> <a href="/ai-basic-textbook/lessons/part4/lesson-08/" class="astro-3ii7xxms"> <span class="astro-3ii7xxms">8차시: ChatGPT의 작동 원리, 다음 단어 맞추기</span>  </a> </li> </ul>  </details> </li><li class="astro-3ii7xxms"> <details open class="astro-3ii7xxms"> <summary class="astro-3ii7xxms"> <span class="group-label astro-3ii7xxms"> <span class="large astro-3ii7xxms">확장 모듈</span>  </span> <svg aria-hidden="true" class="caret astro-3ii7xxms astro-c6vsoqas" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1.25rem;"><path d="m14.83 11.29-4.24-4.24a1 1 0 1 0-1.42 1.41L12.71 12l-3.54 3.54a1 1 0 0 0 0 1.41 1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.24-4.24a1.002 1.002 0 0 0 0-1.42Z"/></svg> </summary> <sl-sidebar-restore data-index="4"></sl-sidebar-restore> <ul class="astro-3ii7xxms"> <li class="astro-3ii7xxms"> <a href="/ai-basic-textbook/lessons/part5/lesson-09/" aria-current="page" class="astro-3ii7xxms"> <span class="astro-3ii7xxms">9차시: 퍼셉트론에서 ChatGPT까지, 인공지능 연구의 역사</span>  </a> </li><li class="astro-3ii7xxms"> <a href="/ai-basic-textbook/lessons/part5/lesson-10/" class="astro-3ii7xxms"> <span class="astro-3ii7xxms">10차시: AI의 한계를 찾아서</span>  </a> </li> </ul>  </details> </li><li class="astro-3ii7xxms"> <details open class="astro-3ii7xxms"> <summary class="astro-3ii7xxms"> <span class="group-label astro-3ii7xxms"> <span class="large astro-3ii7xxms">부록</span>  </span> <svg aria-hidden="true" class="caret astro-3ii7xxms astro-c6vsoqas" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1.25rem;"><path d="m14.83 11.29-4.24-4.24a1 1 0 1 0-1.42 1.41L12.71 12l-3.54 3.54a1 1 0 0 0 0 1.41 1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.24-4.24a1.002 1.002 0 0 0 0-1.42Z"/></svg> </summary> <sl-sidebar-restore data-index="5"></sl-sidebar-restore> <ul class="astro-3ii7xxms"> <li class="astro-3ii7xxms"> <a href="/ai-basic-textbook/appendix/glossary/" class="astro-3ii7xxms"> <span class="astro-3ii7xxms">용어 사전</span>  </a> </li><li class="astro-3ii7xxms"> <a href="/ai-basic-textbook/appendix/references/" class="astro-3ii7xxms"> <span class="astro-3ii7xxms">참고자료</span>  </a> </li> </ul>  </details> </li> </ul>   <script aria-hidden="true">
+		(() => {
+			const scroller = document.getElementById('starlight__sidebar');
+			if (!window._starlightScrollRestore || !scroller) return;
+			scroller.scrollTop = window._starlightScrollRestore;
+			delete window._starlightScrollRestore;
+		})();
+	</script> </sl-sidebar-state-persist>  <div class="md:sl-hidden"> <div class="mobile-preferences sl-flex astro-wu23bvmt"> <div class="social-icons astro-wu23bvmt">  </div> <starlight-theme-select>  <label style="--sl-select-width: 6.25em" class="astro-4yphtoen"> <span class="sr-only astro-4yphtoen">테마 선택</span> <svg aria-hidden="true" class="icon label-icon astro-4yphtoen astro-c6vsoqas" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1em;"><path d="M21 14h-1V7a3 3 0 0 0-3-3H7a3 3 0 0 0-3 3v7H3a1 1 0 0 0-1 1v2a3 3 0 0 0 3 3h14a3 3 0 0 0 3-3v-2a1 1 0 0 0-1-1ZM6 7a1 1 0 0 1 1-1h10a1 1 0 0 1 1 1v7H6V7Zm14 10a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1v-1h16v1Z"/></svg> <select autocomplete="off" class="astro-4yphtoen"> <option value="dark" class="astro-4yphtoen">어두운 테마</option><option value="light" class="astro-4yphtoen">밝은 테마</option><option value="auto" selected class="astro-4yphtoen">자동</option> </select> <svg aria-hidden="true" class="icon caret astro-4yphtoen astro-c6vsoqas" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1em;"><path d="M17 9.17a1 1 0 0 0-1.41 0L12 12.71 8.46 9.17a1 1 0 1 0-1.41 1.42l4.24 4.24a1.002 1.002 0 0 0 1.42 0L17 10.59a1.002 1.002 0 0 0 0-1.42Z"/></svg> </label>  </starlight-theme-select>  <script>
+	StarlightThemeProvider.updatePickers();
+</script>   </div>  </div> </div> </div> </nav> <div class="main-frame astro-vrdttmbt">  <script type="module">const a=document.getElementById("starlight__sidebar"),n=a?.querySelector("sl-sidebar-state-persist"),o="sl-sidebar-state",i=()=>{let t=[];const e=n?.dataset.hash||"";try{const s=sessionStorage.getItem(o),r=JSON.parse(s||"{}");Array.isArray(r.open)&&r.hash===e&&(t=r.open)}catch{}return{hash:e,open:t,scroll:a?.scrollTop||0}},c=t=>{try{sessionStorage.setItem(o,JSON.stringify(t))}catch{}},d=()=>c(i()),l=(t,e)=>{const s=i();s.open[e]=t,c(s)};n?.addEventListener("click",t=>{if(!(t.target instanceof Element))return;const e=t.target.closest("summary")?.closest("details");if(!e)return;const s=e.querySelector("sl-sidebar-restore"),r=parseInt(s?.dataset.index||"");isNaN(r)||l(!e.open,r)});addEventListener("visibilitychange",()=>{document.visibilityState==="hidden"&&d()});addEventListener("pageHide",d);</script> <div class="lg:sl-flex astro-67yu43on"> <aside class="right-sidebar-container print:hidden astro-67yu43on"> <div class="right-sidebar astro-67yu43on"> <script type="module" src="/ai-basic-textbook/_astro/MobileTableOfContents.astro_astro_type_script_index_0_lang.hwBsy0Mo.js"></script><script type="module" src="/ai-basic-textbook/_astro/TableOfContents.astro_astro_type_script_index_0_lang.FuRcXuRY.js"></script><div class="lg:sl-hidden astro-pb3aqygn"><mobile-starlight-toc data-min-h="2" data-max-h="3" class="astro-doynk5tl"><nav aria-labelledby="starlight__on-this-page--mobile" class="astro-doynk5tl"><details id="starlight__mobile-toc" class="astro-doynk5tl"><summary id="starlight__on-this-page--mobile" class="sl-flex astro-doynk5tl"><span class="toggle sl-flex astro-doynk5tl">목차<svg aria-hidden="true" class="caret astro-doynk5tl astro-c6vsoqas" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1rem;"><path d="m14.83 11.29-4.24-4.24a1 1 0 1 0-1.42 1.41L12.71 12l-3.54 3.54a1 1 0 0 0 0 1.41 1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.24-4.24a1.002 1.002 0 0 0 0-1.42Z"/></svg></span><span class="display-current astro-doynk5tl"></span></summary><div class="dropdown astro-doynk5tl"><ul class="isMobile astro-g2bywc46" style="--depth: 0;"> <li class="astro-g2bywc46" style="--depth: 0;"> <a href="#_top" class="astro-g2bywc46" style="--depth: 0;"> <span class="astro-g2bywc46" style="--depth: 0;">개요</span> </a>  </li><li class="astro-g2bywc46" style="--depth: 0;"> <a href="#8주-전의-나를-만나다" class="astro-g2bywc46" style="--depth: 0;"> <span class="astro-g2bywc46" style="--depth: 0;">8주 전의 나를 만나다</span> </a>  </li><li class="astro-g2bywc46" style="--depth: 0;"> <a href="#ai가-바꾸는-세계" class="astro-g2bywc46" style="--depth: 0;"> <span class="astro-g2bywc46" style="--depth: 0;">AI가 바꾸는 세계</span> </a>  </li><li class="astro-g2bywc46" style="--depth: 0;"> <a href="#내-관심-분야의-ai-연구-찾기--실습" class="astro-g2bywc46" style="--depth: 0;"> <span class="astro-g2bywc46" style="--depth: 0;">내 관심 분야의 AI 연구 찾기 — 실습</span> </a> <ul class="isMobile astro-g2bywc46" style="--depth: 1;"> <li class="astro-g2bywc46" style="--depth: 1;"> <a href="#step-1-관심-분야-선택" class="astro-g2bywc46" style="--depth: 1;"> <span class="astro-g2bywc46" style="--depth: 1;">Step 1: 관심 분야 선택</span> </a>  </li><li class="astro-g2bywc46" style="--depth: 1;"> <a href="#step-2-ai에게-질문하기" class="astro-g2bywc46" style="--depth: 1;"> <span class="astro-g2bywc46" style="--depth: 1;">Step 2: AI에게 질문하기</span> </a>  </li><li class="astro-g2bywc46" style="--depth: 1;"> <a href="#step-3-검증하기--가장-중요한-단계" class="astro-g2bywc46" style="--depth: 1;"> <span class="astro-g2bywc46" style="--depth: 1;">Step 3: 검증하기 — 가장 중요한 단계</span> </a>  </li><li class="astro-g2bywc46" style="--depth: 1;"> <a href="#step-4-워크시트에-기록" class="astro-g2bywc46" style="--depth: 1;"> <span class="astro-g2bywc46" style="--depth: 1;">Step 4: 워크시트에 기록</span> </a>  </li> </ul>  </li><li class="astro-g2bywc46" style="--depth: 0;"> <a href="#ai-시대-무엇을-준비할-것인가--토론" class="astro-g2bywc46" style="--depth: 0;"> <span class="astro-g2bywc46" style="--depth: 0;">AI 시대, 무엇을 준비할 것인가 — 토론</span> </a> <ul class="isMobile astro-g2bywc46" style="--depth: 1;"> <li class="astro-g2bywc46" style="--depth: 1;"> <a href="#토론-주제-1-ai가-대체할-것-vs-ai와-협업할-것" class="astro-g2bywc46" style="--depth: 1;"> <span class="astro-g2bywc46" style="--depth: 1;">토론 주제 1: AI가 대체할 것 vs AI와 협업할 것</span> </a>  </li><li class="astro-g2bywc46" style="--depth: 1;"> <a href="#토론-주제-2-ai-시대에-가장-중요한-역량은" class="astro-g2bywc46" style="--depth: 1;"> <span class="astro-g2bywc46" style="--depth: 1;">토론 주제 2: AI 시대에 가장 중요한 역량은?</span> </a>  </li><li class="astro-g2bywc46" style="--depth: 1;"> <a href="#이-수업에서-배운-것이-왜-중요한가" class="astro-g2bywc46" style="--depth: 1;"> <span class="astro-g2bywc46" style="--depth: 1;">이 수업에서 배운 것이 왜 중요한가</span> </a>  </li> </ul>  </li><li class="astro-g2bywc46" style="--depth: 0;"> <a href="#원을-그리며-돌아온-질문" class="astro-g2bywc46" style="--depth: 0;"> <span class="astro-g2bywc46" style="--depth: 0;">원을 그리며 돌아온 질문</span> </a>  </li><li class="astro-g2bywc46" style="--depth: 0;"> <a href="#더-알고-싶다면" class="astro-g2bywc46" style="--depth: 0;"> <span class="astro-g2bywc46" style="--depth: 0;">더 알고 싶다면</span> </a>  </li><li class="astro-g2bywc46" style="--depth: 0;"> <a href="#평가-준비" class="astro-g2bywc46" style="--depth: 0;"> <span class="astro-g2bywc46" style="--depth: 0;">평가 준비</span> </a> <ul class="isMobile astro-g2bywc46" style="--depth: 1;"> <li class="astro-g2bywc46" style="--depth: 1;"> <a href="#서술형-평가-안내" class="astro-g2bywc46" style="--depth: 1;"> <span class="astro-g2bywc46" style="--depth: 1;">서술형 평가 안내</span> </a>  </li><li class="astro-g2bywc46" style="--depth: 1;"> <a href="#a-개념-설명형-각-10점" class="astro-g2bywc46" style="--depth: 1;"> <span class="astro-g2bywc46" style="--depth: 1;">A: 개념 설명형 (각 10점)</span> </a>  </li><li class="astro-g2bywc46" style="--depth: 1;"> <a href="#b-사고실험형-각-10점" class="astro-g2bywc46" style="--depth: 1;"> <span class="astro-g2bywc46" style="--depth: 1;">B: 사고실험형 (각 10점)</span> </a>  </li><li class="astro-g2bywc46" style="--depth: 1;"> <a href="#c-종합-서술형-20점" class="astro-g2bywc46" style="--depth: 1;"> <span class="astro-g2bywc46" style="--depth: 1;">C: 종합 서술형 (20점)</span> </a>  </li><li class="astro-g2bywc46" style="--depth: 1;"> <a href="#수행평가-모둠-토의--성찰-활동" class="astro-g2bywc46" style="--depth: 1;"> <span class="astro-g2bywc46" style="--depth: 1;">수행평가: 모둠 토의 + 성찰 활동</span> </a>  </li> </ul>  </li><li class="astro-g2bywc46" style="--depth: 0;"> <a href="#우리가-걸어온-길" class="astro-g2bywc46" style="--depth: 0;"> <span class="astro-g2bywc46" style="--depth: 0;">우리가 걸어온 길</span> </a>  </li><li class="astro-g2bywc46" style="--depth: 0;"> <a href="#참고자료" class="astro-g2bywc46" style="--depth: 0;"> <span class="astro-g2bywc46" style="--depth: 0;">참고자료</span> </a>  </li><li class="astro-g2bywc46" style="--depth: 0;"> <a href="#성찰" class="astro-g2bywc46" style="--depth: 0;"> <span class="astro-g2bywc46" style="--depth: 0;">성찰</span> </a>  </li><li class="astro-g2bywc46" style="--depth: 0;"> <a href="#자기-점검-체크리스트" class="astro-g2bywc46" style="--depth: 0;"> <span class="astro-g2bywc46" style="--depth: 0;">자기 점검 체크리스트</span> </a>  </li> </ul> </div></details></nav></mobile-starlight-toc></div><div class="right-sidebar-panel sl-hidden lg:sl-block astro-pb3aqygn"><div class="sl-container astro-pb3aqygn"><starlight-toc data-min-h="2" data-max-h="3"><nav aria-labelledby="starlight__on-this-page"><h2 id="starlight__on-this-page">목차</h2><ul class="astro-g2bywc46" style="--depth: 0;"> <li class="astro-g2bywc46" style="--depth: 0;"> <a href="#_top" class="astro-g2bywc46" style="--depth: 0;"> <span class="astro-g2bywc46" style="--depth: 0;">개요</span> </a>  </li><li class="astro-g2bywc46" style="--depth: 0;"> <a href="#8주-전의-나를-만나다" class="astro-g2bywc46" style="--depth: 0;"> <span class="astro-g2bywc46" style="--depth: 0;">8주 전의 나를 만나다</span> </a>  </li><li class="astro-g2bywc46" style="--depth: 0;"> <a href="#ai가-바꾸는-세계" class="astro-g2bywc46" style="--depth: 0;"> <span class="astro-g2bywc46" style="--depth: 0;">AI가 바꾸는 세계</span> </a>  </li><li class="astro-g2bywc46" style="--depth: 0;"> <a href="#내-관심-분야의-ai-연구-찾기--실습" class="astro-g2bywc46" style="--depth: 0;"> <span class="astro-g2bywc46" style="--depth: 0;">내 관심 분야의 AI 연구 찾기 — 실습</span> </a> <ul class="astro-g2bywc46" style="--depth: 1;"> <li class="astro-g2bywc46" style="--depth: 1;"> <a href="#step-1-관심-분야-선택" class="astro-g2bywc46" style="--depth: 1;"> <span class="astro-g2bywc46" style="--depth: 1;">Step 1: 관심 분야 선택</span> </a>  </li><li class="astro-g2bywc46" style="--depth: 1;"> <a href="#step-2-ai에게-질문하기" class="astro-g2bywc46" style="--depth: 1;"> <span class="astro-g2bywc46" style="--depth: 1;">Step 2: AI에게 질문하기</span> </a>  </li><li class="astro-g2bywc46" style="--depth: 1;"> <a href="#step-3-검증하기--가장-중요한-단계" class="astro-g2bywc46" style="--depth: 1;"> <span class="astro-g2bywc46" style="--depth: 1;">Step 3: 검증하기 — 가장 중요한 단계</span> </a>  </li><li class="astro-g2bywc46" style="--depth: 1;"> <a href="#step-4-워크시트에-기록" class="astro-g2bywc46" style="--depth: 1;"> <span class="astro-g2bywc46" style="--depth: 1;">Step 4: 워크시트에 기록</span> </a>  </li> </ul>  </li><li class="astro-g2bywc46" style="--depth: 0;"> <a href="#ai-시대-무엇을-준비할-것인가--토론" class="astro-g2bywc46" style="--depth: 0;"> <span class="astro-g2bywc46" style="--depth: 0;">AI 시대, 무엇을 준비할 것인가 — 토론</span> </a> <ul class="astro-g2bywc46" style="--depth: 1;"> <li class="astro-g2bywc46" style="--depth: 1;"> <a href="#토론-주제-1-ai가-대체할-것-vs-ai와-협업할-것" class="astro-g2bywc46" style="--depth: 1;"> <span class="astro-g2bywc46" style="--depth: 1;">토론 주제 1: AI가 대체할 것 vs AI와 협업할 것</span> </a>  </li><li class="astro-g2bywc46" style="--depth: 1;"> <a href="#토론-주제-2-ai-시대에-가장-중요한-역량은" class="astro-g2bywc46" style="--depth: 1;"> <span class="astro-g2bywc46" style="--depth: 1;">토론 주제 2: AI 시대에 가장 중요한 역량은?</span> </a>  </li><li class="astro-g2bywc46" style="--depth: 1;"> <a href="#이-수업에서-배운-것이-왜-중요한가" class="astro-g2bywc46" style="--depth: 1;"> <span class="astro-g2bywc46" style="--depth: 1;">이 수업에서 배운 것이 왜 중요한가</span> </a>  </li> </ul>  </li><li class="astro-g2bywc46" style="--depth: 0;"> <a href="#원을-그리며-돌아온-질문" class="astro-g2bywc46" style="--depth: 0;"> <span class="astro-g2bywc46" style="--depth: 0;">원을 그리며 돌아온 질문</span> </a>  </li><li class="astro-g2bywc46" style="--depth: 0;"> <a href="#더-알고-싶다면" class="astro-g2bywc46" style="--depth: 0;"> <span class="astro-g2bywc46" style="--depth: 0;">더 알고 싶다면</span> </a>  </li><li class="astro-g2bywc46" style="--depth: 0;"> <a href="#평가-준비" class="astro-g2bywc46" style="--depth: 0;"> <span class="astro-g2bywc46" style="--depth: 0;">평가 준비</span> </a> <ul class="astro-g2bywc46" style="--depth: 1;"> <li class="astro-g2bywc46" style="--depth: 1;"> <a href="#서술형-평가-안내" class="astro-g2bywc46" style="--depth: 1;"> <span class="astro-g2bywc46" style="--depth: 1;">서술형 평가 안내</span> </a>  </li><li class="astro-g2bywc46" style="--depth: 1;"> <a href="#a-개념-설명형-각-10점" class="astro-g2bywc46" style="--depth: 1;"> <span class="astro-g2bywc46" style="--depth: 1;">A: 개념 설명형 (각 10점)</span> </a>  </li><li class="astro-g2bywc46" style="--depth: 1;"> <a href="#b-사고실험형-각-10점" class="astro-g2bywc46" style="--depth: 1;"> <span class="astro-g2bywc46" style="--depth: 1;">B: 사고실험형 (각 10점)</span> </a>  </li><li class="astro-g2bywc46" style="--depth: 1;"> <a href="#c-종합-서술형-20점" class="astro-g2bywc46" style="--depth: 1;"> <span class="astro-g2bywc46" style="--depth: 1;">C: 종합 서술형 (20점)</span> </a>  </li><li class="astro-g2bywc46" style="--depth: 1;"> <a href="#수행평가-모둠-토의--성찰-활동" class="astro-g2bywc46" style="--depth: 1;"> <span class="astro-g2bywc46" style="--depth: 1;">수행평가: 모둠 토의 + 성찰 활동</span> </a>  </li> </ul>  </li><li class="astro-g2bywc46" style="--depth: 0;"> <a href="#우리가-걸어온-길" class="astro-g2bywc46" style="--depth: 0;"> <span class="astro-g2bywc46" style="--depth: 0;">우리가 걸어온 길</span> </a>  </li><li class="astro-g2bywc46" style="--depth: 0;"> <a href="#참고자료" class="astro-g2bywc46" style="--depth: 0;"> <span class="astro-g2bywc46" style="--depth: 0;">참고자료</span> </a>  </li><li class="astro-g2bywc46" style="--depth: 0;"> <a href="#성찰" class="astro-g2bywc46" style="--depth: 0;"> <span class="astro-g2bywc46" style="--depth: 0;">성찰</span> </a>  </li><li class="astro-g2bywc46" style="--depth: 0;"> <a href="#자기-점검-체크리스트" class="astro-g2bywc46" style="--depth: 0;"> <span class="astro-g2bywc46" style="--depth: 0;">자기 점검 체크리스트</span> </a>  </li> </ul> </nav></starlight-toc></div></div> </div> </aside> <div class="main-pane astro-67yu43on">  <main data-pagefind-body class="astro-bguv2lll" lang="ko" dir="ltr">    <div class="content-panel astro-7nkwcw3z"> <div class="sl-container astro-7nkwcw3z"> <h1 id="_top" class="astro-j6tvhyss">9차시: 나의 진로와 AI</h1>  </div> </div>  <div class="content-panel astro-7nkwcw3z"> <div class="sl-container astro-7nkwcw3z"> <div class="sl-markdown-content"> <p style="color: var(--sl-color-gray-3); margin-bottom: 0.25rem;">확장 모듈 > 9차시</p>
+<blockquote>
+<p><strong>오늘의 질문:</strong> “AI를 이해하는 사람이 AI 시대를 어떻게 이끌 수 있는가?”</p>
+</blockquote>
+<p style="color: var(--sl-color-gray-3);"><p>50분 | before/after 비교 · AI 활용 사례 탐색 · 진로 연결 토론 · 서술형 평가 안내 | 난이도 ●●●○○</p></p>
+<p style="color: var(--sl-color-gray-3); font-size: 13px; margin-top: 0.5rem;"><p><strong>학습목표:</strong> AI가 다양한 분야에서 활용되는 방식을 이해하고, 자신의 관심 분야에서 AI와 협업하는 전략을 세울 수 있다.</p></p>
+<hr>
+<div class="sl-heading-wrapper level-h2"><h2 id="8주-전의-나를-만나다">8주 전의 나를 만나다</h2><a class="sl-anchor-link" href="#8주-전의-나를-만나다"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24"><path fill="currentcolor" d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 0 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 1 0-1.42-1.42Zm8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 0 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 1 0 1.42 1.42l3.88-3.89a4.49 4.49 0 0 0 0-6.33ZM8.83 15.17a1 1 0 0 0 1.1.22 1 1 0 0 0 .32-.22l4.92-4.92a1 1 0 0 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42Z"></path></svg></span><span class="sr-only" data-pagefind-ignore>섹션 제목: “8주 전의 나를 만나다”</span></a></div>
+<div class="story-box"><p>8차시에서 여러분은 트랜스포머와 어텐션, 그리고 “다음 토큰 예측”이 어떻게 대화를 만드는지를 배웠습니다. 환각이 왜 발생하는지 구조적으로 이해했고, AI의 작동 원리를 뉴런부터 ChatGPT까지 하나의 흐름으로 알게 되었습니다.</p><p>이제 시선을 돌려봅시다. AI의 과거가 아니라, <strong>AI와 함께할 여러분의 미래</strong>를 봅니다.</p></div>
+<aside aria-label="1차시 설문 되돌아보기" class="starlight-aside starlight-aside--note"><p class="starlight-aside__title" aria-hidden="true"><svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor" class="starlight-aside__icon"><path d="M12 11C11.7348 11 11.4804 11.1054 11.2929 11.2929C11.1054 11.4804 11 11.7348 11 12V16C11 16.2652 11.1054 16.5196 11.2929 16.7071C11.4804 16.8946 11.7348 17 12 17C12.2652 17 12.5196 16.8946 12.7071 16.7071C12.8946 16.5196 13 16.2652 13 16V12C13 11.7348 12.8946 11.4804 12.7071 11.2929C12.5196 11.1054 12.2652 11 12 11ZM12.38 7.08C12.1365 6.97998 11.8635 6.97998 11.62 7.08C11.4973 7.12759 11.3851 7.19896 11.29 7.29C11.2017 7.3872 11.1306 7.49882 11.08 7.62C11.024 7.73868 10.9966 7.86882 11 8C10.9992 8.13161 11.0245 8.26207 11.0742 8.38391C11.124 8.50574 11.1973 8.61656 11.29 8.71C11.3872 8.79833 11.4988 8.86936 11.62 8.92C11.7715 8.98224 11.936 9.00632 12.099 8.99011C12.2619 8.97391 12.4184 8.91792 12.5547 8.82707C12.691 8.73622 12.8029 8.61328 12.8805 8.46907C12.9582 8.32486 12.9992 8.16378 13 8C12.9963 7.73523 12.8927 7.48163 12.71 7.29C12.6149 7.19896 12.5028 7.12759 12.38 7.08ZM12 2C10.0222 2 8.08879 2.58649 6.4443 3.6853C4.79981 4.78412 3.51809 6.3459 2.76121 8.17317C2.00433 10.0004 1.8063 12.0111 2.19215 13.9509C2.578 15.8907 3.53041 17.6725 4.92894 19.0711C6.32746 20.4696 8.10929 21.422 10.0491 21.8079C11.9889 22.1937 13.9996 21.9957 15.8268 21.2388C17.6541 20.4819 19.2159 19.2002 20.3147 17.5557C21.4135 15.9112 22 13.9778 22 12C22 10.6868 21.7413 9.38642 21.2388 8.17317C20.7363 6.95991 19.9997 5.85752 19.0711 4.92893C18.1425 4.00035 17.0401 3.26375 15.8268 2.7612C14.6136 2.25866 13.3132 2 12 2ZM12 20C10.4178 20 8.87104 19.5308 7.55544 18.6518C6.23985 17.7727 5.21447 16.5233 4.60897 15.0615C4.00347 13.5997 3.84504 11.9911 4.15372 10.4393C4.4624 8.88743 5.22433 7.46197 6.34315 6.34315C7.46197 5.22433 8.88743 4.4624 10.4393 4.15372C11.9911 3.84504 13.5997 4.00346 15.0615 4.60896C16.5233 5.21447 17.7727 6.23984 18.6518 7.55544C19.5308 8.87103 20 10.4177 20 12C20 14.1217 19.1572 16.1566 17.6569 17.6569C16.1566 19.1571 14.1217 20 12 20Z"></path></svg>1차시 설문 되돌아보기</p><div class="starlight-aside__content"><p>아래는 1차시에 여러분이 작성한 설문 결과의 요약입니다. 자신의 답을 찾아보세요.</p><p>1차시 질문: “기계가 생각할 수 있다고 생각하나요? 그 이유는?”</p><p>그때 많이 나왔던 답:</p><ul>
+<li>“AI는 프로그래밍된 대로만 하니까 생각이 아니다”</li>
+<li>“ChatGPT가 대화하는 건 생각하는 것 같다”</li>
+<li>“생각의 정의부터 내려야 답할 수 있다”</li>
+<li>“AI는 멍청해서 가끔 틀린다”</li>
+</ul></div></aside>
+<p>8주 동안 여러분은 뉴런, 가중치, 손실함수, 역전파, 임베딩, 어텐션을 배웠습니다. 이제 이 지식을 <strong>‘무기’로 쓸 차례</strong>입니다.</p>
+<style>astro-island,astro-slot,astro-static-slot{display:contents}</style><script>(()=>{var a=(s,i,o)=>{let r=async()=>{await(await s())()},t=typeof i.value=="object"?i.value:void 0,c={rootMargin:t==null?void 0:t.rootMargin},n=new IntersectionObserver(e=>{for(let l of e)if(l.isIntersecting){n.disconnect(),r();break}},c);for(let e of o.children)n.observe(e)};(self.Astro||(self.Astro={})).visible=a;window.dispatchEvent(new Event("astro:visible"));})();</script><script>(()=>{var A=Object.defineProperty;var g=(i,o,a)=>o in i?A(i,o,{enumerable:!0,configurable:!0,writable:!0,value:a}):i[o]=a;var d=(i,o,a)=>g(i,typeof o!="symbol"?o+"":o,a);{let i={0:t=>m(t),1:t=>a(t),2:t=>new RegExp(t),3:t=>new Date(t),4:t=>new Map(a(t)),5:t=>new Set(a(t)),6:t=>BigInt(t),7:t=>new URL(t),8:t=>new Uint8Array(t),9:t=>new Uint16Array(t),10:t=>new Uint32Array(t),11:t=>1/0*t},o=t=>{let[l,e]=t;return l in i?i[l](e):void 0},a=t=>t.map(o),m=t=>typeof t!="object"||t===null?t:Object.fromEntries(Object.entries(t).map(([l,e])=>[l,o(e)]));class y extends HTMLElement{constructor(){super(...arguments);d(this,"Component");d(this,"hydrator");d(this,"hydrate",async()=>{var b;if(!this.hydrator||!this.isConnected)return;let e=(b=this.parentElement)==null?void 0:b.closest("astro-island[ssr]");if(e){e.addEventListener("astro:hydrate",this.hydrate,{once:!0});return}let c=this.querySelectorAll("astro-slot"),n={},h=this.querySelectorAll("template[data-astro-template]");for(let r of h){let s=r.closest(this.tagName);s!=null&&s.isSameNode(this)&&(n[r.getAttribute("data-astro-template")||"default"]=r.innerHTML,r.remove())}for(let r of c){let s=r.closest(this.tagName);s!=null&&s.isSameNode(this)&&(n[r.getAttribute("name")||"default"]=r.innerHTML)}let p;try{p=this.hasAttribute("props")?m(JSON.parse(this.getAttribute("props"))):{}}catch(r){let s=this.getAttribute("component-url")||"<unknown>",v=this.getAttribute("component-export");throw v&&(s+=` (export ${v})`),console.error(`[hydrate] Error parsing props for component ${s}`,this.getAttribute("props"),r),r}let u;await this.hydrator(this)(this.Component,p,n,{client:this.getAttribute("client")}),this.removeAttribute("ssr"),this.dispatchEvent(new CustomEvent("astro:hydrate"))});d(this,"unmount",()=>{this.isConnected||this.dispatchEvent(new CustomEvent("astro:unmount"))})}disconnectedCallback(){document.removeEventListener("astro:after-swap",this.unmount),document.addEventListener("astro:after-swap",this.unmount,{once:!0})}connectedCallback(){if(!this.hasAttribute("await-children")||document.readyState==="interactive"||document.readyState==="complete")this.childrenConnectedCallback();else{let e=()=>{document.removeEventListener("DOMContentLoaded",e),c.disconnect(),this.childrenConnectedCallback()},c=new MutationObserver(()=>{var n;((n=this.lastChild)==null?void 0:n.nodeType)===Node.COMMENT_NODE&&this.lastChild.nodeValue==="astro:end"&&(this.lastChild.remove(),e())});c.observe(this,{childList:!0}),document.addEventListener("DOMContentLoaded",e)}}async childrenConnectedCallback(){let e=this.getAttribute("before-hydration-url");e&&await import(e),this.start()}async start(){let e=JSON.parse(this.getAttribute("opts")),c=this.getAttribute("client");if(Astro[c]===void 0){window.addEventListener(`astro:${c}`,()=>this.start(),{once:!0});return}try{await Astro[c](async()=>{let n=this.getAttribute("renderer-url"),[h,{default:p}]=await Promise.all([import(this.getAttribute("component-url")),n?import(n):()=>()=>{}]),u=this.getAttribute("component-export")||"default";if(!u.includes("."))this.Component=h[u];else{this.Component=h;for(let f of u.split("."))this.Component=this.Component[f]}return this.hydrator=p,this.hydrate},e,this)}catch(n){console.error(`[astro-island] Error hydrating ${this.getAttribute("component-url")}`,n)}}attributeChangedCallback(){this.hydrate()}}d(y,"observedAttributes",["props"]),customElements.get("astro-island")||customElements.define("astro-island",y)}})();</script><astro-island uid="T1IdR" prefix="r2" component-url="/ai-basic-textbook/_astro/BeforeAfterReflection.DWGPJlVY.js" component-export="default" renderer-url="/ai-basic-textbook/_astro/client.BpR2CX5i.js" props="{}" ssr client="visible" opts="{&quot;name&quot;:&quot;BeforeAfterReflection&quot;,&quot;value&quot;:true}" await-children><div style="background:linear-gradient(135deg, rgba(30,32,48,0.95), rgba(20,22,36,0.98));border-radius:16px;padding:28px 24px;border:1px solid rgba(100,116,139,0.25);max-width:800px;margin:1.5rem auto"><p style="color:#e2e8f0;font-size:18px;font-weight:700;margin:0 0 4px 0;text-align:center">1차시의 나 vs 10차시의 나</p><p style="color:#94a3b8;font-size:13px;margin:0 0 20px 0;text-align:center">&quot;기계가 생각할 수 있는가?&quot; 에 대한 답이 어떻게 달라졌는지 비교합니다</p><div style="background:rgba(239,68,68,0.08);border:1px solid rgba(239,68,68,0.25);border-radius:12px;padding:16px;margin-bottom:16px"><p style="color:#fca5a5;font-size:14px;font-weight:700;margin:0 0 8px 0">Before: 1차시에 내가 쓴 답 (기억나는 대로 적어보세요)</p><textarea placeholder="1차시에 &#x27;기계가 생각할 수 있는가?&#x27;에 뭐라고 답했는지 떠올려보세요..." style="width:100%;min-height:80px;background:rgba(0,0,0,0.3);border:1px solid rgba(239,68,68,0.2);border-radius:8px;color:#e2e8f0;padding:12px;font-size:14px;resize:vertical;box-sizing:border-box;font-family:inherit"></textarea><p style="color:#94a3b8;font-size:12px;margin:8px 0 0 0">1차시에 많이 나왔던 답 예시:</p><div style="display:flex;flex-wrap:wrap;gap:6px;margin-top:6px"><button style="background:rgba(239,68,68,0.12);border:1px solid rgba(239,68,68,0.2);border-radius:6px;color:#fca5a5;padding:4px 10px;font-size:12px;cursor:pointer;opacity:1">&quot;<!-- -->AI는 프로그래밍된 대로만 하니까 생각이 아니다<!-- -->&quot;</button><button style="background:rgba(239,68,68,0.12);border:1px solid rgba(239,68,68,0.2);border-radius:6px;color:#fca5a5;padding:4px 10px;font-size:12px;cursor:pointer;opacity:1">&quot;<!-- -->ChatGPT가 대화하는 건 생각하는 것 같다<!-- -->&quot;</button><button style="background:rgba(239,68,68,0.12);border:1px solid rgba(239,68,68,0.2);border-radius:6px;color:#fca5a5;padding:4px 10px;font-size:12px;cursor:pointer;opacity:1">&quot;<!-- -->생각의 정의부터 내려야 답할 수 있다<!-- -->&quot;</button><button style="background:rgba(239,68,68,0.12);border:1px solid rgba(239,68,68,0.2);border-radius:6px;color:#fca5a5;padding:4px 10px;font-size:12px;cursor:pointer;opacity:1">&quot;<!-- -->AI는 멍청해서 가끔 틀린다<!-- -->&quot;</button></div></div><div style="background:rgba(34,211,238,0.08);border:1px solid rgba(34,211,238,0.25);border-radius:12px;padding:16px;margin-bottom:16px"><p style="color:#67e8f9;font-size:14px;font-weight:700;margin:0 0 8px 0">After: 10차시인 지금, 같은 질문에 다시 답합니다</p><textarea placeholder="이 수업에서 배운 개념을 3개 이상 포함하여 답해보세요..." style="width:100%;min-height:120px;background:rgba(0,0,0,0.3);border:1px solid rgba(34,211,238,0.2);border-radius:8px;color:#e2e8f0;padding:12px;font-size:14px;resize:vertical;box-sizing:border-box;font-family:inherit"></textarea><p style="color:#94a3b8;font-size:12px;margin:12px 0 6px 0">답변에 사용한 개념을 선택하세요 (3개 이상):</p><div style="display:flex;flex-wrap:wrap;gap:6px"><button style="background:rgba(100,116,139,0.15);border:1px solid rgba(100,116,139,0.25);border-radius:6px;color:#94a3b8;padding:4px 10px;font-size:12px;cursor:pointer;transition:all 0.2s">튜링 테스트</button><button style="background:rgba(100,116,139,0.15);border:1px solid rgba(100,116,139,0.25);border-radius:6px;color:#94a3b8;padding:4px 10px;font-size:12px;cursor:pointer;transition:all 0.2s">중국어 방</button><button style="background:rgba(100,116,139,0.15);border:1px solid rgba(100,116,139,0.25);border-radius:6px;color:#94a3b8;padding:4px 10px;font-size:12px;cursor:pointer;transition:all 0.2s">퍼셉트론</button><button style="background:rgba(100,116,139,0.15);border:1px solid rgba(100,116,139,0.25);border-radius:6px;color:#94a3b8;padding:4px 10px;font-size:12px;cursor:pointer;transition:all 0.2s">활성화함수</button><button style="background:rgba(100,116,139,0.15);border:1px solid rgba(100,116,139,0.25);border-radius:6px;color:#94a3b8;padding:4px 10px;font-size:12px;cursor:pointer;transition:all 0.2s">손실함수</button><button style="background:rgba(100,116,139,0.15);border:1px solid rgba(100,116,139,0.25);border-radius:6px;color:#94a3b8;padding:4px 10px;font-size:12px;cursor:pointer;transition:all 0.2s">경사하강법</button><button style="background:rgba(100,116,139,0.15);border:1px solid rgba(100,116,139,0.25);border-radius:6px;color:#94a3b8;padding:4px 10px;font-size:12px;cursor:pointer;transition:all 0.2s">역전파</button><button style="background:rgba(100,116,139,0.15);border:1px solid rgba(100,116,139,0.25);border-radius:6px;color:#94a3b8;padding:4px 10px;font-size:12px;cursor:pointer;transition:all 0.2s">토큰화</button><button style="background:rgba(100,116,139,0.15);border:1px solid rgba(100,116,139,0.25);border-radius:6px;color:#94a3b8;padding:4px 10px;font-size:12px;cursor:pointer;transition:all 0.2s">임베딩</button><button style="background:rgba(100,116,139,0.15);border:1px solid rgba(100,116,139,0.25);border-radius:6px;color:#94a3b8;padding:4px 10px;font-size:12px;cursor:pointer;transition:all 0.2s">어텐션</button><button style="background:rgba(100,116,139,0.15);border:1px solid rgba(100,116,139,0.25);border-radius:6px;color:#94a3b8;padding:4px 10px;font-size:12px;cursor:pointer;transition:all 0.2s">확률적 예측</button><button style="background:rgba(100,116,139,0.15);border:1px solid rgba(100,116,139,0.25);border-radius:6px;color:#94a3b8;padding:4px 10px;font-size:12px;cursor:pointer;transition:all 0.2s">학습 데이터</button><button style="background:rgba(100,116,139,0.15);border:1px solid rgba(100,116,139,0.25);border-radius:6px;color:#94a3b8;padding:4px 10px;font-size:12px;cursor:pointer;transition:all 0.2s">XOR</button><button style="background:rgba(100,116,139,0.15);border:1px solid rgba(100,116,139,0.25);border-radius:6px;color:#94a3b8;padding:4px 10px;font-size:12px;cursor:pointer;transition:all 0.2s">비선형성</button></div></div><button disabled="" style="width:100%;padding:12px;background:rgba(100,116,139,0.2);border:none;border-radius:8px;color:#64748b;font-size:15px;font-weight:700;cursor:default">비교하기</button></div><!--astro:end--></astro-island>
+<hr>
+<div class="sl-heading-wrapper level-h2"><h2 id="ai가-바꾸는-세계">AI가 바꾸는 세계</h2><a class="sl-anchor-link" href="#ai가-바꾸는-세계"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24"><path fill="currentcolor" d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 0 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 1 0-1.42-1.42Zm8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 0 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 1 0 1.42 1.42l3.88-3.89a4.49 4.49 0 0 0 0-6.33ZM8.83 15.17a1 1 0 0 0 1.1.22 1 1 0 0 0 .32-.22l4.92-4.92a1 1 0 0 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42Z"></path></svg></span><span class="sr-only" data-pagefind-ignore>섹션 제목: “AI가 바꾸는 세계”</span></a></div>
+<p>AI는 특정 분야만의 기술이 아닙니다. 지금 이 순간에도 거의 모든 분야에서 AI가 일하는 방식을 바꾸고 있습니다. 여러분의 관심 분야에서도 이미 AI가 활용되고 있을 가능성이 높습니다.</p>
+<div class="card-grid astro-zntqmydn"><article class="card sl-flex astro-v5tidmuc"> <p class="title sl-flex astro-v5tidmuc">  <span class="astro-v5tidmuc">의료</span> </p> <div class="body astro-v5tidmuc"><p>AI 진단 보조 — X-ray/CT 판독, 피부 병변 분석, 신약 후보 물질 탐색. 의사의 판단을 대체하는 것이 아니라, 놓칠 수 있는 패턴을 함께 찾아줍니다.</p></div> </article> <article class="card sl-flex astro-v5tidmuc"> <p class="title sl-flex astro-v5tidmuc">  <span class="astro-v5tidmuc">법률</span> </p> <div class="body astro-v5tidmuc"><p>판례 검색, 계약서 조항 분석, 리걸 리서치 자동화. 변호사가 수천 건의 판례를 읽는 대신 AI가 관련 사례를 추려내고, 변호사는 전략적 판단에 집중합니다.</p></div> </article> <article class="card sl-flex astro-v5tidmuc"> <p class="title sl-flex astro-v5tidmuc">  <span class="astro-v5tidmuc">예술</span> </p> <div class="body astro-v5tidmuc"><p>AI 작곡, 이미지 생성, 영상 편집 보조. 예술가의 창작 도구가 붓에서 AI로 확장되고 있습니다. 중요한 것은 도구가 아니라 어떤 이야기를 담느냐입니다.</p></div> </article> <article class="card sl-flex astro-v5tidmuc"> <p class="title sl-flex astro-v5tidmuc">  <span class="astro-v5tidmuc">교육</span> </p> <div class="body astro-v5tidmuc"><p>개인 맞춤 학습 경로, 자동 채점, 학습 분석. 30명의 학생에게 각각 다른 설명을 제공할 수 있는 AI 튜터가 교사를 보조합니다.</p></div> </article> <article class="card sl-flex astro-v5tidmuc"> <p class="title sl-flex astro-v5tidmuc">  <span class="astro-v5tidmuc">과학</span> </p> <div class="body astro-v5tidmuc"><p>단백질 구조 예측(AlphaFold), 기후 모델링, 천문 데이터 분석. 인간이 수십 년 걸릴 연구를 AI가 며칠 만에 후보를 좁혀줍니다.</p></div> </article> <article class="card sl-flex astro-v5tidmuc"> <p class="title sl-flex astro-v5tidmuc">  <span class="astro-v5tidmuc">공학</span> </p> <div class="body astro-v5tidmuc"><p>자율주행, 로봇 제어, 설계 최적화. 6차시에서 배운 역전파가 자율주행차의 판단을 학습시키는 핵심 알고리즘입니다.</p></div> </article> <article class="card sl-flex astro-v5tidmuc"> <p class="title sl-flex astro-v5tidmuc">  <span class="astro-v5tidmuc">경영</span> </p> <div class="body astro-v5tidmuc"><p>수요 예측, 고객 행동 분석, 재고 최적화. 4차시에서 배운 손실함수가 여기서도 “예측과 실제의 차이를 최소화”하는 데 쓰입니다.</p></div> </article> <article class="card sl-flex astro-v5tidmuc"> <p class="title sl-flex astro-v5tidmuc">  <span class="astro-v5tidmuc">미디어</span> </p> <div class="body astro-v5tidmuc"><p>자동 번역, 콘텐츠 추천, 영상 자막 생성. 7차시에서 배운 임베딩 기술이 넷플릭스 추천과 유튜브 번역의 핵심입니다.</p></div> </article> </div> 
+<div class="surprise-box"><strong>핵심 메시지</strong><p>AI는 특정 직업을 없애는 것이 아니라, <strong>모든 직업의 일하는 방식을 바꿉니다.</strong> 중요한 것은 “어떤 직업이 살아남는가”가 아니라, <strong>“어떻게 AI와 함께 일할 것인가”</strong>입니다.</p><p>의사가 사라지는 것이 아니라 “AI와 협업하는 의사”가 됩니다. 디자이너가 사라지는 것이 아니라 “AI 도구를 활용하는 디자이너”가 됩니다. 여러분이 어떤 진로를 선택하든, AI는 여러분의 동료가 될 것입니다.</p></div>
+<hr>
+<div class="sl-heading-wrapper level-h2"><h2 id="내-관심-분야의-ai-연구-찾기--실습">내 관심 분야의 AI 연구 찾기 — 실습</h2><a class="sl-anchor-link" href="#내-관심-분야의-ai-연구-찾기--실습"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24"><path fill="currentcolor" d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 0 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 1 0-1.42-1.42Zm8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 0 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 1 0 1.42 1.42l3.88-3.89a4.49 4.49 0 0 0 0-6.33ZM8.83 15.17a1 1 0 0 0 1.1.22 1 1 0 0 0 .32-.22l4.92-4.92a1 1 0 0 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42Z"></path></svg></span><span class="sr-only" data-pagefind-ignore>섹션 제목: “내 관심 분야의 AI 연구 찾기 — 실습”</span></a></div>
+<p>지금부터 15분 동안, 여러분의 관심 분야에서 AI가 어떻게 쓰이고 있는지 직접 조사합니다.</p>
+<div class="sl-heading-wrapper level-h3"><h3 id="step-1-관심-분야-선택">Step 1: 관심 분야 선택</h3><a class="sl-anchor-link" href="#step-1-관심-분야-선택"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24"><path fill="currentcolor" d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 0 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 1 0-1.42-1.42Zm8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 0 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 1 0 1.42 1.42l3.88-3.89a4.49 4.49 0 0 0 0-6.33ZM8.83 15.17a1 1 0 0 0 1.1.22 1 1 0 0 0 .32-.22l4.92-4.92a1 1 0 0 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42Z"></path></svg></span><span class="sr-only" data-pagefind-ignore>섹션 제목: “Step 1: 관심 분야 선택”</span></a></div>
+<p>자신이 관심 있는 분야를 하나 정합니다. 아직 진로가 정해지지 않았다면, 최근 가장 흥미를 느낀 분야를 고르세요. 위 카드 8개에 없는 분야도 괜찮습니다 — 농업, 스포츠, 요리, 게임, 음악, 패션, 심리학, 환경 등 무엇이든 좋습니다.</p>
+<div class="sl-heading-wrapper level-h3"><h3 id="step-2-ai에게-질문하기">Step 2: AI에게 질문하기</h3><a class="sl-anchor-link" href="#step-2-ai에게-질문하기"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24"><path fill="currentcolor" d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 0 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 1 0-1.42-1.42Zm8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 0 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 1 0 1.42 1.42l3.88-3.89a4.49 4.49 0 0 0 0-6.33ZM8.83 15.17a1 1 0 0 0 1.1.22 1 1 0 0 0 .32-.22l4.92-4.92a1 1 0 0 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42Z"></path></svg></span><span class="sr-only" data-pagefind-ignore>섹션 제목: “Step 2: AI에게 질문하기”</span></a></div>
+<p>AI(ChatGPT, Claude 등)에게 다음과 같이 질문합니다:</p>
+<div class="concept-card"><strong>프롬프트 예시:</strong><p>“나는 [자신의 관심 분야]에 관심이 있는 고등학생입니다. 이 분야에서 AI가 어떻게 활용되고 있는지, 구체적인 사례 3가지를 알려주세요. 각 사례에 대해 어떤 기관이나 기업에서 진행하고 있는지도 포함해주세요.”</p></div>
+<div class="sl-heading-wrapper level-h3"><h3 id="step-3-검증하기--가장-중요한-단계">Step 3: 검증하기 — 가장 중요한 단계</h3><a class="sl-anchor-link" href="#step-3-검증하기--가장-중요한-단계"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24"><path fill="currentcolor" d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 0 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 1 0-1.42-1.42Zm8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 0 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 1 0 1.42 1.42l3.88-3.89a4.49 4.49 0 0 0 0-6.33ZM8.83 15.17a1 1 0 0 0 1.1.22 1 1 0 0 0 .32-.22l4.92-4.92a1 1 0 0 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42Z"></path></svg></span><span class="sr-only" data-pagefind-ignore>섹션 제목: “Step 3: 검증하기 — 가장 중요한 단계”</span></a></div>
+<aside aria-label="8차시에서 배운 ‘환각’을 기억하세요" class="starlight-aside starlight-aside--caution"><p class="starlight-aside__title" aria-hidden="true"><svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor" class="starlight-aside__icon"><path d="M12 16C11.8022 16 11.6089 16.0587 11.4444 16.1686C11.28 16.2784 11.1518 16.4346 11.0761 16.6173C11.0004 16.8001 10.9806 17.0011 11.0192 17.1951C11.0578 17.3891 11.153 17.5673 11.2929 17.7071C11.4327 17.847 11.6109 17.9422 11.8049 17.9808C11.9989 18.0194 12.2 17.9996 12.3827 17.9239C12.5654 17.8482 12.7216 17.72 12.8315 17.5556C12.9413 17.3911 13 17.1978 13 17C13 16.7348 12.8946 16.4805 12.7071 16.2929C12.5196 16.1054 12.2652 16 12 16ZM22.67 17.47L14.62 3.47003C14.3598 3.00354 13.9798 2.61498 13.5192 2.3445C13.0586 2.07401 12.5341 1.9314 12 1.9314C11.4659 1.9314 10.9414 2.07401 10.4808 2.3445C10.0202 2.61498 9.64019 3.00354 9.38 3.47003L1.38 17.47C1.11079 17.924 0.966141 18.441 0.960643 18.9688C0.955144 19.4966 1.089 20.0166 1.34868 20.4761C1.60837 20.9356 1.9847 21.3185 2.43968 21.5861C2.89466 21.8536 3.41218 21.9964 3.94 22H20.06C20.5921 22.0053 21.1159 21.8689 21.5779 21.6049C22.0399 21.341 22.4234 20.9589 22.689 20.4978C22.9546 20.0368 23.0928 19.5134 23.0895 18.9814C23.0862 18.4493 22.9414 17.9277 22.67 17.47ZM20.94 19.47C20.8523 19.626 20.7245 19.7556 20.5697 19.8453C20.4149 19.935 20.2389 19.9815 20.06 19.98H3.94C3.76111 19.9815 3.5851 19.935 3.43032 19.8453C3.27553 19.7556 3.14765 19.626 3.06 19.47C2.97223 19.318 2.92602 19.1456 2.92602 18.97C2.92602 18.7945 2.97223 18.622 3.06 18.47L11.06 4.47003C11.1439 4.30623 11.2714 4.16876 11.4284 4.07277C11.5855 3.97678 11.766 3.92599 11.95 3.92599C12.134 3.92599 12.3145 3.97678 12.4716 4.07277C12.6286 4.16876 12.7561 4.30623 12.84 4.47003L20.89 18.47C20.9892 18.6199 21.0462 18.7937 21.055 18.9732C21.0638 19.1527 21.0241 19.3312 20.94 19.49V19.47ZM12 8.00003C11.7348 8.00003 11.4804 8.10538 11.2929 8.29292C11.1054 8.48046 11 8.73481 11 9.00003V13C11 13.2652 11.1054 13.5196 11.2929 13.7071C11.4804 13.8947 11.7348 14 12 14C12.2652 14 12.5196 13.8947 12.7071 13.7071C12.8946 13.5196 13 13.2652 13 13V9.00003C13 8.73481 12.8946 8.48046 12.7071 8.29292C12.5196 8.10538 12.2652 8.00003 12 8.00003Z"></path></svg>8차시에서 배운 ‘환각’을 기억하세요</p><div class="starlight-aside__content"><p>AI가 알려준 연구나 사례가 실제로 존재하는지 <strong>반드시 검색</strong>해보세요.</p><ul>
+<li>AI가 언급한 기관명, 프로젝트명, 연구자 이름을 검색엔진에서 확인합니다</li>
+<li>존재하지 않는 사례를 그럴듯하게 만들어낸 것은 아닌지 판단합니다</li>
+<li>이것이 8차시에서 배운 <strong>“환각(hallucination)“을 직접 확인하는 과정</strong>이기도 합니다</li>
+</ul><p>환각을 발견했다면? 그것도 훌륭한 발견입니다. 워크시트에 “AI가 만들어낸 사례”라고 기록하고, 왜 이런 일이 일어나는지 8차시의 개념으로 설명해보세요.</p></div></aside>
+<div class="sl-heading-wrapper level-h3"><h3 id="step-4-워크시트에-기록">Step 4: 워크시트에 기록</h3><a class="sl-anchor-link" href="#step-4-워크시트에-기록"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24"><path fill="currentcolor" d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 0 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 1 0-1.42-1.42Zm8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 0 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 1 0 1.42 1.42l3.88-3.89a4.49 4.49 0 0 0 0-6.33ZM8.83 15.17a1 1 0 0 0 1.1.22 1 1 0 0 0 .32-.22l4.92-4.92a1 1 0 0 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42Z"></path></svg></span><span class="sr-only" data-pagefind-ignore>섹션 제목: “Step 4: 워크시트에 기록”</span></a></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>항목</th><th>내용</th></tr></thead><tbody><tr><td>내 관심 분야</td><td></td></tr><tr><td>AI가 알려준 사례 1</td><td></td></tr><tr><td>AI가 알려준 사례 2</td><td></td></tr><tr><td>AI가 알려준 사례 3</td><td></td></tr><tr><td>검증 결과 (실제 존재 여부)</td><td></td></tr><tr><td>느낀 점</td><td></td></tr></tbody></table>
+<aside aria-label="실습 팁" class="starlight-aside starlight-aside--tip"><p class="starlight-aside__title" aria-hidden="true"><svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor" class="starlight-aside__icon"><path fill-rule="evenodd" clip-rule="evenodd" d="M1.43909 8.85483L1.44039 8.85354L4.96668 5.33815C5.30653 4.99386 5.7685 4.79662 6.2524 4.78972L6.26553 4.78963L12.9014 4.78962L13.8479 3.84308C16.9187 0.772319 20.0546 0.770617 21.4678 0.975145C21.8617 1.02914 22.2271 1.21053 22.5083 1.4917C22.7894 1.77284 22.9708 2.13821 23.0248 2.53199C23.2294 3.94517 23.2278 7.08119 20.1569 10.1521L19.2107 11.0983V17.7338L19.2106 17.7469C19.2037 18.2308 19.0067 18.6933 18.6624 19.0331L15.1456 22.5608C14.9095 22.7966 14.6137 22.964 14.29 23.0449C13.9663 23.1259 13.6267 23.1174 13.3074 23.0204C12.9881 22.9235 12.7011 22.7417 12.4771 22.4944C12.2533 22.2473 12.1006 21.9441 12.0355 21.6171L11.1783 17.3417L6.65869 12.822L4.34847 12.3589L2.38351 11.965C2.05664 11.8998 1.75272 11.747 1.50564 11.5232C1.25835 11.2992 1.07653 11.0122 0.979561 10.6929C0.882595 10.3736 0.874125 10.034 0.955057 9.7103C1.03599 9.38659 1.20328 9.09092 1.43909 8.85483ZM6.8186 10.8724L2.94619 10.096L6.32006 6.73268H10.9583L6.8186 10.8724ZM15.2219 5.21703C17.681 2.75787 20.0783 2.75376 21.1124 2.8876C21.2462 3.92172 21.2421 6.31895 18.783 8.77812L12.0728 15.4883L8.51172 11.9272L15.2219 5.21703ZM13.9042 21.0538L13.1279 17.1811L17.2676 13.0414V17.68L13.9042 21.0538Z"></path><path d="M9.31827 18.3446C9.45046 17.8529 9.17864 17.3369 8.68945 17.1724C8.56178 17.1294 8.43145 17.1145 8.30512 17.1243C8.10513 17.1398 7.91519 17.2172 7.76181 17.3434C7.62613 17.455 7.51905 17.6048 7.45893 17.7835C6.97634 19.2186 5.77062 19.9878 4.52406 20.4029C4.08525 20.549 3.6605 20.644 3.29471 20.7053C3.35607 20.3395 3.45098 19.9148 3.59711 19.476C4.01221 18.2294 4.78141 17.0237 6.21648 16.5411C6.39528 16.481 6.54504 16.3739 6.65665 16.2382C6.85126 16.0016 6.92988 15.678 6.84417 15.3647C6.83922 15.3466 6.83373 15.3286 6.82767 15.3106C6.74106 15.053 6.55701 14.8557 6.33037 14.7459C6.10949 14.6389 5.84816 14.615 5.59715 14.6994C5.47743 14.7397 5.36103 14.7831 5.24786 14.8294C3.22626 15.6569 2.2347 17.4173 1.75357 18.8621C1.49662 19.6337 1.36993 20.3554 1.30679 20.8818C1.27505 21.1464 1.25893 21.3654 1.25072 21.5213C1.24662 21.5993 1.24448 21.6618 1.24337 21.7066L1.243 21.7226L1.24235 21.7605L1.2422 21.7771L1.24217 21.7827L1.24217 21.7856C1.24217 22.3221 1.67703 22.7579 2.2137 22.7579L2.2155 22.7579L2.22337 22.7578L2.23956 22.7577C2.25293 22.7575 2.27096 22.7572 2.29338 22.7567C2.33821 22.7555 2.40073 22.7534 2.47876 22.7493C2.63466 22.7411 2.85361 22.725 3.11822 22.6932C3.64462 22.6301 4.36636 22.5034 5.13797 22.2464C6.58274 21.7653 8.3431 20.7738 9.17063 18.7522C9.21696 18.639 9.26037 18.5226 9.30064 18.4029C9.30716 18.3835 9.31304 18.364 9.31827 18.3446Z"></path></svg>실습 팁</p><div class="starlight-aside__content"><p>검증 과정에서 AI가 알려준 것보다 더 흥미로운 실제 사례를 발견할 수도 있습니다. AI의 답변은 출발점일 뿐입니다 — 검색을 통해 더 깊이 파고들어 보세요.</p></div></aside>
+<hr>
+<div class="sl-heading-wrapper level-h2"><h2 id="ai-시대-무엇을-준비할-것인가--토론">AI 시대, 무엇을 준비할 것인가 — 토론</h2><a class="sl-anchor-link" href="#ai-시대-무엇을-준비할-것인가--토론"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24"><path fill="currentcolor" d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 0 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 1 0-1.42-1.42Zm8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 0 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 1 0 1.42 1.42l3.88-3.89a4.49 4.49 0 0 0 0-6.33ZM8.83 15.17a1 1 0 0 0 1.1.22 1 1 0 0 0 .32-.22l4.92-4.92a1 1 0 0 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42Z"></path></svg></span><span class="sr-only" data-pagefind-ignore>섹션 제목: “AI 시대, 무엇을 준비할 것인가 — 토론”</span></a></div>
+<astro-island uid="2kLprI" prefix="r3" component-url="/ai-basic-textbook/_astro/DiscussionWorksheet.Bgnra_ON.js" component-export="default" renderer-url="/ai-basic-textbook/_astro/client.BpR2CX5i.js" props="{}" ssr client="visible" opts="{&quot;name&quot;:&quot;DiscussionWorksheet&quot;,&quot;value&quot;:true}" await-children><div style="background:linear-gradient(135deg, rgba(30,32,48,0.95), rgba(20,22,36,0.98));border-radius:16px;padding:24px;border:1px solid rgba(100,116,139,0.25);max-width:800px;margin:1.5rem auto"><p style="color:#e2e8f0;font-size:18px;font-weight:700;margin:0 0 4px 0;text-align:center">모둠 토의 워크시트</p><p style="color:#94a3b8;font-size:13px;margin:0 0 20px 0;text-align:center">5가지 실험 결과를 정리하고, 수업에서 배운 개념으로 구조적 원인을 설명하세요</p><div style="overflow-x:auto"><table style="width:100%;border-collapse:separate;border-spacing:0 6px"><thead><tr><th style="color:#94a3b8;font-size:12px;font-weight:600;text-align:left;padding:4px 8px;white-space:nowrap">실험</th><th style="color:#94a3b8;font-size:12px;font-weight:600;text-align:left;padding:4px 8px;white-space:nowrap">AI가 보인 한계</th><th style="color:#94a3b8;font-size:12px;font-weight:600;text-align:left;padding:4px 8px;white-space:nowrap">구조적 원인 (배운 개념 활용)</th><th style="color:#94a3b8;font-size:12px;font-weight:600;text-align:left;padding:4px 8px;white-space:nowrap">연결 차시</th></tr></thead><tbody><tr><td style="background:rgba(167,139,250,0.08);border-radius:8px 0 0 8px;padding:10px 12px;color:#c4b5fd;font-size:13px;font-weight:600;white-space:nowrap;vertical-align:top">환각</td><td style="background:rgba(0,0,0,0.2);padding:6px;vertical-align:top"><textarea placeholder="어떤 한계를 관찰했나요?" style="width:100%;min-height:50px;background:transparent;border:1px solid rgba(100,116,139,0.2);border-radius:6px;color:#e2e8f0;padding:8px;font-size:12px;resize:vertical;box-sizing:border-box;font-family:inherit"></textarea></td><td style="background:rgba(0,0,0,0.2);padding:6px;vertical-align:top"><textarea placeholder="왜 이런 한계가 생기는 걸까요?" style="width:100%;min-height:50px;background:transparent;border:1px solid rgba(100,116,139,0.2);border-radius:6px;color:#e2e8f0;padding:8px;font-size:12px;resize:vertical;box-sizing:border-box;font-family:inherit"></textarea></td><td style="background:rgba(0,0,0,0.2);border-radius:0 8px 8px 0;padding:10px 12px;color:#94a3b8;font-size:12px;vertical-align:top;white-space:nowrap">4, 8차시</td></tr><tr><td style="background:rgba(167,139,250,0.08);border-radius:8px 0 0 8px;padding:10px 12px;color:#c4b5fd;font-size:13px;font-weight:600;white-space:nowrap;vertical-align:top">산술</td><td style="background:rgba(0,0,0,0.2);padding:6px;vertical-align:top"><textarea placeholder="어떤 한계를 관찰했나요?" style="width:100%;min-height:50px;background:transparent;border:1px solid rgba(100,116,139,0.2);border-radius:6px;color:#e2e8f0;padding:8px;font-size:12px;resize:vertical;box-sizing:border-box;font-family:inherit"></textarea></td><td style="background:rgba(0,0,0,0.2);padding:6px;vertical-align:top"><textarea placeholder="왜 이런 한계가 생기는 걸까요?" style="width:100%;min-height:50px;background:transparent;border:1px solid rgba(100,116,139,0.2);border-radius:6px;color:#e2e8f0;padding:8px;font-size:12px;resize:vertical;box-sizing:border-box;font-family:inherit"></textarea></td><td style="background:rgba(0,0,0,0.2);border-radius:0 8px 8px 0;padding:10px 12px;color:#94a3b8;font-size:12px;vertical-align:top;white-space:nowrap">7차시</td></tr><tr><td style="background:rgba(167,139,250,0.08);border-radius:8px 0 0 8px;padding:10px 12px;color:#c4b5fd;font-size:13px;font-weight:600;white-space:nowrap;vertical-align:top">논리</td><td style="background:rgba(0,0,0,0.2);padding:6px;vertical-align:top"><textarea placeholder="어떤 한계를 관찰했나요?" style="width:100%;min-height:50px;background:transparent;border:1px solid rgba(100,116,139,0.2);border-radius:6px;color:#e2e8f0;padding:8px;font-size:12px;resize:vertical;box-sizing:border-box;font-family:inherit"></textarea></td><td style="background:rgba(0,0,0,0.2);padding:6px;vertical-align:top"><textarea placeholder="왜 이런 한계가 생기는 걸까요?" style="width:100%;min-height:50px;background:transparent;border:1px solid rgba(100,116,139,0.2);border-radius:6px;color:#e2e8f0;padding:8px;font-size:12px;resize:vertical;box-sizing:border-box;font-family:inherit"></textarea></td><td style="background:rgba(0,0,0,0.2);border-radius:0 8px 8px 0;padding:10px 12px;color:#94a3b8;font-size:12px;vertical-align:top;white-space:nowrap">2, 8차시</td></tr><tr><td style="background:rgba(167,139,250,0.08);border-radius:8px 0 0 8px;padding:10px 12px;color:#c4b5fd;font-size:13px;font-weight:600;white-space:nowrap;vertical-align:top">최신 정보</td><td style="background:rgba(0,0,0,0.2);padding:6px;vertical-align:top"><textarea placeholder="어떤 한계를 관찰했나요?" style="width:100%;min-height:50px;background:transparent;border:1px solid rgba(100,116,139,0.2);border-radius:6px;color:#e2e8f0;padding:8px;font-size:12px;resize:vertical;box-sizing:border-box;font-family:inherit"></textarea></td><td style="background:rgba(0,0,0,0.2);padding:6px;vertical-align:top"><textarea placeholder="왜 이런 한계가 생기는 걸까요?" style="width:100%;min-height:50px;background:transparent;border:1px solid rgba(100,116,139,0.2);border-radius:6px;color:#e2e8f0;padding:8px;font-size:12px;resize:vertical;box-sizing:border-box;font-family:inherit"></textarea></td><td style="background:rgba(0,0,0,0.2);border-radius:0 8px 8px 0;padding:10px 12px;color:#94a3b8;font-size:12px;vertical-align:top;white-space:nowrap">4, 8차시</td></tr><tr><td style="background:rgba(167,139,250,0.08);border-radius:8px 0 0 8px;padding:10px 12px;color:#c4b5fd;font-size:13px;font-weight:600;white-space:nowrap;vertical-align:top">반복 함정</td><td style="background:rgba(0,0,0,0.2);padding:6px;vertical-align:top"><textarea placeholder="어떤 한계를 관찰했나요?" style="width:100%;min-height:50px;background:transparent;border:1px solid rgba(100,116,139,0.2);border-radius:6px;color:#e2e8f0;padding:8px;font-size:12px;resize:vertical;box-sizing:border-box;font-family:inherit"></textarea></td><td style="background:rgba(0,0,0,0.2);padding:6px;vertical-align:top"><textarea placeholder="왜 이런 한계가 생기는 걸까요?" style="width:100%;min-height:50px;background:transparent;border:1px solid rgba(100,116,139,0.2);border-radius:6px;color:#e2e8f0;padding:8px;font-size:12px;resize:vertical;box-sizing:border-box;font-family:inherit"></textarea></td><td style="background:rgba(0,0,0,0.2);border-radius:0 8px 8px 0;padding:10px 12px;color:#94a3b8;font-size:12px;vertical-align:top;white-space:nowrap">1, 4차시</td></tr></tbody></table></div><div style="display:flex;justify-content:space-between;align-items:center;margin-top:16px"><span style="color:#94a3b8;font-size:13px">작성 완료: <!-- -->0<!-- --> / <!-- -->5</span><button style="padding:8px 16px;background:rgba(100,116,139,0.15);border:1px solid rgba(100,116,139,0.25);border-radius:8px;color:#94a3b8;font-size:13px;cursor:pointer">예시 답안 보기</button></div></div><!--astro:end--></astro-island>
+<div class="sl-heading-wrapper level-h3"><h3 id="토론-주제-1-ai가-대체할-것-vs-ai와-협업할-것">토론 주제 1: AI가 대체할 것 vs AI와 협업할 것</h3><a class="sl-anchor-link" href="#토론-주제-1-ai가-대체할-것-vs-ai와-협업할-것"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24"><path fill="currentcolor" d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 0 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 1 0-1.42-1.42Zm8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 0 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 1 0 1.42 1.42l3.88-3.89a4.49 4.49 0 0 0 0-6.33ZM8.83 15.17a1 1 0 0 0 1.1.22 1 1 0 0 0 .32-.22l4.92-4.92a1 1 0 0 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42Z"></path></svg></span><span class="sr-only" data-pagefind-ignore>섹션 제목: “토론 주제 1: AI가 대체할 것 vs AI와 협업할 것”</span></a></div>
+<p>모둠별로 토의합니다. 아래 표를 함께 채워보세요.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>구분</th><th>예시</th><th>이유</th></tr></thead><tbody><tr><td>AI가 대체할 가능성이 높은 작업</td><td>단순 데이터 입력, 정형화된 보고서 작성, 반복 패턴 검사</td><td>명확한 규칙과 패턴이 존재하는 작업</td></tr><tr><td>AI와 협업이 필요한 영역</td><td>창의적 판단, 공감과 소통, 윤리적 결정, 복잡한 상황 판단</td><td>정답이 없거나 맥락과 가치 판단이 필요한 영역</td></tr></tbody></table>
+<p><strong>핵심:</strong> AI를 “도구”로 활용하는 능력이 중요합니다. 계산기가 나왔을 때 수학자가 사라지지 않았듯, AI가 나와도 전문가는 사라지지 않습니다 — 다만 <strong>AI를 활용하는 전문가</strong>가 됩니다.</p>
+<div class="sl-heading-wrapper level-h3"><h3 id="토론-주제-2-ai-시대에-가장-중요한-역량은">토론 주제 2: AI 시대에 가장 중요한 역량은?</h3><a class="sl-anchor-link" href="#토론-주제-2-ai-시대에-가장-중요한-역량은"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24"><path fill="currentcolor" d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 0 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 1 0-1.42-1.42Zm8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 0 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 1 0 1.42 1.42l3.88-3.89a4.49 4.49 0 0 0 0-6.33ZM8.83 15.17a1 1 0 0 0 1.1.22 1 1 0 0 0 .32-.22l4.92-4.92a1 1 0 0 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42Z"></path></svg></span><span class="sr-only" data-pagefind-ignore>섹션 제목: “토론 주제 2: AI 시대에 가장 중요한 역량은?”</span></a></div>
+<p>다음 4가지 역량 중 가장 중요하다고 생각하는 것을 선택하고, 그 이유를 토론하세요.</p>
+<div class="card-grid astro-zntqmydn"><article class="card sl-flex astro-v5tidmuc"> <p class="title sl-flex astro-v5tidmuc">  <span class="astro-v5tidmuc">비판적 사고</span> </p> <div class="body astro-v5tidmuc"><p>AI의 결과를 검증하는 능력. 방금 실습에서 AI의 답변을 검색으로 확인한 것이 바로 비판적 사고입니다.</p></div> </article> <article class="card sl-flex astro-v5tidmuc"> <p class="title sl-flex astro-v5tidmuc">  <span class="astro-v5tidmuc">질문하는 능력</span> </p> <div class="body astro-v5tidmuc"><p>좋은 프롬프트는 좋은 질문에서 나옵니다. “무엇을 물어야 하는지 아는 것”이 AI 시대의 핵심 역량입니다.</p></div> </article> <article class="card sl-flex astro-v5tidmuc"> <p class="title sl-flex astro-v5tidmuc">  <span class="astro-v5tidmuc">융합적 사고</span> </p> <div class="body astro-v5tidmuc"><p>AI 기술 + 도메인 전문성. AI를 만드는 사람도 중요하지만, 자기 분야에서 AI를 활용하는 사람이 더 많이 필요합니다.</p></div> </article> <article class="card sl-flex astro-v5tidmuc"> <p class="title sl-flex astro-v5tidmuc">  <span class="astro-v5tidmuc">윤리적 판단</span> </p> <div class="body astro-v5tidmuc"><p>AI를 책임감 있게 사용하는 능력. AI가 내린 판단이 공정한지, 편향은 없는지 판단하는 것은 인간의 몫입니다.</p></div> </article> </div> 
+<div class="sl-heading-wrapper level-h3"><h3 id="이-수업에서-배운-것이-왜-중요한가">이 수업에서 배운 것이 왜 중요한가</h3><a class="sl-anchor-link" href="#이-수업에서-배운-것이-왜-중요한가"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24"><path fill="currentcolor" d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 0 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 1 0-1.42-1.42Zm8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 0 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 1 0 1.42 1.42l3.88-3.89a4.49 4.49 0 0 0 0-6.33ZM8.83 15.17a1 1 0 0 0 1.1.22 1 1 0 0 0 .32-.22l4.92-4.92a1 1 0 0 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42Z"></path></svg></span><span class="sr-only" data-pagefind-ignore>섹션 제목: “이 수업에서 배운 것이 왜 중요한가”</span></a></div>
+<p>1~8차시에서 배운 개념들은 단순한 지식이 아닙니다. 여러분이 AI와 함께 일할 때 필요한 <strong>구조적 이해</strong>의 기초입니다.</p>
+<ul>
+<li><strong>손실함수(4차시)</strong>를 이해하면, AI가 왜 틀릴 수 있는지 구조적으로 이해합니다. “AI가 추천한 결과가 이상한데?” → “학습 데이터의 편향 때문일 수 있다”고 판단할 수 있습니다.</li>
+<li><strong>토큰화(7차시)</strong>를 알면, AI의 언어 처리 한계를 파악할 수 있습니다. “왜 AI가 한국어 속담을 이상하게 해석하지?” → “토큰 분할 방식 때문일 수 있다”고 추론할 수 있습니다.</li>
+<li><strong>어텐션(8차시)</strong>을 이해하면, AI가 긴 문서에서 핵심을 놓치는 이유를 알 수 있습니다. “프롬프트를 어떻게 구성해야 AI가 중요한 부분에 집중할까?”를 설계할 수 있습니다.</li>
+<li><strong>역전파(6차시)</strong>를 알면, AI 모델을 미세 조정(fine-tuning)하는 원리를 이해합니다. 자기 분야의 데이터로 AI를 맞춤 훈련시키는 것이 가능해집니다.</li>
+</ul>
+<p><strong>이 수업에서 배운 것은 AI를 “블랙박스”가 아닌 “이해 가능한 도구”로 만드는 기초입니다.</strong> AI의 원리를 아는 사람만이 AI를 제대로 활용하고, AI의 한계를 인식하며, AI와 함께 더 나은 결과를 만들 수 있습니다.</p>
+<hr>
+<div class="sl-heading-wrapper level-h2"><h2 id="원을-그리며-돌아온-질문">원을 그리며 돌아온 질문</h2><a class="sl-anchor-link" href="#원을-그리며-돌아온-질문"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24"><path fill="currentcolor" d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 0 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 1 0-1.42-1.42Zm8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 0 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 1 0 1.42 1.42l3.88-3.89a4.49 4.49 0 0 0 0-6.33ZM8.83 15.17a1 1 0 0 0 1.1.22 1 1 0 0 0 .32-.22l4.92-4.92a1 1 0 0 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42Z"></path></svg></span><span class="sr-only" data-pagefind-ignore>섹션 제목: “원을 그리며 돌아온 질문”</span></a></div>
+<p>수업의 처음과 끝을 잇는 이 질문을 마지막으로 한 번 더 봅시다.</p>
+<div class="concept-card"><strong>”기계가 생각할 수 있는가?”</strong><p>이 질문에 다시 답해봅시다. 하지만 이번에는 <strong>조건</strong>이 있습니다:</p><p>답변에 이 수업에서 배운 개념을 <strong>최소 3개 이상</strong> 포함해야 합니다. 예를 들어 토큰화, 확률적 예측, 손실함수, 학습 데이터, 퍼셉트론, 활성화함수, 역전파, 임베딩, 어텐션 등.</p><p>1차시의 답과 지금의 답을 비교해보세요. <strong>무엇이 달라졌나요?</strong></p></div>
+<p>많은 경우 이런 변화가 나타납니다:</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>1차시 (before)</th><th>9차시 (after)</th></tr></thead><tbody><tr><td>“AI는 프로그래밍된 대로 하니까 생각이 아니다"</td><td>"AI는 학습 데이터의 패턴을 확률적으로 예측하는 것이다. 프로그래밍된 ‘규칙’이 아니라 데이터에서 ‘학습한 패턴’을 따른다"</td></tr><tr><td>"AI가 대화하면 생각하는 것 같다"</td><td>"대화는 다음 토큰의 확률 분포에서 선택하는 과정이다. 이것이 ‘생각’인지는 중국어 방 논증처럼 정의에 따라 다르다"</td></tr><tr><td>"AI는 멍청해서 틀린다"</td><td>"AI의 한계는 구조적이다: 토큰 단위 처리, 확률적 예측, 학습 데이터 범위 등에 의해 발생한다"</td></tr><tr><td>"잘 모르겠다"</td><td>"생각의 정의에 따라 답이 달라진다. 튜링 테스트 관점, 중국어 방 관점, 기능적 관점에서 각각 다른 답이 가능하다"</td></tr></tbody></table>
+<strong>"달라진 것은 답이 아니라 ‘근거’입니다. 이것이 학습입니다.”</strong>
+<p>1차시에서 여러분은 튜링 테스트 게임을 하면서 이 질문을 처음 만났습니다. 그때는 “AI가 사람을 속일 수 있으면 생각하는 걸까?”라는 수준에서 논의했습니다. 10차시인 지금, 여러분은 이 질문에 훨씬 더 깊이 답할 수 있는 도구를 가지고 있습니다.</p>
+<ul>
+<li><strong>1차시 (튜링 테스트):</strong> 기계가 사람을 속일 수 있다면 그것은 생각인가?</li>
+<li><strong>1차시 (중국어 방):</strong> 매뉴얼대로 답변하는 것은 이해인가?</li>
+<li><strong>2차시 (퍼셉트론):</strong> “틀리면 고치기”를 반복하는 것은 학습인가?</li>
+<li><strong>6차시 (역전파):</strong> 오차의 원인을 거꾸로 추적하는 것은 반성인가?</li>
+<li><strong>7차시 (임베딩):</strong> “왕 - 남자 + 여자 = 여왕”이 성립하는 것은 이해인가?</li>
+<li><strong>8차시 (어텐션):</strong> 문맥에서 중요한 단어에 주목하는 것은 집중인가?</li>
+<li><strong>10차시 (진로 탐색):</strong> 그리고 이 모든 것을 이해한 여러분은, AI와 함께 일할 준비가 되어 있는가?</li>
+</ul>
+<p><strong>이 수업은 이 질문에 답을 주지 않습니다.</strong> 답은 여러분 각자가 만들어가는 것입니다. 다만 이제 여러분은 이 질문에 <strong>근거를 가지고</strong> 답할 수 있습니다. “나는 이렇게 생각한다, 왜냐하면…” — 이 “왜냐하면” 뒤에 올 내용을 이 수업에서 배운 것입니다.</p>
+<hr>
+<div class="sl-heading-wrapper level-h2"><h2 id="더-알고-싶다면">더 알고 싶다면</h2><a class="sl-anchor-link" href="#더-알고-싶다면"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24"><path fill="currentcolor" d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 0 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 1 0-1.42-1.42Zm8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 0 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 1 0 1.42 1.42l3.88-3.89a4.49 4.49 0 0 0 0-6.33ZM8.83 15.17a1 1 0 0 0 1.1.22 1 1 0 0 0 .32-.22l4.92-4.92a1 1 0 0 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42Z"></path></svg></span><span class="sr-only" data-pagefind-ignore>섹션 제목: “더 알고 싶다면”</span></a></div>
+<p>이 수업은 끝이지만, 여러분의 AI 여정은 이제 시작입니다. 관심과 수준에 따라 다음 단계를 선택해보세요.</p>
+<div class="card-grid astro-zntqmydn"><article class="card sl-flex astro-v5tidmuc"> <p class="title sl-flex astro-v5tidmuc">  <span class="astro-v5tidmuc">코딩부터 시작하고 싶다면</span> </p> <div class="body astro-v5tidmuc"><p>Python 기초 → NumPy/Pandas → PyTorch 또는 TensorFlow. 2차시에서 손으로 계산한 퍼셉트론을 코드로 구현하는 것부터 시작할 수 있습니다.</p></div> </article> <article class="card sl-flex astro-v5tidmuc"> <p class="title sl-flex astro-v5tidmuc">  <span class="astro-v5tidmuc">수학을 더 깊이 하고 싶다면</span> </p> <div class="body astro-v5tidmuc"><p>선형대수 (행렬 연산, 벡터 공간), 미적분 (편미분, 연쇄법칙), 확률통계. 5차시의 경사하강법과 6차시의 역전파를 수식으로 완전히 이해할 수 있게 됩니다.</p></div> </article> <article class="card sl-flex astro-v5tidmuc"> <p class="title sl-flex astro-v5tidmuc">  <span class="astro-v5tidmuc">영상으로 배우고 싶다면</span> </p> <div class="body astro-v5tidmuc"><p>3Blue1Brown “Neural Networks” 시리즈, Stanford CS231n (컴퓨터 비전), fast.ai (실용 딥러닝). 모두 무료이며, 이 수업에서 배운 개념을 더 깊이 다룹니다.</p></div> </article> <article class="card sl-flex astro-v5tidmuc"> <p class="title sl-flex astro-v5tidmuc">  <span class="astro-v5tidmuc">대학 전공을 고민 중이라면</span> </p> <div class="body astro-v5tidmuc"><p>컴퓨터공학, 데이터사이언스, 인지과학, 통계학, 산업공학 등. 하지만 기억하세요 — AI는 모든 분야와 결합합니다. 의학+AI, 법학+AI, 예술+AI 모두 가능합니다.</p></div> </article> <article class="card sl-flex astro-v5tidmuc"> <p class="title sl-flex astro-v5tidmuc">  <span class="astro-v5tidmuc">실전 경험을 쌓고 싶다면</span> </p> <div class="body astro-v5tidmuc"><p>Kaggle 대회 참가, AI 해커톤, 개인 프로젝트. 배운 것을 직접 만들어보는 것이 가장 빠른 학습입니다.</p></div> </article> </div> 
+<hr>
+<div class="sl-heading-wrapper level-h2"><h2 id="평가-준비">평가 준비</h2><a class="sl-anchor-link" href="#평가-준비"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24"><path fill="currentcolor" d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 0 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 1 0-1.42-1.42Zm8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 0 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 1 0 1.42 1.42l3.88-3.89a4.49 4.49 0 0 0 0-6.33ZM8.83 15.17a1 1 0 0 0 1.1.22 1 1 0 0 0 .32-.22l4.92-4.92a1 1 0 0 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42Z"></path></svg></span><span class="sr-only" data-pagefind-ignore>섹션 제목: “평가 준비”</span></a></div>
+<div class="sl-heading-wrapper level-h3"><h3 id="서술형-평가-안내">서술형 평가 안내</h3><a class="sl-anchor-link" href="#서술형-평가-안내"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24"><path fill="currentcolor" d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 0 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 1 0-1.42-1.42Zm8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 0 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 1 0 1.42 1.42l3.88-3.89a4.49 4.49 0 0 0 0-6.33ZM8.83 15.17a1 1 0 0 0 1.1.22 1 1 0 0 0 .32-.22l4.92-4.92a1 1 0 0 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42Z"></path></svg></span><span class="sr-only" data-pagefind-ignore>섹션 제목: “서술형 평가 안내”</span></a></div>
+<div class="concept-card"><p><strong>서술형 평가</strong>는 오프라인 손글씨로 작성하며, 문항은 <strong>사전 공개</strong>됩니다. 충분히 준비한 뒤 작성할 수 있습니다.</p></div>
+<p>서술형 평가는 3가지 유형으로 구성됩니다. 각 유형이 측정하는 것이 다릅니다.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>유형</th><th>측정하는 것</th><th>배점</th><th>문항 수</th></tr></thead><tbody><tr><td>A: 개념 설명형</td><td>핵심 개념을 정확히 아는가</td><td>각 10점</td><td>4문항</td></tr><tr><td>B: 사고실험형</td><td>개념을 새로운 상황에 적용하는가</td><td>각 10점</td><td>2문항</td></tr><tr><td>C: 종합 서술형</td><td>여러 개념을 연결하여 논증하는가</td><td>20점</td><td>1문항</td></tr></tbody></table>
+<div class="sl-heading-wrapper level-h3"><h3 id="a-개념-설명형-각-10점">A: 개념 설명형 (각 10점)</h3><a class="sl-anchor-link" href="#a-개념-설명형-각-10점"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24"><path fill="currentcolor" d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 0 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 1 0-1.42-1.42Zm8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 0 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 1 0 1.42 1.42l3.88-3.89a4.49 4.49 0 0 0 0-6.33ZM8.83 15.17a1 1 0 0 0 1.1.22 1 1 0 0 0 .32-.22l4.92-4.92a1 1 0 0 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42Z"></path></svg></span><span class="sr-only" data-pagefind-ignore>섹션 제목: “A: 개념 설명형 (각 10점)”</span></a></div>
+<p><strong>A1.</strong> 활성화함수의 역할을 서술하고, ReLU와 Sigmoid의 차이점을 설명하시오.</p>
+<p><strong>A2.</strong> 손실함수의 역할을 서술하시오. (단, “학습”과 “최적화”의 관계를 포함할 것)</p>
+<p><strong>A3.</strong> 경사하강법의 원리를 서술하시오. (단, “기울기”, “학습률”, “최솟값”의 개념을 포함할 것)</p>
+<p><strong>A4.</strong> 활성화함수의 3가지 이상 종류를 쓰고, 각각의 특징을 서술하시오.</p>
+<div class="sl-heading-wrapper level-h3"><h3 id="b-사고실험형-각-10점">B: 사고실험형 (각 10점)</h3><a class="sl-anchor-link" href="#b-사고실험형-각-10점"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24"><path fill="currentcolor" d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 0 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 1 0-1.42-1.42Zm8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 0 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 1 0 1.42 1.42l3.88-3.89a4.49 4.49 0 0 0 0-6.33ZM8.83 15.17a1 1 0 0 0 1.1.22 1 1 0 0 0 .32-.22l4.92-4.92a1 1 0 0 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42Z"></path></svg></span><span class="sr-only" data-pagefind-ignore>섹션 제목: “B: 사고실험형 (각 10점)”</span></a></div>
+<p><strong>B1.</strong> 단층 퍼셉트론이 XOR 문제를 풀지 못하는 이유를 좌표평면을 활용하여 설명하시오.</p>
+<p><strong>B2.</strong> 만약 신경망에서 활성화함수를 모두 제거하면 어떤 문제가 생기는지, XOR 문제를 예로 들어 설명하시오.</p>
+<div class="sl-heading-wrapper level-h3"><h3 id="c-종합-서술형-20점">C: 종합 서술형 (20점)</h3><a class="sl-anchor-link" href="#c-종합-서술형-20점"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24"><path fill="currentcolor" d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 0 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 1 0-1.42-1.42Zm8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 0 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 1 0 1.42 1.42l3.88-3.89a4.49 4.49 0 0 0 0-6.33ZM8.83 15.17a1 1 0 0 0 1.1.22 1 1 0 0 0 .32-.22l4.92-4.92a1 1 0 0 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42Z"></path></svg></span><span class="sr-only" data-pagefind-ignore>섹션 제목: “C: 종합 서술형 (20점)”</span></a></div>
+<p><strong>C1.</strong> ChatGPT가 가끔 틀린 답을 자신 있게 말하는 이유를, 이 수업에서 배운 개념을 활용하여 설명하시오.
+(단, <strong>토큰화, 확률적 예측, 손실함수, 학습 데이터</strong>의 개념을 포함하여 설명할 것)</p>
+<details><summary>각 유형의 “상” 답안은 이렇게 다릅니다</summary><p><strong>A 유형 “상” 답안의 특징:</strong>
+핵심 개념을 정확히 정의한 뒤, <strong>구체적 예시나 비유</strong>로 뒷받침합니다. “비선형성”이라는 단어만 쓰는 것이 아니라, “활성화함수가 없으면 100층을 쌓아도 직선 하나와 같아서 XOR을 못 풀기 때문”까지 설명합니다.</p><p><strong>B 유형 “상” 답안의 특징:</strong>
+주장만이 아니라 <strong>시각적/수학적 근거</strong>를 제시합니다. “직선으로 안 된다”가 아니라, 좌표평면에 4개 점을 배치하고 “어떤 직선을 그어도 (0,0)과 (1,1)을 한쪽에, (0,1)과 (1,0)을 다른 쪽에 넣을 수 없다”고 보여줍니다.</p><p><strong>C 유형 “상” 답안의 특징:</strong>
+4가지 개념을 나열하는 것이 아니라, <strong>인과관계</strong>로 엮습니다. “토큰화 때문에 → AI에게 문장은 토큰의 나열이고 → 각 토큰을 확률적으로 예측하는데 → 이 확률은 손실함수를 최소화하여 학습한 것이고 → 학습 데이터에 없는 사실은 확인할 수 없으므로 → 그럴듯하지만 틀린 답(환각)이 생긴다.”</p></details>
+<details><summary>A1 예시 답안 — 상/중/하 비교</summary><p><strong>상 (9-10점):</strong>
+활성화함수는 신경망에 비선형성을 도입하는 함수이다. 활성화함수가 없으면 여러 층을 쌓아도 결국 하나의 선형 변환과 같아져서, XOR 같은 직선으로 분류할 수 없는 문제를 풀 수 없다. ReLU는 max(0, x)로, 양수는 그대로 출력하고 음수는 0으로 만든다. 기울기가 1로 일정하여 기울기 소실이 없고 계산이 단순하다. Sigmoid는 출력을 0에서 1로 압축하는 S자 곡선으로, 확률 해석이 가능하지만 양 끝에서 기울기가 거의 0이 되어 깊은 네트워크에서 기울기 소실이 발생한다.</p><p><strong>중 (6-8점):</strong>
+활성화함수는 비선형성을 만들어주는 함수이다. ReLU는 음수를 0으로 만들고, Sigmoid는 출력을 0에서 1 사이로 만든다. ReLU가 더 빠르다.</p><p><strong>하 (3-5점):</strong>
+활성화함수는 뉴런이 작동하는지 결정한다. ReLU는 0 아래를 잘라내고, Sigmoid는 S자 모양이다.</p></details>
+<details><summary>C1 예시 답안 — 상/중/하 비교</summary><p><strong>상 (18-20점):</strong>
+ChatGPT가 환각을 보이는 것은 구조적으로 필연적이다. 먼저 토큰화: AI에게 문장은 토큰의 나열이며, “존재하지 않는 논문을 요약해달라”는 요청도 토큰 패턴일 뿐이다. 다음으로 확률적 예측: AI는 이전 토큰들로부터 다음 토큰의 확률을 예측하고 가장 높은 것을 선택한다. “논문 요약” 패턴 뒤에는 “저자, 연도, 핵심 주장” 형태가 높은 확률로 이어지므로, 내용의 진위와 관계없이 그 패턴을 따른다. 이 확률은 손실함수를 최소화하는 학습으로 얻어진 것인데, 손실 최소화는 학습 데이터에 대해 잘 맞추는 것이지 세상의 모든 진실을 아는 것이 아니다. 학습 데이터에 없거나 부족한 정보에 대해서도 AI는 가장 그럴듯한 토큰을 생성해야 하며, 이것이 환각이다.</p><p><strong>중 (12-15점):</strong>
+ChatGPT는 텍스트를 토큰으로 나누고, 다음 토큰의 확률을 예측하는 방식으로 작동한다. 학습 데이터에서 패턴을 배우고 손실을 줄이도록 훈련된 것이다. 학습 데이터에 없는 내용을 물으면, 정답을 모르면서도 가장 그럴듯한 답을 만들어낸다. 이것이 환각이다.</p><p><strong>하 (6-9점):</strong>
+ChatGPT는 다음 단어를 예측하는 AI이다. 모르는 것도 그럴듯하게 답해서 환각이 생긴다.</p></details>
+<details><summary>채점 기준 상세</summary><strong>A, B 유형 (각 10점, 5단계):</strong>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>단계</th><th>점수</th><th>기준</th></tr></thead><tbody><tr><td>매우 우수</td><td>9-10</td><td>핵심 개념을 정확히 서술 + 구체적 예시/비유 + 차시 간 연결</td></tr><tr><td>우수</td><td>7-8</td><td>핵심 개념이 정확하고 예시가 있으나 일부 연결이 부족</td></tr><tr><td>보통</td><td>5-6</td><td>대체로 정확하나 예시가 부족하거나 일부 부정확</td></tr><tr><td>미흡</td><td>3-4</td><td>일부 개념만 서술하거나 설명이 불완전</td></tr><tr><td>매우 미흡</td><td>0-2</td><td>핵심을 이해하지 못했거나 무관한 내용</td></tr></tbody></table><strong>C 유형 (20점, 항목별 5단계):</strong>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>항목</th><th>배점</th><th>매우 우수 (5)</th><th>우수 (4)</th><th>보통 (3)</th><th>미흡 (2)</th><th>매우 미흡 (0에서 1)</th></tr></thead><tbody><tr><td>토큰화</td><td>5</td><td>토큰 처리를 정확히 설명 + 예시</td><td>정확히 설명</td><td>언급, 설명 부족</td><td>부정확하게 언급</td><td>언급 없음</td></tr><tr><td>확률적 예측</td><td>5</td><td>환각과의 인과관계까지 설명</td><td>확률 예측을 설명</td><td>언급, 환각 연결 부족</td><td>부정확</td><td>언급 없음</td></tr><tr><td>손실함수</td><td>5</td><td>손실 최소화 ≠ 진실임을 논증</td><td>손실함수 역할 설명</td><td>언급, 한계 미언급</td><td>부정확</td><td>언급 없음</td></tr><tr><td>학습 데이터</td><td>5</td><td>데이터→AI 한계 인과관계 논증</td><td>데이터 의존성 설명</td><td>언급, 연결 부족</td><td>부정확</td><td>언급 없음</td></tr></tbody></table></details>
+<hr>
+<div class="sl-heading-wrapper level-h3"><h3 id="수행평가-모둠-토의--성찰-활동">수행평가: 모둠 토의 + 성찰 활동</h3><a class="sl-anchor-link" href="#수행평가-모둠-토의--성찰-활동"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24"><path fill="currentcolor" d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 0 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 1 0-1.42-1.42Zm8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 0 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 1 0 1.42 1.42l3.88-3.89a4.49 4.49 0 0 0 0-6.33ZM8.83 15.17a1 1 0 0 0 1.1.22 1 1 0 0 0 .32-.22l4.92-4.92a1 1 0 0 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42Z"></path></svg></span><span class="sr-only" data-pagefind-ignore>섹션 제목: “수행평가: 모둠 토의 + 성찰 활동”</span></a></div>
+<p>수업 중 진행한 모둠 토의와 before/after 성찰도 평가에 반영됩니다.</p>
+<details><summary>모둠 토의 평가 루브릭 (20점, 5단계)</summary><strong>A. AI 활용 사례 조사의 충실성 (6점)</strong>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>단계</th><th>점수</th><th>기준</th></tr></thead><tbody><tr><td>매우 우수</td><td>6</td><td>관심 분야의 AI 사례 3가지를 조사하고, 검증 과정과 결과를 구체적으로 기록</td></tr><tr><td>우수</td><td>5</td><td>3가지 사례를 조사했으나 검증이 1-2가지에서 부족</td></tr><tr><td>보통</td><td>4</td><td>2가지를 충실히 조사하거나, 3가지를 피상적으로 조사</td></tr><tr><td>미흡</td><td>2-3</td><td>1가지만 조사하거나, 검증 과정이 없음</td></tr><tr><td>매우 미흡</td><td>0에서 1</td><td>조사를 거의 하지 않았거나 무관한 내용</td></tr></tbody></table><strong>B. 토론 참여 및 논증 (8점)</strong>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>단계</th><th>점수</th><th>기준</th></tr></thead><tbody><tr><td>매우 우수</td><td>8</td><td>AI 시대 역량에 대해 배운 개념을 근거로 들어 자신의 입장을 논증하고, 다른 의견에도 반응</td></tr><tr><td>우수</td><td>6-7</td><td>자신의 입장을 논증하되, 근거가 일부 부족하거나 다른 의견과의 연결이 약함</td></tr><tr><td>보통</td><td>4-5</td><td>의견을 제시하나, 수업 내용과의 연결이 느슨</td></tr><tr><td>미흡</td><td>2-3</td><td>의견 제시가 단편적이거나, 수업 내용을 활용하지 못함</td></tr><tr><td>매우 미흡</td><td>0에서 1</td><td>토론에 거의 참여하지 않음</td></tr></tbody></table><strong>C. 모둠 기여도 (3점)</strong>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>단계</th><th>점수</th><th>기준</th></tr></thead><tbody><tr><td>매우 우수</td><td>3</td><td>토의를 주도하거나 핵심 아이디어를 제시하고 정리</td></tr><tr><td>우수</td><td>2.5</td><td>적극적으로 의견을 제시</td></tr><tr><td>보통</td><td>2</td><td>참여했으나 주도적이지 않음</td></tr><tr><td>미흡</td><td>1</td><td>질문에 답하는 수준의 수동적 참여</td></tr><tr><td>매우 미흡</td><td>0</td><td>거의 참여하지 않음</td></tr></tbody></table><strong>D. 발표/공유 (3점)</strong>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>단계</th><th>점수</th><th>기준</th></tr></thead><tbody><tr><td>매우 우수</td><td>3</td><td>논리적 구조로 명확하게 발표, 청중의 질문에도 대응</td></tr><tr><td>우수</td><td>2.5</td><td>내용은 정확하나 전달이 다소 미흡</td></tr><tr><td>보통</td><td>2</td><td>핵심은 전달했으나 구조가 불명확</td></tr><tr><td>미흡</td><td>1</td><td>내용이 부족하거나 전달이 어려움</td></tr><tr><td>매우 미흡</td><td>0</td><td>발표하지 않음</td></tr></tbody></table><p>핵심: 자신의 관심 분야에서 AI 활용을 <strong>구체적으로 탐색</strong>하고, AI 시대에 필요한 역량을 <strong>수업에서 배운 개념과 연결</strong>하여 논증할 수 있는가.</p></details>
+<details><summary>Before/After 성찰 평가 루브릭 (10점, 5단계)</summary><strong>A. 1차시 답변 회고 (2점)</strong>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>단계</th><th>점수</th><th>기준</th></tr></thead><tbody><tr><td>매우 우수</td><td>2</td><td>과거 답변의 논리와 근거(또는 근거 부재)를 구체적으로 재구성</td></tr><tr><td>우수</td><td>1.5</td><td>답변 내용을 정확히 기억/기술</td></tr><tr><td>보통</td><td>1</td><td>대략적으로 기억</td></tr><tr><td>미흡</td><td>0.5</td><td>막연하게 “이런 식이었다” 수준</td></tr><tr><td>매우 미흡</td><td>0</td><td>기억하지 못하거나 작성하지 않음</td></tr></tbody></table><strong>B. 10차시 답변의 깊이 (4점)</strong>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>단계</th><th>점수</th><th>기준</th></tr></thead><tbody><tr><td>매우 우수</td><td>4</td><td>배운 개념 3개 이상을 인과적으로 연결하여 자신의 입장을 논증</td></tr><tr><td>우수</td><td>3</td><td>개념 2-3개를 활용하여 논증, 일부 연결이 느슨</td></tr><tr><td>보통</td><td>2</td><td>개념 1-2개를 언급하나 논증보다 나열에 가까움</td></tr><tr><td>미흡</td><td>1</td><td>개념 없이 직관적 답변</td></tr><tr><td>매우 미흡</td><td>0</td><td>작성하지 않음</td></tr></tbody></table><strong>C. 변화 인식 (2점)</strong>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>단계</th><th>점수</th><th>기준</th></tr></thead><tbody><tr><td>매우 우수</td><td>2</td><td>무엇이 어떻게 달라졌는지 구체적으로 서술하고, 그 변화의 원인을 분석</td></tr><tr><td>우수</td><td>1.5</td><td>달라진 점을 구체적으로 서술</td></tr><tr><td>보통</td><td>1</td><td>”달라졌다”는 인식은 있으나 구체적이지 않음</td></tr><tr><td>미흡</td><td>0.5</td><td>변화가 모호하게 언급</td></tr><tr><td>매우 미흡</td><td>0</td><td>변화 인식 없음 또는 미작성</td></tr></tbody></table><strong>D. 성찰의 진정성 (2점)</strong>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>단계</th><th>점수</th><th>기준</th></tr></thead><tbody><tr><td>매우 우수</td><td>2</td><td>자신만의 언어로 솔직하게 서술, 개인적 경험이나 감정 연결</td></tr><tr><td>우수</td><td>1.5</td><td>자신의 언어로 서술하되 깊이가 다소 부족</td></tr><tr><td>보통</td><td>1</td><td>교재 내용을 자신의 상황에 적용하려 시도</td></tr><tr><td>미흡</td><td>0.5</td><td>교재 내용을 그대로 반복</td></tr><tr><td>매우 미흡</td><td>0</td><td>형식적 답변 또는 미작성</td></tr></tbody></table></details>
+<details><summary>학습목표-평가 연결표 (이원분류표)</summary>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>학습 목표</th><th>차시</th><th>블룸 수준</th><th>대응 문항</th></tr></thead><tbody><tr><td>튜링 테스트, 중국어 방 개념 이해</td><td>1</td><td>기억</td><td>before/after 성찰</td></tr><tr><td>퍼셉트론 구조와 학습 규칙</td><td>2</td><td>적용</td><td>서술형 B1</td></tr><tr><td>활성화함수의 역할과 종류</td><td>3</td><td>이해/분석</td><td>A1, A4</td></tr><tr><td>손실함수의 정의와 의미</td><td>4</td><td>이해</td><td>A2</td></tr><tr><td>경사하강법 원리와 학습률</td><td>5</td><td>적용</td><td>A3</td></tr><tr><td>역전파와 연쇄법칙</td><td>6</td><td>적용/분석</td><td>B2</td></tr><tr><td>토큰화와 임베딩</td><td>7</td><td>적용</td><td>C1</td></tr><tr><td>어텐션, 다음 토큰 예측</td><td>8</td><td>이해</td><td>C1</td></tr><tr><td>AI 역사의 인과관계</td><td>9</td><td>분석</td><td>모둠 토의</td></tr><tr><td>AI 활용과 진로 탐색</td><td>10</td><td>평가/종합</td><td>모둠 토의, AI 사례 조사, before/after 성찰</td></tr><tr><td>XOR 문제 분석</td><td>2,3</td><td>분석</td><td>B1, B2</td></tr><tr><td>여러 개념의 인과적 연결</td><td>전체</td><td>종합</td><td>C1, before/after 성찰</td></tr></tbody></table><p>블룸(Bloom)의 인지적 수준: 기억 → 이해 → 적용 → 분석 → 평가 → 종합</p></details>
+<details><summary>평가 준비 팁</summary><p><strong>A 유형 (개념 설명형):</strong>
+핵심 개념의 정의를 정확하게 쓰고, 구체적인 예시나 비유를 들면 높은 점수를 받습니다. 2-6차시 교재의 해당 섹션을 복습하세요. “왜 필요한가”까지 설명하면 상 등급입니다.</p><p><strong>B 유형 (사고실험형):</strong>
+“왜?”에 대한 구조적 설명이 핵심입니다. 단순히 “안 된다”가 아니라, 좌표평면이나 수식을 활용하여 <strong>왜 안 되는지</strong>를 시각적으로 보여야 합니다.</p><p><strong>C 유형 (종합 서술형):</strong>
+4가지 개념이 <strong>모두</strong> 포함되어야 합니다. 나열이 아니라 <strong>인과관계</strong>로 엮으세요. “토큰화 때문에 → … → 그래서 환각이 생긴다”처럼 논리의 흐름이 있어야 합니다.</p></details>
+<hr>
+<div class="sl-heading-wrapper level-h2"><h2 id="우리가-걸어온-길">우리가 걸어온 길</h2><a class="sl-anchor-link" href="#우리가-걸어온-길"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24"><path fill="currentcolor" d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 0 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 1 0-1.42-1.42Zm8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 0 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 1 0 1.42 1.42l3.88-3.89a4.49 4.49 0 0 0 0-6.33ZM8.83 15.17a1 1 0 0 0 1.1.22 1 1 0 0 0 .32-.22l4.92-4.92a1 1 0 0 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42Z"></path></svg></span><span class="sr-only" data-pagefind-ignore>섹션 제목: “우리가 걸어온 길”</span></a></div>
+<p>10차시의 여정이 끝났습니다. 전체 수업을 한눈에 정리합니다.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>차시</th><th>핵심 질문</th><th>배운 것</th><th>”기계가 생각할 수 있는가?”에 더한 관점</th></tr></thead><tbody><tr><td>1</td><td>기계가 생각할 수 있는가?</td><td>튜링 테스트, 중국어 방</td><td>질문을 던지는 법을 배웠다</td></tr><tr><td>2</td><td>기계가 스스로 배울 수 있는가?</td><td>퍼셉트론, 결정 경계, XOR의 벽</td><td>”틀리면 고치기”는 학습인가?</td></tr><tr><td>3</td><td>활성화함수 하나로 무엇이 바뀌는가?</td><td>비선형성, 다층 신경망, AlexNet</td><td>단순한 부품이 복잡한 능력을 만든다</td></tr><tr><td>4</td><td>”틀린 정도”를 어떻게 잴 수 있는가?</td><td>손실함수, MSE, 학습의 정의</td><td>손실 최소화는 진실을 아는 것이 아니다</td></tr><tr><td>5</td><td>어디로 가야 손실이 줄어드는가?</td><td>경사하강법, 학습률, 로컬 미니마</td><td>최적의 답이 유일하지 않을 수 있다</td></tr><tr><td>6</td><td>오차를 어떻게 거꾸로 보내는가?</td><td>역전파, 연쇄법칙, 가중치 업데이트</td><td>원인을 추적하는 것은 반성인가?</td></tr><tr><td>7</td><td>단어를 숫자로 바꿀 수 있는가?</td><td>토큰화, 임베딩, 의미적 거리</td><td>의미의 산술 연산은 이해인가?</td></tr><tr><td>8</td><td>다음 단어를 예측하면 대화가 되는가?</td><td>트랜스포머, 어텐션, 환각의 구조</td><td>패턴 예측이 사고와 같은가?</td></tr><tr><td>9</td><td>이 조각들이 왜 이 순서로 등장했는가?</td><td>AI 역사의 인과관계, 7편 논문 카드</td><td>좌절이 다음 돌파의 씨앗이 된다</td></tr><tr><td>10</td><td>AI를 이해하는 나는 무엇을 할 수 있는가?</td><td>진로 탐색, AI 활용 사례, before/after 비교</td><td><strong>AI를 이해하는 사람이 AI 시대를 이끈다</strong></td></tr></tbody></table>
+<p>1차시의 “기계가 생각할 수 있는가?”에서 출발하여, 10차시의 “AI를 이해하는 내가 무엇을 할 수 있는가”에 도착했습니다. <strong>원을 그리며 돌아왔지만, 같은 자리가 아닙니다.</strong> 여러분은 이제 같은 질문에 전혀 다른 깊이로 답할 수 있습니다.</p>
+<hr>
+<div class="sl-heading-wrapper level-h2"><h2 id="참고자료">참고자료</h2><a class="sl-anchor-link" href="#참고자료"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24"><path fill="currentcolor" d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 0 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 1 0-1.42-1.42Zm8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 0 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 1 0 1.42 1.42l3.88-3.89a4.49 4.49 0 0 0 0-6.33ZM8.83 15.17a1 1 0 0 0 1.1.22 1 1 0 0 0 .32-.22l4.92-4.92a1 1 0 0 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42Z"></path></svg></span><span class="sr-only" data-pagefind-ignore>섹션 제목: “참고자료”</span></a></div>
+<div class="card-grid astro-zntqmydn"><div class="sl-link-card astro-mf7fz2mj"> <span class="sl-flex stack astro-mf7fz2mj"> <a href="https://courses.cs.umbc.edu/471/papers/turing.pdf" class="astro-mf7fz2mj"> <span class="title astro-mf7fz2mj">Turing (1950) — 원문 논문</span> </a> <span class="description astro-mf7fz2mj">'Computing Machinery and Intelligence'. 이 수업의 출발점이자 도착점인 질문을 처음 던진 논문.</span> </span> <svg aria-hidden="true" class="icon rtl:flip astro-mf7fz2mj astro-c6vsoqas" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1.333em;"><path d="M17.92 11.62a1.001 1.001 0 0 0-.21-.33l-5-5a1.003 1.003 0 1 0-1.42 1.42l3.3 3.29H7a1 1 0 0 0 0 2h7.59l-3.3 3.29a1.002 1.002 0 0 0 .325 1.639 1 1 0 0 0 1.095-.219l5-5a1 1 0 0 0 .21-.33 1 1 0 0 0 0-.76Z"/></svg> </div> <div class="sl-link-card astro-mf7fz2mj"> <span class="sl-flex stack astro-mf7fz2mj"> <a href="https://plato.stanford.edu/entries/chinese-room/" class="astro-mf7fz2mj"> <span class="title astro-mf7fz2mj">Searle (1980) — 중국어 방</span> </a> <span class="description astro-mf7fz2mj">'Minds, Brains, and Programs'. 기계의 '이해'에 대한 근본적 반론.</span> </span> <svg aria-hidden="true" class="icon rtl:flip astro-mf7fz2mj astro-c6vsoqas" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1.333em;"><path d="M17.92 11.62a1.001 1.001 0 0 0-.21-.33l-5-5a1.003 1.003 0 1 0-1.42 1.42l3.3 3.29H7a1 1 0 0 0 0 2h7.59l-3.3 3.29a1.002 1.002 0 0 0 .325 1.639 1 1 0 0 0 1.095-.219l5-5a1 1 0 0 0 .21-.33 1 1 0 0 0 0-.76Z"/></svg> </div> <div class="sl-link-card astro-mf7fz2mj"> <span class="sl-flex stack astro-mf7fz2mj"> <a href="https://jalammar.github.io/illustrated-transformer/" class="astro-mf7fz2mj"> <span class="title astro-mf7fz2mj">Jay Alammar: The Illustrated Transformer</span> </a> <span class="description astro-mf7fz2mj">트랜스포머의 작동 원리를 시각적으로 설명. 환각의 구조적 원인을 이해하는 데 도움.</span> </span> <svg aria-hidden="true" class="icon rtl:flip astro-mf7fz2mj astro-c6vsoqas" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1.333em;"><path d="M17.92 11.62a1.001 1.001 0 0 0-.21-.33l-5-5a1.003 1.003 0 1 0-1.42 1.42l3.3 3.29H7a1 1 0 0 0 0 2h7.59l-3.3 3.29a1.002 1.002 0 0 0 .325 1.639 1 1 0 0 0 1.095-.219l5-5a1 1 0 0 0 .21-.33 1 1 0 0 0 0-.76Z"/></svg> </div> <div class="sl-link-card astro-mf7fz2mj"> <span class="sl-flex stack astro-mf7fz2mj"> <a href="https://poloclub.github.io/transformer-explainer/" class="astro-mf7fz2mj"> <span class="title astro-mf7fz2mj">Transformer Explainer (인터랙티브)</span> </a> <span class="description astro-mf7fz2mj">트랜스포머의 각 구성요소를 직접 조작하며 이해할 수 있는 인터랙티브 데모.</span> </span> <svg aria-hidden="true" class="icon rtl:flip astro-mf7fz2mj astro-c6vsoqas" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1.333em;"><path d="M17.92 11.62a1.001 1.001 0 0 0-.21-.33l-5-5a1.003 1.003 0 1 0-1.42 1.42l3.3 3.29H7a1 1 0 0 0 0 2h7.59l-3.3 3.29a1.002 1.002 0 0 0 .325 1.639 1 1 0 0 0 1.095-.219l5-5a1 1 0 0 0 .21-.33 1 1 0 0 0 0-.76Z"/></svg> </div> <div class="sl-link-card astro-mf7fz2mj"> <span class="sl-flex stack astro-mf7fz2mj"> <a href="https://alphafold.ebi.ac.uk/" class="astro-mf7fz2mj"> <span class="title astro-mf7fz2mj">AlphaFold — AI가 바꾼 과학</span> </a> <span class="description astro-mf7fz2mj">DeepMind의 단백질 구조 예측 AI. 과학 분야에서 AI가 가져온 혁신적 변화의 대표 사례.</span> </span> <svg aria-hidden="true" class="icon rtl:flip astro-mf7fz2mj astro-c6vsoqas" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1.333em;"><path d="M17.92 11.62a1.001 1.001 0 0 0-.21-.33l-5-5a1.003 1.003 0 1 0-1.42 1.42l3.3 3.29H7a1 1 0 0 0 0 2h7.59l-3.3 3.29a1.002 1.002 0 0 0 .325 1.639 1 1 0 0 0 1.095-.219l5-5a1 1 0 0 0 .21-.33 1 1 0 0 0 0-.76Z"/></svg> </div> <div class="sl-link-card astro-mf7fz2mj"> <span class="sl-flex stack astro-mf7fz2mj"> <a href="https://aiindex.stanford.edu/report/" class="astro-mf7fz2mj"> <span class="title astro-mf7fz2mj">AI Index Report — Stanford HAI</span> </a> <span class="description astro-mf7fz2mj">스탠퍼드 대학의 연례 AI 현황 보고서. AI가 어떤 분야에서 어떻게 활용되고 있는지 데이터로 확인.</span> </span> <svg aria-hidden="true" class="icon rtl:flip astro-mf7fz2mj astro-c6vsoqas" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1.333em;"><path d="M17.92 11.62a1.001 1.001 0 0 0-.21-.33l-5-5a1.003 1.003 0 1 0-1.42 1.42l3.3 3.29H7a1 1 0 0 0 0 2h7.59l-3.3 3.29a1.002 1.002 0 0 0 .325 1.639 1 1 0 0 0 1.095-.219l5-5a1 1 0 0 0 .21-.33 1 1 0 0 0 0-.76Z"/></svg> </div> <div class="sl-link-card astro-mf7fz2mj"> <span class="sl-flex stack astro-mf7fz2mj"> <a href="https://www.kaggle.com/" class="astro-mf7fz2mj"> <span class="title astro-mf7fz2mj">Kaggle — AI/ML 대회 플랫폼</span> </a> <span class="description astro-mf7fz2mj">실전 AI 프로젝트를 경험할 수 있는 글로벌 플랫폼. 고등학생도 참여 가능한 대회가 많습니다.</span> </span> <svg aria-hidden="true" class="icon rtl:flip astro-mf7fz2mj astro-c6vsoqas" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1.333em;"><path d="M17.92 11.62a1.001 1.001 0 0 0-.21-.33l-5-5a1.003 1.003 0 1 0-1.42 1.42l3.3 3.29H7a1 1 0 0 0 0 2h7.59l-3.3 3.29a1.002 1.002 0 0 0 .325 1.639 1 1 0 0 0 1.095-.219l5-5a1 1 0 0 0 .21-.33 1 1 0 0 0 0-.76Z"/></svg> </div> <div class="sl-link-card astro-mf7fz2mj"> <span class="sl-flex stack astro-mf7fz2mj"> <a href="https://www.3blue1brown.com/topics/neural-networks" class="astro-mf7fz2mj"> <span class="title astro-mf7fz2mj">3Blue1Brown: Neural Networks</span> </a> <span class="description astro-mf7fz2mj">시각적으로 아름다운 수학 영상. 이 수업에서 배운 신경망 개념을 더 깊이 이해할 수 있습니다.</span> </span> <svg aria-hidden="true" class="icon rtl:flip astro-mf7fz2mj astro-c6vsoqas" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1.333em;"><path d="M17.92 11.62a1.001 1.001 0 0 0-.21-.33l-5-5a1.003 1.003 0 1 0-1.42 1.42l3.3 3.29H7a1 1 0 0 0 0 2h7.59l-3.3 3.29a1.002 1.002 0 0 0 .325 1.639 1 1 0 0 0 1.095-.219l5-5a1 1 0 0 0 .21-.33 1 1 0 0 0 0-.76Z"/></svg> </div> </div> 
+<hr>
+<div class="sl-heading-wrapper level-h2"><h2 id="성찰">성찰</h2><a class="sl-anchor-link" href="#성찰"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24"><path fill="currentcolor" d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 0 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 1 0-1.42-1.42Zm8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 0 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 1 0 1.42 1.42l3.88-3.89a4.49 4.49 0 0 0 0-6.33ZM8.83 15.17a1 1 0 0 0 1.1.22 1 1 0 0 0 .32-.22l4.92-4.92a1 1 0 0 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42Z"></path></svg></span><span class="sr-only" data-pagefind-ignore>섹션 제목: “성찰”</span></a></div>
+<p>마지막 성찰입니다. 구글 설문에 기록합니다:</p>
+<ol>
+<li>
+<p><strong>내 관심 분야에서 AI가 가장 큰 변화를 가져올 부분은 무엇이라고 생각하나요?</strong> 오늘 실습에서 조사한 내용을 바탕으로 구체적으로 써보세요.</p>
+</li>
+<li>
+<p><strong>“AI와 함께 일하기 위해 내가 준비해야 할 것”을 3가지 적어보세요.</strong> 비판적 사고, 질문 능력, 융합적 사고, 윤리적 판단 외에 자신만의 답도 가능합니다.</p>
+</li>
+<li>
+<p><strong>“기계가 생각할 수 있는가?”에 대한 최종 답변을 1차시 답과 비교하며 써보세요.</strong> 이 수업에서 배운 개념을 <strong>최소 3개</strong> 포함하여 근거를 제시하세요.</p>
+</li>
+</ol>
+<aside aria-label="이 질문에 정답은 없습니다" class="starlight-aside starlight-aside--note"><p class="starlight-aside__title" aria-hidden="true"><svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor" class="starlight-aside__icon"><path d="M12 11C11.7348 11 11.4804 11.1054 11.2929 11.2929C11.1054 11.4804 11 11.7348 11 12V16C11 16.2652 11.1054 16.5196 11.2929 16.7071C11.4804 16.8946 11.7348 17 12 17C12.2652 17 12.5196 16.8946 12.7071 16.7071C12.8946 16.5196 13 16.2652 13 16V12C13 11.7348 12.8946 11.4804 12.7071 11.2929C12.5196 11.1054 12.2652 11 12 11ZM12.38 7.08C12.1365 6.97998 11.8635 6.97998 11.62 7.08C11.4973 7.12759 11.3851 7.19896 11.29 7.29C11.2017 7.3872 11.1306 7.49882 11.08 7.62C11.024 7.73868 10.9966 7.86882 11 8C10.9992 8.13161 11.0245 8.26207 11.0742 8.38391C11.124 8.50574 11.1973 8.61656 11.29 8.71C11.3872 8.79833 11.4988 8.86936 11.62 8.92C11.7715 8.98224 11.936 9.00632 12.099 8.99011C12.2619 8.97391 12.4184 8.91792 12.5547 8.82707C12.691 8.73622 12.8029 8.61328 12.8805 8.46907C12.9582 8.32486 12.9992 8.16378 13 8C12.9963 7.73523 12.8927 7.48163 12.71 7.29C12.6149 7.19896 12.5028 7.12759 12.38 7.08ZM12 2C10.0222 2 8.08879 2.58649 6.4443 3.6853C4.79981 4.78412 3.51809 6.3459 2.76121 8.17317C2.00433 10.0004 1.8063 12.0111 2.19215 13.9509C2.578 15.8907 3.53041 17.6725 4.92894 19.0711C6.32746 20.4696 8.10929 21.422 10.0491 21.8079C11.9889 22.1937 13.9996 21.9957 15.8268 21.2388C17.6541 20.4819 19.2159 19.2002 20.3147 17.5557C21.4135 15.9112 22 13.9778 22 12C22 10.6868 21.7413 9.38642 21.2388 8.17317C20.7363 6.95991 19.9997 5.85752 19.0711 4.92893C18.1425 4.00035 17.0401 3.26375 15.8268 2.7612C14.6136 2.25866 13.3132 2 12 2ZM12 20C10.4178 20 8.87104 19.5308 7.55544 18.6518C6.23985 17.7727 5.21447 16.5233 4.60897 15.0615C4.00347 13.5997 3.84504 11.9911 4.15372 10.4393C4.4624 8.88743 5.22433 7.46197 6.34315 6.34315C7.46197 5.22433 8.88743 4.4624 10.4393 4.15372C11.9911 3.84504 13.5997 4.00346 15.0615 4.60896C16.5233 5.21447 17.7727 6.23984 18.6518 7.55544C19.5308 8.87103 20 10.4177 20 12C20 14.1217 19.1572 16.1566 17.6569 17.6569C16.1566 19.1571 14.1217 20 12 20Z"></path></svg>이 질문에 정답은 없습니다</p><div class="starlight-aside__content"><p>10시간의 수업을 거친 뒤에도, “기계가 생각할 수 있는가”에 대한 답은 사람마다 다릅니다. 이것은 철학, 과학, 공학이 교차하는 열린 질문이며, 학계에서도 여전히 논쟁 중입니다. 중요한 것은 정답이 아니라, <strong>자신의 근거를 들어 설명할 수 있는 능력</strong>입니다. 그리고 그 능력이야말로 AI 시대에 여러분이 가진 가장 강력한 무기입니다.</p></div></aside>
+<hr>
+<div class="sl-heading-wrapper level-h2"><h2 id="자기-점검-체크리스트">자기 점검 체크리스트</h2><a class="sl-anchor-link" href="#자기-점검-체크리스트"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24"><path fill="currentcolor" d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 0 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 1 0-1.42-1.42Zm8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 0 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 1 0 1.42 1.42l3.88-3.89a4.49 4.49 0 0 0 0-6.33ZM8.83 15.17a1 1 0 0 0 1.1.22 1 1 0 0 0 .32-.22l4.92-4.92a1 1 0 0 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42Z"></path></svg></span><span class="sr-only" data-pagefind-ignore>섹션 제목: “자기 점검 체크리스트”</span></a></div>
+<div class="self-check"><ul>
+<li>AI가 다양한 분야(의료, 법률, 예술, 교육, 과학, 공학, 경영, 미디어)에서 어떻게 활용되는지 설명할 수 있다</li>
+<li>내 관심 분야에서 AI가 활용되는 구체적인 사례를 3가지 이상 알고 있다</li>
+<li>AI의 답변을 그대로 믿지 않고 검증하는 과정을 실천할 수 있다</li>
+<li>AI 시대에 중요한 역량(비판적 사고, 질문 능력, 융합적 사고, 윤리적 판단)을 설명하고, 수업에서 배운 개념과 연결할 수 있다</li>
+<li>1차시의 자신과 비교하여 어떤 개념적 성장이 있었는지 서술할 수 있다</li>
+<li>“기계가 생각할 수 있는가?”에 대해 이 수업에서 배운 개념 3개 이상을 근거로 들어 자신의 입장을 설명할 수 있다</li>
+</ul></div> </div> <footer class="sl-flex astro-3yyafb3n"> <div class="meta sl-flex astro-3yyafb3n">   </div> <div class="pagination-links print:hidden astro-u2l5gyhi" dir="ltr"> <a href="/ai-basic-textbook/lessons/part4/lesson-08/" rel="prev" class="astro-u2l5gyhi"> <svg aria-hidden="true" class="astro-u2l5gyhi astro-c6vsoqas" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1.5rem;"><path d="M17 11H9.41l3.3-3.29a1.004 1.004 0 1 0-1.42-1.42l-5 5a1 1 0 0 0-.21.33 1 1 0 0 0 0 .76 1 1 0 0 0 .21.33l5 5a1.002 1.002 0 0 0 1.639-.325 1 1 0 0 0-.219-1.095L9.41 13H17a1 1 0 0 0 0-2Z"/></svg> <span class="astro-u2l5gyhi"> 이전 페이지 <br class="astro-u2l5gyhi"> <span class="link-title astro-u2l5gyhi">8차시: ChatGPT의 작동 원리, 다음 단어 맞추기</span> </span> </a> <a href="/ai-basic-textbook/lessons/part5/lesson-10/" rel="next" class="astro-u2l5gyhi"> <svg aria-hidden="true" class="astro-u2l5gyhi astro-c6vsoqas" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1.5rem;"><path d="M17.92 11.62a1.001 1.001 0 0 0-.21-.33l-5-5a1.003 1.003 0 1 0-1.42 1.42l3.3 3.29H7a1 1 0 0 0 0 2h7.59l-3.3 3.29a1.002 1.002 0 0 0 .325 1.639 1 1 0 0 0 1.095-.219l5-5a1 1 0 0 0 .21-.33 1 1 0 0 0 0-.76Z"/></svg> <span class="astro-u2l5gyhi"> 다음 페이지 <br class="astro-u2l5gyhi"> <span class="link-title astro-u2l5gyhi">10차시: AI의 한계를 찾아서</span> </span> </a> </div>   </footer>  </div> </div>   </main> </div> </div>  </div> </div>  </body></html>

@@ -1,0 +1,74 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 380" font-family="system-ui, -apple-system, 'Apple SD Gothic Neo', 'Noto Sans KR', sans-serif">
+  <rect width="760" height="380" rx="16" fill="#1a1b26" opacity="0.95"/>
+
+  <text x="380" y="32" text-anchor="middle" fill="#e2e8f0" font-size="18" font-weight="700">퍼셉트론의 빛과 그림자</text>
+
+  <!-- Axes -->
+  <line x1="80" y1="280" x2="720" y2="280" stroke="#475569" stroke-width="1.5"/>
+  <line x1="80" y1="280" x2="80" y2="60" stroke="#475569" stroke-width="1.5"/>
+
+  <text x="30" y="170" text-anchor="middle" fill="#94a3b8" font-size="13" font-weight="600" transform="rotate(-90, 30, 170)">기대감 · 투자</text>
+
+  <!-- Gradient fill -->
+  <defs>
+    <linearGradient id="hope-fill3" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#10b981" stop-opacity="0.25"/>
+      <stop offset="100%" stop-color="#10b981" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Hope curve: 1950s already moderate → 1958 rise → 1958.7 peak → 1969 CLIFF DROP → flat low → 1986 tiny rise -->
+  <path d="M 100,180 C 140,175 180,160 220,140 C 260,115 290,85 305,65 C 310,60 315,58 320,60 C 340,75 350,85 360,90 L 365,92 L 370,260 C 400,270 500,272 560,270 C 600,268 640,262 670,245"
+        fill="url(#hope-fill3)" stroke="none"/>
+
+  <path d="M 100,180 C 140,175 180,160 220,140 C 260,115 290,85 305,65 C 310,60 315,58 320,60 C 340,75 350,85 360,90 L 365,92 L 370,260 C 400,270 500,272 560,270 C 600,268 640,262 670,245"
+        fill="none" stroke="#10b981" stroke-width="3.5" stroke-linecap="round"/>
+
+  <!-- Cliff drop highlight -->
+  <line x1="365" y1="92" x2="370" y2="260" stroke="#ef4444" stroke-width="3" stroke-dasharray="6,3" opacity="0.6"/>
+
+  <!-- AI Winter dark zone -->
+  <rect x="375" y="245" width="225" height="32" rx="8" fill="rgba(71,85,105,0.35)" stroke="#475569" stroke-width="1" stroke-dasharray="5,3"/>
+  <text x="487" y="266" text-anchor="middle" fill="#64748b" font-size="13" font-style="italic">AI 겨울 (~20년)</text>
+
+  <!-- 1958: Perceptron -->
+  <circle cx="220" cy="140" r="6" fill="#10b981"/>
+  <line x1="220" y1="146" x2="220" y2="280" stroke="#10b981" stroke-width="1" stroke-dasharray="3,3" opacity="0.4"/>
+  <text x="220" y="296" text-anchor="middle" fill="#6ee7b7" font-size="14" font-weight="700">1958</text>
+  <rect x="155" y="310" width="130" height="40" rx="6" fill="rgba(16,185,129,0.12)" stroke="#10b981" stroke-width="1"/>
+  <text x="220" y="328" text-anchor="middle" fill="#6ee7b7" font-size="12" font-weight="600">퍼셉트론 발명</text>
+  <text x="220" y="344" text-anchor="middle" fill="#94a3b8" font-size="11">로젠블랫</text>
+
+  <!-- 1958.7: NYT (peak) -->
+  <circle cx="305" cy="60" r="8" fill="#f59e0b" stroke="#e2e8f0" stroke-width="2"/>
+  <line x1="305" y1="70" x2="305" y2="280" stroke="#f59e0b" stroke-width="1" stroke-dasharray="3,3" opacity="0.4"/>
+  <text x="305" y="296" text-anchor="middle" fill="#fcd34d" font-size="13" font-weight="700">1958.7</text>
+  <rect x="245" y="310" width="120" height="40" rx="6" fill="rgba(245,158,11,0.12)" stroke="#f59e0b" stroke-width="1"/>
+  <text x="305" y="328" text-anchor="middle" fill="#fcd34d" font-size="12" font-weight="600">NYT 1면 보도</text>
+  <text x="305" y="344" text-anchor="middle" fill="#94a3b8" font-size="11">"걷고 말하는 기계!"</text>
+
+  <!-- 1969: Perceptrons book (cliff) -->
+  <circle cx="370" cy="260" r="8" fill="#ef4444" stroke="#e2e8f0" stroke-width="2"/>
+  <line x1="370" y1="252" x2="370" y2="165" stroke="#ef4444" stroke-width="1.5" stroke-dasharray="3,3"/>
+  <rect x="390" y="143" width="130" height="50" rx="6" fill="rgba(239,68,68,0.15)" stroke="#ef4444" stroke-width="1"/>
+  <text x="455" y="161" text-anchor="middle" fill="#fca5a5" font-size="12" font-weight="600">Perceptrons</text>
+  <text x="455" y="176" text-anchor="middle" fill="#94a3b8" font-size="10">민스키 &amp; 파퍼트</text>
+  <text x="455" y="189" text-anchor="middle" fill="#94a3b8" font-size="10">"XOR은 불가능"</text>
+  <text x="370" y="296" text-anchor="middle" fill="#fca5a5" font-size="14" font-weight="700">1969</text>
+
+  <!-- Cliff drop annotation -->
+  <text x="348" y="180" text-anchor="end" fill="#ef4444" font-size="12" font-weight="700">급락</text>
+
+  <!-- 1986: Backprop -->
+  <circle cx="670" cy="245" r="6" fill="#10b981"/>
+  <line x1="670" y1="251" x2="670" y2="280" stroke="#10b981" stroke-width="1" stroke-dasharray="3,3" opacity="0.4"/>
+  <text x="670" y="296" text-anchor="middle" fill="#6ee7b7" font-size="14" font-weight="700">1986</text>
+  <rect x="610" y="310" width="120" height="40" rx="6" fill="rgba(16,185,129,0.12)" stroke="#10b981" stroke-width="1"/>
+  <text x="670" y="328" text-anchor="middle" fill="#6ee7b7" font-size="12" font-weight="600">역전파 알고리즘</text>
+  <text x="670" y="344" text-anchor="middle" fill="#94a3b8" font-size="11">반등의 시작</text>
+
+  <text x="720" y="240" fill="#6ee7b7" font-size="16">↗</text>
+  <text x="715" y="225" fill="#64748b" font-size="10">3차시</text>
+
+  <text x="380" y="372" text-anchor="middle" fill="#64748b" font-size="11">XOR의 벽을 증명하는 데 11년, 해결의 실마리를 찾는 데 다시 17년</text>
+</svg>

@@ -1,0 +1,63 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 320" font-family="system-ui, -apple-system, 'Apple SD Gothic Neo', 'Noto Sans KR', sans-serif">
+  <rect width="560" height="320" rx="16" fill="#1a1b26" opacity="0.95"/>
+  <text x="280" y="30" text-anchor="middle" fill="#e2e8f0" font-size="17" font-weight="700">직선 하나의 한계 — XOR 문제</text>
+
+  <!-- Left: AND success -->
+  <rect x="30" y="50" width="230" height="230" rx="12" fill="rgba(16,185,129,0.08)" stroke="#10b981" stroke-width="1.5"/>
+  <text x="145" y="75" text-anchor="middle" fill="#6ee7b7" font-size="15" font-weight="700">AND (직선 1개로 성공)</text>
+
+  <line x1="60" y1="245" x2="230" y2="245" stroke="#475569" stroke-width="1.5"/>
+  <line x1="60" y1="245" x2="60" y2="95" stroke="#475569" stroke-width="1.5"/>
+
+  <!-- AND points: (0,0)=0 (0,1)=0 (1,0)=0 (1,1)=1 -->
+  <circle cx="90" cy="215" r="12" fill="#3b82f6"/>
+  <circle cx="200" cy="215" r="12" fill="#3b82f6"/>
+  <circle cx="90" cy="120" r="12" fill="#3b82f6"/>
+  <circle cx="200" cy="120" r="12" fill="#ef4444"/>
+
+  <!-- AND decision line: 대각선, 모든 점에서 충분히 떨어짐 -->
+  <line x1="140" y1="95" x2="235" y2="165" stroke="#6ee7b7" stroke-width="3.5"/>
+
+  <text x="90" y="240" text-anchor="middle" fill="#94a3b8" font-size="10">0</text>
+  <text x="200" y="240" text-anchor="middle" fill="#94a3b8" font-size="10">0</text>
+  <text x="77" y="115" text-anchor="middle" fill="#94a3b8" font-size="10">0</text>
+  <text x="213" y="115" text-anchor="middle" fill="#94a3b8" font-size="10">1</text>
+
+  <text x="108" y="210" fill="#10b981" font-size="13" font-weight="900">✓</text>
+  <text x="218" y="210" fill="#10b981" font-size="13" font-weight="900">✓</text>
+  <text x="108" y="116" fill="#10b981" font-size="13" font-weight="900">✓</text>
+  <text x="218" y="116" fill="#10b981" font-size="13" font-weight="900">✓</text>
+
+  <text x="145" y="270" text-anchor="middle" fill="#6ee7b7" font-size="13" font-weight="600">4/4 정확!</text>
+
+  <!-- Right: XOR failure -->
+  <rect x="300" y="50" width="230" height="230" rx="12" fill="rgba(239,68,68,0.08)" stroke="#ef4444" stroke-width="1.5"/>
+  <text x="415" y="75" text-anchor="middle" fill="#fca5a5" font-size="15" font-weight="700">XOR (직선 1개로 불가능)</text>
+
+  <line x1="330" y1="245" x2="500" y2="245" stroke="#475569" stroke-width="1.5"/>
+  <line x1="330" y1="245" x2="330" y2="95" stroke="#475569" stroke-width="1.5"/>
+
+  <!-- XOR points: (0,0)=0 (0,1)=1 (1,0)=1 (1,1)=0 -->
+  <circle cx="360" cy="215" r="12" fill="#3b82f6"/>
+  <circle cx="470" cy="215" r="12" fill="#ef4444"/>
+  <circle cx="360" cy="120" r="12" fill="#ef4444"/>
+  <circle cx="470" cy="120" r="12" fill="#3b82f6"/>
+
+  <!-- XOR attempt line: 대각선, (1,1)=0이 틀리는 위치 -->
+  <line x1="320" y1="165" x2="510" y2="165" stroke="#fca5a5" stroke-width="3" stroke-dasharray="8,4"/>
+
+  <text x="347" y="210" text-anchor="middle" fill="#94a3b8" font-size="10">0</text>
+  <text x="483" y="210" text-anchor="middle" fill="#94a3b8" font-size="10">1</text>
+  <text x="347" y="115" text-anchor="middle" fill="#94a3b8" font-size="10">1</text>
+  <text x="483" y="115" text-anchor="middle" fill="#94a3b8" font-size="10">0</text>
+
+  <!-- 3 correct, 1 wrong -->
+  <text x="378" y="210" fill="#10b981" font-size="13" font-weight="900">✓</text>
+  <text x="488" y="210" fill="#10b981" font-size="13" font-weight="900">✓</text>
+  <text x="378" y="116" fill="#10b981" font-size="13" font-weight="900">✓</text>
+  <text x="488" y="116" fill="#ef4444" font-size="18" font-weight="900">✗</text>
+
+  <text x="415" y="270" text-anchor="middle" fill="#fca5a5" font-size="13" font-weight="600">최선을 다해도 3/4이 최대</text>
+
+  <text x="280" y="305" text-anchor="middle" fill="#94a3b8" font-size="12">대각선으로 번갈아 배치된 점은 어떤 직선으로도 완벽히 나눌 수 없다</text>
+</svg>

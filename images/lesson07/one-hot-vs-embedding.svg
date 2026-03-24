@@ -1,0 +1,83 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 350" font-family="system-ui, -apple-system, 'Apple SD Gothic Neo', 'Noto Sans KR', sans-serif">
+  <rect width="800" height="350" rx="16" fill="#1a1b26" opacity="0.95"/>
+
+  <text x="400" y="32" text-anchor="middle" fill="#e2e8f0" font-size="18" font-weight="700">원-핫 인코딩 vs 임베딩</text>
+  <text x="400" y="52" text-anchor="middle" fill="#94a3b8" font-size="13">"왕"이라는 단어를 숫자로 표현하는 두 가지 방법</text>
+
+  <!-- Left: One-hot encoding -->
+  <rect x="30" y="70" width="310" height="220" rx="12" fill="rgba(239,68,68,0.08)" stroke="#ef4444" stroke-width="1" stroke-opacity="0.4"/>
+  <text x="185" y="95" text-anchor="middle" fill="#fca5a5" font-size="14" font-weight="700">원-핫 인코딩</text>
+  <text x="185" y="113" text-anchor="middle" fill="#94a3b8" font-size="11">10,000차원 (단어장 크기)</text>
+
+  <!-- Sparse vector visualization -->
+  <rect x="60" y="130" width="22" height="25" rx="3" fill="rgba(71,85,105,0.3)" stroke="#475569" stroke-width="0.5"/>
+  <text x="71" y="148" text-anchor="middle" fill="#64748b" font-size="10">0</text>
+
+  <rect x="85" y="130" width="22" height="25" rx="3" fill="rgba(71,85,105,0.3)" stroke="#475569" stroke-width="0.5"/>
+  <text x="96" y="148" text-anchor="middle" fill="#64748b" font-size="10">0</text>
+
+  <rect x="110" y="130" width="22" height="25" rx="3" fill="rgba(71,85,105,0.3)" stroke="#475569" stroke-width="0.5"/>
+  <text x="121" y="148" text-anchor="middle" fill="#64748b" font-size="10">0</text>
+
+  <text x="143" y="148" fill="#64748b" font-size="10">...</text>
+
+  <rect x="160" y="130" width="22" height="25" rx="3" fill="rgba(239,68,68,0.3)" stroke="#ef4444" stroke-width="1.5"/>
+  <text x="171" y="148" text-anchor="middle" fill="#ef4444" font-size="11" font-weight="700">1</text>
+
+  <text x="193" y="148" fill="#64748b" font-size="10">...</text>
+
+  <rect x="210" y="130" width="22" height="25" rx="3" fill="rgba(71,85,105,0.3)" stroke="#475569" stroke-width="0.5"/>
+  <text x="221" y="148" text-anchor="middle" fill="#64748b" font-size="10">0</text>
+
+  <rect x="235" y="130" width="22" height="25" rx="3" fill="rgba(71,85,105,0.3)" stroke="#475569" stroke-width="0.5"/>
+  <text x="246" y="148" text-anchor="middle" fill="#64748b" font-size="10">0</text>
+
+  <rect x="260" y="130" width="22" height="25" rx="3" fill="rgba(71,85,105,0.3)" stroke="#475569" stroke-width="0.5"/>
+  <text x="271" y="148" text-anchor="middle" fill="#64748b" font-size="10">0</text>
+
+  <!-- "왕" position label -->
+  <text x="171" y="172" text-anchor="middle" fill="#ef4444" font-size="10" font-weight="600">&#x2191; 왕</text>
+
+  <!-- Problems -->
+  <text x="185" y="200" text-anchor="middle" fill="#fca5a5" font-size="12" font-weight="600">문제점</text>
+  <text x="185" y="220" text-anchor="middle" fill="#94a3b8" font-size="11">&#x2716; 차원이 너무 큼 (10,000개)</text>
+  <text x="185" y="238" text-anchor="middle" fill="#94a3b8" font-size="11">&#x2716; 모든 단어 사이 거리가 동일</text>
+  <text x="185" y="256" text-anchor="middle" fill="#94a3b8" font-size="11">&#x2716; 의미 정보 없음</text>
+  <text x="185" y="276" text-anchor="middle" fill="#ef4444" font-size="12" font-weight="600">의미: &#x2716; 없음</text>
+
+  <!-- Arrow between sections -->
+  <rect x="355" y="155" width="90" height="45" rx="8" fill="rgba(96,165,250,0.15)" stroke="#60a5fa" stroke-width="1.5"/>
+  <text x="400" y="174" text-anchor="middle" fill="#93c5fd" font-size="11" font-weight="600">임베딩</text>
+  <text x="400" y="190" text-anchor="middle" fill="#93c5fd" font-size="11" font-weight="600">학습 &#x2192;</text>
+
+  <!-- Right: Embedding -->
+  <rect x="460" y="70" width="310" height="220" rx="12" fill="rgba(16,185,129,0.08)" stroke="#10b981" stroke-width="1.5" stroke-opacity="0.5"/>
+  <text x="615" y="95" text-anchor="middle" fill="#6ee7b7" font-size="14" font-weight="700">임베딩 (밀집 벡터)</text>
+  <text x="615" y="113" text-anchor="middle" fill="#94a3b8" font-size="11">3차원 (예시, 실제는 수백~수천)</text>
+
+  <!-- Dense vector visualization -->
+  <rect x="520" y="130" width="55" height="30" rx="5" fill="rgba(16,185,129,0.25)" stroke="#10b981" stroke-width="1.5"/>
+  <text x="547" y="150" text-anchor="middle" fill="#10b981" font-size="12" font-weight="700">0.9</text>
+
+  <rect x="585" y="130" width="55" height="30" rx="5" fill="rgba(16,185,129,0.2)" stroke="#10b981" stroke-width="1.5"/>
+  <text x="612" y="150" text-anchor="middle" fill="#10b981" font-size="12" font-weight="700">0.8</text>
+
+  <rect x="650" y="130" width="55" height="30" rx="5" fill="rgba(16,185,129,0.1)" stroke="#10b981" stroke-width="1"/>
+  <text x="677" y="150" text-anchor="middle" fill="#10b981" font-size="12" font-weight="700">0.1</text>
+
+  <!-- Dimension labels -->
+  <text x="547" y="175" text-anchor="middle" fill="#94a3b8" font-size="10">왕족</text>
+  <text x="612" y="175" text-anchor="middle" fill="#94a3b8" font-size="10">남성</text>
+  <text x="677" y="175" text-anchor="middle" fill="#94a3b8" font-size="10">권력</text>
+
+  <!-- Benefits -->
+  <text x="615" y="200" text-anchor="middle" fill="#6ee7b7" font-size="12" font-weight="600">장점</text>
+  <text x="615" y="220" text-anchor="middle" fill="#94a3b8" font-size="11">&#x2714; 차원이 작음 (효율적)</text>
+  <text x="615" y="238" text-anchor="middle" fill="#94a3b8" font-size="11">&#x2714; 비슷한 단어는 가까운 벡터</text>
+  <text x="615" y="256" text-anchor="middle" fill="#94a3b8" font-size="11">&#x2714; 의미가 숫자에 담김</text>
+  <text x="615" y="276" text-anchor="middle" fill="#10b981" font-size="12" font-weight="600">의미: &#x2714; '왕족', '남성', '권력'</text>
+
+  <!-- Bottom note -->
+  <text x="400" y="320" text-anchor="middle" fill="#64748b" font-size="11">임베딩은 학습을 통해 단어의 의미를 벡터 공간에 배치합니다</text>
+  <text x="400" y="340" text-anchor="middle" fill="#818cf8" font-size="12" font-weight="600">Word2Vec, GloVe &#x2192; 트랜스포머 임베딩으로 발전</text>
+</svg>

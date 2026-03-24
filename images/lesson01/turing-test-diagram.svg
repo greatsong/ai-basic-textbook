@@ -1,0 +1,63 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 340" font-family="'Pretendard', 'Noto Sans KR', sans-serif">
+  <defs>
+    <linearGradient id="interrogator-bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#6366f1"/>
+      <stop offset="100%" stop-color="#4f46e5"/>
+    </linearGradient>
+    <linearGradient id="human-bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#10b981"/>
+      <stop offset="100%" stop-color="#059669"/>
+    </linearGradient>
+    <linearGradient id="machine-bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#f59e0b"/>
+      <stop offset="100%" stop-color="#d97706"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="720" height="340" rx="16" fill="#1a1b26" opacity="0.95"/>
+
+  <!-- Title -->
+  <text x="360" y="36" text-anchor="middle" fill="#e2e8f0" font-size="18" font-weight="700">튜링 테스트 (모방 게임) 구조</text>
+
+  <!-- Wall / Screen -->
+  <rect x="350" y="55" width="4" height="240" rx="2" fill="#475569" opacity="0.6"/>
+  <text x="352" y="310" text-anchor="middle" fill="#94a3b8" font-size="12">화면 (서로 보이지 않음)</text>
+
+  <!-- Interrogator (Left) -->
+  <rect x="40" y="80" width="260" height="200" rx="14" fill="url(#interrogator-bg)" opacity="0.15" stroke="#6366f1" stroke-width="2"/>
+  <!-- Person icon -->
+  <circle cx="170" cy="140" r="28" fill="url(#interrogator-bg)" opacity="0.3"/>
+  <text x="170" y="137" text-anchor="middle" fill="#e2e8f0" font-size="32">🧑‍⚖️</text>
+  <text x="170" y="190" text-anchor="middle" fill="#a5b4fc" font-size="16" font-weight="700">심판</text>
+  <text x="170" y="210" text-anchor="middle" fill="#a5b4fc" font-size="13">Interrogator</text>
+  <text x="170" y="240" text-anchor="middle" fill="#cbd5e1" font-size="12">화면으로만 대화</text>
+  <text x="170" y="258" text-anchor="middle" fill="#cbd5e1" font-size="12">"상대가 사람? 기계?"</text>
+
+  <!-- Human (Right Top) -->
+  <rect x="404" y="65" width="280" height="100" rx="14" fill="url(#human-bg)" opacity="0.15" stroke="#10b981" stroke-width="2"/>
+  <text x="440" y="112" fill="#e2e8f0" font-size="28">👤</text>
+  <text x="480" y="105" fill="#6ee7b7" font-size="15" font-weight="700">사람 (Human)</text>
+  <text x="480" y="127" fill="#cbd5e1" font-size="12">자연스럽게 대화</text>
+  <text x="480" y="147" fill="#cbd5e1" font-size="12">"나는 진짜 사람이에요!"</text>
+
+  <!-- Machine (Right Bottom) -->
+  <rect x="404" y="185" width="280" height="100" rx="14" fill="url(#machine-bg)" opacity="0.15" stroke="#f59e0b" stroke-width="2"/>
+  <text x="440" y="232" fill="#e2e8f0" font-size="28">🤖</text>
+  <text x="480" y="225" fill="#fcd34d" font-size="15" font-weight="700">기계 (Machine)</text>
+  <text x="480" y="247" fill="#cbd5e1" font-size="12">사람인 척 대화</text>
+  <text x="480" y="267" fill="#cbd5e1" font-size="12">"나도 사람이에요!" (속이기)</text>
+
+  <!-- Arrows -->
+  <line x1="300" y1="150" x2="350" y2="120" stroke="#818cf8" stroke-width="2" stroke-dasharray="6,3" marker-end="url(#arrow-purple)"/>
+  <line x1="300" y1="200" x2="350" y2="230" stroke="#818cf8" stroke-width="2" stroke-dasharray="6,3" marker-end="url(#arrow-purple)"/>
+
+  <text x="310" y="110" fill="#818cf8" font-size="11">텍스트만</text>
+  <text x="310" y="250" fill="#818cf8" font-size="11">텍스트만</text>
+
+  <defs>
+    <marker id="arrow-purple" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#818cf8"/>
+    </marker>
+  </defs>
+</svg>
