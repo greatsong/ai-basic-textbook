@@ -26,50 +26,50 @@
   <!-- Title -->
   <text x="400" y="42" text-anchor="middle" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="22" font-weight="bold" fill="#1E293B">왜 기울기의 반대 방향으로 이동하는가?</text>
 
-  <!-- Loss curve (U-shape) -->
-  <path d="M 100,380 Q 200,380 250,320 Q 300,260 350,180 Q 400,100 420,90 Q 440,80 460,90 Q 480,100 520,200 Q 560,300 620,360 Q 680,400 750,410"
-        fill="none" stroke="url(#curveGrad)" stroke-width="4" stroke-linecap="round"/>
+  <!-- Axes -->
+  <line x1="90" y1="400" x2="760" y2="400" stroke="#CBD5E1" stroke-width="2"/>
+  <line x1="90" y1="60" x2="90" y2="400" stroke="#CBD5E1" stroke-width="2"/>
 
   <!-- Y-axis label -->
-  <text x="60" y="240" text-anchor="middle" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="16" font-weight="bold" fill="#64748B" transform="rotate(-90 60 240)">손실 (Loss)</text>
-  <!-- X-axis label -->
-  <text x="420" y="470" text-anchor="middle" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="16" font-weight="bold" fill="#64748B">파라미터 값</text>
+  <text x="55" y="230" text-anchor="middle" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="16" font-weight="bold" fill="#64748B" transform="rotate(-90 55 230)">손실 (Loss)</text>
 
-  <!-- Axes -->
-  <line x1="90" y1="420" x2="760" y2="420" stroke="#CBD5E1" stroke-width="2"/>
-  <line x1="90" y1="60" x2="90" y2="420" stroke="#CBD5E1" stroke-width="2"/>
+  <!-- Loss curve (U-shape valley: high → low → high) -->
+  <path d="M 100,100 Q 160,105 200,140 Q 260,190 300,260 Q 340,330 380,360 Q 420,380 440,385 Q 460,380 500,360 Q 540,330 580,270 Q 620,200 680,130 Q 720,100 760,90"
+        fill="none" stroke="url(#curveGrad)" stroke-width="4" stroke-linecap="round"/>
 
-  <!-- Current position dot (on the LEFT side of the curve, going downhill) -->
-  <circle cx="280" cy="290" r="12" fill="#F59E0B" stroke="#FFF" stroke-width="3" filter="url(#shadow)"/>
-  <text x="280" y="266" text-anchor="middle" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="14" font-weight="bold" fill="#F59E0B">현재 위치</text>
+  <!-- Minimum point (at the bottom of the valley) -->
+  <circle cx="440" cy="387" r="8" fill="#10B981" stroke="#FFF" stroke-width="2"/>
+  <text x="440" y="415" text-anchor="middle" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="13" font-weight="bold" fill="#10B981">최솟값</text>
 
-  <!-- Gradient arrow (pointing LEFT = uphill direction on left side) -->
-  <!-- On the left side of U-curve, gradient is negative (pointing left = steepest ascent direction for loss increase) -->
-  <line x1="280" y1="295" x2="180" y2="355" stroke="#EF4444" stroke-width="4" marker-end="url(#arrowRed)"/>
-  <rect x="105" y="340" width="140" height="52" rx="8" fill="#FEE2E2" stroke="#EF4444" stroke-width="1.5" filter="url(#shadow)"/>
-  <text x="175" y="361" text-anchor="middle" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="13" font-weight="bold" fill="#EF4444">기울기 방향</text>
-  <text x="175" y="381" text-anchor="middle" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="11" fill="#DC2626">(손실이 가장 빠르게 증가)</text>
+  <!-- Current position dot (on the LEFT slope, partway down) -->
+  <circle cx="260" cy="190" r="12" fill="#F59E0B" stroke="#FFF" stroke-width="3" filter="url(#shadow)"/>
+  <text x="260" y="170" text-anchor="middle" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="14" font-weight="bold" fill="#F59E0B">현재 위치</text>
 
-  <!-- Movement arrow (pointing RIGHT = opposite of gradient = downhill) -->
-  <line x1="290" y1="285" x2="390" y2="170" stroke="#10B981" stroke-width="4" marker-end="url(#arrowGreen)"/>
-  <rect x="360" y="120" width="160" height="52" rx="8" fill="#D1FAE5" stroke="#10B981" stroke-width="1.5" filter="url(#shadow)"/>
-  <text x="440" y="141" text-anchor="middle" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="13" font-weight="bold" fill="#10B981">이동 방향 (반대!)</text>
-  <text x="440" y="161" text-anchor="middle" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="11" fill="#059669">(손실이 줄어드는 방향)</text>
+  <!-- Gradient arrow (pointing LEFT+UP = steepest ascent = loss increases most) -->
+  <line x1="250" y1="185" x2="180" y2="135" stroke="#EF4444" stroke-width="4" marker-end="url(#arrowRed)"/>
+  <rect x="85" y="90" width="145" height="52" rx="8" fill="#FEE2E2" stroke="#EF4444" stroke-width="1.5" filter="url(#shadow)"/>
+  <text x="157" y="111" text-anchor="middle" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="13" font-weight="bold" fill="#EF4444">기울기 방향</text>
+  <text x="157" y="131" text-anchor="middle" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="11" fill="#DC2626">(손실이 가장 빠르게 증가)</text>
 
-  <!-- Minimum point -->
-  <circle cx="440" cy="86" r="8" fill="#10B981" stroke="#FFF" stroke-width="2"/>
-  <text x="440" y="72" text-anchor="middle" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="12" font-weight="bold" fill="#10B981">최솟값</text>
+  <!-- Movement arrow (pointing RIGHT+DOWN = opposite of gradient = toward minimum) -->
+  <line x1="272" y1="196" x2="360" y2="310" stroke="#10B981" stroke-width="4" marker-end="url(#arrowGreen)"/>
+  <rect x="370" y="260" width="175" height="52" rx="8" fill="#D1FAE5" stroke="#10B981" stroke-width="1.5" filter="url(#shadow)"/>
+  <text x="457" y="281" text-anchor="middle" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="13" font-weight="bold" fill="#10B981">이동 방향 (반대!)</text>
+  <text x="457" y="301" text-anchor="middle" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="11" fill="#059669">(손실이 줄어드는 방향)</text>
+
+  <!-- Dashed path showing the descent trajectory -->
+  <path d="M 270,195 Q 320,280 370,340 Q 410,370 440,385" fill="none" stroke="#10B981" stroke-width="2" stroke-dasharray="6,4" opacity="0.4"/>
 
   <!-- Bottom explanation boxes -->
-  <rect x="50" y="430" width="220" height="55" rx="8" fill="#FEF3C7" stroke="#F59E0B" stroke-width="1.5"/>
-  <text x="160" y="453" text-anchor="middle" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="13" font-weight="bold" fill="#92400E">기울기가 음수(-) 이면</text>
-  <text x="160" y="473" text-anchor="middle" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="12" fill="#92400E">오른쪽(+)으로 이동 = 반대</text>
+  <rect x="50" y="435" width="220" height="55" rx="8" fill="#FEF3C7" stroke="#F59E0B" stroke-width="1.5"/>
+  <text x="160" y="458" text-anchor="middle" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="13" font-weight="bold" fill="#92400E">기울기가 음수(-) 이면</text>
+  <text x="160" y="478" text-anchor="middle" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="12" fill="#92400E">오른쪽(+)으로 이동 = 반대</text>
 
-  <rect x="290" y="430" width="220" height="55" rx="8" fill="#FEE2E2" stroke="#EF4444" stroke-width="1.5"/>
-  <text x="400" y="453" text-anchor="middle" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="13" font-weight="bold" fill="#991B1B">기울기가 양수(+) 이면</text>
-  <text x="400" y="473" text-anchor="middle" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="12" fill="#991B1B">왼쪽(-)으로 이동 = 반대</text>
+  <rect x="290" y="435" width="220" height="55" rx="8" fill="#FEE2E2" stroke="#EF4444" stroke-width="1.5"/>
+  <text x="400" y="458" text-anchor="middle" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="13" font-weight="bold" fill="#991B1B">기울기가 양수(+) 이면</text>
+  <text x="400" y="478" text-anchor="middle" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="12" fill="#991B1B">왼쪽(-)으로 이동 = 반대</text>
 
-  <rect x="530" y="430" width="220" height="55" rx="8" fill="#D1FAE5" stroke="#10B981" stroke-width="1.5"/>
-  <text x="640" y="453" text-anchor="middle" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="13" font-weight="bold" fill="#065F46">결론</text>
-  <text x="640" y="473" text-anchor="middle" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="12" fill="#065F46">항상 반대 = 항상 손실 감소!</text>
+  <rect x="530" y="435" width="220" height="55" rx="8" fill="#D1FAE5" stroke="#10B981" stroke-width="1.5"/>
+  <text x="640" y="458" text-anchor="middle" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="13" font-weight="bold" fill="#065F46">결론</text>
+  <text x="640" y="478" text-anchor="middle" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="12" fill="#065F46">항상 반대 = 항상 손실 감소!</text>
 </svg>
