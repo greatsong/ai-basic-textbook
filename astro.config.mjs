@@ -55,6 +55,7 @@ export default defineConfig({
         {
           label: '부록',
           items: [
+            { label: '📋 평가 안내', slug: 'appendix/assessment-guide' },
             { label: '용어 사전', slug: 'appendix/glossary' },
             { label: '참고자료', slug: 'appendix/references' },
           ],
