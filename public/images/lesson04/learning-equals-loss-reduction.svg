@@ -1,0 +1,116 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 450">
+  <style>@import url("https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700&amp;display=swap");</style>
+  <defs>
+    <linearGradient id="bgG3" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#FAFBFF"/>
+      <stop offset="100%" stop-color="#F0F4FF"/>
+    </linearGradient>
+    <filter id="sh3" x="-3%" y="-3%" width="106%" height="110%">
+      <feDropShadow dx="1" dy="2" stdDeviation="3" flood-color="#000" flood-opacity="0.08"/>
+    </filter>
+    <marker id="arr3" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0,10 3.5,0 7" fill="#4F46E5"/>
+    </marker>
+    <marker id="arr3g" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0,10 3.5,0 7" fill="#10B981"/>
+    </marker>
+  </defs>
+  <rect width="900" height="450" fill="url(#bgG3)" rx="16"/>
+  <text x="450" y="38" text-anchor="middle" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="22" font-weight="bold" fill="#1E293B">기계 학습 = 손실 줄이기</text>
+
+  <!-- Timeline/Flow: 3 Stages -->
+  <!-- Stage 1: Bad Model -->
+  <rect x="30" y="65" width="260" height="310" rx="14" fill="white" stroke="#EF4444" stroke-width="2" filter="url(#sh3)"/>
+  <rect x="30" y="65" width="260" height="36" rx="14" fill="#EF4444"/>
+  <rect x="30" y="87" width="260" height="14" fill="#EF4444"/>
+  <text x="160" y="88" text-anchor="middle" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="14" font-weight="bold" fill="white">처음: 나쁜 모델</text>
+
+  <!-- Mini chart 1 -->
+  <line x1="60" y1="310" x2="260" y2="310" stroke="#94A3B8" stroke-width="1"/>
+  <line x1="60" y1="120" x2="60" y2="310" stroke="#94A3B8" stroke-width="1"/>
+  <!-- Data points -->
+  <circle cx="100" cy="270" r="6" fill="#4F46E5"/>
+  <circle cx="140" cy="230" r="6" fill="#4F46E5"/>
+  <circle cx="180" cy="190" r="6" fill="#4F46E5"/>
+  <circle cx="220" cy="160" r="6" fill="#4F46E5"/>
+  <!-- Bad line -->
+  <line x1="70" y1="200" x2="250" y2="250" stroke="#EF4444" stroke-width="2.5"/>
+  <!-- Error lines -->
+  <line x1="100" y1="270" x2="100" y2="218" stroke="#EF4444" stroke-width="1.5" stroke-dasharray="3,2"/>
+  <line x1="140" y1="230" x2="140" y2="228" stroke="#EF4444" stroke-width="1.5" stroke-dasharray="3,2"/>
+  <line x1="180" y1="190" x2="180" y2="237" stroke="#EF4444" stroke-width="1.5" stroke-dasharray="3,2"/>
+  <line x1="220" y1="160" x2="220" y2="246" stroke="#EF4444" stroke-width="1.5" stroke-dasharray="3,2"/>
+
+  <!-- Loss bar 1 -->
+  <rect x="60" y="330" width="200" height="30" rx="6" fill="#FEE2E2" stroke="#EF4444" stroke-width="1"/>
+  <rect x="60" y="330" width="200" height="30" rx="6" fill="#EF4444" opacity="0.3"/>
+  <text x="160" y="350" text-anchor="middle" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="14" font-weight="bold" fill="#EF4444">손실 = 25.0</text>
+
+  <!-- Arrow 1->2 -->
+  <line x1="300" y1="220" x2="325" y2="220" stroke="#4F46E5" stroke-width="3" marker-end="url(#arr3)"/>
+  <text x="312" y="200" text-anchor="middle" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="11" fill="#4F46E5" font-weight="bold">w, b</text>
+  <text x="312" y="215" text-anchor="middle" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="10" fill="#475569">조절</text>
+
+  <!-- Stage 2: Better Model -->
+  <rect x="335" y="65" width="260" height="310" rx="14" fill="white" stroke="#F59E0B" stroke-width="2" filter="url(#sh3)"/>
+  <rect x="335" y="65" width="260" height="36" rx="14" fill="#F59E0B"/>
+  <rect x="335" y="87" width="260" height="14" fill="#F59E0B"/>
+  <text x="465" y="88" text-anchor="middle" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="14" font-weight="bold" fill="white">중간: 나아지는 중</text>
+
+  <!-- Mini chart 2 -->
+  <line x1="365" y1="310" x2="565" y2="310" stroke="#94A3B8" stroke-width="1"/>
+  <line x1="365" y1="120" x2="365" y2="310" stroke="#94A3B8" stroke-width="1"/>
+  <!-- Data points -->
+  <circle cx="405" cy="270" r="6" fill="#4F46E5"/>
+  <circle cx="445" cy="230" r="6" fill="#4F46E5"/>
+  <circle cx="485" cy="190" r="6" fill="#4F46E5"/>
+  <circle cx="525" cy="160" r="6" fill="#4F46E5"/>
+  <!-- Medium line -->
+  <line x1="375" y1="285" x2="555" y2="175" stroke="#F59E0B" stroke-width="2.5"/>
+  <!-- Smaller error lines -->
+  <line x1="405" y1="270" x2="405" y2="260" stroke="#F59E0B" stroke-width="1.5" stroke-dasharray="3,2"/>
+  <line x1="445" y1="230" x2="445" y2="237" stroke="#F59E0B" stroke-width="1.5" stroke-dasharray="3,2"/>
+  <line x1="485" y1="190" x2="485" y2="213" stroke="#F59E0B" stroke-width="1.5" stroke-dasharray="3,2"/>
+  <line x1="525" y1="160" x2="525" y2="190" stroke="#F59E0B" stroke-width="1.5" stroke-dasharray="3,2"/>
+
+  <!-- Loss bar 2 -->
+  <rect x="365" y="330" width="200" height="30" rx="6" fill="#FEF3C7" stroke="#F59E0B" stroke-width="1"/>
+  <rect x="365" y="330" width="100" height="30" rx="6" fill="#F59E0B" opacity="0.3"/>
+  <text x="465" y="350" text-anchor="middle" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="14" font-weight="bold" fill="#F59E0B">손실 = 5.2</text>
+
+  <!-- Arrow 2->3 -->
+  <line x1="605" y1="220" x2="630" y2="220" stroke="#4F46E5" stroke-width="3" marker-end="url(#arr3)"/>
+  <text x="617" y="200" text-anchor="middle" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="11" fill="#4F46E5" font-weight="bold">w, b</text>
+  <text x="617" y="215" text-anchor="middle" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="10" fill="#475569">조절</text>
+
+  <!-- Stage 3: Good Model -->
+  <rect x="640" y="65" width="240" height="310" rx="14" fill="white" stroke="#10B981" stroke-width="2" filter="url(#sh3)"/>
+  <rect x="640" y="65" width="240" height="36" rx="14" fill="#10B981"/>
+  <rect x="640" y="87" width="240" height="14" fill="#10B981"/>
+  <text x="760" y="88" text-anchor="middle" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="14" font-weight="bold" fill="white">최적: 좋은 모델!</text>
+
+  <!-- Mini chart 3 -->
+  <line x1="670" y1="310" x2="850" y2="310" stroke="#94A3B8" stroke-width="1"/>
+  <line x1="670" y1="120" x2="670" y2="310" stroke="#94A3B8" stroke-width="1"/>
+  <!-- Data points -->
+  <circle cx="710" cy="270" r="6" fill="#4F46E5"/>
+  <circle cx="740" cy="230" r="6" fill="#4F46E5"/>
+  <circle cx="780" cy="190" r="6" fill="#4F46E5"/>
+  <circle cx="820" cy="160" r="6" fill="#4F46E5"/>
+  <!-- Good line (close to points) -->
+  <line x1="685" y1="290" x2="845" y2="142" stroke="#10B981" stroke-width="2.5"/>
+  <!-- Tiny error lines -->
+  <line x1="710" y1="270" x2="710" y2="267" stroke="#10B981" stroke-width="1.5" stroke-dasharray="3,2"/>
+  <line x1="740" y1="230" x2="740" y2="234" stroke="#10B981" stroke-width="1.5" stroke-dasharray="3,2"/>
+  <line x1="780" y1="190" x2="780" y2="193" stroke="#10B981" stroke-width="1.5" stroke-dasharray="3,2"/>
+  <line x1="820" y1="160" x2="820" y2="157" stroke="#10B981" stroke-width="1.5" stroke-dasharray="3,2"/>
+
+  <!-- Loss bar 3 -->
+  <rect x="670" y="330" width="200" height="30" rx="6" fill="#D1FAE5" stroke="#10B981" stroke-width="1"/>
+  <rect x="670" y="330" width="20" height="30" rx="6" fill="#10B981" opacity="0.3"/>
+  <text x="770" y="350" text-anchor="middle" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="14" font-weight="bold" fill="#10B981">손실 = 0.2</text>
+
+  <!-- Bottom Insight Box -->
+  <rect x="100" y="395" width="700" height="45" rx="12" fill="#4F46E5" filter="url(#sh3)"/>
+  <text x="450" y="424" text-anchor="middle" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="17" font-weight="bold" fill="white">학습이란? 손실값을 줄이는 방향으로 파라미터(w, b)를 계속 조절하는 과정</text>
+</svg>

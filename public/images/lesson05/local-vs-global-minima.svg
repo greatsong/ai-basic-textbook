@@ -1,0 +1,86 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 420">
+  <style>@import url("https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700&amp;display=swap");</style>
+  <defs>
+    <linearGradient id="bg6" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#F8FAFC"/>
+      <stop offset="100%" stop-color="#E2E8F0"/>
+    </linearGradient>
+    <linearGradient id="terrainGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#6B7280"/>
+      <stop offset="40%" stop-color="#9CA3AF"/>
+      <stop offset="100%" stop-color="#D1D5DB"/>
+    </linearGradient>
+    <filter id="sh6">
+      <feDropShadow dx="0" dy="2" stdDeviation="3" flood-opacity="0.12"/>
+    </filter>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="4" result="blur"/>
+      <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+    </filter>
+  </defs>
+
+  <rect width="800" height="420" fill="url(#bg6)" rx="12"/>
+  <text x="400" y="35" text-anchor="middle" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="20" font-weight="bold" fill="#1E293B">로컬 미니마 vs 글로벌 미니마</text>
+
+  <!-- Loss landscape -->
+  <path d="M 30,180 Q 80,160 120,200 Q 160,240 200,180 Q 240,120 280,160 Q 320,200 360,120 Q 400,40 440,100 Q 480,160 520,210 Q 540,230 560,225 Q 580,220 600,250 Q 620,280 650,250 Q 680,220 720,260 Q 760,300 790,280"
+        fill="none" stroke="url(#terrainGrad)" stroke-width="4" stroke-linecap="round"/>
+
+  <!-- Fill under curve -->
+  <path d="M 30,180 Q 80,160 120,200 Q 160,240 200,180 Q 240,120 280,160 Q 320,200 360,120 Q 400,40 440,100 Q 480,160 520,210 Q 540,230 560,225 Q 580,220 600,250 Q 620,280 650,250 Q 680,220 720,260 Q 760,300 790,280 L 790,350 L 30,350 Z"
+        fill="#F1F5F9" opacity="0.5"/>
+
+  <!-- Local minimum 1 -->
+  <circle cx="120" cy="203" r="8" fill="#F59E0B" stroke="white" stroke-width="2"/>
+  <line x1="120" y1="215" x2="120" y2="255" stroke="#F59E0B" stroke-width="1.5" stroke-dasharray="4,3"/>
+  <rect x="60" y="255" width="120" height="45" rx="8" fill="#FEF3C7" stroke="#F59E0B" stroke-width="1.5" filter="url(#sh6)"/>
+  <text x="120" y="274" text-anchor="middle" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="12" font-weight="bold" fill="#92400E">로컬 미니마</text>
+  <text x="120" y="291" text-anchor="middle" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="10" fill="#A16207">(가짜 바닥 1)</text>
+
+  <!-- Local minimum 2 -->
+  <circle cx="280" cy="163" r="8" fill="#F59E0B" stroke="white" stroke-width="2"/>
+  <line x1="280" y1="175" x2="280" y2="255" stroke="#F59E0B" stroke-width="1.5" stroke-dasharray="4,3"/>
+  <rect x="220" y="255" width="120" height="45" rx="8" fill="#FEF3C7" stroke="#F59E0B" stroke-width="1.5" filter="url(#sh6)"/>
+  <text x="280" y="274" text-anchor="middle" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="12" font-weight="bold" fill="#92400E">로컬 미니마</text>
+  <text x="280" y="291" text-anchor="middle" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="10" fill="#A16207">(가짜 바닥 2)</text>
+
+  <!-- Global minimum (the lowest point) -->
+  <circle cx="560" cy="228" r="10" fill="#10B981" stroke="white" stroke-width="3" filter="url(#glow)"/>
+  <line x1="560" y1="242" x2="560" y2="255" stroke="#10B981" stroke-width="2" stroke-dasharray="4,3"/>
+  <rect x="490" y="255" width="140" height="50" rx="10" fill="#D1FAE5" stroke="#10B981" stroke-width="2" filter="url(#sh6)"/>
+  <text x="560" y="276" text-anchor="middle" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="14" font-weight="bold" fill="#065F46">글로벌 미니마</text>
+  <text x="560" y="296" text-anchor="middle" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="11" fill="#047857">(진짜 최저점!)</text>
+
+  <!-- Local minimum 3 -->
+  <circle cx="650" cy="253" r="7" fill="#F59E0B" stroke="white" stroke-width="2"/>
+  <text x="650" y="330" text-anchor="middle" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="10" fill="#A16207">로컬 미니마 3</text>
+
+  <!-- Starting point with person -->
+  <circle cx="50" cy="178" r="6" fill="#EF4444" stroke="white" stroke-width="2"/>
+  <text x="50" y="168" text-anchor="middle" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="12" font-weight="bold" fill="#EF4444">출발</text>
+
+  <!-- Y-axis label -->
+  <text x="18" y="200" text-anchor="middle" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="13" font-weight="bold" fill="#64748B" transform="rotate(-90 18 200)">손실</text>
+
+  <!-- Explanatory boxes at bottom -->
+  <rect x="30" y="320" width="240" height="85" rx="10" fill="white" stroke="#F59E0B" stroke-width="1.5" filter="url(#sh6)"/>
+  <circle cx="55" cy="345" r="10" fill="#FEF3C7" stroke="#F59E0B" stroke-width="1.5"/>
+  <text x="55" y="349" text-anchor="middle" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="12" fill="#F59E0B" font-weight="bold">!</text>
+  <text x="155" y="345" text-anchor="middle" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="13" font-weight="bold" fill="#92400E">로컬 미니마에 갇히면</text>
+  <text x="150" y="368" text-anchor="middle" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="11" fill="#475569">주변이 모두 오르막이라</text>
+  <text x="150" y="385" text-anchor="middle" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="11" fill="#475569">경사하강법은 멈춰버림</text>
+
+  <rect x="290" y="320" width="240" height="85" rx="10" fill="white" stroke="#10B981" stroke-width="1.5" filter="url(#sh6)"/>
+  <circle cx="315" cy="345" r="10" fill="#D1FAE5" stroke="#10B981" stroke-width="1.5"/>
+  <text x="315" y="349" text-anchor="middle" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="14" fill="#10B981" font-weight="bold">★</text>
+  <text x="420" y="345" text-anchor="middle" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="13" font-weight="bold" fill="#065F46">해결책: 모멘텀!</text>
+  <text x="410" y="368" text-anchor="middle" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="11" fill="#475569">관성으로 작은 언덕을 넘어</text>
+  <text x="410" y="385" text-anchor="middle" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="11" fill="#475569">글로벌 미니마에 도달 가능</text>
+
+  <rect x="550" y="320" width="220" height="85" rx="10" fill="white" stroke="#3B82F6" stroke-width="1.5" filter="url(#sh6)"/>
+  <circle cx="575" cy="345" r="10" fill="#DBEAFE" stroke="#3B82F6" stroke-width="1.5"/>
+  <text x="575" y="349" text-anchor="middle" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="12" fill="#3B82F6" font-weight="bold">?</text>
+  <text x="670" y="345" text-anchor="middle" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="13" font-weight="bold" fill="#1E40AF">출발 위치도 중요</text>
+  <text x="660" y="368" text-anchor="middle" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="11" fill="#475569">같은 설정이라도</text>
+  <text x="660" y="385" text-anchor="middle" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="11" fill="#475569">시작점에 따라 결과 다름</text>
+</svg>

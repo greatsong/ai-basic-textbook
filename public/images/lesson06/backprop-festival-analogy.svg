@@ -1,0 +1,99 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 480">
+  <style>@import url("https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700&amp;display=swap");</style>
+  <defs>
+    <linearGradient id="bg4" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#FAFBFF;stop-opacity:1"/>
+      <stop offset="100%" style="stop-color:#F0F4FF;stop-opacity:1"/>
+    </linearGradient>
+    <filter id="sh4">
+      <feDropShadow dx="1" dy="2" stdDeviation="3" flood-color="#000" flood-opacity="0.08"/>
+    </filter>
+    <marker id="arr4" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+      <polygon points="0 0, 8 3, 0 6" fill="#EF4444"/>
+    </marker>
+  </defs>
+
+  <!-- Background -->
+  <rect width="900" height="480" fill="url(#bg4)" rx="12"/>
+
+  <!-- Title -->
+  <text x="450" y="38" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="22" font-weight="bold" fill="#1E293B" text-anchor="middle">비유: 학교 축제 공연 실패 → 역전파</text>
+
+  <!-- Top row: Festival analogy -->
+  <rect x="30" y="58" width="840" height="180" rx="14" fill="white" stroke="#C7D2FE" stroke-width="1.5" filter="url(#sh4)"/>
+  <text x="450" y="82" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="14" font-weight="bold" fill="#4F46E5" text-anchor="middle">학교 축제 이야기</text>
+
+  <!-- Stage person (output) -->
+  <circle cx="720" cy="155" r="35" fill="#FEE2E2" stroke="#EF4444" stroke-width="2"/>
+  <text x="720" y="145" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="26" text-anchor="middle">🎤</text>
+  <text x="720" y="170" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="9" font-weight="bold" fill="#EF4444" text-anchor="middle">무대 공연</text>
+  <text x="720" y="210" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="11" font-weight="bold" fill="#EF4444" text-anchor="middle">책임 크다!</text>
+
+  <!-- Sound person (hidden) -->
+  <circle cx="500" cy="155" r="35" fill="#FEF3C7" stroke="#F59E0B" stroke-width="2"/>
+  <text x="500" y="145" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="26" text-anchor="middle">🔊</text>
+  <text x="500" y="170" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="9" font-weight="bold" fill="#F59E0B" text-anchor="middle">음향 담당</text>
+  <text x="500" y="210" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="11" font-weight="bold" fill="#F59E0B" text-anchor="middle">중간 책임</text>
+
+  <!-- Song selector (input) -->
+  <circle cx="280" cy="155" r="35" fill="#E0E7FF" stroke="#4F46E5" stroke-width="2"/>
+  <text x="280" y="145" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="26" text-anchor="middle">🎵</text>
+  <text x="280" y="170" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="9" font-weight="bold" fill="#4F46E5" text-anchor="middle">곡 선정</text>
+  <text x="280" y="210" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="11" font-weight="bold" fill="#4F46E5" text-anchor="middle">간접 영향</text>
+
+  <!-- Result -->
+  <rect x="790" y="120" width="70" height="70" rx="10" fill="#FEE2E2" stroke="#EF4444" stroke-width="2"/>
+  <text x="825" y="152" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="11" font-weight="bold" fill="#EF4444" text-anchor="middle">공연</text>
+  <text x="825" y="170" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="11" font-weight="bold" fill="#EF4444" text-anchor="middle">실패!</text>
+
+  <!-- Blame arrows (reverse) -->
+  <line x1="788" y1="170" x2="758" y2="162" stroke="#EF4444" stroke-width="2" marker-end="url(#arr4)" stroke-dasharray="6,3"/>
+  <line x1="682" y1="155" x2="538" y2="155" stroke="#EF4444" stroke-width="2" marker-end="url(#arr4)" stroke-dasharray="6,3"/>
+  <line x1="462" y1="155" x2="318" y2="155" stroke="#EF4444" stroke-width="1.5" marker-end="url(#arr4)" stroke-dasharray="6,3"/>
+
+  <text x="130" y="135" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="13" fill="#EF4444" font-weight="bold">← 책임 추적</text>
+  <text x="120" y="155" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="11" fill="#475569">(역방향으로)</text>
+
+  <!-- Divider with equals -->
+  <line x1="50" y1="250" x2="850" y2="250" stroke="#C7D2FE" stroke-width="1" stroke-dasharray="4,4"/>
+  <rect x="400" y="240" width="100" height="22" rx="11" fill="#4F46E5"/>
+  <text x="450" y="256" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="12" font-weight="bold" fill="white" text-anchor="middle">= 역전파</text>
+
+  <!-- Bottom row: Neural network mapping -->
+  <rect x="30" y="270" width="840" height="190" rx="14" fill="white" stroke="#C7D2FE" stroke-width="1.5" filter="url(#sh4)"/>
+  <text x="450" y="295" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="14" font-weight="bold" fill="#4F46E5" text-anchor="middle">신경망에서의 역전파</text>
+
+  <!-- Input layer -->
+  <circle cx="280" cy="370" r="35" fill="#E0E7FF" stroke="#4F46E5" stroke-width="2"/>
+  <text x="280" y="365" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="13" font-weight="bold" fill="#4F46E5" text-anchor="middle">w₁</text>
+  <text x="280" y="383" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="10" fill="#475569" text-anchor="middle">입력층</text>
+  <text x="280" y="425" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="11" fill="#4F46E5" text-anchor="middle">−0.019</text>
+  <text x="280" y="440" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="9" fill="#475569" text-anchor="middle">(조금 수정)</text>
+
+  <!-- Hidden layer -->
+  <circle cx="500" cy="370" r="35" fill="#FEF3C7" stroke="#F59E0B" stroke-width="2"/>
+  <text x="500" y="365" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="13" font-weight="bold" fill="#F59E0B" text-anchor="middle">w₃</text>
+  <text x="500" y="383" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="10" fill="#475569" text-anchor="middle">출력 가중치</text>
+
+  <!-- Output layer -->
+  <circle cx="720" cy="370" r="35" fill="#FEE2E2" stroke="#EF4444" stroke-width="2"/>
+  <text x="720" y="365" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="13" font-weight="bold" fill="#EF4444" text-anchor="middle">ŷ</text>
+  <text x="720" y="383" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="10" fill="#475569" text-anchor="middle">출력</text>
+
+  <!-- Loss -->
+  <rect x="790" y="345" width="70" height="50" rx="10" fill="#FEE2E2" stroke="#EF4444" stroke-width="2"/>
+  <text x="825" y="370" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="11" font-weight="bold" fill="#EF4444" text-anchor="middle">오차</text>
+  <text x="825" y="385" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="11" font-weight="bold" fill="#EF4444" text-anchor="middle">0.135</text>
+
+  <!-- Gradient info for w3 -->
+  <text x="500" y="425" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="11" fill="#F59E0B" text-anchor="middle">−0.117</text>
+  <text x="500" y="440" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="9" fill="#475569" text-anchor="middle">(많이 수정)</text>
+
+  <!-- Backward arrows -->
+  <line x1="788" y1="378" x2="758" y2="374" stroke="#EF4444" stroke-width="2" marker-end="url(#arr4)" stroke-dasharray="6,3"/>
+  <line x1="682" y1="370" x2="538" y2="370" stroke="#EF4444" stroke-width="2" marker-end="url(#arr4)" stroke-dasharray="6,3"/>
+  <line x1="462" y1="370" x2="318" y2="370" stroke="#EF4444" stroke-width="1.5" marker-end="url(#arr4)" stroke-dasharray="6,3"/>
+
+  <text x="130" y="365" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="13" fill="#EF4444" font-weight="bold">← 기울기 전파</text>
+  <text x="120" y="385" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="11" fill="#475569">(연쇄법칙)</text>
+</svg>

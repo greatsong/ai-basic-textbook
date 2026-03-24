@@ -1,0 +1,105 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 540">
+  <style>@import url("https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700&amp;display=swap");</style>
+  <defs>
+    <linearGradient id="bgGrad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#FAFBFF"/>
+      <stop offset="100%" stop-color="#F0F4FF"/>
+    </linearGradient>
+    <linearGradient id="primaryGrad" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#4F46E5"/>
+      <stop offset="100%" stop-color="#818CF8"/>
+    </linearGradient>
+    <filter id="shadow" x="-5%" y="-5%" width="110%" height="120%">
+      <feDropShadow dx="0" dy="2" stdDeviation="4" flood-color="#000" flood-opacity="0.1"/>
+    </filter>
+    <marker id="arrowRight" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#4F46E5"/>
+    </marker>
+    <marker id="arrowDown" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#4F46E5"/>
+    </marker>
+  </defs>
+
+  <rect width="960" height="540" fill="url(#bgGrad)"/>
+  <rect x="0" y="0" width="960" height="4" fill="#4F46E5"/>
+
+  <!-- Title -->
+  <text x="480" y="45" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="24" font-weight="bold" fill="#1E293B" text-anchor="middle">퍼셉트론 학습 규칙 (Learning Rule)</text>
+  <line x1="380" y1="55" x2="580" y2="55" stroke="#818CF8" stroke-width="3"/>
+
+  <!-- Step 1: Initialize -->
+  <rect x="30" y="80" width="200" height="100" rx="12" fill="#FFFFFF" stroke="#4F46E5" stroke-width="2" filter="url(#shadow)"/>
+  <circle cx="55" cy="105" r="16" fill="#4F46E5"/>
+  <text x="55" y="110" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="14" font-weight="bold" fill="white" text-anchor="middle">1</text>
+  <text x="80" y="108" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="14" font-weight="bold" fill="#3730A3">초기화</text>
+  <text x="45" y="135" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="12" fill="#475569">w1, w2 = 랜덤</text>
+  <text x="45" y="155" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="12" fill="#475569">b = 랜덤</text>
+
+  <!-- Arrow 1->2 -->
+  <line x1="230" y1="130" x2="270" y2="130" stroke="#4F46E5" stroke-width="2" marker-end="url(#arrowRight)"/>
+
+  <!-- Step 2: Input -->
+  <rect x="280" y="80" width="200" height="100" rx="12" fill="#FFFFFF" stroke="#4F46E5" stroke-width="2" filter="url(#shadow)"/>
+  <circle cx="305" cy="105" r="16" fill="#4F46E5"/>
+  <text x="305" y="110" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="14" font-weight="bold" fill="white" text-anchor="middle">2</text>
+  <text x="330" y="108" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="14" font-weight="bold" fill="#3730A3">데이터 입력</text>
+  <text x="295" y="135" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="12" fill="#475569">x1, x2를 넣고</text>
+  <text x="295" y="155" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="12" fill="#475569">예측값 y 계산</text>
+
+  <!-- Arrow 2->3 -->
+  <line x1="480" y1="130" x2="520" y2="130" stroke="#4F46E5" stroke-width="2" marker-end="url(#arrowRight)"/>
+
+  <!-- Step 3: Compare -->
+  <rect x="530" y="80" width="200" height="100" rx="12" fill="#FFFFFF" stroke="#4F46E5" stroke-width="2" filter="url(#shadow)"/>
+  <circle cx="555" cy="105" r="16" fill="#4F46E5"/>
+  <text x="555" y="110" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="14" font-weight="bold" fill="white" text-anchor="middle">3</text>
+  <text x="580" y="108" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="14" font-weight="bold" fill="#3730A3">정답 비교</text>
+  <text x="545" y="135" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="12" fill="#475569">예측(y) vs 정답(t)</text>
+  <text x="545" y="155" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="12" fill="#475569">맞았나? 틀렸나?</text>
+
+  <!-- Arrow 3 down split -->
+  <line x1="580" y1="180" x2="580" y2="210" stroke="#4F46E5" stroke-width="2"/>
+
+  <!-- Branch: Correct -->
+  <line x1="580" y1="210" x2="780" y2="210" stroke="#10B981" stroke-width="2"/>
+  <line x1="780" y1="210" x2="780" y2="240" stroke="#10B981" stroke-width="2" marker-end="url(#arrowDown)"/>
+  <rect x="700" y="250" width="220" height="80" rx="12" fill="#D1FAE5" stroke="#10B981" stroke-width="2" filter="url(#shadow)"/>
+  <text x="810" y="280" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="15" font-weight="bold" fill="#10B981" text-anchor="middle">맞음!</text>
+  <text x="810" y="305" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="13" fill="#475569" text-anchor="middle">가중치 그대로 유지</text>
+  <text x="770" y="222" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="11" fill="#10B981" font-weight="bold">y = t</text>
+
+  <!-- Branch: Wrong -->
+  <line x1="580" y1="210" x2="380" y2="210" stroke="#EF4444" stroke-width="2"/>
+  <line x1="380" y1="210" x2="380" y2="240" stroke="#EF4444" stroke-width="2" marker-end="url(#arrowDown)"/>
+  <rect x="260" y="250" width="240" height="80" rx="12" fill="#FEE2E2" stroke="#EF4444" stroke-width="2" filter="url(#shadow)"/>
+  <text x="380" y="280" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="15" font-weight="bold" fill="#EF4444" text-anchor="middle">틀림!</text>
+  <text x="380" y="305" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="13" fill="#475569" text-anchor="middle">가중치 수정 (정답 방향으로)</text>
+  <text x="400" y="222" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="11" fill="#EF4444" font-weight="bold">y != t</text>
+
+  <!-- Step 4: Update formula -->
+  <rect x="80" y="360" width="400" height="100" rx="12" fill="#E0E7FF" stroke="#4F46E5" stroke-width="2" filter="url(#shadow)"/>
+  <circle cx="105" cy="385" r="16" fill="#4F46E5"/>
+  <text x="105" y="390" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="14" font-weight="bold" fill="white" text-anchor="middle">4</text>
+  <text x="130" y="388" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="14" font-weight="bold" fill="#3730A3">가중치 수정 공식</text>
+  <text x="100" y="418" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="16" font-weight="bold" fill="#4F46E5" font-style="italic">w_new = w_old + (t - y) x x</text>
+  <text x="100" y="442" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="16" font-weight="bold" fill="#4F46E5" font-style="italic">b_new = b_old + (t - y)</text>
+
+  <!-- Arrow from wrong to formula -->
+  <line x1="380" y1="330" x2="280" y2="360" stroke="#EF4444" stroke-width="2" stroke-dasharray="6,3" marker-end="url(#arrowDown)"/>
+
+  <!-- Step 5: Repeat -->
+  <rect x="530" y="360" width="380" height="100" rx="12" fill="#FFFFFF" stroke="#818CF8" stroke-width="2" filter="url(#shadow)"/>
+  <circle cx="555" cy="385" r="16" fill="#818CF8"/>
+  <text x="555" y="390" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="14" font-weight="bold" fill="white" text-anchor="middle">5</text>
+  <text x="580" y="388" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="14" font-weight="bold" fill="#3730A3">반복</text>
+  <text x="545" y="418" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="13" fill="#475569">모든 데이터에 대해 2~4 반복</text>
+  <text x="545" y="442" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="13" font-weight="bold" fill="#4F46E5">전부 맞출 때까지 계속!</text>
+
+  <!-- Loop arrow from step 5 back to step 2 -->
+  <path d="M 910 410 Q 940 410 940 250 Q 940 90 480 80" stroke="#818CF8" stroke-width="2" fill="none" stroke-dasharray="8,4" marker-end="url(#arrowRight)"/>
+  <text x="945" y="260" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="11" fill="#818CF8" font-weight="bold" transform="rotate(-90 945 260)">다시 반복</text>
+
+  <!-- Key message -->
+  <rect x="150" y="485" width="660" height="45" rx="22" fill="#4F46E5" filter="url(#shadow)"/>
+  <text x="480" y="514" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="16" font-weight="bold" fill="white" text-anchor="middle">"틀리면 고치고, 맞으면 냅둔다" - 이것이 퍼셉트론 학습의 전부!</text>
+</svg>

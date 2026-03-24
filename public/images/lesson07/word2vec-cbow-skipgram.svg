@@ -1,0 +1,107 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450">
+  <style>@import url("https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700&amp;display=swap");</style>
+  <defs>
+    <linearGradient id="bg4" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#FAFBFF;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#E0E7FF;stop-opacity:1" />
+    </linearGradient>
+    <filter id="s4" x="-3%" y="-3%" width="106%" height="112%">
+      <feDropShadow dx="1" dy="2" stdDeviation="2" flood-color="#000" flood-opacity="0.08"/>
+    </filter>
+  </defs>
+  <rect width="800" height="450" fill="url(#bg4)" rx="16"/>
+
+  <text x="400" y="38" text-anchor="middle" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="22" font-weight="bold" fill="#1E293B">Word2Vec: CBOW vs Skip-gram</text>
+
+  <!-- Sentence -->
+  <rect x="100" y="55" width="600" height="35" rx="8" fill="#EEF2FF" stroke="#818CF8" stroke-width="1"/>
+  <text x="400" y="78" text-anchor="middle" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="14" fill="#475569">예시 문장: "오늘 <tspan font-weight="bold" fill="#1E293B">날씨</tspan> 정말 좋다"</text>
+
+  <!-- CBOW side -->
+  <rect x="30" y="105" width="360" height="330" rx="14" fill="white" stroke="#4F46E5" stroke-width="2" filter="url(#s4)"/>
+  <rect x="30" y="105" width="360" height="38" rx="14" fill="#4F46E5"/>
+  <text x="210" y="130" text-anchor="middle" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="16" font-weight="bold" fill="white">CBOW (주변 → 가운데)</text>
+
+  <!-- CBOW diagram -->
+  <rect x="60" y="160" width="70" height="32" rx="6" fill="#C7D2FE"/>
+  <text x="95" y="181" text-anchor="middle" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="13" fill="#3730A3">오늘</text>
+  <rect x="60" y="200" width="70" height="32" rx="6" fill="#C7D2FE"/>
+  <text x="95" y="221" text-anchor="middle" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="13" fill="#3730A3">정말</text>
+  <rect x="60" y="240" width="70" height="32" rx="6" fill="#C7D2FE"/>
+  <text x="95" y="261" text-anchor="middle" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="13" fill="#3730A3">좋다</text>
+
+  <!-- Arrows to hidden -->
+  <line x1="130" y1="176" x2="170" y2="216" stroke="#818CF8" stroke-width="1.5" marker-end="url(#a4)"/>
+  <line x1="130" y1="216" x2="170" y2="216" stroke="#818CF8" stroke-width="1.5" marker-end="url(#a4)"/>
+  <line x1="130" y1="256" x2="170" y2="216" stroke="#818CF8" stroke-width="1.5" marker-end="url(#a4)"/>
+  <defs>
+    <marker id="a4" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+      <polygon points="0 0, 8 3, 0 6" fill="#818CF8"/>
+    </marker>
+  </defs>
+
+  <!-- Hidden layer -->
+  <circle cx="195" cy="200" r="10" fill="#818CF8"/>
+  <circle cx="195" cy="220" r="10" fill="#818CF8"/>
+  <circle cx="195" cy="240" r="10" fill="#818CF8"/>
+
+  <!-- Arrow to output -->
+  <line x1="210" y1="220" x2="250" y2="220" stroke="#818CF8" stroke-width="1.5" marker-end="url(#a4)"/>
+
+  <!-- CBOW output -->
+  <rect x="260" y="204" width="80" height="32" rx="6" fill="#4F46E5"/>
+  <text x="300" y="225" text-anchor="middle" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="14" font-weight="bold" fill="white">날씨?</text>
+
+  <!-- CBOW description -->
+  <text x="210" y="300" text-anchor="middle" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="13" fill="#475569">주변 단어들을 입력으로 받아</text>
+  <text x="210" y="320" text-anchor="middle" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="13" fill="#475569">가운데 빈칸의 단어를 예측</text>
+  <rect x="80" y="340" width="260" height="35" rx="8" fill="#D1FAE5"/>
+  <text x="210" y="363" text-anchor="middle" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="13" font-weight="bold" fill="#059669">장점: 학습 속도 빠름</text>
+  <rect x="80" y="385" width="260" height="35" rx="8" fill="#FEF3C7"/>
+  <text x="210" y="408" text-anchor="middle" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="13" font-weight="bold" fill="#92400E">자주 쓰는 단어에 강함</text>
+
+  <!-- VS divider -->
+  <circle cx="400" cy="270" r="22" fill="#F59E0B"/>
+  <text x="400" y="277" text-anchor="middle" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="14" font-weight="bold" fill="white">VS</text>
+
+  <!-- Skip-gram side -->
+  <rect x="410" y="105" width="360" height="330" rx="14" fill="white" stroke="#8B5CF6" stroke-width="2" filter="url(#s4)"/>
+  <rect x="410" y="105" width="360" height="38" rx="14" fill="#8B5CF6"/>
+  <text x="590" y="130" text-anchor="middle" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="16" font-weight="bold" fill="white">Skip-gram (가운데 → 주변)</text>
+
+  <!-- Skip-gram input -->
+  <rect x="440" y="200" width="80" height="32" rx="6" fill="#8B5CF6"/>
+  <text x="480" y="221" text-anchor="middle" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="14" font-weight="bold" fill="white">날씨</text>
+
+  <!-- Hidden layer -->
+  <line x1="520" y1="216" x2="560" y2="216" stroke="#A78BFA" stroke-width="1.5" marker-end="url(#a5)"/>
+  <defs>
+    <marker id="a5" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+      <polygon points="0 0, 8 3, 0 6" fill="#A78BFA"/>
+    </marker>
+  </defs>
+  <circle cx="580" cy="200" r="10" fill="#A78BFA"/>
+  <circle cx="580" cy="220" r="10" fill="#A78BFA"/>
+  <circle cx="580" cy="240" r="10" fill="#A78BFA"/>
+
+  <!-- Arrows to outputs -->
+  <line x1="595" y1="200" x2="640" y2="176" stroke="#A78BFA" stroke-width="1.5" marker-end="url(#a5)"/>
+  <line x1="595" y1="220" x2="640" y2="216" stroke="#A78BFA" stroke-width="1.5" marker-end="url(#a5)"/>
+  <line x1="595" y1="240" x2="640" y2="256" stroke="#A78BFA" stroke-width="1.5" marker-end="url(#a5)"/>
+
+  <!-- Skip-gram outputs -->
+  <rect x="650" y="160" width="70" height="32" rx="6" fill="#EDE9FE"/>
+  <text x="685" y="181" text-anchor="middle" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="13" fill="#6D28D9">오늘?</text>
+  <rect x="650" y="200" width="70" height="32" rx="6" fill="#EDE9FE"/>
+  <text x="685" y="221" text-anchor="middle" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="13" fill="#6D28D9">정말?</text>
+  <rect x="650" y="240" width="70" height="32" rx="6" fill="#EDE9FE"/>
+  <text x="685" y="261" text-anchor="middle" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="13" fill="#6D28D9">좋다?</text>
+
+  <!-- Skip-gram description -->
+  <text x="590" y="300" text-anchor="middle" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="13" fill="#475569">가운데 단어를 입력으로 받아</text>
+  <text x="590" y="320" text-anchor="middle" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="13" fill="#475569">주변에 올 단어들을 예측</text>
+  <rect x="460" y="340" width="260" height="35" rx="8" fill="#D1FAE5"/>
+  <text x="590" y="363" text-anchor="middle" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="13" font-weight="bold" fill="#059669">장점: 드문 단어도 잘 학습</text>
+  <rect x="460" y="385" width="260" height="35" rx="8" fill="#FEF3C7"/>
+  <text x="590" y="408" text-anchor="middle" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="13" font-weight="bold" fill="#92400E">의미 관계 포착 능력 우수</text>
+</svg>

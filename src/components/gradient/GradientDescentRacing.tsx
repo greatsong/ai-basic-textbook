@@ -455,14 +455,27 @@ function TrailLine({ trail, level }: { trail: TrailPoint[]; level: number }) {
 }
 
 // Camera presets
-function CameraController({ preset }: { preset: 'birdseye' | 'ride' }) {
+function CameraController({ preset, ballX, ballZ, ballY }: { preset: 'birdseye' | 'ride'; ballX: number; ballZ: number; ballY: number }) {
   const { camera } = useThree();
+  const targetRef = useRef(new THREE.Vector3(0, 1, 0));
+
   useEffect(() => {
     if (preset === 'birdseye') {
       camera.position.set(0, 22, 16);
+      camera.lookAt(0, 1, 0);
     }
-    // ride view is handled by orbit controls following ball
   }, [preset, camera]);
+
+  useFrame(() => {
+    if (preset === 'ride') {
+      // Chase camera: follow behind and above the ball
+      const targetPos = new THREE.Vector3(ballX, ballY + 3, ballZ + 5);
+      camera.position.lerp(targetPos, 0.06);
+      targetRef.current.set(ballX, ballY, ballZ);
+      camera.lookAt(targetRef.current);
+    }
+  });
+
   return null;
 }
 
@@ -888,11 +901,11 @@ export default function GradientDescentRacing({ mode = 'initial' }: Props) {
         </div>
       </div>
 
-      {/* ─── Main content: 3D + side panel ─── */}
-      <div style={{ display: 'flex', gap: 14, flexWrap: 'wrap' }}>
+      {/* ─── Main content: 3D canvas with overlay stats ─── */}
+      <div style={{ position: 'relative' }}>
         {/* 3D Canvas */}
         <div style={{
-          flex: '1 1 480px', minHeight: 380, borderRadius: 14,
+          width: '100%', height: 360, borderRadius: 14,
           overflow: 'hidden', background: 'rgba(5,10,25,0.8)',
           border: `1px solid ${C.borderLight}`,
           cursor: clickToPlace ? 'crosshair' : 'grab',
@@ -913,10 +926,10 @@ export default function GradientDescentRacing({ mode = 'initial' }: Props) {
             gl={{ antialias: true, alpha: true, powerPreference: 'high-performance' }}
             dpr={[1, 2]}
             frameloop={visible ? 'always' : 'never'}
-            style={{ width: '100%', height: '100%', minHeight: 380 }}
+            style={{ width: '100%', height: '100%' }}
           >
             <DeltaClamp />
-            <CameraController preset={cameraPreset} />
+            <CameraController preset={cameraPreset} ballX={ball.x} ballZ={ball.z} ballY={ball.loss} />
 
             <ambientLight intensity={0.4} />
             <directionalLight position={[10, 20, 10]} intensity={0.8} color="#ffffff" />
@@ -934,93 +947,70 @@ export default function GradientDescentRacing({ mode = 'initial' }: Props) {
               maxDistance={40}
               minDistance={5}
               maxPolarAngle={Math.PI / 2.2}
-              target={[0, 1, 0]}
+              target={cameraPreset === 'ride' ? [ball.x, ball.loss, ball.z] : [0, 1, 0]}
             />
           </Canvas>
-        </div>
 
-        {/* Side panel */}
-        <div style={{ flex: '0 0 270px', minWidth: 240 }}>
-          {/* Stats */}
+          {/* Overlay stats (top-left of 3D canvas) */}
           <div style={{
-            padding: '14px', borderRadius: 14,
-            background: C.card, border: `1px solid ${C.borderLight}`,
-            marginBottom: 10,
+            position: 'absolute', top: 10, left: 10, zIndex: 5,
+            display: 'flex', gap: 8, pointerEvents: 'none',
           }}>
-            <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: 6 }}>
-              <div>
-                <div style={{ color: C.dim, fontSize: 10, fontWeight: 600, letterSpacing: '0.04em' }}>손실값</div>
-                <div style={{
-                  fontFamily: mono, fontSize: 22, fontWeight: 700,
-                  color: ball.loss < globalMin.loss + 0.5 ? C.emerald : ball.loss < globalMin.loss + 3 ? C.cyan : C.amber,
-                }}>
-                  {ball.loss.toFixed(3)}
-                </div>
-              </div>
-              <div style={{ textAlign: 'right' }}>
-                <div style={{ color: C.dim, fontSize: 10, fontWeight: 600, letterSpacing: '0.04em' }}>스텝</div>
-                <div style={{ fontFamily: mono, fontSize: 22, fontWeight: 700, color: C.text }}>
-                  {ball.step}
-                </div>
+            <div style={{
+              padding: '8px 14px', borderRadius: 10,
+              background: 'rgba(15,23,42,0.85)', backdropFilter: 'blur(8px)',
+              border: `1px solid ${C.borderLight}`,
+            }}>
+              <div style={{ color: C.dim, fontSize: 9, fontWeight: 600 }}>손실값</div>
+              <div style={{
+                fontFamily: mono, fontSize: 18, fontWeight: 700,
+                color: ball.loss < globalMin.loss + 0.5 ? C.emerald : ball.loss < globalMin.loss + 3 ? C.cyan : C.amber,
+              }}>
+                {ball.loss.toFixed(3)}
               </div>
             </div>
-            <div style={{ color: C.dim, fontSize: 10, marginTop: 4 }}>
-              목표 손실: <span style={{ color: C.emerald, fontFamily: mono }}>{globalMin.loss.toFixed(3)}</span>
-              {' '}| 위치: ({globalMin.x.toFixed(1)}, {globalMin.z.toFixed(1)})
+            <div style={{
+              padding: '8px 14px', borderRadius: 10,
+              background: 'rgba(15,23,42,0.85)', backdropFilter: 'blur(8px)',
+              border: `1px solid ${C.borderLight}`,
+            }}>
+              <div style={{ color: C.dim, fontSize: 9, fontWeight: 600 }}>스텝</div>
+              <div style={{ fontFamily: mono, fontSize: 18, fontWeight: 700, color: C.text }}>
+                {ball.step}
+              </div>
+            </div>
+            <div style={{
+              padding: '8px 14px', borderRadius: 10,
+              background: 'rgba(15,23,42,0.85)', backdropFilter: 'blur(8px)',
+              border: `1px solid ${C.borderLight}`,
+            }}>
+              <div style={{ color: C.dim, fontSize: 9, fontWeight: 600 }}>목표</div>
+              <div style={{ fontFamily: mono, fontSize: 12, fontWeight: 600, color: C.emerald, marginTop: 2 }}>
+                {globalMin.loss.toFixed(3)}
+              </div>
             </div>
           </div>
 
-          {/* Loss graph */}
+          {/* Overlay mini loss graph (top-right) */}
           <div style={{
-            padding: '10px 8px 6px', borderRadius: 14,
-            background: C.card, border: `1px solid ${C.borderLight}`,
-            marginBottom: 10,
+            position: 'absolute', top: 10, right: 10, zIndex: 5,
+            width: 180, padding: '6px', borderRadius: 10,
+            background: 'rgba(15,23,42,0.85)', backdropFilter: 'blur(8px)',
+            border: `1px solid ${C.borderLight}`, pointerEvents: 'none',
           }}>
-            <div style={{ color: C.dim, fontSize: 10, fontWeight: 600, letterSpacing: '0.04em', marginBottom: 4, paddingLeft: 4 }}>
-              손실 그래프
-            </div>
+            <div style={{ color: C.dim, fontSize: 9, fontWeight: 600, marginBottom: 2, paddingLeft: 2 }}>손실 그래프</div>
             <LossGraph history={ball.lossHistory} maxSteps={ball.step} />
-          </div>
-
-          {/* Gradient info */}
-          <div style={{
-            padding: '10px 12px', borderRadius: 14,
-            background: C.card, border: `1px solid ${C.borderLight}`,
-          }}>
-            <div style={{ color: C.dim, fontSize: 10, fontWeight: 600, letterSpacing: '0.04em', marginBottom: 6 }}>
-              벡터 정보
-            </div>
-            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 6 }}>
-              <div style={{
-                padding: '6px 8px', borderRadius: 8, background: 'rgba(239,68,68,0.08)',
-                border: '1px solid rgba(239,68,68,0.15)',
-              }}>
-                <div style={{ color: C.rose, fontSize: 9, fontWeight: 600 }}>기울기(Gradient)</div>
-                <div style={{ fontFamily: mono, fontSize: 11, color: C.text, marginTop: 2 }}>
-                  ({ball.gradX.toFixed(2)}, {ball.gradZ.toFixed(2)})
-                </div>
-              </div>
-              <div style={{
-                padding: '6px 8px', borderRadius: 8, background: 'rgba(16,185,129,0.08)',
-                border: '1px solid rgba(16,185,129,0.15)',
-              }}>
-                <div style={{ color: C.emerald, fontSize: 9, fontWeight: 600 }}>속도(Velocity)</div>
-                <div style={{ fontFamily: mono, fontSize: 11, color: C.text, marginTop: 2 }}>
-                  ({ball.vx.toFixed(2)}, {ball.vz.toFixed(2)})
-                </div>
-              </div>
-            </div>
           </div>
         </div>
       </div>
 
-      {/* ─── Controls ─── */}
+      {/* ─── Compact Controls ─── */}
       <div style={{
-        marginTop: 14, padding: '16px', borderRadius: 14,
+        marginTop: 10, padding: '12px 14px', borderRadius: 14,
         background: C.card, border: `1px solid ${C.borderLight}`,
       }}>
         {/* Sliders row */}
-        <div style={{ display: 'flex', gap: 20, flexWrap: 'wrap', marginBottom: 14 }}>
+        <div style={{ display: 'flex', gap: 16, flexWrap: 'wrap', marginBottom: 10 }}>
           {/* Learning rate slider */}
           <div style={{ flex: '1 1 200px' }}>
             <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 4 }}>

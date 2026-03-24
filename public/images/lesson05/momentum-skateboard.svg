@@ -1,0 +1,88 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450">
+  <style>@import url("https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700&amp;display=swap");</style>
+  <defs>
+    <linearGradient id="bg2" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#F8FAFC"/>
+      <stop offset="100%" stop-color="#E2E8F0"/>
+    </linearGradient>
+    <linearGradient id="pipeGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#94A3B8"/>
+      <stop offset="100%" stop-color="#CBD5E1"/>
+    </linearGradient>
+    <filter id="sh2">
+      <feDropShadow dx="0" dy="2" stdDeviation="3" flood-opacity="0.12"/>
+    </filter>
+    <marker id="moveArrow" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+      <polygon points="0 0, 8 3, 0 6" fill="#3B82F6"/>
+    </marker>
+  </defs>
+
+  <rect width="800" height="450" fill="url(#bg2)" rx="12"/>
+
+  <!-- Title -->
+  <text x="400" y="35" text-anchor="middle" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="20" font-weight="bold" fill="#1E293B">모멘텀의 직관: 스케이트보드와 반파이프</text>
+
+  <!-- LEFT: No momentum -->
+  <text x="200" y="68" text-anchor="middle" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="16" font-weight="bold" fill="#EF4444">모멘텀 = 0 (관성 없음)</text>
+
+  <!-- U-shaped half-pipe left -->
+  <path d="M 40,300 Q 40,200 80,150 Q 120,100 200,85 Q 280,100 320,150 Q 360,200 360,300" fill="none" stroke="#94A3B8" stroke-width="6" stroke-linecap="round"/>
+  <!-- Ground -->
+  <line x1="40" y1="300" x2="360" y2="300" stroke="#CBD5E1" stroke-width="2"/>
+
+  <!-- Ball stuck at local minimum -->
+  <circle cx="200" cy="82" r="10" fill="#EF4444" stroke="#FFF" stroke-width="2"/>
+  <!-- X mark -->
+  <line x1="194" y1="76" x2="206" y2="88" stroke="#FFF" stroke-width="2"/>
+  <line x1="206" y1="76" x2="194" y2="88" stroke="#FFF" stroke-width="2"/>
+
+  <!-- Small bump in the pipe (local minimum) -->
+  <path d="M 130,160 Q 150,180 170,170 Q 190,160 200,155 Q 210,160 230,170 Q 250,180 270,160" fill="none" stroke="#F59E0B" stroke-width="2" stroke-dasharray="4,3"/>
+  <text x="200" y="200" text-anchor="middle" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="11" fill="#F59E0B" font-weight="bold">로컬 미니마</text>
+
+  <!-- Stuck label -->
+  <rect x="130" y="45" width="140" height="30" rx="6" fill="#FEE2E2" stroke="#EF4444" stroke-width="1"/>
+  <text x="200" y="65" text-anchor="middle" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="12" font-weight="bold" fill="#EF4444">여기서 멈춤! (갇힘)</text>
+
+  <!-- RIGHT: With momentum -->
+  <text x="600" y="68" text-anchor="middle" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="16" font-weight="bold" fill="#10B981">모멘텀 > 0 (관성 있음)</text>
+
+  <!-- U-shaped half-pipe right -->
+  <path d="M 440,300 Q 440,200 480,150 Q 520,100 600,85 Q 680,100 720,150 Q 760,200 760,300" fill="none" stroke="#94A3B8" stroke-width="6" stroke-linecap="round"/>
+  <line x1="440" y1="300" x2="760" y2="300" stroke="#CBD5E1" stroke-width="2"/>
+
+  <!-- Ball rolling with momentum - shown passing over bump -->
+  <circle cx="540" cy="125" r="10" fill="#10B981" stroke="#FFF" stroke-width="2"/>
+
+  <!-- Motion trail -->
+  <circle cx="500" cy="145" r="6" fill="#10B981" opacity="0.3"/>
+  <circle cx="520" cy="135" r="7" fill="#10B981" opacity="0.5"/>
+
+  <!-- Arrow showing momentum carrying it over -->
+  <line x1="545" y1="120" x2="610" y2="90" stroke="#3B82F6" stroke-width="3" marker-end="url(#moveArrow)"/>
+
+  <!-- Small bump in right pipe -->
+  <path d="M 530,160 Q 550,180 570,170 Q 590,160 600,155 Q 610,160 630,170 Q 650,180 670,160" fill="none" stroke="#F59E0B" stroke-width="2" stroke-dasharray="4,3"/>
+  <text x="600" y="200" text-anchor="middle" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="11" fill="#F59E0B" font-weight="bold">로컬 미니마</text>
+
+  <!-- Success label -->
+  <rect x="530" y="45" width="140" height="30" rx="6" fill="#D1FAE5" stroke="#10B981" stroke-width="1"/>
+  <text x="600" y="65" text-anchor="middle" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="12" font-weight="bold" fill="#10B981">관성으로 넘어감!</text>
+
+  <!-- Deeper valley at bottom right -->
+  <circle cx="680" cy="155" r="8" fill="#3B82F6" opacity="0.6"/>
+  <text x="710" y="170" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="10" fill="#3B82F6" font-weight="bold">글로벌 미니마</text>
+
+  <!-- Bottom comparison boxes -->
+  <rect x="40" y="320" width="360" height="110" rx="10" fill="#FEF2F2" stroke="#EF4444" stroke-width="1.5" filter="url(#sh2)"/>
+  <text x="220" y="348" text-anchor="middle" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="14" font-weight="bold" fill="#EF4444">모멘텀 없이 (일반 경사하강법)</text>
+  <text x="220" y="370" text-anchor="middle" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="12" fill="#64748B">현재 기울기만 보고 이동</text>
+  <text x="220" y="390" text-anchor="middle" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="12" fill="#64748B">작은 언덕(로컬 미니마)에 갇히기 쉬움</text>
+  <text x="220" y="415" text-anchor="middle" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="13" font-weight="bold" fill="#EF4444">결과: 가짜 바닥에서 멈춤</text>
+
+  <rect x="440" y="320" width="320" height="110" rx="10" fill="#ECFDF5" stroke="#10B981" stroke-width="1.5" filter="url(#sh2)"/>
+  <text x="600" y="348" text-anchor="middle" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="14" font-weight="bold" fill="#10B981">모멘텀 있을 때</text>
+  <text x="600" y="370" text-anchor="middle" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="12" fill="#64748B">이전 이동 방향의 관성을 유지</text>
+  <text x="600" y="390" text-anchor="middle" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="12" fill="#64748B">굴러온 힘으로 작은 언덕을 넘어감</text>
+  <text x="600" y="415" text-anchor="middle" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="13" font-weight="bold" fill="#10B981">결과: 진짜 바닥까지 도달!</text>
+</svg>

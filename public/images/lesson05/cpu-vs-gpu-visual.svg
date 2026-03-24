@@ -1,0 +1,126 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 420">
+  <style>@import url("https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700&amp;display=swap");</style>
+  <defs>
+    <linearGradient id="bg4" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#F8FAFC"/>
+      <stop offset="100%" stop-color="#F1F5F9"/>
+    </linearGradient>
+    <filter id="sh4">
+      <feDropShadow dx="0" dy="2" stdDeviation="3" flood-opacity="0.1"/>
+    </filter>
+  </defs>
+
+  <rect width="800" height="420" fill="url(#bg4)" rx="12"/>
+  <text x="400" y="35" text-anchor="middle" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="20" font-weight="bold" fill="#1E293B">CPU vs GPU: 왜 AI 학습에 GPU가 필요한가?</text>
+
+  <!-- CPU side -->
+  <rect x="30" y="55" width="360" height="340" rx="14" fill="white" stroke="#3B82F6" stroke-width="2" filter="url(#sh4)"/>
+  <rect x="30" y="55" width="360" height="40" rx="14" fill="#3B82F6"/>
+  <rect x="30" y="82" width="360" height="13" fill="#3B82F6"/>
+  <text x="210" y="82" text-anchor="middle" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="18" font-weight="bold" fill="white">CPU (중앙처리장치)</text>
+
+  <!-- CPU - One big brain -->
+  <text x="210" y="120" text-anchor="middle" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="14" fill="#64748B">수학 천재 1명</text>
+
+  <!-- Big person icon for CPU -->
+  <circle cx="210" cy="180" r="30" fill="#DBEAFE" stroke="#3B82F6" stroke-width="2"/>
+  <circle cx="210" cy="155" r="18" fill="#DBEAFE" stroke="#3B82F6" stroke-width="2"/>
+  <!-- Brain icon -->
+  <text x="210" y="188" text-anchor="middle" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="28">🧠</text>
+
+  <!-- CPU features -->
+  <text x="210" y="235" text-anchor="middle" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="13" font-weight="bold" fill="#3B82F6">코어 4~16개</text>
+  <text x="210" y="258" text-anchor="middle" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="12" fill="#475569">복잡한 연산 순서대로 처리</text>
+  <text x="210" y="278" text-anchor="middle" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="12" fill="#475569">한 번에 한 문제씩 빠르게</text>
+
+  <!-- CPU task visualization -->
+  <rect x="60" y="295" width="300" height="35" rx="6" fill="#EFF6FF"/>
+  <rect x="65" y="300" width="50" height="25" rx="4" fill="#3B82F6"/>
+  <text x="90" y="317" text-anchor="middle" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="10" fill="white" font-weight="bold">w₁</text>
+  <rect x="120" y="300" width="50" height="25" rx="4" fill="#93C5FD"/>
+  <text x="145" y="317" text-anchor="middle" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="10" fill="#1E40AF">w₂</text>
+  <rect x="175" y="300" width="50" height="25" rx="4" fill="#BFDBFE"/>
+  <text x="200" y="317" text-anchor="middle" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="10" fill="#1E40AF">w₃</text>
+  <text x="250" y="317" text-anchor="middle" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="14" fill="#94A3B8">...</text>
+  <text x="210" y="355" text-anchor="middle" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="11" fill="#EF4444">순서대로 하나씩 → 느리다!</text>
+
+  <!-- VS -->
+  <circle cx="400" cy="220" r="22" fill="#F1F5F9" stroke="#CBD5E1" stroke-width="2"/>
+  <text x="400" y="226" text-anchor="middle" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="14" font-weight="bold" fill="#64748B">VS</text>
+
+  <!-- GPU side -->
+  <rect x="410" y="55" width="360" height="340" rx="14" fill="white" stroke="#10B981" stroke-width="2" filter="url(#sh4)"/>
+  <rect x="410" y="55" width="360" height="40" rx="14" fill="#10B981"/>
+  <rect x="410" y="82" width="360" height="13" fill="#10B981"/>
+  <text x="590" y="82" text-anchor="middle" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="18" font-weight="bold" fill="white">GPU (그래픽처리장치)</text>
+
+  <!-- GPU - Many small workers -->
+  <text x="590" y="120" text-anchor="middle" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="14" fill="#64748B">산수를 아는 학생 수천 명</text>
+
+  <!-- Grid of small people for GPU -->
+  <g transform="translate(490, 135)">
+    <!-- Row 1 -->
+    <circle cx="0" cy="0" r="8" fill="#D1FAE5" stroke="#10B981" stroke-width="1"/>
+    <circle cx="25" cy="0" r="8" fill="#D1FAE5" stroke="#10B981" stroke-width="1"/>
+    <circle cx="50" cy="0" r="8" fill="#D1FAE5" stroke="#10B981" stroke-width="1"/>
+    <circle cx="75" cy="0" r="8" fill="#D1FAE5" stroke="#10B981" stroke-width="1"/>
+    <circle cx="100" cy="0" r="8" fill="#D1FAE5" stroke="#10B981" stroke-width="1"/>
+    <circle cx="125" cy="0" r="8" fill="#D1FAE5" stroke="#10B981" stroke-width="1"/>
+    <circle cx="150" cy="0" r="8" fill="#D1FAE5" stroke="#10B981" stroke-width="1"/>
+    <circle cx="175" cy="0" r="8" fill="#D1FAE5" stroke="#10B981" stroke-width="1"/>
+    <!-- Row 2 -->
+    <circle cx="0" cy="22" r="8" fill="#D1FAE5" stroke="#10B981" stroke-width="1"/>
+    <circle cx="25" cy="22" r="8" fill="#D1FAE5" stroke="#10B981" stroke-width="1"/>
+    <circle cx="50" cy="22" r="8" fill="#D1FAE5" stroke="#10B981" stroke-width="1"/>
+    <circle cx="75" cy="22" r="8" fill="#D1FAE5" stroke="#10B981" stroke-width="1"/>
+    <circle cx="100" cy="22" r="8" fill="#D1FAE5" stroke="#10B981" stroke-width="1"/>
+    <circle cx="125" cy="22" r="8" fill="#D1FAE5" stroke="#10B981" stroke-width="1"/>
+    <circle cx="150" cy="22" r="8" fill="#D1FAE5" stroke="#10B981" stroke-width="1"/>
+    <circle cx="175" cy="22" r="8" fill="#D1FAE5" stroke="#10B981" stroke-width="1"/>
+    <!-- Row 3 -->
+    <circle cx="0" cy="44" r="8" fill="#D1FAE5" stroke="#10B981" stroke-width="1"/>
+    <circle cx="25" cy="44" r="8" fill="#D1FAE5" stroke="#10B981" stroke-width="1"/>
+    <circle cx="50" cy="44" r="8" fill="#D1FAE5" stroke="#10B981" stroke-width="1"/>
+    <circle cx="75" cy="44" r="8" fill="#D1FAE5" stroke="#10B981" stroke-width="1"/>
+    <circle cx="100" cy="44" r="8" fill="#D1FAE5" stroke="#10B981" stroke-width="1"/>
+    <circle cx="125" cy="44" r="8" fill="#D1FAE5" stroke="#10B981" stroke-width="1"/>
+    <circle cx="150" cy="44" r="8" fill="#D1FAE5" stroke="#10B981" stroke-width="1"/>
+    <circle cx="175" cy="44" r="8" fill="#D1FAE5" stroke="#10B981" stroke-width="1"/>
+    <!-- Row 4 -->
+    <circle cx="0" cy="66" r="8" fill="#D1FAE5" stroke="#10B981" stroke-width="1"/>
+    <circle cx="25" cy="66" r="8" fill="#D1FAE5" stroke="#10B981" stroke-width="1"/>
+    <circle cx="50" cy="66" r="8" fill="#D1FAE5" stroke="#10B981" stroke-width="1"/>
+    <circle cx="75" cy="66" r="8" fill="#D1FAE5" stroke="#10B981" stroke-width="1"/>
+    <circle cx="100" cy="66" r="8" fill="#D1FAE5" stroke="#10B981" stroke-width="1"/>
+    <circle cx="125" cy="66" r="8" fill="#D1FAE5" stroke="#10B981" stroke-width="1"/>
+    <circle cx="150" cy="66" r="8" fill="#D1FAE5" stroke="#10B981" stroke-width="1"/>
+    <circle cx="175" cy="66" r="8" fill="#D1FAE5" stroke="#10B981" stroke-width="1"/>
+  </g>
+
+  <!-- GPU features -->
+  <text x="590" y="240" text-anchor="middle" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="13" font-weight="bold" fill="#10B981">코어 수천~수만 개</text>
+  <text x="590" y="263" text-anchor="middle" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="12" fill="#475569">단순한 연산을 동시에 처리</text>
+  <text x="590" y="283" text-anchor="middle" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="12" fill="#475569">수천 개 문제를 한꺼번에</text>
+
+  <!-- GPU task visualization - all at once -->
+  <rect x="440" y="295" width="300" height="35" rx="6" fill="#ECFDF5"/>
+  <rect x="445" y="300" width="36" height="25" rx="4" fill="#10B981"/>
+  <text x="463" y="317" text-anchor="middle" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="9" fill="white" font-weight="bold">w₁</text>
+  <rect x="484" y="300" width="36" height="25" rx="4" fill="#10B981"/>
+  <text x="502" y="317" text-anchor="middle" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="9" fill="white" font-weight="bold">w₂</text>
+  <rect x="523" y="300" width="36" height="25" rx="4" fill="#10B981"/>
+  <text x="541" y="317" text-anchor="middle" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="9" fill="white" font-weight="bold">w₃</text>
+  <rect x="562" y="300" width="36" height="25" rx="4" fill="#10B981"/>
+  <text x="580" y="317" text-anchor="middle" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="9" fill="white" font-weight="bold">w₄</text>
+  <rect x="601" y="300" width="36" height="25" rx="4" fill="#10B981"/>
+  <text x="619" y="317" text-anchor="middle" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="9" fill="white" font-weight="bold">w₅</text>
+  <rect x="640" y="300" width="36" height="25" rx="4" fill="#10B981"/>
+  <text x="658" y="317" text-anchor="middle" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="9" fill="white" font-weight="bold">w₆</text>
+  <rect x="679" y="300" width="36" height="25" rx="4" fill="#10B981"/>
+  <text x="697" y="317" text-anchor="middle" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="9" fill="white" font-weight="bold">...</text>
+  <text x="590" y="355" text-anchor="middle" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="11" fill="#10B981" font-weight="bold">동시에 전부! → 빠르다!</text>
+
+  <!-- Bottom summary -->
+  <rect x="150" y="395" width="500" height="20" rx="4" fill="#F1F5F9"/>
+  <text x="400" y="410" text-anchor="middle" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="12" font-weight="bold" fill="#475569">경사하강법 = 모든 가중치에 같은 계산 반복 → GPU에 딱 맞는 작업!</text>
+</svg>

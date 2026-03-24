@@ -1,0 +1,101 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450">
+  <style>@import url("https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700&amp;display=swap");</style>
+  <defs>
+    <linearGradient id="bgG" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#FAFBFF;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#F0F4FF;stop-opacity:1" />
+    </linearGradient>
+    <filter id="sh" x="-3%" y="-3%" width="106%" height="112%">
+      <feDropShadow dx="1" dy="2" stdDeviation="3" flood-color="#000" flood-opacity="0.1"/>
+    </filter>
+  </defs>
+  <rect width="800" height="450" fill="url(#bgG)" rx="16"/>
+
+  <text x="400" y="38" text-anchor="middle" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="22" font-weight="bold" fill="#1E293B">NLP 파이프라인: 문장이 AI를 통과하는 과정</text>
+
+  <!-- Step 1: Input -->
+  <rect x="30" y="70" width="140" height="100" rx="14" fill="#FFFFFF" stroke="#4F46E5" stroke-width="2" filter="url(#sh)"/>
+  <text x="100" y="100" text-anchor="middle" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="12" font-weight="bold" fill="#4F46E5">입력 문장</text>
+  <text x="100" y="125" text-anchor="middle" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="16" fill="#1E293B">"오늘 날씨</text>
+  <text x="100" y="148" text-anchor="middle" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="16" fill="#1E293B">정말 좋다"</text>
+
+  <!-- Arrow 1 -->
+  <polygon points="178,120 200,110 200,130" fill="#818CF8"/>
+
+  <!-- Step 2: Tokenization -->
+  <rect x="208" y="70" width="140" height="100" rx="14" fill="#EEF2FF" stroke="#4F46E5" stroke-width="2" filter="url(#sh)"/>
+  <text x="278" y="95" text-anchor="middle" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="12" font-weight="bold" fill="#4F46E5">토큰화</text>
+  <rect x="222" y="105" width="45" height="24" rx="4" fill="#C7D2FE"/>
+  <text x="244" y="122" text-anchor="middle" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="12" fill="#3730A3">오늘</text>
+  <rect x="273" y="105" width="45" height="24" rx="4" fill="#C7D2FE"/>
+  <text x="295" y="122" text-anchor="middle" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="12" fill="#3730A3">날씨</text>
+  <rect x="222" y="135" width="45" height="24" rx="4" fill="#C7D2FE"/>
+  <text x="244" y="152" text-anchor="middle" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="12" fill="#3730A3">정말</text>
+  <rect x="273" y="135" width="45" height="24" rx="4" fill="#C7D2FE"/>
+  <text x="295" y="152" text-anchor="middle" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="12" fill="#3730A3">좋다</text>
+
+  <!-- Arrow 2 -->
+  <polygon points="356,120 378,110 378,130" fill="#818CF8"/>
+
+  <!-- Step 3: Embedding -->
+  <rect x="386" y="70" width="140" height="100" rx="14" fill="#E0E7FF" stroke="#4F46E5" stroke-width="2" filter="url(#sh)"/>
+  <text x="456" y="95" text-anchor="middle" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="12" font-weight="bold" fill="#4F46E5">임베딩</text>
+  <text x="456" y="118" text-anchor="middle" font-family="monospace" font-size="11" fill="#3730A3">[0.3, 0.7, ...]</text>
+  <text x="456" y="135" text-anchor="middle" font-family="monospace" font-size="11" fill="#3730A3">[0.8, 0.2, ...]</text>
+  <text x="456" y="152" text-anchor="middle" font-family="monospace" font-size="11" fill="#3730A3">[0.5, 0.9, ...]</text>
+
+  <!-- Arrow 3 -->
+  <polygon points="534,120 556,110 556,130" fill="#818CF8"/>
+
+  <!-- Step 4: Neural Network -->
+  <rect x="564" y="70" width="140" height="100" rx="14" fill="#4F46E5" filter="url(#sh)"/>
+  <text x="634" y="95" text-anchor="middle" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="12" font-weight="bold" fill="white">신경망 처리</text>
+  <!-- Mini network -->
+  <circle cx="594" cy="120" r="6" fill="#818CF8"/>
+  <circle cx="594" cy="140" r="6" fill="#818CF8"/>
+  <circle cx="634" cy="115" r="6" fill="#C7D2FE"/>
+  <circle cx="634" cy="130" r="6" fill="#C7D2FE"/>
+  <circle cx="634" cy="145" r="6" fill="#C7D2FE"/>
+  <circle cx="674" cy="125" r="6" fill="#818CF8"/>
+  <circle cx="674" cy="140" r="6" fill="#818CF8"/>
+  <line x1="600" y1="120" x2="628" y2="115" stroke="#C7D2FE" stroke-width="1"/>
+  <line x1="600" y1="120" x2="628" y2="130" stroke="#C7D2FE" stroke-width="1"/>
+  <line x1="600" y1="140" x2="628" y2="130" stroke="#C7D2FE" stroke-width="1"/>
+  <line x1="600" y1="140" x2="628" y2="145" stroke="#C7D2FE" stroke-width="1"/>
+  <line x1="640" y1="115" x2="668" y2="125" stroke="#C7D2FE" stroke-width="1"/>
+  <line x1="640" y1="130" x2="668" y2="125" stroke="#C7D2FE" stroke-width="1"/>
+  <line x1="640" y1="145" x2="668" y2="140" stroke="#C7D2FE" stroke-width="1"/>
+
+  <!-- Arrow 4 (down) -->
+  <polygon points="634,178 624,200 644,200" fill="#818CF8"/>
+
+  <!-- Step 5: Output -->
+  <rect x="564" y="210" width="210" height="70" rx="14" fill="#D1FAE5" stroke="#10B981" stroke-width="2" filter="url(#sh)"/>
+  <text x="669" y="240" text-anchor="middle" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="12" font-weight="bold" fill="#10B981">출력</text>
+  <text x="669" y="263" text-anchor="middle" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="16" fill="#1E293B">"맑음" (감정: 긍정)</text>
+
+  <!-- Bottom: Detail boxes -->
+  <rect x="30" y="300" width="230" height="130" rx="12" fill="white" stroke="#C7D2FE" stroke-width="1.5" filter="url(#sh)"/>
+  <rect x="30" y="300" width="230" height="30" rx="12" fill="#4F46E5"/>
+  <text x="145" y="320" text-anchor="middle" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="13" font-weight="bold" fill="white">토큰화 (7차시)</text>
+  <text x="50" y="348" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="12" fill="#475569">문장을 작은 조각으로 분해</text>
+  <text x="50" y="368" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="12" fill="#475569">BPE 알고리즘 사용</text>
+  <text x="50" y="388" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="12" fill="#475569">한국어: 더 많은 토큰 필요</text>
+  <text x="50" y="413" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="11" fill="#4F46E5" font-weight="bold">핵심: 기계가 읽을 수 있게!</text>
+
+  <rect x="285" y="300" width="230" height="130" rx="12" fill="white" stroke="#C7D2FE" stroke-width="1.5" filter="url(#sh)"/>
+  <rect x="285" y="300" width="230" height="30" rx="12" fill="#4F46E5"/>
+  <text x="400" y="320" text-anchor="middle" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="13" font-weight="bold" fill="white">임베딩 (7차시)</text>
+  <text x="305" y="348" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="12" fill="#475569">토큰을 숫자 벡터로 변환</text>
+  <text x="305" y="368" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="12" fill="#475569">의미가 담긴 좌표</text>
+  <text x="305" y="388" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="12" fill="#475569">비슷한 단어 = 가까운 벡터</text>
+  <text x="305" y="413" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="11" fill="#4F46E5" font-weight="bold">핵심: 의미를 숫자로!</text>
+
+  <rect x="540" y="300" width="230" height="130" rx="12" fill="white" stroke="#C7D2FE" stroke-width="1.5" filter="url(#sh)"/>
+  <rect x="540" y="300" width="230" height="30" rx="12" fill="#4F46E5"/>
+  <text x="655" y="320" text-anchor="middle" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="13" font-weight="bold" fill="white">신경망 (2~6차시)</text>
+  <text x="560" y="348" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="12" fill="#475569">벡터를 입력으로 계산</text>
+  <text x="560" y="368" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="12" fill="#475569">손실함수로 오차 측정</text>
+  <text x="560" y="388" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="12" fill="#475569">역전파 + 경사하강법</text>
+  <text x="560" y="413" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="11" fill="#4F46E5" font-weight="bold">핵심: 학습으로 정확해짐!</text>
+</svg>

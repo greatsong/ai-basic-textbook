@@ -1,0 +1,87 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 550">
+  <style>@import url("https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700&amp;display=swap");</style>
+  <defs>
+    <filter id="shadow" x="-5%" y="-5%" width="115%" height="115%">
+      <feDropShadow dx="1" dy="2" stdDeviation="3" flood-color="#000" flood-opacity="0.08"/>
+    </filter>
+  </defs>
+  <!-- Background -->
+  <rect width="900" height="550" rx="16" fill="#FAFBFF"/>
+  <text x="450" y="40" text-anchor="middle" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="22" font-weight="bold" fill="#1E293B">AI 대체 vs AI 협업</text>
+
+  <!-- Left panel: Replace -->
+  <rect x="30" y="60" width="400" height="420" rx="16" fill="#FEE2E2" filter="url(#shadow)"/>
+  <rect x="30" y="60" width="400" height="50" rx="16" fill="#EF4444"/>
+  <rect x="30" y="94" width="400" height="16" fill="#EF4444"/>
+  <text x="230" y="92" text-anchor="middle" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="18" font-weight="bold" fill="#fff">AI가 대체할 가능성 높은 작업</text>
+
+  <!-- Replace items -->
+  <rect x="55" y="130" width="350" height="48" rx="8" fill="#fff" filter="url(#shadow)"/>
+  <circle cx="82" cy="154" r="14" fill="#FEE2E2"/>
+  <text x="82" y="159" text-anchor="middle" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="16" fill="#EF4444">1</text>
+  <text x="110" y="150" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="14" font-weight="bold" fill="#1E293B">단순 데이터 입력</text>
+  <text x="110" y="168" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="11" fill="#475569">반복적, 규칙적 패턴</text>
+
+  <rect x="55" y="190" width="350" height="48" rx="8" fill="#fff" filter="url(#shadow)"/>
+  <circle cx="82" cy="214" r="14" fill="#FEE2E2"/>
+  <text x="82" y="219" text-anchor="middle" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="16" fill="#EF4444">2</text>
+  <text x="110" y="210" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="14" font-weight="bold" fill="#1E293B">정형화된 보고서 작성</text>
+  <text x="110" y="228" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="11" fill="#475569">템플릿 기반 문서 작성</text>
+
+  <rect x="55" y="250" width="350" height="48" rx="8" fill="#fff" filter="url(#shadow)"/>
+  <circle cx="82" cy="274" r="14" fill="#FEE2E2"/>
+  <text x="82" y="279" text-anchor="middle" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="16" fill="#EF4444">3</text>
+  <text x="110" y="270" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="14" font-weight="bold" fill="#1E293B">반복 패턴 검사</text>
+  <text x="110" y="288" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="11" fill="#475569">불량 검출, 이상 탐지</text>
+
+  <!-- Common trait -->
+  <rect x="55" y="320" width="350" height="50" rx="10" fill="#EF4444" opacity="0.12"/>
+  <text x="230" y="342" text-anchor="middle" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="14" font-weight="bold" fill="#EF4444">공통점: 명확한 규칙과</text>
+  <text x="230" y="360" text-anchor="middle" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="14" font-weight="bold" fill="#EF4444">패턴이 존재하는 작업</text>
+
+  <!-- Arrow down -->
+  <polygon points="215,385 230,410 245,385" fill="#EF4444" opacity="0.5"/>
+  <text x="230" y="445" text-anchor="middle" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="13" fill="#EF4444">자동화 가능</text>
+
+  <!-- Center VS -->
+  <circle cx="450" cy="270" r="32" fill="#4F46E5" filter="url(#shadow)"/>
+  <text x="450" y="276" text-anchor="middle" font-family="Georgia, serif" font-size="22" font-weight="bold" fill="#fff">VS</text>
+
+  <!-- Right panel: Collaborate -->
+  <rect x="470" y="60" width="400" height="420" rx="16" fill="#D1FAE5" filter="url(#shadow)"/>
+  <rect x="470" y="60" width="400" height="50" rx="16" fill="#10B981"/>
+  <rect x="470" y="94" width="400" height="16" fill="#10B981"/>
+  <text x="670" y="92" text-anchor="middle" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="18" font-weight="bold" fill="#fff">AI와 협업이 필요한 영역</text>
+
+  <!-- Collaborate items -->
+  <rect x="495" y="130" width="350" height="48" rx="8" fill="#fff" filter="url(#shadow)"/>
+  <circle cx="522" cy="154" r="14" fill="#D1FAE5"/>
+  <text x="522" y="159" text-anchor="middle" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="16" fill="#10B981">1</text>
+  <text x="550" y="150" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="14" font-weight="bold" fill="#1E293B">창의적 판단</text>
+  <text x="550" y="168" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="11" fill="#475569">새로운 가치 창출, 예술적 표현</text>
+
+  <rect x="495" y="190" width="350" height="48" rx="8" fill="#fff" filter="url(#shadow)"/>
+  <circle cx="522" cy="214" r="14" fill="#D1FAE5"/>
+  <text x="522" y="219" text-anchor="middle" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="16" fill="#10B981">2</text>
+  <text x="550" y="210" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="14" font-weight="bold" fill="#1E293B">공감과 소통</text>
+  <text x="550" y="228" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="11" fill="#475569">인간관계, 감정 이해</text>
+
+  <rect x="495" y="250" width="350" height="48" rx="8" fill="#fff" filter="url(#shadow)"/>
+  <circle cx="522" cy="274" r="14" fill="#D1FAE5"/>
+  <text x="522" y="279" text-anchor="middle" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="16" fill="#10B981">3</text>
+  <text x="550" y="270" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="14" font-weight="bold" fill="#1E293B">윤리적 결정</text>
+  <text x="550" y="288" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="11" fill="#475569">복잡한 상황, 가치 판단</text>
+
+  <!-- Common trait -->
+  <rect x="495" y="320" width="350" height="50" rx="10" fill="#10B981" opacity="0.12"/>
+  <text x="670" y="342" text-anchor="middle" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="14" font-weight="bold" fill="#10B981">공통점: 정답이 없거나</text>
+  <text x="670" y="360" text-anchor="middle" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="14" font-weight="bold" fill="#10B981">맥락과 가치 판단이 필요한 영역</text>
+
+  <!-- Arrow down -->
+  <polygon points="655,385 670,410 685,385" fill="#10B981" opacity="0.5"/>
+  <text x="670" y="445" text-anchor="middle" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="13" fill="#10B981">인간+AI 시너지</text>
+
+  <!-- Bottom message -->
+  <rect x="150" y="498" width="600" height="40" rx="10" fill="#E0E7FF"/>
+  <text x="450" y="524" text-anchor="middle" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="15" font-weight="bold" fill="#3730A3">계산기가 나와도 수학자는 사라지지 않았습니다</text>
+</svg>

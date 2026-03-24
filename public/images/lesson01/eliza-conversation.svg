@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500">
+  <style>@import url("https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700&amp;display=swap");</style>
+  <defs>
+    <filter id="shadow" x="-5%" y="-5%" width="115%" height="115%">
+      <feDropShadow dx="0" dy="2" stdDeviation="4" flood-opacity="0.08"/>
+    </filter>
+    <linearGradient id="headerGrad" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#4F46E5"/>
+      <stop offset="100%" stop-color="#818CF8"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="800" height="500" rx="16" fill="#FAFBFF"/>
+
+  <!-- Header -->
+  <rect x="0" y="0" width="800" height="56" rx="16" fill="url(#headerGrad)"/>
+  <rect x="0" y="40" width="800" height="16" fill="url(#headerGrad)"/>
+  <text x="400" y="36" text-anchor="middle" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="20" font-weight="bold" fill="white">ELIZA 대화 예시 (1966)</text>
+
+  <!-- Chat bubbles -->
+  <!-- User message 1 -->
+  <rect x="300" y="76" width="470" height="48" rx="20" fill="#E0E7FF" filter="url(#shadow)"/>
+  <text x="320" y="106" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="15" fill="#1E293B">저는 요즘 너무 우울해요.</text>
+  <text x="730" y="106" text-anchor="end" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="11" fill="#94A3B8">사용자</text>
+
+  <!-- ELIZA response 1 -->
+  <rect x="30" y="140" width="470" height="48" rx="20" fill="#F0F4FF" filter="url(#shadow)"/>
+  <circle cx="52" cy="164" r="14" fill="#4F46E5"/>
+  <text x="52" y="169" text-anchor="middle" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="11" font-weight="bold" fill="white">E</text>
+  <text x="76" y="170" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="15" fill="#3730A3" font-weight="600">우울하다고 느끼시는군요. 더 말씀해주세요.</text>
+
+  <!-- User message 2 -->
+  <rect x="300" y="204" width="470" height="48" rx="20" fill="#E0E7FF" filter="url(#shadow)"/>
+  <text x="320" y="234" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="15" fill="#1E293B">엄마와 자주 싸워요.</text>
+  <text x="730" y="234" text-anchor="end" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="11" fill="#94A3B8">사용자</text>
+
+  <!-- ELIZA response 2 -->
+  <rect x="30" y="268" width="470" height="48" rx="20" fill="#F0F4FF" filter="url(#shadow)"/>
+  <circle cx="52" cy="292" r="14" fill="#4F46E5"/>
+  <text x="52" y="297" text-anchor="middle" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="11" font-weight="bold" fill="white">E</text>
+  <text x="76" y="298" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="15" fill="#3730A3" font-weight="600">가족에 대해 더 이야기해 주세요.</text>
+
+  <!-- Annotation box -->
+  <rect x="40" y="340" width="720" height="140" rx="12" fill="white" stroke="#C7D2FE" stroke-width="2" filter="url(#shadow)"/>
+
+  <!-- Rule icon -->
+  <circle cx="80" cy="380" r="24" fill="#FEF3C7"/>
+  <text x="80" y="387" text-anchor="middle" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="20">&#x1F50D;</text>
+
+  <text x="120" y="375" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="15" font-weight="bold" fill="#F59E0B">ELIZA의 비밀</text>
+  <text x="120" y="398" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="14" fill="#475569">"우울" 키워드 감지 → "~하다고 느끼시는군요" 패턴 출력</text>
+  <text x="120" y="418" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="14" fill="#475569">"엄마" 키워드 감지 → "가족에 대해 더 이야기해 주세요" 패턴 출력</text>
+
+  <rect x="120" y="435" width="600" height="30" rx="6" fill="#FEF3C7"/>
+  <text x="420" y="455" text-anchor="middle" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="13" font-weight="bold" fill="#92400E">단순한 패턴 매칭이지만, 사용자들은 "진짜 이해한다"고 느꼈습니다!</text>
+</svg>

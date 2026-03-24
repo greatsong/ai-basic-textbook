@@ -1,0 +1,105 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif">
+  <style>@import url("https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700&amp;display=swap");</style>
+  <rect width="800" height="400" rx="16" fill="#1a1b26" opacity="0.95"/>
+
+  <text x="400" y="30" text-anchor="middle" fill="#e2e8f0" font-size="18" font-weight="700">다음 단어 예측 (Next Word Prediction)</text>
+  <text x="400" y="50" text-anchor="middle" fill="#94a3b8" font-size="13">AI가 하는 일의 본질 = 다음에 올 단어의 확률을 계산하는 것</text>
+
+  <!-- Input sentence -->
+  <rect x="30" y="70" width="740" height="45" rx="10" fill="rgba(79,70,229,0.08)" stroke="#4f46e5" stroke-width="1" stroke-opacity="0.3"/>
+  <text x="50" y="88" fill="#94a3b8" font-size="11">입력 문장</text>
+
+  <rect x="50" y="93" width="55" height="18" rx="4" fill="rgba(129,140,248,0.3)" stroke="#818cf8" stroke-width="0.8"/>
+  <text x="77" y="106" text-anchor="middle" fill="#c7d2fe" font-size="10">오늘</text>
+
+  <rect x="115" y="93" width="60" height="18" rx="4" fill="rgba(129,140,248,0.3)" stroke="#818cf8" stroke-width="0.8"/>
+  <text x="145" y="106" text-anchor="middle" fill="#c7d2fe" font-size="10">점심에</text>
+
+  <rect x="185" y="93" width="55" height="18" rx="4" fill="rgba(129,140,248,0.3)" stroke="#818cf8" stroke-width="0.8"/>
+  <text x="212" y="106" text-anchor="middle" fill="#c7d2fe" font-size="10">나는</text>
+
+  <rect x="250" y="88" width="60" height="28" rx="6" fill="rgba(245,158,11,0.3)" stroke="#f59e0b" stroke-width="2" stroke-dasharray="4,3"/>
+  <text x="280" y="107" text-anchor="middle" fill="#fcd34d" font-size="12" font-weight="700">???</text>
+
+  <text x="320" y="106" fill="#94a3b8" font-size="10">을 먹었다</text>
+
+  <!-- Arrow down to model -->
+  <line x1="280" y1="120" x2="280" y2="145" stroke="#818cf8" stroke-width="1.5"/>
+  <polygon points="275,143 280,152 285,143" fill="#818cf8"/>
+
+  <!-- Transformer model box -->
+  <rect x="150" y="155" width="260" height="50" rx="12" fill="rgba(79,70,229,0.2)" stroke="#4f46e5" stroke-width="2"/>
+  <text x="280" y="176" text-anchor="middle" fill="#a5b4fc" font-size="12" font-weight="600">트랜스포머 모델</text>
+  <text x="280" y="194" text-anchor="middle" fill="#94a3b8" font-size="10">(수천억 파라미터)</text>
+
+  <!-- Arrow down to probability -->
+  <line x1="280" y1="205" x2="280" y2="225" stroke="#818cf8" stroke-width="1.5"/>
+  <polygon points="275,223 280,232 285,223" fill="#818cf8"/>
+
+  <!-- Probability distribution -->
+  <text x="400" y="250" text-anchor="middle" fill="#e2e8f0" font-size="14" font-weight="600">확률 분포 출력</text>
+
+  <!-- Bar chart for probabilities -->
+  <g transform="translate(40, 265)">
+    <!-- Bars (sorted by probability) -->
+    <rect x="50" y="5" width="175" height="22" rx="4" fill="rgba(16,185,129,0.5)" stroke="#10b981" stroke-width="1.5"/>
+    <text x="60" y="20" fill="#6ee7b7" font-size="11" font-weight="700">밥</text>
+    <text x="220" y="20" fill="#10b981" font-size="11" font-weight="700">35%</text>
+
+    <rect x="50" y="32" width="100" height="22" rx="4" fill="rgba(129,140,248,0.35)" stroke="#818cf8" stroke-width="1"/>
+    <text x="60" y="47" fill="#c7d2fe" font-size="11">김치찌개</text>
+    <text x="145" y="47" fill="#818cf8" font-size="11">20%</text>
+
+    <rect x="50" y="59" width="75" height="22" rx="4" fill="rgba(129,140,248,0.25)" stroke="#818cf8" stroke-width="1"/>
+    <text x="60" y="74" fill="#c7d2fe" font-size="11">라면</text>
+    <text x="120" y="74" fill="#818cf8" font-size="11">15%</text>
+
+    <rect x="50" y="86" width="60" height="22" rx="4" fill="rgba(129,140,248,0.15)" stroke="#818cf8" stroke-width="0.8" opacity="0.7"/>
+    <text x="60" y="101" fill="#c7d2fe" font-size="11" opacity="0.8">피자</text>
+    <text x="105" y="101" fill="#818cf8" font-size="11" opacity="0.7">12%</text>
+
+    <rect x="50" y="113" width="40" height="22" rx="4" fill="rgba(129,140,248,0.08)" stroke="#818cf8" stroke-width="0.8" opacity="0.5"/>
+    <text x="60" y="128" fill="#c7d2fe" font-size="11" opacity="0.6">...</text>
+    <text x="85" y="128" fill="#818cf8" font-size="11" opacity="0.5">18%</text>
+
+    <!-- Highlight winner -->
+    <line x1="230" y1="16" x2="260" y2="16" stroke="#10b981" stroke-width="1.5"/>
+    <text x="265" y="20" fill="#10b981" font-size="10" font-weight="600">가장 높은 확률!</text>
+  </g>
+
+  <!-- Right side: Temperature comparison -->
+  <rect x="460" y="155" width="320" height="230" rx="12" fill="rgba(245,158,11,0.05)" stroke="#f59e0b" stroke-width="1" stroke-opacity="0.3"/>
+  <text x="620" y="178" text-anchor="middle" fill="#fcd34d" font-size="13" font-weight="700">Temperature에 따른 변화</text>
+
+  <!-- Low temp -->
+  <rect x="475" y="195" width="140" height="55" rx="8" fill="rgba(16,185,129,0.1)" stroke="#10b981" stroke-width="1"/>
+  <text x="545" y="212" text-anchor="middle" fill="#10b981" font-size="11" font-weight="600">T = 0.1 (낮음)</text>
+  <rect x="485" y="225" width="120" height="12" rx="3" fill="rgba(16,185,129,0.15)"/>
+  <rect x="485" y="225" width="110" height="12" rx="3" fill="rgba(16,185,129,0.5)"/>
+  <text x="485" y="245" fill="#94a3b8" font-size="8">"밥" 95% - 거의 확정</text>
+
+  <!-- Mid temp -->
+  <rect x="625" y="195" width="140" height="55" rx="8" fill="rgba(129,140,248,0.1)" stroke="#818cf8" stroke-width="1"/>
+  <text x="695" y="212" text-anchor="middle" fill="#818cf8" font-size="11" font-weight="600">T = 1.0 (보통)</text>
+  <rect x="635" y="225" width="120" height="12" rx="3" fill="rgba(129,140,248,0.15)"/>
+  <rect x="635" y="225" width="50" height="12" rx="3" fill="rgba(129,140,248,0.4)"/>
+  <rect x="685" y="225" width="30" height="12" rx="3" fill="rgba(129,140,248,0.25)"/>
+  <rect x="715" y="225" width="20" height="12" rx="3" fill="rgba(129,140,248,0.15)"/>
+  <text x="635" y="245" fill="#94a3b8" font-size="8">고르게 분포</text>
+
+  <!-- High temp -->
+  <rect x="475" y="265" width="290" height="55" rx="8" fill="rgba(239,68,68,0.08)" stroke="#ef4444" stroke-width="1"/>
+  <text x="620" y="282" text-anchor="middle" fill="#fca5a5" font-size="11" font-weight="600">T = 2.0 (높음)</text>
+  <rect x="485" y="293" width="270" height="12" rx="3" fill="rgba(239,68,68,0.15)"/>
+  <rect x="485" y="293" width="35" height="12" rx="3" fill="rgba(239,68,68,0.25)"/>
+  <rect x="520" y="293" width="30" height="12" rx="3" fill="rgba(239,68,68,0.2)"/>
+  <rect x="550" y="293" width="28" height="12" rx="3" fill="rgba(239,68,68,0.18)"/>
+  <rect x="578" y="293" width="25" height="12" rx="3" fill="rgba(239,68,68,0.15)"/>
+  <rect x="603" y="293" width="22" height="12" rx="3" fill="rgba(239,68,68,0.12)"/>
+  <text x="485" y="315" fill="#94a3b8" font-size="8">"우주선", "행복" 같은 엉뚱한 답도 등장</text>
+
+  <!-- Bottom key insight -->
+  <rect x="475" y="335" width="290" height="45" rx="8" fill="rgba(79,70,229,0.12)" stroke="#4f46e5" stroke-width="1"/>
+  <text x="620" y="353" text-anchor="middle" fill="#a5b4fc" font-size="11" font-weight="600">핵심: AI는 "이해"하지 않는다</text>
+  <text x="620" y="370" text-anchor="middle" fill="#94a3b8" font-size="10">텍스트 패턴에서 확률만 계산할 뿐!</text>
+</svg>

@@ -1,0 +1,99 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 500">
+  <style>@import url("https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700&amp;display=swap");</style>
+  <defs>
+    <linearGradient id="bgGr" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#FAFBFF"/>
+      <stop offset="100%" stop-color="#F0F4FF"/>
+    </linearGradient>
+    <filter id="shd" x="-3%" y="-3%" width="106%" height="110%">
+      <feDropShadow dx="1" dy="2" stdDeviation="2" flood-opacity="0.08"/>
+    </filter>
+  </defs>
+  <rect width="900" height="500" fill="url(#bgGr)" rx="12"/>
+
+  <text x="450" y="38" text-anchor="middle" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="22" font-weight="bold" fill="#1E293B">딥러닝 혁명의 세 기둥</text>
+  <text x="450" y="60" text-anchor="middle" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="13" fill="#475569">왜 2012년에야 가능했을까?</text>
+
+  <!-- Pillar 1: Algorithm -->
+  <g transform="translate(55, 90)" filter="url(#shd)">
+    <rect width="240" height="340" fill="white" rx="14" stroke="#4F46E5" stroke-width="2"/>
+    <rect width="240" height="50" fill="#4F46E5" rx="14 14 0 0"/>
+    <text x="120" y="22" text-anchor="middle" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="28" fill="rgba(255,255,255,0.3)">01</text>
+    <text x="120" y="38" text-anchor="middle" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="16" font-weight="bold" fill="white">알고리즘</text>
+
+    <!-- Icon: neural network -->
+    <circle cx="120" cy="95" r="28" fill="#E0E7FF" stroke="#4F46E5" stroke-width="1.5"/>
+    <text x="120" y="102" text-anchor="middle" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="28">🧠</text>
+
+    <text x="120" y="145" text-anchor="middle" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="14" font-weight="bold" fill="#3730A3">활성화함수 + 역전파</text>
+
+    <line x1="40" y1="160" x2="200" y2="160" stroke="#E0E7FF" stroke-width="1"/>
+
+    <text x="30" y="185" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="12" fill="#475569">1986  역전파 (Hinton)</text>
+    <text x="30" y="207" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="12" fill="#475569">2006  딥 빌리프 네트워크</text>
+    <text x="30" y="229" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="12" font-weight="bold" fill="#4F46E5">2012  ReLU (AlexNet)</text>
+
+    <rect x="25" y="252" width="190" height="38" fill="#E0E7FF" rx="8"/>
+    <text x="120" y="276" text-anchor="middle" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="12" font-weight="bold" fill="#3730A3">기울기 소실 해결</text>
+
+    <rect x="25" y="300" width="190" height="28" fill="#4F46E5" rx="8"/>
+    <text x="120" y="319" text-anchor="middle" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="12" font-weight="bold" fill="white">핵심 열쇠!</text>
+  </g>
+
+  <!-- Pillar 2: Data -->
+  <g transform="translate(330, 90)" filter="url(#shd)">
+    <rect width="240" height="340" fill="white" rx="14" stroke="#10B981" stroke-width="2"/>
+    <rect width="240" height="50" fill="#10B981" rx="14 14 0 0"/>
+    <text x="120" y="22" text-anchor="middle" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="28" fill="rgba(255,255,255,0.3)">02</text>
+    <text x="120" y="38" text-anchor="middle" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="16" font-weight="bold" fill="white">대규모 데이터</text>
+
+    <circle cx="120" cy="95" r="28" fill="#D1FAE5" stroke="#10B981" stroke-width="1.5"/>
+    <text x="120" y="102" text-anchor="middle" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="28">📷</text>
+
+    <text x="120" y="145" text-anchor="middle" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="14" font-weight="bold" fill="#059669">ImageNet 프로젝트</text>
+
+    <line x1="40" y1="160" x2="200" y2="160" stroke="#D1FAE5" stroke-width="1"/>
+
+    <text x="30" y="185" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="12" fill="#475569">2009  ImageNet 시작</text>
+    <text x="30" y="207" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="12" fill="#475569">1,400만+ 장의 이미지</text>
+    <text x="30" y="229" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="12" font-weight="bold" fill="#10B981">1,000개 카테고리</text>
+
+    <rect x="25" y="252" width="190" height="38" fill="#D1FAE5" rx="8"/>
+    <text x="120" y="276" text-anchor="middle" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="12" font-weight="bold" fill="#059669">인터넷 덕분에 가능</text>
+
+    <rect x="25" y="300" width="190" height="28" fill="#10B981" rx="8"/>
+    <text x="120" y="319" text-anchor="middle" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="12" font-weight="bold" fill="white">학습의 원료</text>
+  </g>
+
+  <!-- Pillar 3: Computing -->
+  <g transform="translate(605, 90)" filter="url(#shd)">
+    <rect width="240" height="340" fill="white" rx="14" stroke="#F59E0B" stroke-width="2"/>
+    <rect width="240" height="50" fill="#F59E0B" rx="14 14 0 0"/>
+    <text x="120" y="22" text-anchor="middle" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="28" fill="rgba(255,255,255,0.3)">03</text>
+    <text x="120" y="38" text-anchor="middle" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="16" font-weight="bold" fill="white">컴퓨팅 파워</text>
+
+    <circle cx="120" cy="95" r="28" fill="#FEF3C7" stroke="#F59E0B" stroke-width="1.5"/>
+    <text x="120" y="102" text-anchor="middle" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="28">⚡</text>
+
+    <text x="120" y="145" text-anchor="middle" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="14" font-weight="bold" fill="#D97706">GPU 병렬 연산</text>
+
+    <line x1="40" y1="160" x2="200" y2="160" stroke="#FEF3C7" stroke-width="1"/>
+
+    <text x="30" y="185" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="12" fill="#475569">원래 게임용 그래픽 카드</text>
+    <text x="30" y="207" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="12" fill="#475569">NVIDIA GTX 580 x 2장</text>
+    <text x="30" y="229" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="12" font-weight="bold" fill="#F59E0B">행렬 연산에 최적</text>
+
+    <rect x="25" y="252" width="190" height="38" fill="#FEF3C7" rx="8"/>
+    <text x="120" y="276" text-anchor="middle" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="12" font-weight="bold" fill="#D97706">CPU 대비 수십 배 빠름</text>
+
+    <rect x="25" y="300" width="190" height="28" fill="#F59E0B" rx="8"/>
+    <text x="120" y="319" text-anchor="middle" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="12" font-weight="bold" fill="white">실행의 근육</text>
+  </g>
+
+  <!-- Bottom convergence -->
+  <g transform="translate(0, 450)">
+    <rect x="150" y="0" width="600" height="42" fill="#3730A3" rx="21"/>
+    <text x="450" y="17" text-anchor="middle" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="14" font-weight="bold" fill="white">2012 AlexNet = 알고리즘(ReLU) + 데이터(ImageNet) + GPU</text>
+    <text x="450" y="34" text-anchor="middle" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="12" fill="#C7D2FE">세 조건이 동시에 갖춰진 최초의 순간 → 딥러닝 혁명</text>
+  </g>
+</svg>

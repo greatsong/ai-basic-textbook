@@ -1,0 +1,79 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500">
+  <style>@import url("https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700&amp;display=swap");</style>
+  <defs>
+    <filter id="shadow" x="-5%" y="-5%" width="115%" height="115%">
+      <feDropShadow dx="0" dy="2" stdDeviation="4" flood-opacity="0.08"/>
+    </filter>
+    <linearGradient id="weakGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#4F46E5"/>
+      <stop offset="100%" stop-color="#818CF8"/>
+    </linearGradient>
+    <linearGradient id="strongGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#8B5CF6"/>
+      <stop offset="100%" stop-color="#A78BFA"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="800" height="500" rx="16" fill="#FAFBFF"/>
+
+  <!-- Title -->
+  <text x="400" y="40" text-anchor="middle" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="22" font-weight="bold" fill="#1E293B">약한 AI vs 강한 AI</text>
+  <rect x="300" y="50" width="200" height="3" rx="1.5" fill="#818CF8"/>
+
+  <!-- Weak AI Section -->
+  <rect x="30" y="72" width="360" height="400" rx="16" fill="white" stroke="#C7D2FE" stroke-width="2" filter="url(#shadow)"/>
+  <rect x="30" y="72" width="360" height="56" rx="16" fill="url(#weakGrad)"/>
+  <rect x="30" y="112" width="360" height="16" fill="url(#weakGrad)"/>
+  <text x="210" y="108" text-anchor="middle" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="18" font-weight="bold" fill="white">약한 AI (Weak AI)</text>
+
+  <!-- Weak AI icon -->
+  <circle cx="210" cy="172" r="30" fill="#E0E7FF"/>
+  <text x="210" y="180" text-anchor="middle" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="28">&#x1F916;</text>
+
+  <text x="210" y="222" text-anchor="middle" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="15" font-weight="bold" fill="#4F46E5">"지능적으로 행동"</text>
+
+  <!-- Weak AI examples -->
+  <rect x="55" y="242" width="310" height="36" rx="8" fill="#F0F4FF"/>
+  <text x="210" y="265" text-anchor="middle" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="14" fill="#475569">&#x2713;  ChatGPT - 대화형 AI</text>
+
+  <rect x="55" y="286" width="310" height="36" rx="8" fill="#F0F4FF"/>
+  <text x="210" y="309" text-anchor="middle" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="14" fill="#475569">&#x2713;  시리/빅스비 - 음성 비서</text>
+
+  <rect x="55" y="330" width="310" height="36" rx="8" fill="#F0F4FF"/>
+  <text x="210" y="353" text-anchor="middle" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="14" fill="#475569">&#x2713;  구글 번역 - 기계 번역</text>
+
+  <rect x="55" y="374" width="310" height="36" rx="8" fill="#F0F4FF"/>
+  <text x="210" y="397" text-anchor="middle" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="14" fill="#475569">&#x2713;  AlphaGo - 바둑 AI</text>
+
+  <rect x="55" y="424" width="310" height="36" rx="8" fill="#D1FAE5"/>
+  <text x="210" y="447" text-anchor="middle" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="14" font-weight="bold" fill="#065F46">현재 존재 &#x2714;</text>
+
+  <!-- Strong AI Section -->
+  <rect x="410" y="72" width="360" height="400" rx="16" fill="white" stroke="#DDD6FE" stroke-width="2" filter="url(#shadow)"/>
+  <rect x="410" y="72" width="360" height="56" rx="16" fill="url(#strongGrad)"/>
+  <rect x="410" y="112" width="360" height="16" fill="url(#strongGrad)"/>
+  <text x="590" y="108" text-anchor="middle" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="18" font-weight="bold" fill="white">강한 AI (Strong AI)</text>
+
+  <!-- Strong AI icon -->
+  <circle cx="590" cy="172" r="30" fill="#EDE9FE"/>
+  <text x="590" y="180" text-anchor="middle" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="28">&#x1F9E0;</text>
+
+  <text x="590" y="222" text-anchor="middle" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="15" font-weight="bold" fill="#8B5CF6">"진짜 이해 + 의식"</text>
+
+  <!-- Strong AI characteristics -->
+  <rect x="435" y="242" width="310" height="36" rx="8" fill="#F5F3FF"/>
+  <text x="590" y="265" text-anchor="middle" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="14" fill="#475569">&#x2022;  스스로 목표를 설정</text>
+
+  <rect x="435" y="286" width="310" height="36" rx="8" fill="#F5F3FF"/>
+  <text x="590" y="309" text-anchor="middle" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="14" fill="#475569">&#x2022;  의미를 진짜로 이해</text>
+
+  <rect x="435" y="330" width="310" height="36" rx="8" fill="#F5F3FF"/>
+  <text x="590" y="353" text-anchor="middle" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="14" fill="#475569">&#x2022;  감정과 의식 보유</text>
+
+  <rect x="435" y="374" width="310" height="36" rx="8" fill="#F5F3FF"/>
+  <text x="590" y="397" text-anchor="middle" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="14" fill="#475569">&#x2022;  자아 인식 가능</text>
+
+  <rect x="435" y="424" width="310" height="36" rx="8" fill="#FEE2E2"/>
+  <text x="590" y="447" text-anchor="middle" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="14" font-weight="bold" fill="#991B1B">아직 미달성 &#x2718;</text>
+</svg>

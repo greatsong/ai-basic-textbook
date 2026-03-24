@@ -1,0 +1,89 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 500">
+  <style>@import url("https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700&amp;display=swap");</style>
+  <defs>
+    <linearGradient id="bgG2" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#FAFBFF"/>
+      <stop offset="100%" stop-color="#F0F4FF"/>
+    </linearGradient>
+    <radialGradient id="contourGrad" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#4F46E5"/>
+      <stop offset="25%" stop-color="#818CF8"/>
+      <stop offset="50%" stop-color="#C7D2FE"/>
+      <stop offset="75%" stop-color="#FEF3C7"/>
+      <stop offset="100%" stop-color="#FEE2E2"/>
+    </radialGradient>
+    <filter id="sh2" x="-3%" y="-3%" width="106%" height="110%">
+      <feDropShadow dx="1" dy="2" stdDeviation="3" flood-color="#000" flood-opacity="0.08"/>
+    </filter>
+    <marker id="arr2" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <polygon points="0 0,8 3,0 6" fill="#EF4444"/>
+    </marker>
+  </defs>
+  <rect width="900" height="500" fill="url(#bgG2)" rx="16"/>
+  <text x="450" y="38" text-anchor="middle" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="22" font-weight="bold" fill="#1E293B">손실 등고선(Loss Contour) 이해하기</text>
+
+  <!-- Left: Contour Map -->
+  <rect x="30" y="55" width="440" height="430" rx="14" fill="white" stroke="#E0E7FF" stroke-width="1.5" filter="url(#sh2)"/>
+  <text x="250" y="82" text-anchor="middle" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="16" font-weight="bold" fill="#3730A3">손실 등고선 지도</text>
+
+  <!-- Contour rings -->
+  <ellipse cx="250" cy="295" rx="180" ry="160" fill="#FEE2E2" stroke="#EF4444" stroke-width="1" opacity="0.6"/>
+  <ellipse cx="250" cy="295" rx="150" ry="130" fill="#FEF3C7" stroke="#F59E0B" stroke-width="1" opacity="0.7"/>
+  <ellipse cx="250" cy="295" rx="115" ry="100" fill="#C7D2FE" stroke="#818CF8" stroke-width="1" opacity="0.8"/>
+  <ellipse cx="250" cy="295" rx="75" ry="65" fill="#818CF8" stroke="#4F46E5" stroke-width="1" opacity="0.7"/>
+  <ellipse cx="250" cy="295" rx="35" ry="30" fill="#4F46E5" stroke="#3730A3" stroke-width="1.5"/>
+
+  <!-- Optimal point -->
+  <circle cx="250" cy="295" r="6" fill="white" stroke="#3730A3" stroke-width="2"/>
+  <text x="250" y="275" text-anchor="middle" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="12" font-weight="bold" fill="#3730A3">최적점</text>
+
+  <!-- Current position -->
+  <circle cx="340" cy="200" r="8" fill="#EF4444"/>
+  <text x="355" y="195" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="11" font-weight="bold" fill="#EF4444">현재 위치</text>
+
+  <!-- Arrow path to optimal -->
+  <path d="M335,205 Q310,230 295,260 Q280,280 258,290" stroke="#EF4444" stroke-width="2.5" fill="none" stroke-dasharray="6,3" marker-end="url(#arr2)"/>
+  <text x="320" y="255" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="11" fill="#EF4444" transform="rotate(-40,320,255)">이동 경로</text>
+
+  <!-- Axis labels -->
+  <text x="250" y="465" text-anchor="middle" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="14" font-weight="bold" fill="#475569">w (기울기)</text>
+  <text x="50" y="295" text-anchor="middle" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="14" font-weight="bold" fill="#475569" transform="rotate(-90,50,295)">b (절편)</text>
+
+  <!-- Color legend -->
+  <rect x="55" y="105" width="15" height="15" fill="#FEE2E2" stroke="#EF4444" stroke-width="0.5" rx="2"/>
+  <text x="75" y="117" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="11" fill="#1E293B">손실 높음</text>
+  <rect x="55" y="125" width="15" height="15" fill="#FEF3C7" stroke="#F59E0B" stroke-width="0.5" rx="2"/>
+  <text x="75" y="137" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="11" fill="#1E293B">손실 중간</text>
+  <rect x="55" y="145" width="15" height="15" fill="#4F46E5" rx="2"/>
+  <text x="75" y="157" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="11" fill="#1E293B">손실 낮음</text>
+
+  <!-- Right: Analogy Panel -->
+  <rect x="490" y="55" width="390" height="200" rx="14" fill="white" stroke="#10B981" stroke-width="1.5" filter="url(#sh2)"/>
+  <rect x="490" y="55" width="390" height="36" rx="14" fill="#10B981"/>
+  <rect x="490" y="77" width="390" height="14" fill="#10B981"/>
+  <text x="685" y="80" text-anchor="middle" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="15" font-weight="bold" fill="white">등산 지도 비유</text>
+
+  <!-- Mountain analogy -->
+  <text x="510" y="115" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="13" fill="#1E293B">
+    <tspan x="510" dy="0" font-weight="bold" fill="#10B981">등산 지도</tspan>
+    <tspan x="510" dy="22">같은 높이의 점을 이은 선 = 등고선</tspan>
+    <tspan x="510" dy="22">높은 곳 = 산꼭대기 (올라가야 할 곳?)</tspan>
+  </text>
+  <text x="510" y="190" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="13" fill="#1E293B">
+    <tspan x="510" dy="0" font-weight="bold" fill="#4F46E5">손실 등고선</tspan>
+    <tspan x="510" dy="22">같은 손실의 점을 이은 선 = 등고선</tspan>
+    <tspan x="510" dy="22" font-weight="bold" fill="#3730A3">낮은 곳 = 최적점 (내려가야 할 곳!)</tspan>
+  </text>
+
+  <!-- Right Bottom: Key Insight -->
+  <rect x="490" y="275" width="390" height="100" rx="14" fill="#E0E7FF" stroke="#4F46E5" stroke-width="1.5" filter="url(#sh2)"/>
+  <text x="685" y="310" text-anchor="middle" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="15" font-weight="bold" fill="#3730A3">핵심 인사이트</text>
+  <text x="685" y="340" text-anchor="middle" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="14" fill="#1E293B">"가장 파란 곳을 찾아가면</text>
+  <text x="685" y="360" text-anchor="middle" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="14" font-weight="bold" fill="#4F46E5">손실이 가장 작은 최적의 모델을 찾는 것!"</text>
+
+  <!-- Right Bottom 2: Next Step -->
+  <rect x="490" y="395" width="390" height="90" rx="14" fill="#FEF3C7" stroke="#F59E0B" stroke-width="1.5" filter="url(#sh2)"/>
+  <text x="685" y="425" text-anchor="middle" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="14" font-weight="bold" fill="#F59E0B">5차시 예고</text>
+  <text x="685" y="450" text-anchor="middle" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="13" fill="#1E293B">"이 지도 위에서 공을 굴리면</text>
+  <text x="685" y="470" text-anchor="middle" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="14" font-weight="bold" fill="#F59E0B">자동으로 최적점에 도달 = 경사하강법"</text>
+</svg>

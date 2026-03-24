@@ -1,0 +1,72 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 550">
+  <style>@import url("https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700&amp;display=swap");</style>
+  <defs>
+    <filter id="shadow" x="-5%" y="-5%" width="115%" height="115%">
+      <feDropShadow dx="1" dy="2" stdDeviation="3" flood-color="#000" flood-opacity="0.08"/>
+    </filter>
+  </defs>
+  <!-- Background -->
+  <rect width="900" height="550" rx="16" fill="#FAFBFF"/>
+  <text x="450" y="38" text-anchor="middle" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="22" font-weight="bold" fill="#1E293B">AI 학습 로드맵</text>
+
+  <!-- Winding path -->
+  <path d="M 100,100 Q 250,100 300,150 Q 350,200 500,200 Q 650,200 700,260 Q 750,320 600,320 Q 450,320 400,380 Q 350,440 500,460"
+        stroke="#C7D2FE" stroke-width="6" fill="none" stroke-linecap="round"/>
+  <!-- Arrow dots along path -->
+  <circle cx="180" cy="100" r="4" fill="#818CF8"/>
+  <circle cx="350" cy="175" r="4" fill="#818CF8"/>
+  <circle cx="580" cy="205" r="4" fill="#818CF8"/>
+  <circle cx="700" cy="270" r="4" fill="#818CF8"/>
+  <circle cx="520" cy="330" r="4" fill="#818CF8"/>
+
+  <!-- Step 1: 코딩부터 시작 -->
+  <rect x="30" y="58" width="240" height="80" rx="14" fill="#E0E7FF" filter="url(#shadow)"/>
+  <circle cx="60" cy="88" r="18" fill="#4F46E5"/>
+  <text x="60" y="93" text-anchor="middle" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="16" font-weight="bold" fill="#fff">1</text>
+  <text x="88" y="88" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="15" font-weight="bold" fill="#4F46E5">코딩부터 시작</text>
+  <text x="50" y="110" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="11" fill="#475569">Python → NumPy/Pandas → PyTorch</text>
+  <text x="50" y="127" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="11" fill="#475569">퍼셉트론을 코드로 구현하기</text>
+
+  <!-- Step 2: 수학을 더 깊이 -->
+  <rect x="310" y="130" width="240" height="80" rx="14" fill="#D1FAE5" filter="url(#shadow)"/>
+  <circle cx="340" cy="160" r="18" fill="#10B981"/>
+  <text x="340" y="165" text-anchor="middle" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="16" font-weight="bold" fill="#fff">2</text>
+  <text x="368" y="160" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="15" font-weight="bold" fill="#10B981">수학을 더 깊이</text>
+  <text x="330" y="182" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="11" fill="#475569">선형대수, 미적분, 확률통계</text>
+  <text x="330" y="199" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="11" fill="#475569">수식으로 경사하강법 이해하기</text>
+
+  <!-- Step 3: 영상으로 배우기 -->
+  <rect x="600" y="210" width="260" height="80" rx="14" fill="#EDE9FE" filter="url(#shadow)"/>
+  <circle cx="630" cy="240" r="18" fill="#8B5CF6"/>
+  <text x="630" y="245" text-anchor="middle" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="16" font-weight="bold" fill="#fff">3</text>
+  <text x="658" y="240" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="15" font-weight="bold" fill="#8B5CF6">영상으로 배우기</text>
+  <text x="620" y="262" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="11" fill="#475569">3Blue1Brown, Stanford CS231n</text>
+  <text x="620" y="279" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="11" fill="#475569">무료 강의로 개념 심화</text>
+
+  <!-- Step 4: 대학 전공 탐색 -->
+  <rect x="350" y="340" width="260" height="80" rx="14" fill="#FEF3C7" filter="url(#shadow)"/>
+  <circle cx="380" cy="370" r="18" fill="#F59E0B"/>
+  <text x="380" y="375" text-anchor="middle" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="16" font-weight="bold" fill="#fff">4</text>
+  <text x="408" y="370" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="15" font-weight="bold" fill="#F59E0B">대학 전공 탐색</text>
+  <text x="370" y="392" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="11" fill="#475569">컴퓨터공학, 데이터사이언스, 인지과학</text>
+  <text x="370" y="409" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="11" fill="#475569">AI는 모든 분야와 결합 가능</text>
+
+  <!-- Step 5: 실전 경험 -->
+  <rect x="420" y="440" width="260" height="80" rx="14" fill="#E0E7FF" filter="url(#shadow)"/>
+  <circle cx="450" cy="470" r="18" fill="#4F46E5"/>
+  <text x="450" y="475" text-anchor="middle" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="16" font-weight="bold" fill="#fff">5</text>
+  <text x="478" y="470" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="15" font-weight="bold" fill="#4F46E5">실전 경험 쌓기</text>
+  <text x="440" y="492" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="11" fill="#475569">Kaggle 대회, AI 해커톤, 개인 프로젝트</text>
+  <text x="440" y="509" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="11" fill="#475569">직접 만들어보는 것이 가장 빠른 학습!</text>
+
+  <!-- Finish flag -->
+  <rect x="700" y="455" width="80" height="50" rx="8" fill="#4F46E5" filter="url(#shadow)"/>
+  <text x="740" y="478" text-anchor="middle" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="22" fill="#fff">🎯</text>
+  <text x="740" y="498" text-anchor="middle" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="10" font-weight="bold" fill="#C7D2FE">AI 전문가</text>
+
+  <!-- Arrow from 5 to finish -->
+  <line x1="680" y1="475" x2="698" y2="475" stroke="#4F46E5" stroke-width="2" marker-end="url(#arrowhead)"/>
+
+  <!-- Bottom note -->
+  <text x="200" y="538" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="13" fill="#94A3B8">여정은 이제 시작입니다. 어떤 길을 선택하든, AI는 여러분의 동료가 될 것입니다.</text>
+</svg>

@@ -1,4 +1,5 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 320" font-family="system-ui, -apple-system, 'Apple SD Gothic Neo', 'Noto Sans KR', sans-serif">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 320" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif">
+  <style>@import url("https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700&amp;display=swap");</style>
   <rect width="560" height="320" rx="16" fill="#1a1b26" opacity="0.95"/>
   <text x="280" y="30" text-anchor="middle" fill="#e2e8f0" font-size="17" font-weight="700">직선 하나의 한계 — XOR 문제</text>
 

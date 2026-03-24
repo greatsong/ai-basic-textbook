@@ -1,0 +1,67 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 550">
+  <style>@import url("https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700&amp;display=swap");</style>
+  <defs>
+    <filter id="shadow" x="-5%" y="-5%" width="115%" height="115%">
+      <feDropShadow dx="1" dy="2" stdDeviation="3" flood-color="#000" flood-opacity="0.08"/>
+    </filter>
+    <linearGradient id="gradCenter" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#4F46E5;stop-opacity:1"/>
+      <stop offset="100%" style="stop-color:#818CF8;stop-opacity:1"/>
+    </linearGradient>
+  </defs>
+  <!-- Background -->
+  <rect width="900" height="550" rx="16" fill="#FAFBFF"/>
+  <text x="450" y="40" text-anchor="middle" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="22" font-weight="bold" fill="#1E293B">AI 시대 4대 핵심 역량</text>
+
+  <!-- Center hub -->
+  <circle cx="450" cy="290" r="52" fill="url(#gradCenter)" filter="url(#shadow)"/>
+  <text x="450" y="282" text-anchor="middle" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="16" font-weight="bold" fill="#fff">AI 시대</text>
+  <text x="450" y="302" text-anchor="middle" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="14" fill="#C7D2FE">핵심 역량</text>
+
+  <!-- Competency 1: 비판적 사고 (top-left) -->
+  <line x1="410" y1="252" x2="290" y2="155" stroke="#4F46E5" stroke-width="2.5" stroke-dasharray="6,4"/>
+  <rect x="100" y="80" width="280" height="150" rx="16" fill="#E0E7FF" filter="url(#shadow)"/>
+  <circle cx="140" cy="120" r="24" fill="#4F46E5"/>
+  <text x="140" y="125" text-anchor="middle" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="22" font-weight="bold" fill="#fff">1</text>
+  <text x="180" y="122" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="18" font-weight="bold" fill="#4F46E5">비판적 사고</text>
+  <line x1="120" y1="142" x2="360" y2="142" stroke="#C7D2FE" stroke-width="1"/>
+  <text x="120" y="165" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="13" fill="#475569">AI의 결과를 검증하는 능력</text>
+  <text x="120" y="185" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="13" fill="#475569">실습에서 환각을 검증한 것이</text>
+  <text x="120" y="205" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="13" font-weight="bold" fill="#3730A3">바로 비판적 사고입니다!</text>
+
+  <!-- Competency 2: 질문하는 능력 (top-right) -->
+  <line x1="490" y1="252" x2="610" y2="155" stroke="#10B981" stroke-width="2.5" stroke-dasharray="6,4"/>
+  <rect x="520" y="80" width="280" height="150" rx="16" fill="#D1FAE5" filter="url(#shadow)"/>
+  <circle cx="560" cy="120" r="24" fill="#10B981"/>
+  <text x="560" y="125" text-anchor="middle" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="22" font-weight="bold" fill="#fff">2</text>
+  <text x="600" y="122" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="18" font-weight="bold" fill="#10B981">질문하는 능력</text>
+  <line x1="540" y1="142" x2="780" y2="142" stroke="#A7F3D0" stroke-width="1"/>
+  <text x="540" y="165" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="13" fill="#475569">좋은 프롬프트 =  좋은 질문</text>
+  <text x="540" y="185" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="13" fill="#475569">"무엇을 물어야 하는지</text>
+  <text x="540" y="205" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="13" font-weight="bold" fill="#065F46">아는 것"이 경쟁력</text>
+
+  <!-- Competency 3: 융합적 사고 (bottom-left) -->
+  <line x1="410" y1="328" x2="290" y2="410" stroke="#8B5CF6" stroke-width="2.5" stroke-dasharray="6,4"/>
+  <rect x="100" y="340" width="280" height="150" rx="16" fill="#EDE9FE" filter="url(#shadow)"/>
+  <circle cx="140" cy="380" r="24" fill="#8B5CF6"/>
+  <text x="140" y="385" text-anchor="middle" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="22" font-weight="bold" fill="#fff">3</text>
+  <text x="180" y="382" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="18" font-weight="bold" fill="#8B5CF6">융합적 사고</text>
+  <line x1="120" y1="402" x2="360" y2="402" stroke="#DDD6FE" stroke-width="1"/>
+  <text x="120" y="425" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="13" fill="#475569">AI 기술 + 도메인 전문성</text>
+  <text x="120" y="445" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="13" fill="#475569">자기 분야에서 AI를</text>
+  <text x="120" y="465" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="13" font-weight="bold" fill="#5B21B6">활용하는 사람이 미래 인재</text>
+
+  <!-- Competency 4: 윤리적 판단 (bottom-right) -->
+  <line x1="490" y1="328" x2="610" y2="410" stroke="#F59E0B" stroke-width="2.5" stroke-dasharray="6,4"/>
+  <rect x="520" y="340" width="280" height="150" rx="16" fill="#FEF3C7" filter="url(#shadow)"/>
+  <circle cx="560" cy="380" r="24" fill="#F59E0B"/>
+  <text x="560" y="385" text-anchor="middle" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="22" font-weight="bold" fill="#fff">4</text>
+  <text x="600" y="382" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="18" font-weight="bold" fill="#F59E0B">윤리적 판단</text>
+  <line x1="540" y1="402" x2="780" y2="402" stroke="#FDE68A" stroke-width="1"/>
+  <text x="540" y="425" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="13" fill="#475569">AI의 판단이 공정한지,</text>
+  <text x="540" y="445" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="13" fill="#475569">편향은 없는지 판단하는 것</text>
+  <text x="540" y="465" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="13" font-weight="bold" fill="#92400E">AI에게 없는 인간의 능력</text>
+
+  <!-- Bottom message -->
+  <text x="450" y="530" text-anchor="middle" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="14" fill="#94A3B8">이 4가지 역량은 AI가 대체할 수 없는, 인간만의 강점입니다</text>
+</svg>

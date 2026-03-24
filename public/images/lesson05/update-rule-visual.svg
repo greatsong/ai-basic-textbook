@@ -1,0 +1,94 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 420">
+  <style>@import url("https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700&amp;display=swap");</style>
+  <defs>
+    <linearGradient id="bg3" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#F0F9FF"/>
+      <stop offset="100%" stop-color="#E0F2FE"/>
+    </linearGradient>
+    <filter id="sh3">
+      <feDropShadow dx="0" dy="3" stdDeviation="4" flood-opacity="0.1"/>
+    </filter>
+    <marker id="flowArrow" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#0EA5E9"/>
+    </marker>
+  </defs>
+
+  <rect width="800" height="420" fill="url(#bg3)" rx="12"/>
+
+  <!-- Title -->
+  <text x="400" y="38" text-anchor="middle" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="22" font-weight="bold" fill="#0C4A6E">경사하강법 업데이트 규칙</text>
+
+  <!-- Main formula box -->
+  <rect x="100" y="55" width="600" height="70" rx="14" fill="white" stroke="#0EA5E9" stroke-width="3" filter="url(#sh3)"/>
+  <text x="400" y="100" text-anchor="middle" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="30" font-weight="bold" fill="#0F172A">
+    <tspan fill="#8B5CF6">새 위치</tspan>
+    <tspan fill="#64748B"> = </tspan>
+    <tspan fill="#0EA5E9">현재 위치</tspan>
+    <tspan fill="#64748B"> - </tspan>
+    <tspan fill="#F59E0B">학습률</tspan>
+    <tspan fill="#64748B"> x </tspan>
+    <tspan fill="#EF4444">기울기</tspan>
+  </text>
+
+  <!-- Connecting arrows from formula to boxes -->
+  <line x1="200" y1="125" x2="140" y2="170" stroke="#0EA5E9" stroke-width="2" stroke-dasharray="5,3"/>
+  <line x1="400" y1="125" x2="400" y2="170" stroke="#F59E0B" stroke-width="2" stroke-dasharray="5,3"/>
+  <line x1="600" y1="125" x2="660" y2="170" stroke="#EF4444" stroke-width="2" stroke-dasharray="5,3"/>
+
+  <!-- Three explanation boxes -->
+  <!-- Box 1: Current position -->
+  <rect x="40" y="170" width="220" height="130" rx="12" fill="white" stroke="#0EA5E9" stroke-width="2" filter="url(#sh3)"/>
+  <rect x="40" y="170" width="220" height="35" rx="12" fill="#0EA5E9"/>
+  <rect x="40" y="193" width="220" height="12" fill="#0EA5E9"/>
+  <text x="150" y="193" text-anchor="middle" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="15" font-weight="bold" fill="white">현재 위치</text>
+  <text x="150" y="225" text-anchor="middle" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="13" fill="#475569">지금 서 있는</text>
+  <text x="150" y="245" text-anchor="middle" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="13" fill="#475569">파라미터 값</text>
+  <text x="150" y="275" text-anchor="middle" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="20" fill="#0EA5E9">w = 5.0</text>
+  <!-- Person icon -->
+  <circle cx="80" cy="235" r="10" fill="#BAE6FD"/>
+  <circle cx="80" cy="223" r="7" fill="#BAE6FD"/>
+
+  <!-- Box 2: Learning rate -->
+  <rect x="290" y="170" width="220" height="130" rx="12" fill="white" stroke="#F59E0B" stroke-width="2" filter="url(#sh3)"/>
+  <rect x="290" y="170" width="220" height="35" rx="12" fill="#F59E0B"/>
+  <rect x="290" y="193" width="220" height="12" fill="#F59E0B"/>
+  <text x="400" y="193" text-anchor="middle" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="15" font-weight="bold" fill="white">학습률 (η)</text>
+  <text x="400" y="225" text-anchor="middle" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="13" fill="#475569">한 걸음의</text>
+  <text x="400" y="245" text-anchor="middle" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="13" fill="#475569">크기</text>
+  <text x="400" y="275" text-anchor="middle" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="20" fill="#F59E0B">η = 0.1</text>
+  <!-- Footprint icon -->
+  <circle cx="330" cy="232" r="8" fill="#FEF3C7"/>
+  <circle cx="338" cy="242" r="6" fill="#FEF3C7"/>
+
+  <!-- Box 3: Gradient -->
+  <rect x="540" y="170" width="220" height="130" rx="12" fill="white" stroke="#EF4444" stroke-width="2" filter="url(#sh3)"/>
+  <rect x="540" y="170" width="220" height="35" rx="12" fill="#EF4444"/>
+  <rect x="540" y="193" width="220" height="12" fill="#EF4444"/>
+  <text x="650" y="193" text-anchor="middle" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="15" font-weight="bold" fill="white">기울기 (∇)</text>
+  <text x="650" y="225" text-anchor="middle" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="13" fill="#475569">가장 가파르게</text>
+  <text x="650" y="245" text-anchor="middle" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="13" fill="#475569">올라가는 방향</text>
+  <text x="650" y="275" text-anchor="middle" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="20" fill="#EF4444">∇ = -3</text>
+  <!-- Compass icon -->
+  <polygon points="580,228 586,240 580,252 574,240" fill="#FEE2E2" stroke="#EF4444" stroke-width="1"/>
+
+  <!-- Calculation flow at bottom -->
+  <rect x="80" y="320" width="640" height="80" rx="14" fill="white" stroke="#8B5CF6" stroke-width="2" filter="url(#sh3)"/>
+  <text x="400" y="352" text-anchor="middle" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="18" fill="#475569">
+    <tspan fill="#0EA5E9" font-weight="bold">5.0</tspan>
+    <tspan> - </tspan>
+    <tspan fill="#F59E0B" font-weight="bold">0.1</tspan>
+    <tspan> x </tspan>
+    <tspan fill="#EF4444" font-weight="bold">(-3)</tspan>
+    <tspan> = </tspan>
+    <tspan fill="#0EA5E9" font-weight="bold">5.0</tspan>
+    <tspan> + </tspan>
+    <tspan fill="#F59E0B" font-weight="bold">0.3</tspan>
+    <tspan> = </tspan>
+    <tspan fill="#8B5CF6" font-weight="bold" font-size="22">5.3</tspan>
+  </text>
+  <text x="400" y="385" text-anchor="middle" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="14" fill="#64748B">기울기가 음수이므로 오른쪽(+방향)으로 이동 → 손실이 줄어드는 방향!</text>
+
+  <!-- Minus sign highlight -->
+  <rect x="345" y="62" width="30" height="55" rx="6" fill="#FEE2E2" opacity="0.3"/>
+  <text x="360" y="138" text-anchor="middle" font-family="'Nanum Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="11" font-weight="bold" fill="#EF4444">이 마이너스가 핵심!</text>
+</svg>

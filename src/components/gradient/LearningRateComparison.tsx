@@ -21,15 +21,18 @@ const C = {
 
 const mono = 'var(--sl-font-mono, monospace)';
 
-// ─── Parabola with a slight bump (local min) ───
-// f(x) = 0.12*(x-0.5)^2 + 0.3*exp(-(x+2.5)^2/0.8)
-// Global min near x=0.5, small bump near x=-2.5
+// ─── Tuned parabola: lr=2.5 oscillates ~8 times then escapes ───
+// f(x) = 0.42*(x-0.5)^2 + 0.3*exp(-(x+2.5)^2/0.8)
+// Curvature ≈ 0.84 near minimum.
+// lr=2.5 → |1 - 2.5*0.84| = 1.1 → grows 10% per bounce → ~8 bounces to escape
+// lr=0.5 → |1 - 0.5*0.84| = 0.58 → converges nicely
+// lr=0.02 → |1 - 0.02*0.84| = 0.98 → very slow convergence
 function lossFunc(x: number): number {
-  return 0.12 * (x - 0.5) * (x - 0.5) + 0.3 * Math.exp(-((x + 2.5) * (x + 2.5)) / 0.8);
+  return 0.42 * (x - 0.5) * (x - 0.5) + 0.3 * Math.exp(-((x + 2.5) * (x + 2.5)) / 0.8);
 }
 
 function lossGrad(x: number): number {
-  const d1 = 0.24 * (x - 0.5);
+  const d1 = 0.84 * (x - 0.5);
   const d2 = 0.3 * Math.exp(-((x + 2.5) * (x + 2.5)) / 0.8) * (-2 * (x + 2.5) / 0.8);
   return d1 + d2;
 }
@@ -109,7 +112,7 @@ const SCENARIOS: Scenario[] = [
 
 const START_X = -4;
 const MAX_STEPS = 80;
-const ANIM_INTERVAL = 60; // ms per step
+const ANIM_INTERVAL = 200; // ms per step (느리게 — 학생이 각 스텝을 볼 수 있도록)
 
 interface BallState {
   x: number;
@@ -224,16 +227,26 @@ function SinglePanel({ scenario, playing, onFinish }: {
           fill="rgba(100,116,139,0.05)"
         />
 
+        {/* Trail line (connecting path for visibility) */}
+        {ball.trail.length > 1 && (() => {
+          const pts = ball.trail
+            .map(tx => ({ px: toSvgX(tx), py: toSvgY(lossFunc(tx)) }))
+            .filter(p => p.px >= PAD_L && p.px <= SVG_W - PAD_R);
+          if (pts.length < 2) return null;
+          const d = pts.map((p, i) => `${i === 0 ? 'M' : 'L'}${p.px.toFixed(1)},${p.py.toFixed(1)}`).join(' ');
+          return <path d={d} fill="none" stroke={scenario.color} strokeWidth={1.5} opacity={0.5} strokeLinejoin="round" />;
+        })()}
+
         {/* Trail dots */}
         {ball.trail.map((tx, i) => {
           if (i === ball.trail.length - 1) return null;
-          const opacity = 0.1 + (i / ball.trail.length) * 0.4;
+          const opacity = 0.15 + (i / ball.trail.length) * 0.5;
           const ty = lossFunc(tx);
           const px = toSvgX(tx);
           const py = toSvgY(ty);
           if (px < PAD_L || px > SVG_W - PAD_R) return null;
           return (
-            <circle key={i} cx={px} cy={py} r={2}
+            <circle key={i} cx={px} cy={py} r={3}
               fill={scenario.color} opacity={opacity} />
           );
         })}
