@@ -46,18 +46,9 @@ export default defineConfig({
           ],
         },
         {
-          label: '확장 모듈',
-          items: [
-            { label: '9차시: 퍼셉트론에서 ChatGPT까지, 인공지능 연구의 역사', slug: 'lessons/part5/lesson-09' },
-            { label: '10차시: AI의 한계를 찾아서', slug: 'lessons/part5/lesson-10' },
-          ],
-        },
-        {
           label: '부록',
           items: [
-            { label: '📋 평가 안내', slug: 'appendix/assessment-guide' },
-            { label: '용어 사전', slug: 'appendix/glossary' },
-            { label: '참고자료', slug: 'appendix/references' },
+            { label: '📋 과정중심평가 안내', slug: 'appendix/assessment-guide' },
           ],
         },
       ],
