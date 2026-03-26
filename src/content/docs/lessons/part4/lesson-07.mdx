@@ -146,11 +146,11 @@ import EmbeddingGalaxy from '../../../../components/language/EmbeddingGalaxy';
 <details>
 <summary>심화: 다른 예시들</summary>
 
-임베딩 공간에서는 다양한 유추 관계가 벡터 연산으로 포착됩니다:
+위 시뮬레이션의 세 가지 예시 외에도, 임베딩 공간에서는 다양한 유추 관계가 벡터 연산으로 포착됩니다:
 
-- <strong>파리 - 프랑스 + 일본 ≈ 도쿄</strong> (수도 관계)
-- <strong>걷다 - 걸었다 + 수영했다 ≈ 수영하다</strong> (시제 관계)
 - <strong>좋다 - 매우 좋다 + 매우 나쁘다 ≈ 나쁘다</strong> (정도 관계)
+- <strong>서울 - 한국 + 중국 ≈ 베이징</strong> (수도 관계)
+- <strong>형 - 남자 + 여자 ≈ 언니</strong> (성별 관계)
 
 모든 유추가 완벽하게 맞는 것은 아닙니다. 하지만 <strong>단어의 관계가 벡터 공간의 기하학적 구조로 포착된다</strong>는 사실 자체가 혁명적이었습니다.
 
@@ -243,7 +243,12 @@ Mikolov, T., Chen, K., Corrado, G., & Dean, J. (2013). Efficient Estimation of W
 
 </div>
 
-{/* TODO: 토마스 미콜로프 사진 */}
+<div style="display: flex; justify-content: center; margin: 1rem 0;">
+  <figure style="flex: 0 0 auto; min-width: 160px; margin: 0; text-align: center;">
+    <img src="/ai-basic-textbook/images/lesson07/tomas-mikolov.jpg" alt="토마스 미콜로프(Tomas Mikolov)" style="width: 100%; max-width: 220px; aspect-ratio: 3/4; object-fit: cover; border-radius: 10px;" />
+    <figcaption style="color: var(--sl-color-gray-3); font-size: 12px; margin-top: 6px;">토마스 미콜로프 (Tomas Mikolov)<br/>사진: Jindřich Nosek, CC BY-SA 4.0, Wikimedia Commons</figcaption>
+  </figure>
+</div>
 
 이 논문이 보여준 것은 단순한 기술적 성과가 아니었습니다. <strong>단어의 의미를 수학적으로 계산할 수 있다</strong>는 발상 자체가 혁명이었습니다. "왕 - 남자 + 여자 = 여왕" — 이 한 줄이 자연어 처리(NLP, Natural Language Processing) — 컴퓨터가 인간의 언어를 처리하는 기술 분야 — 의 패러다임을 바꿨습니다.
 

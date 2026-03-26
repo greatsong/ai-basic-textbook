@@ -1363,7 +1363,7 @@ export default function EmbeddingGalaxy() {
                 transition: 'all 0.2s',
               }}
             >
-              {showVectorMode ? '&#x2716; 벡터 연산 닫기' : '&#x2795; 벡터 연산 모드'}
+              {showVectorMode ? '\u2716 벡터 연산 닫기' : '\u2795 벡터 연산 모드'}
             </button>
 
             {showVectorMode && (
